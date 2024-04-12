@@ -1,0 +1,17 @@
+uuid: fe0ab313-8226-4358-8543-73e40998f35f
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_16_10_portrait_xs_wide
+label: '16:10 portrait xs wide [480×768]'
+effects:
+  0dc51a5a-180c-4db3-8367-f5bf6f427997:
+    uuid: 0dc51a5a-180c-4db3-8367-f5bf6f427997
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 768
+      crop_type: focal_point

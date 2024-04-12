@@ -1,0 +1,17 @@
+uuid: f2a927dc-cbe2-47e8-b618-23a66d5f4b62
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: product_thumbnail
+label: 'Product thumbnail'
+effects:
+  c30b0e9f-21cb-4b8c-8f4d-4274abfab354:
+    uuid: c30b0e9f-21cb-4b8c-8f4d-4274abfab354
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 180
+      height: 120
+      crop_type: focal_point

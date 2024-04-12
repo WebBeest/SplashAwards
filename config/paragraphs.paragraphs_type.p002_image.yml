@@ -1,0 +1,10 @@
+uuid: 973dbf8d-49eb-4749-8c32-6251a9a8b3bf
+langcode: nl
+status: true
+dependencies: {  }
+id: p002_image
+label: 'P002 Image'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

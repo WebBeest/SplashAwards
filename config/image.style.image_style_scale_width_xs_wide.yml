@@ -1,0 +1,15 @@
+uuid: 9fc787fc-22cb-4fd3-be5f-2e6940df55b1
+langcode: nl
+status: true
+dependencies: {  }
+name: image_style_scale_width_xs_wide
+label: 'Scale width xs wide [480]'
+effects:
+  71821556-3426-4340-a223-5cf1e9716771:
+    uuid: 71821556-3426-4340-a223-5cf1e9716771
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: false

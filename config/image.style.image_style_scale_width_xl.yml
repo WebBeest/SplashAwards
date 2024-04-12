@@ -1,0 +1,15 @@
+uuid: 9e4bdb1e-3e85-4cda-a370-a10535596ffa
+langcode: nl
+status: true
+dependencies: {  }
+name: image_style_scale_width_xl
+label: 'Scale width xl [1920]'
+effects:
+  1933203d-21a2-4968-98ea-fd2473310994:
+    uuid: 1933203d-21a2-4968-98ea-fd2473310994
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: false

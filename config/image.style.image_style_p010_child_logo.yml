@@ -1,0 +1,23 @@
+uuid: e2ef810f-b4f8-4324-8968-cb2fd20ae445
+langcode: nl
+status: true
+dependencies: {  }
+name: image_style_p010_child_logo
+label: 'Paragraph p010 logo'
+effects:
+  4f295c8b-4aa4-4041-bc6f-94660b6cde78:
+    uuid: 4f295c8b-4aa4-4041-bc6f-94660b6cde78
+    id: image_scale
+    weight: 1
+    data:
+      width: 200
+      height: null
+      upscale: false
+  8b437638-77fd-4ec7-856a-46a034a51103:
+    uuid: 8b437638-77fd-4ec7-856a-46a034a51103
+    id: image_scale
+    weight: 2
+    data:
+      width: null
+      height: 80
+      upscale: false

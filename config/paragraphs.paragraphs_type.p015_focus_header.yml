@@ -1,0 +1,10 @@
+uuid: cb81b9e3-1e6f-4815-abe8-5259d10d1f29
+langcode: nl
+status: true
+dependencies: {  }
+id: p015_focus_header
+label: 'P015 Focus header'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

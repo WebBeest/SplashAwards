@@ -1,0 +1,17 @@
+uuid: 820a03ee-de1e-4cf4-937c-2cb603fa3da9
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_3_2_landscape_sm
+label: '3:2 landscape sm [768x512]'
+effects:
+  882ae16d-ff1b-4f85-883b-8fd06b337bce:
+    uuid: 882ae16d-ff1b-4f85-883b-8fd06b337bce
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 512
+      crop_type: focal_point

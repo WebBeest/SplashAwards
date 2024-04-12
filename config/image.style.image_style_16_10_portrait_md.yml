@@ -1,0 +1,17 @@
+uuid: 053cf4c1-051e-4f7e-bb0c-1060262cebd0
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_16_10_portrait_md
+label: '16:10 portrait md [1024×1639]'
+effects:
+  8349a248-f102-408c-9e37-8c32b55ca785:
+    uuid: 8349a248-f102-408c-9e37-8c32b55ca785
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 1639
+      crop_type: focal_point

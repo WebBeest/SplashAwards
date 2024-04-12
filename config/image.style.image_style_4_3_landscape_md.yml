@@ -1,0 +1,17 @@
+uuid: 435189bc-c912-49d9-88b9-ea99e4752f87
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_4_3_landscape_md
+label: '4:3 landscape md [1024×768]'
+effects:
+  620af8d7-c510-4625-ac65-ddbb133d15bc:
+    uuid: 620af8d7-c510-4625-ac65-ddbb133d15bc
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 768
+      crop_type: focal_point

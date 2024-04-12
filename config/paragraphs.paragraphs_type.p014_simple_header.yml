@@ -1,0 +1,10 @@
+uuid: 78a1eed7-cbad-4229-9a26-f21cd40352ad
+langcode: nl
+status: true
+dependencies: {  }
+id: p014_simple_header
+label: 'P014 Simple header'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

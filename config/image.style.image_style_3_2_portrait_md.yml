@@ -1,0 +1,17 @@
+uuid: d63cfde6-cbb5-4302-b46a-1a05769051c3
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_3_2_portrait_md
+label: '3:2 portrait md [1024×1536]'
+effects:
+  4a609045-65da-4455-ab4a-67be2b123ebd:
+    uuid: 4a609045-65da-4455-ab4a-67be2b123ebd
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1024
+      height: 1536
+      crop_type: focal_point

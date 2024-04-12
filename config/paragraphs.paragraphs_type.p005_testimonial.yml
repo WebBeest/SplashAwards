@@ -1,0 +1,10 @@
+uuid: 0ef2ecab-0672-4dd3-a592-2c02f2476d11
+langcode: nl
+status: true
+dependencies: {  }
+id: p005_testimonial
+label: 'P005 Testimonial'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

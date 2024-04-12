@@ -1,0 +1,10 @@
+uuid: 5e3b36b7-e0ad-4a84-8b64-b027a1107ef7
+langcode: nl
+status: true
+dependencies: {  }
+id: p018_jury
+label: 'P018 Jury'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

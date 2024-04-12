@@ -1,0 +1,10 @@
+uuid: 89553fc1-f155-4d7f-8164-43236d45de33
+langcode: nl
+status: true
+dependencies: {  }
+id: p009_photo_gallery
+label: 'P009 Photo gallery'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

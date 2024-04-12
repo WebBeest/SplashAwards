@@ -1,0 +1,10 @@
+uuid: cdb1d1d3-1842-4618-8f27-60ca7ddfd9b1
+langcode: nl
+status: true
+dependencies: {  }
+id: p004_faq
+label: 'P004 FAQ'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

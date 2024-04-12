@@ -1,0 +1,10 @@
+uuid: 1f1d9f43-2866-400d-815c-707520bf1bdd
+langcode: nl
+status: true
+dependencies: {  }
+id: p008_focus
+label: 'P008 Focus'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

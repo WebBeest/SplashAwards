@@ -1,0 +1,44 @@
+uuid: a9ec07c6-5ab6-4dca-a47a-a5f14e4656e7
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p018_jury.field_company
+    - field.field.paragraph.p018_jury.field_image
+    - field.field.paragraph.p018_jury.field_name
+    - paragraphs.paragraphs_type.p018_jury
+  module:
+    - image
+    - text
+id: paragraph.p018_jury.default
+targetEntityType: paragraph
+bundle: p018_jury
+mode: default
+content:
+  field_company:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_name:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

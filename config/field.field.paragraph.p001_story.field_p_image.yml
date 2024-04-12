@@ -1,0 +1,38 @@
+uuid: 0c69631f-8df4-43e9-916b-4baee946fed6
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_image
+    - paragraphs.paragraphs_type.p001_story
+  module:
+    - image
+id: paragraph.p001_story.field_p_image
+field_name: field_p_image
+entity_type: paragraph
+bundle: p001_story
+label: Image
+description: 'An image to show alongside the text'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'p001/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: 2MB
+  max_resolution: 2000x2000
+  min_resolution: 250x165
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

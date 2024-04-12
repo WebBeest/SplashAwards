@@ -1,0 +1,45 @@
+uuid: 28a0eb52-aecc-4584-b30a-a1ddd890c85f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p018_jury.field_company
+    - field.field.paragraph.p018_jury.field_image
+    - field.field.paragraph.p018_jury.field_name
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.p018_jury
+  module:
+    - image
+    - text
+id: paragraph.p018_jury.default
+targetEntityType: paragraph
+bundle: p018_jury
+mode: default
+content:
+  field_company:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 0
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_name:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

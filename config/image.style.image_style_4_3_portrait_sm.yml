@@ -1,0 +1,17 @@
+uuid: 24e18186-bb2b-4131-aff6-0b952be52633
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_4_3_portrait_sm
+label: '4:3 portrait sm [768×1024]'
+effects:
+  2220245c-05d7-4e8c-8670-74418d89494c:
+    uuid: 2220245c-05d7-4e8c-8670-74418d89494c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 1024
+      crop_type: focal_point

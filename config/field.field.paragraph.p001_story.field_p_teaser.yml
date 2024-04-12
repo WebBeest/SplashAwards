@@ -1,0 +1,19 @@
+uuid: f3dc0ac9-552b-4bee-a110-e3c750ef17cb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_teaser
+    - paragraphs.paragraphs_type.p001_story
+id: paragraph.p001_story.field_p_teaser
+field_name: field_p_teaser
+entity_type: paragraph
+bundle: p001_story
+label: Teaser
+description: 'Display a short descriptive text.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,10 @@
+uuid: 458145a0-0381-459c-83e7-9d64130d967f
+langcode: nl
+status: true
+dependencies: {  }
+id: p010_logo_item
+label: 'P010 Logo item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

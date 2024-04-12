@@ -1,0 +1,25 @@
+uuid: b722aa19-a55e-4332-b43e-7cb44f389719
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_video
+    - paragraphs.paragraphs_type.p001_story
+  module:
+    - video_embed_field
+id: paragraph.p001_story.field_p_video
+field_name: field_p_video
+entity_type: paragraph
+bundle: p001_story
+label: Video
+description: "Add your YouTube or Vimeo video's share url here. This will replace the image if you have set both."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    vimeo: vimeo
+    youtube: youtube
+    youtube_playlist: '0'
+field_type: video_embed_field

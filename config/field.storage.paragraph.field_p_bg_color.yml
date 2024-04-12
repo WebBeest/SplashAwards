@@ -1,0 +1,30 @@
+uuid: b2024498-da4d-43ee-bdf0-ef3898d96ad1
+langcode: nl
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_p_bg_color
+field_name: field_p_bg_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: grey_303030_e5e5e5
+      label: 'grey/#303030/#e5e5e5'
+    -
+      value: spot_1_ffffff_10bfff
+      label: 'spot-1/#ffffff/#10BFFF'
+    -
+      value: spot_2_ffffff_de0055
+      label: 'spot-2/#ffffff/#DE0055'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

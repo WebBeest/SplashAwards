@@ -1,0 +1,15 @@
+uuid: bf4466e2-842a-47b9-a9b0-71d4f7bad27f
+langcode: nl
+status: true
+dependencies: {  }
+name: image_style_scale_width_md
+label: 'Scale width md [1024]'
+effects:
+  7655f6ba-bf57-46cc-9c9c-131d52648297:
+    uuid: 7655f6ba-bf57-46cc-9c9c-131d52648297
+    id: image_scale
+    weight: 1
+    data:
+      width: 1024
+      height: null
+      upscale: false

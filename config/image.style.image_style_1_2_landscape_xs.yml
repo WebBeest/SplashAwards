@@ -1,0 +1,17 @@
+uuid: b76fb686-1a66-4813-b551-fb7bd344bba2
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_1_2_landscape_xs
+label: '1:2 landscape xs [320×160]'
+effects:
+  4faacd72-eab7-45ff-aaf0-85555cd78e0a:
+    uuid: 4faacd72-eab7-45ff-aaf0-85555cd78e0a
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 320
+      height: 160
+      crop_type: focal_point

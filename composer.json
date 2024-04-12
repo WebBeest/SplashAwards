@@ -43,6 +43,7 @@
         "drupal/stage_file_proxy": "^2.1",
         "drupal/storybook": "^1@alpha",
         "drupal/styleguide": "^2.1",
+        "drupal/video_embed_field": "^2.5",
         "drupal/webform": "^6.2",
         "drush/drush": "^12.5"
     },

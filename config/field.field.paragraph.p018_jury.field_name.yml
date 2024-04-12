@@ -1,0 +1,24 @@
+uuid: 6bb8378f-2ac0-4182-9591-a68c78b47fc5
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_name
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.p018_jury
+  module:
+    - text
+id: paragraph.p018_jury.field_name
+field_name: field_name
+entity_type: paragraph
+bundle: p018_jury
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

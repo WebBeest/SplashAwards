@@ -1,0 +1,10 @@
+uuid: 4d855fbd-c108-4455-ace2-ef64faebbf16
+langcode: nl
+status: true
+dependencies: {  }
+id: p007_usp_item
+label: 'P007 USP Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

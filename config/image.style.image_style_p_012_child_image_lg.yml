@@ -1,0 +1,17 @@
+uuid: 6e578a6b-9496-4924-a166-e119b4389d5e
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_p_012_child_image_lg
+label: 'Paragraph p012 child image lg [400×600]'
+effects:
+  03b3815d-5699-46ae-9c9b-41f43e710707:
+    uuid: 03b3815d-5699-46ae-9c9b-41f43e710707
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 600
+      crop_type: focal_point

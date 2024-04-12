@@ -1,0 +1,15 @@
+uuid: 612b7179-467f-4f34-af8d-5903ad3e5996
+langcode: nl
+status: true
+dependencies: {  }
+name: header_image
+label: 'Header image (1920x600)'
+effects:
+  71c9f318-73f1-46c3-b7c4-c47d04d785ed:
+    uuid: 71c9f318-73f1-46c3-b7c4-c47d04d785ed
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1920
+      height: 600
+      anchor: center-center

@@ -1,0 +1,21 @@
+uuid: a9b893b9-ed7b-4e84-a624-6fef8e9a2fa3
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_001_layout_image
+    - paragraphs.paragraphs_type.p001_story
+  module:
+    - options
+id: paragraph.p001_story.field_p_001_layout_image
+field_name: field_p_001_layout_image
+entity_type: paragraph
+bundle: p001_story
+label: 'Image layout'
+description: 'By default, the image is aligned with the side of the content container. <br />If you select the second option, the image will stretch to stick to the side of the page and fill out more space.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

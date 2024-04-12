@@ -1,0 +1,15 @@
+uuid: 6227c780-f610-4cab-abb5-3bee3ed57486
+langcode: nl
+status: true
+dependencies: {  }
+name: preview
+label: Preview
+effects:
+  1b679baf-29d1-40c6-9236-f0ebe44ca14f:
+    uuid: 1b679baf-29d1-40c6-9236-f0ebe44ca14f
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: false

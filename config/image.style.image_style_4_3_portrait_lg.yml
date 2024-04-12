@@ -1,0 +1,17 @@
+uuid: 8fbb5d74-8bd6-4302-bab3-28e33150678b
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_4_3_portrait_lg
+label: '4:3 portrait lg [1200×1600]'
+effects:
+  bf6ebd5a-8b28-4916-96e8-097ba0601a22:
+    uuid: bf6ebd5a-8b28-4916-96e8-097ba0601a22
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 1600
+      crop_type: focal_point

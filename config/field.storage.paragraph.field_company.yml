@@ -1,0 +1,19 @@
+uuid: bac9031e-24c1-4a8b-a7f1-83c7577af69f
+langcode: nl
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_company
+field_name: field_company
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

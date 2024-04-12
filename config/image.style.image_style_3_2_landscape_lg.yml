@@ -1,0 +1,17 @@
+uuid: cfd2fa1b-897a-4906-8b78-2848887980eb
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_3_2_landscape_lg
+label: '3:2 landscape lg [1200×800]'
+effects:
+  53b51d99-8615-40c5-a7da-034944b927ce:
+    uuid: 53b51d99-8615-40c5-a7da-034944b927ce
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 800
+      crop_type: focal_point

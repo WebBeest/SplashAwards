@@ -1,0 +1,10 @@
+uuid: 05183e61-722e-4a1a-b170-36e7632352b6
+langcode: nl
+status: true
+dependencies: {  }
+id: p012_guidance
+label: 'P012 Guidance'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

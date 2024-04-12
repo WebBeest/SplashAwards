@@ -1,0 +1,19 @@
+uuid: c0fca816-6139-46fb-8dfe-6419f0c260eb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_title
+    - paragraphs.paragraphs_type.p001_story
+id: paragraph.p001_story.field_p_title
+field_name: field_p_title
+entity_type: paragraph
+bundle: p001_story
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

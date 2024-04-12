@@ -1,0 +1,15 @@
+uuid: 81d6a51d-2cc1-4c44-8575-3bbe6c913421
+langcode: nl
+status: true
+dependencies: {  }
+name: image_style_scale_width_lg
+label: 'Scale width lg [1200]'
+effects:
+  6ecaae67-66fc-49df-9c5d-83f902cd3ce7:
+    uuid: 6ecaae67-66fc-49df-9c5d-83f902cd3ce7
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: false

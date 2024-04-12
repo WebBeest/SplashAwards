@@ -1,0 +1,17 @@
+uuid: ff5d4df1-6192-4471-ae25-effe8bc6eec0
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_1_4_landscape_xs_wide
+label: '1:4 landscape xs wide [480×120]'
+effects:
+  6272bfcf-0709-4363-8935-772f5a5b896f:
+    uuid: 6272bfcf-0709-4363-8935-772f5a5b896f
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 480
+      height: 120
+      crop_type: focal_point

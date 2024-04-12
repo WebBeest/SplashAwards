@@ -1,0 +1,17 @@
+uuid: aceb394a-8d66-417f-a25e-872049522f58
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_p_012_child_image_md
+label: 'Paragraph p012 child image md [300×470]'
+effects:
+  8ccb1b81-be34-4233-be70-ce0cf248e3cf:
+    uuid: 8ccb1b81-be34-4233-be70-ce0cf248e3cf
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 470
+      crop_type: focal_point

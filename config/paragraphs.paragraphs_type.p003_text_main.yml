@@ -1,0 +1,10 @@
+uuid: bd7a8e1c-85f0-4cab-935b-1f77973e7500
+langcode: nl
+status: true
+dependencies: {  }
+id: p003_text_main
+label: 'P003 Text Main'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,93 @@
+uuid: a7ec9e8b-b726-4c1b-a535-5683ef685761
+langcode: nl
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor5
+format: full_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - sourceEditing
+      - code
+      - '|'
+      - undo
+      - redo
+      - '|'
+      - drupalInsertImage
+      - link
+      - '|'
+      - insertTable
+      - '-'
+      - heading
+      - bold
+      - italic
+      - underline
+      - subscript
+      - superscript
+      - '|'
+      - bulletedList
+      - numberedList
+      - indent
+      - outdent
+      - '|'
+      - alignment
+      - '|'
+      - style
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags:
+        - '<span>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'button primary'
+          element: '<a class="button">'
+        -
+          label: 'button secondary'
+          element: '<a class="button button--secondary">'
+        -
+          label: 'Table: responsive headings'
+          element: '<table class="is-reformatted">'
+        -
+          label: 'Table: no margin'
+          element: '<table class="no-margin">'
+        -
+          label: 'Intro text'
+          element: '<p class="intro">'
+        -
+          label: 'Paragraph: no margin'
+          element: '<p class="no-margin">'
+        -
+          label: Highlight
+          element: '<span class="highlight">'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: 64MB
+  max_dimensions:
+    width: 0
+    height: 0

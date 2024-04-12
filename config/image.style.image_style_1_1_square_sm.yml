@@ -1,0 +1,17 @@
+uuid: 082e4622-410a-43c9-a16b-f9eb4ad3316d
+langcode: nl
+status: true
+dependencies:
+  module:
+    - focal_point
+name: image_style_1_1_square_sm
+label: '1:1 square sm [768×768]'
+effects:
+  caa35969-4294-4175-a68e-af7b787808d5:
+    uuid: caa35969-4294-4175-a68e-af7b787808d5
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 768
+      height: 768
+      crop_type: focal_point

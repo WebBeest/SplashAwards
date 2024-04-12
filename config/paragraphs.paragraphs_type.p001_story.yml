@@ -1,0 +1,10 @@
+uuid: 8e28b007-73f9-4b79-9751-afa19855deb4
+langcode: nl
+status: true
+dependencies: {  }
+id: p001_story
+label: 'P001 Story'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

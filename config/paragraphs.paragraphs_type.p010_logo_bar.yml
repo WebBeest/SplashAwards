@@ -1,0 +1,10 @@
+uuid: c2c8bcb8-07a4-4287-95d6-2297352603d3
+langcode: nl
+status: true
+dependencies: {  }
+id: p010_logo_bar
+label: 'P010 Logo bar'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

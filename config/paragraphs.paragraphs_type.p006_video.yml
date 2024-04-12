@@ -1,0 +1,10 @@
+uuid: 149ce218-6f77-4feb-9568-b362b858a2c1
+langcode: nl
+status: true
+dependencies: {  }
+id: p006_video
+label: 'P006 Video'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

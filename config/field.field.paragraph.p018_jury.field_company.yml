@@ -1,0 +1,24 @@
+uuid: 4d70062e-6e8e-468d-aae5-eaeb9b1b6a8e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_company
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.p018_jury
+  module:
+    - text
+id: paragraph.p018_jury.field_company
+field_name: field_company
+entity_type: paragraph
+bundle: p018_jury
+label: Company
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

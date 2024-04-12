@@ -1,0 +1,11 @@
+uuid: 85b9defb-af79-4adf-bf06-45c50d67ffb7
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.afbeelding
+id: media.afbeelding
+target_entity_type_id: media
+target_bundle: afbeelding
+default_langcode: site_default
+language_alterable: false
