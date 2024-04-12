@@ -1,0 +1,13 @@
+uuid: 845269fc-714f-4bf4-aff2-7aa621c9eb2f
+langcode: nl
+status: false
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: dTfAUHooYV0uOVPO3saGpgv-c5PppJXDwxvwRTJOycM
+id: media.full
+label: 'Volledige inhoud'
+description: ''
+targetEntityType: media
+cache: true

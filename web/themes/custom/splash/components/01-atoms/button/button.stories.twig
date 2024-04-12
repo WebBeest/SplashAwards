@@ -1,0 +1,12 @@
+{% stories button with {
+  title: 'Splash Awards/Atoms/Button'
+} %}
+  {% story default with {
+    name: '1. Default',
+    args: {
+      text: 'Button'|t
+    }
+  } %}
+    {{ include('splash:button', { text }) }}
+  {% endstory %}
+{% endstories %}

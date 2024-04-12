@@ -1,0 +1,14 @@
+uuid: bb92f893-b5dd-4d18-a5f2-4c0b5dacc69d
+langcode: nl
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: YNrKbYrWWjeubUUM8AsQ19KnX7cU1elACR14CZJHmdg
+id: days
+label: Dagen
+category: 'Datum en tijd'
+likert: false
+options: "Zondag: Zondag\r\nMaandag: Maandag\r\nDinsdag: Dinsdag\r\nWoensdag: Woensdag\r\nDonderdag: Donderdag\r\nVrijdag: Vrijdag\r\nZaterdag: Zaterdag\n"

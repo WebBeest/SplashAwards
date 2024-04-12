@@ -1,0 +1,13 @@
+uuid: b382e3a6-5fdf-4341-8a11-3d4752807fd1
+langcode: nl
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: OmnschvBLb9ZJn0iVyBd2odf8U8Nt0INjRbRMixZw9U
+id: webform_archive_action
+label: 'Webformulier archiveren'
+type: webform
+plugin: webform_archive_action
+configuration: {  }

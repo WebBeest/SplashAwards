@@ -1,0 +1,12 @@
+uuid: a80e9769-f00a-4a32-bcb8-a6a1f32ae971
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Inhoud
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node:summary]'
+  canonical_url: '[node:url]'

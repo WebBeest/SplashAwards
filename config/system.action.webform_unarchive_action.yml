@@ -1,0 +1,13 @@
+uuid: fed7c9f5-8c54-4cf3-b1f1-c7bbc8ca11b0
+langcode: nl
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: aqi5Ftlnhe9KyOowpK7CanEvJMBBo8xAR1dA99bKOuc
+id: webform_unarchive_action
+label: 'Webformulier herstellen'
+type: webform
+plugin: webform_unarchive_action
+configuration: {  }

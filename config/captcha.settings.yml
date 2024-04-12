@@ -1,0 +1,16 @@
+_core:
+  default_config_hash: QDFjOXYIYVwCPQYHY4wAx4DUqOEkNaZokIx6DGApR9I
+langcode: nl
+enable_globally: 0
+enable_globally_on_admin_routes: false
+default_challenge: captcha/Math
+description: 'Deze vraag is om te controleren dat u een mens bent, om geautomatiseerde invoer (spam) te voorkomen.'
+title: CAPTCHA
+administration_mode: false
+administration_mode_on_admin_routes: false
+whitelist_ips: ''
+wrong_captcha_response_message: 'Uw CAPTCHA-antwoord was niet juist.'
+default_validation: 1
+persistence: 1
+enable_stats: false
+log_wrong_responses: false

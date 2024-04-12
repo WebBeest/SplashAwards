@@ -1,0 +1,11 @@
+name: Splash Awards
+type: theme
+description: Splash Awards theme with Storybook integration.
+package: Core
+base theme: classy
+
+# Define theme core
+core_version_requirement: ^10
+
+dependencies:
+  - drupal:sdc

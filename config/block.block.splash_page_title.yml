@@ -1,0 +1,20 @@
+uuid: 2cda4b53-3838-4cc8-b58c-21f2bed54494
+langcode: en
+status: true
+dependencies:
+  theme:
+    - splash
+_core:
+  default_config_hash: Oh72CHUkp6cj6dbrXMK2hzCsM05w9cHVoD22rMLQUfk
+id: splash_page_title
+theme: splash
+region: content
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

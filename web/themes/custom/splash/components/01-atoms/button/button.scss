@@ -1,0 +1,21 @@
+button {
+  &.my-button {
+    box-shadow: 1px 1px 2px #000000cc;
+    margin: 0;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      vertical-align: bottom;
+      padding-left: 5px;
+      fill: white;
+    }
+
+    &:focus,
+    &:hover {
+      svg {
+        fill: black;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+uuid: 0552f295-07a7-4f1b-a6c6-28de1eda4ee9
+langcode: nl
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: LkO63Zl2cP_l9YdjzWI8dWoD9uD0pytkPiUiUM2bo9A
+id: phone_types
+label: Telefoontype
+category: Demografisch
+likert: false
+options: "Thuis: Thuis\r\nKantoor: Kantoor\r\nMobiel: Mobiel\n"

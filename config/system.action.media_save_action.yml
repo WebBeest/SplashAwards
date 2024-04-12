@@ -1,0 +1,13 @@
+uuid: b97b92ab-cff5-45dd-9f88-9e1df7625cc3
+langcode: nl
+status: true
+dependencies:
+  module:
+    - media
+_core:
+  default_config_hash: VVyUA6PIaVeGtcIbgEWqJ6SYDiJdReBeojFswURFpKs
+id: media_save_action
+label: 'Media opslaan'
+type: media
+plugin: 'entity:save_action:media'
+configuration: {  }

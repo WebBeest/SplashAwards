@@ -1,0 +1,74 @@
+name: splashawards2024
+recipe: drupal10
+config:
+  xdebug: 'develop,debug'
+  webroot: web
+services:
+  appserver:
+    overrides:
+      environment:
+        DRUSH_OPTIONS_URI: "https://splashawards2024.lndo.site"
+        PHP_IDE_CONFIG: "serverName=appserver"
+        XDEBUG_SESSION_START: lando
+        LANDO_HOST_IP: "host.docker.internal"
+        XDEBUG_MODE: debug
+        XDEBUG_SESSION: phpstorm
+    # config:
+    #   php: .vscode/php.ini
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  pma:
+    type: phpmyadmin
+
+proxy:
+  mailhog:
+    - mailhog-rivmweb.lndo.site
+  pma:
+    - pma-rivmweb.lndo.site
+
+tooling:
+  run-tests:
+    service: appserver
+    cmd: "/app/bin/robo job:unit-tests"
+  static-analysis:
+    service: appserver
+    cmd: "/app/bin/robo job:static-analysis"
+  composer:
+    cmd: "/usr/local/bin/composer"
+  phpcs:
+    service: appserver
+    level: app
+    options:
+      standard:
+        passthrough: true
+        describe: "Which coding standard do you want to use?"
+        interactive:
+          type: list
+          choices:
+            - DrupalPractice
+            - Drupal
+          message: "Which coding standard do you want to use?"
+          default: DrupalPractice
+    cmd: "/app/bin/phpcs --standard=$standard --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml --ignore=*.min.css,*.min.js,node_modules,bower_components,vendor"
+  phpstan:
+    service: appserver
+    cmd: "/app/bin/phpstan analyze  --configuration phpstan.neon "
+  update-dev:
+    service: appserver
+    cmd: "/app/scripts/update-dev.sh"
+  xdebug-on:
+    service: appserver
+    description: "Enable xdebug"
+    cmd:
+      - docker-php-ext-enable xdebug && kill -USR2 $(pgrep -o php-fpm) > /dev/null || /etc/init.d/apache2 reload
+      - tput setaf 2 && echo "Xdebug On" && tput sgr 0 && echo
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable XDebug
+    user: root
+    cmd:
+      - rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && kill -USR2 $(pgrep -o php-fpm) > /dev/null || /etc/init.d/apache2 reload
+      - tput setaf 1 && echo "Xdebug Off" && tput sgr 0 && echo

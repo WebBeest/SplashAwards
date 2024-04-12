@@ -1,0 +1,13 @@
+uuid: d377880f-7310-4b59-bad5-af8370c6e570
+langcode: nl
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: AK83C-dOZEPruvi6GbkuhihWLnO4VtrbesqSC6izf4o
+id: webform_open_action
+label: 'Webformulier openen'
+type: webform
+plugin: webform_open_action
+configuration: {  }

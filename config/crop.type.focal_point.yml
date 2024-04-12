@@ -1,0 +1,14 @@
+uuid: 1d2ea6aa-baa7-42d8-9170-272039650781
+langcode: nl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: flCi9IdafdLXlJqvoHguutUOiC05-aynK4niYN4YZ3o
+label: Focuspunt
+id: focal_point
+description: 'Type uitsnede dat gebruikt wordt door de Focal Point-module.'
+aspect_ratio: ''
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null
