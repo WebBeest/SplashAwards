@@ -1,0 +1,41 @@
+uuid: fb047490-3ec1-43c3-a1eb-f845d48a1d94
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_scale_width_lg
+    - image.style.image_style_scale_width_md
+    - image.style.image_style_scale_width_sm
+    - image.style.image_style_scale_width_xs_wide
+  theme:
+    - splash
+id: product_detail
+label: 'Product detail'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_lg
+    breakpoint_id: splash.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_md
+    breakpoint_id: splash.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_sm
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_xs_wide
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_lg
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_scale_width_lg

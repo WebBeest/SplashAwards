@@ -1,0 +1,35 @@
+uuid: 1d266a6c-032f-4e81-a02f-f223b7e9ab4f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_1_2_landscape_md
+    - image.style.image_style_1_2_landscape_sm
+    - image.style.image_style_1_2_landscape_xs_wide
+  theme:
+    - splash
+id: news_detail
+label: 'News detail'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_2_landscape_md
+    breakpoint_id: splash.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_2_landscape_sm
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_2_landscape_sm
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_2_landscape_xs_wide
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_1_2_landscape_xs_wide

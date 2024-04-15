@@ -1,0 +1,36 @@
+uuid: a988ebda-bc97-491a-aff2-4c419513384b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_3_2_landscape_lg
+    - image.style.image_style_3_2_landscape_md
+    - image.style.image_style_3_2_landscape_sm
+    - image.style.image_style_3_2_landscape_xs_wide
+  theme:
+    - splash
+id: paragraph_p005_image_background
+label: 'Paragraph p005 (background image)'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_lg
+    breakpoint_id: splash.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_md
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_sm
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_xs_wide
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_3_2_landscape_xs_wide

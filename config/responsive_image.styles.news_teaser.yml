@@ -1,0 +1,30 @@
+uuid: 625a2e0d-f637-4328-8576-abb270d16cc7
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_3_2_landscape_md
+    - image.style.image_style_3_2_landscape_sm
+    - image.style.image_style_3_2_landscape_xs_wide
+  theme:
+    - splash
+id: news_teaser
+label: 'News Teaser'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_md
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_sm
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_xs_wide
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_3_2_landscape_md

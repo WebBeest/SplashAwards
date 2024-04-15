@@ -1,0 +1,41 @@
+uuid: e9b40f32-194c-4c6f-81cd-bc0ba565d2b3
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_3_2_landscape_sm
+    - image.style.image_style_3_2_landscape_xs_wide
+    - image.style.image_style_p_012_child_image_lg
+    - image.style.image_style_p_012_child_image_md
+  theme:
+    - splash
+id: paragraph_p012_child_image
+label: 'Paragraph p012 child (boxed image)'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_p_012_child_image_lg
+    breakpoint_id: splash.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_p_012_child_image_md
+    breakpoint_id: splash.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_xs_wide
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_sm
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_xs_wide
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_3_2_landscape_xs_wide

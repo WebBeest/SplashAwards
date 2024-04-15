@@ -1,0 +1,36 @@
+uuid: 10cbda08-5840-48af-944f-6398a335ef4a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_scale_width_lg
+    - image.style.image_style_scale_width_md
+    - image.style.image_style_scale_width_sm
+    - image.style.image_style_scale_width_xs_wide
+  theme:
+    - splash
+id: paragraph_p002_image_full
+label: 'Paragraph P002 (image full width)'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_lg
+    breakpoint_id: splash.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_md
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_sm
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_scale_width_xs_wide
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_scale_width_lg

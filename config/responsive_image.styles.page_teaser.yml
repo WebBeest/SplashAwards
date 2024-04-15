@@ -1,0 +1,30 @@
+uuid: 60483897-7baf-4410-acc5-1aabc9ef6f2c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_3_2_landscape_md
+    - image.style.image_style_3_2_landscape_sm
+    - image.style.image_style_3_2_landscape_xs_wide
+  theme:
+    - splash
+id: page_teaser
+label: 'Page teaser'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_md
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_sm
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_3_2_landscape_xs_wide
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_3_2_landscape_md

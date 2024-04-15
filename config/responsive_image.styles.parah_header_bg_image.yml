@@ -1,0 +1,42 @@
+uuid: 5894a7c0-ab74-4543-95d3-01601e935ae2
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_1_3_landscape_xl
+    - image.style.image_style_1_4_landscape
+    - image.style.image_style_1_4_landscape_md
+    - image.style.image_style_1_4_landscape_sm
+    - image.style.image_style_1_4_landscape_xs_wide
+  theme:
+    - splash
+id: parah_header_bg_image
+label: 'Paragraph Header (Generic Background Img)'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_3_landscape_xl
+    breakpoint_id: splash.lg
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_4_landscape
+    breakpoint_id: splash.md
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_4_landscape_md
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_4_landscape_sm
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_1_4_landscape_xs_wide
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_1_4_landscape_xs_wide
