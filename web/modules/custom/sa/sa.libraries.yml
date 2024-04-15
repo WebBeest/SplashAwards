@@ -1,0 +1,6 @@
+tabbed-item:
+  version: 'VERSION'
+  js:
+    js/tabbed-item.js: { }
+  dependencies:
+    - core/drupal
