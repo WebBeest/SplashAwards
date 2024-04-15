@@ -1,0 +1,48 @@
+uuid: ef260893-e792-401c-80ff-e2bafd874c7c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p006_video.field_p_subtitle
+    - field.field.paragraph.p006_video.field_p_title
+    - field.field.paragraph.p006_video.field_p_video
+    - field.field.paragraph.p006_video.field_video_layout
+    - paragraphs.paragraphs_type.p006_video
+  module:
+    - sa
+    - video_embed_field
+id: paragraph.p006_video.default
+targetEntityType: paragraph
+bundle: p006_video
+mode: default
+content:
+  field_p_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_p_video:
+    type: video_embed_field_video
+    label: hidden
+    settings:
+      autoplay: false
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_video_layout: true
+  search_api_excerpt: true

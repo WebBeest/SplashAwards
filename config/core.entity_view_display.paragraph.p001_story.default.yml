@@ -77,7 +77,7 @@ content:
     type: video_embed_field_video
     label: hidden
     settings:
-      autoplay: true
+      autoplay: false
       responsive: true
       width: 854
       height: 480
