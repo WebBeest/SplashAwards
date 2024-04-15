@@ -1,0 +1,27 @@
+uuid: 90f08b78-469e-4e23-9557-8f9026c103e1
+langcode: nl
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_p_003_view_mode
+field_name: field_p_003_view_mode
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: left
+      label: 'Text left'
+    -
+      value: centered
+      label: 'Text centered'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

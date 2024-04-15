@@ -1,0 +1,59 @@
+uuid: 6c712964-8390-46de-8c4f-0deef88a736e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p003_text_main.field_p_003_view_mode
+    - field.field.paragraph.p003_text_main.field_p_bg_color
+    - field.field.paragraph.p003_text_main.field_p_button
+    - field.field.paragraph.p003_text_main.field_p_teaser
+    - field.field.paragraph.p003_text_main.field_p_text
+    - field.field.paragraph.p003_text_main.field_p_title
+    - paragraphs.paragraphs_type.p003_text_main
+  module:
+    - link
+    - sa
+    - text
+id: paragraph.p003_text_main.default
+targetEntityType: paragraph
+bundle: p003_text_main
+mode: default
+content:
+  field_p_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_003_view_mode: true
+  field_p_bg_color: true
+  search_api_excerpt: true

@@ -1,0 +1,24 @@
+uuid: 43318a5a-0421-4681-9e01-c4cd20b64f80
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_text
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.p003_text_main
+  module:
+    - text
+id: paragraph.p003_text_main.field_p_text
+field_name: field_p_text
+entity_type: paragraph
+bundle: p003_text_main
+label: Text
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

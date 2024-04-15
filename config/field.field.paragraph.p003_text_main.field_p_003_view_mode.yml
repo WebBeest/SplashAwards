@@ -1,0 +1,21 @@
+uuid: 31b568ee-3c30-40ae-84d9-271747b4b030
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_003_view_mode
+    - paragraphs.paragraphs_type.p003_text_main
+  module:
+    - options
+id: paragraph.p003_text_main.field_p_003_view_mode
+field_name: field_p_003_view_mode
+entity_type: paragraph
+bundle: p003_text_main
+label: 'View mode'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
