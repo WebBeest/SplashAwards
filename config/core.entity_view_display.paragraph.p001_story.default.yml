@@ -19,7 +19,7 @@ dependencies:
   module:
     - image
     - link
-    - options
+    - sa
     - text
     - video_embed_field
 id: paragraph.p001_story.default
@@ -27,64 +27,9 @@ targetEntityType: paragraph
 bundle: p001_story
 mode: default
 content:
-  field_p_001_layout:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  field_p_001_layout_image:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_p_bg_color:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_p_bg_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_p_button:
     type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_p_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_p_link:
-    type: link
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -94,46 +39,56 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_p_subtitle:
-    type: string
-    label: above
+  field_p_image:
+    type: image
+    label: hidden
     settings:
-      link_to_entity: false
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
-    weight: 6
+    weight: 0
     region: content
-  field_p_teaser:
-    type: basic_string
-    label: above
-    settings: {  }
+  field_p_subtitle:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h3
     third_party_settings: {  }
-    weight: 7
+    weight: 3
     region: content
   field_p_text:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 8
+    weight: 4
     region: content
   field_p_title:
-    type: string
-    label: above
+    type: header_text_field_formatter
+    label: hidden
     settings:
-      link_to_entity: false
+      header: h2
     third_party_settings: {  }
-    weight: 9
+    weight: 2
     region: content
   field_p_video:
     type: video_embed_field_video
-    label: above
+    label: hidden
     settings:
       autoplay: true
       responsive: true
       width: 854
       height: 480
     third_party_settings: {  }
-    weight: 10
+    weight: 1
     region: content
 hidden:
+  field_p_001_layout: true
+  field_p_001_layout_image: true
+  field_p_bg_color: true
+  field_p_bg_image: true
+  field_p_link: true
+  field_p_teaser: true
   search_api_excerpt: true

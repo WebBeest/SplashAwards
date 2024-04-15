@@ -15,11 +15,11 @@ dependencies:
     - field.field.paragraph.p001_story.field_p_text
     - field.field.paragraph.p001_story.field_p_title
     - field.field.paragraph.p001_story.field_p_video
-    - image.style.thumbnail
+    - image.style.preview
     - paragraphs.paragraphs_type.p001_story
   module:
-    - image
-    - link
+    - focal_point
+    - sa
     - text
     - video_embed_field
 id: paragraph.p001_story.default
@@ -28,38 +28,41 @@ bundle: p001_story
 mode: default
 content:
   field_p_001_layout:
-    type: options_select
+    type: options_buttons
     weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_p_001_layout_image:
-    type: options_select
+    type: options_buttons
     weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_p_bg_color:
-    type: options_select
+    type: options_buttons
     weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_p_button:
-    type: link_default
+    type: link_target_widget
     weight: 8
     region: content
     settings:
+      target: ''
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
   field_p_image:
-    type: image_image
+    type: image_focal_point
     weight: 3
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: preview
+      preview_link: true
+      offsets: '50,50'
     third_party_settings: {  }
   field_p_subtitle:
     type: string_textfield

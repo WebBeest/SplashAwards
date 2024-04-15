@@ -1,0 +1,4 @@
+name: Splash Awards
+type: module
+description: Splash Awards custom functionality
+core_version_requirement: ^10
