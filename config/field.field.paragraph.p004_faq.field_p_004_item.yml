@@ -1,0 +1,21 @@
+uuid: 080a6b63-77ff-4e9d-b742-9daa52552c2e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_004_item
+    - paragraphs.paragraphs_type.p004_faq
+  module:
+    - sa
+id: paragraph.p004_faq.field_p_004_item
+field_name: field_p_004_item
+entity_type: paragraph
+bundle: p004_faq
+label: 'FAQ item'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: tabbed_item

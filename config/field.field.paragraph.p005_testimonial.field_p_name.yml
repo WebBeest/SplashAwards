@@ -1,0 +1,19 @@
+uuid: adf12522-36ef-41b5-abe8-c73b9f18f80f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_name
+    - paragraphs.paragraphs_type.p005_testimonial
+id: paragraph.p005_testimonial.field_p_name
+field_name: field_p_name
+entity_type: paragraph
+bundle: p005_testimonial
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

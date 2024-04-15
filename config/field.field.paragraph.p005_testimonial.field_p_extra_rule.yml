@@ -1,0 +1,19 @@
+uuid: f31f917f-439d-4dd3-bf04-c0cc0358227f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_extra_rule
+    - paragraphs.paragraphs_type.p005_testimonial
+id: paragraph.p005_testimonial.field_p_extra_rule
+field_name: field_p_extra_rule
+entity_type: paragraph
+bundle: p005_testimonial
+label: 'Extra rule'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

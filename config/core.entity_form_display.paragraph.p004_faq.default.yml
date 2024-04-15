@@ -1,0 +1,70 @@
+uuid: 7de4a518-878a-451a-af50-18021cc15e30
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p004_faq.field_p_004_item
+    - field.field.paragraph.p004_faq.field_p_bg_color
+    - field.field.paragraph.p004_faq.field_p_button
+    - field.field.paragraph.p004_faq.field_p_subtitle
+    - field.field.paragraph.p004_faq.field_p_teaser
+    - field.field.paragraph.p004_faq.field_p_title
+    - paragraphs.paragraphs_type.p004_faq
+  module:
+    - sa
+id: paragraph.p004_faq.default
+targetEntityType: paragraph
+bundle: p004_faq
+mode: default
+content:
+  field_p_004_item:
+    type: tabbed_widget
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+      rows: '5'
+    third_party_settings: {  }
+  field_p_bg_color:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_p_button:
+    type: link_target_widget
+    weight: 5
+    region: content
+    settings:
+      target: ''
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_p_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_p_teaser:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_p_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

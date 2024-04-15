@@ -1,0 +1,21 @@
+uuid: 3d196bfe-0795-4549-8162-2de7b7428857
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_content_bg_color
+    - paragraphs.paragraphs_type.p005_testimonial
+  module:
+    - options
+id: paragraph.p005_testimonial.field_p_content_bg_color
+field_name: field_p_content_bg_color
+entity_type: paragraph
+bundle: p005_testimonial
+label: 'Content background color'
+description: 'This color will be used as the background for the text.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

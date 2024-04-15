@@ -1,0 +1,66 @@
+uuid: 829f6763-aa61-4c39-b67e-3d4f3cc7620e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p004_faq.field_p_004_item
+    - field.field.paragraph.p004_faq.field_p_bg_color
+    - field.field.paragraph.p004_faq.field_p_button
+    - field.field.paragraph.p004_faq.field_p_subtitle
+    - field.field.paragraph.p004_faq.field_p_teaser
+    - field.field.paragraph.p004_faq.field_p_title
+    - paragraphs.paragraphs_type.p004_faq
+  module:
+    - link
+    - sa
+id: paragraph.p004_faq.default
+targetEntityType: paragraph
+bundle: p004_faq
+mode: default
+content:
+  field_p_004_item:
+    type: tabbed_formatter
+    label: hidden
+    settings:
+      header: h3
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_p_subtitle:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h3
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_bg_color: true
+  search_api_excerpt: true
