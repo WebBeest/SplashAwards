@@ -1,0 +1,23 @@
+uuid: b0f08e55-de79-4977-908a-6e2dce41aa9c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_link
+    - paragraphs.paragraphs_type.p002_image
+  module:
+    - link
+id: paragraph.p002_image.field_p_link
+field_name: field_p_link
+entity_type: paragraph
+bundle: p002_image
+label: Link
+description: 'The link you would like visitors to go to if they click the image'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

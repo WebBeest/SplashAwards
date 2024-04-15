@@ -1,0 +1,27 @@
+uuid: b823b6d3-f283-410f-873e-c1d31ec8ed45
+langcode: nl
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_p_002_layout_image
+field_name: field_p_002_layout_image
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: image_normal
+      label: 'Normal image'
+    -
+      value: image_stretched
+      label: 'Stretched image'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

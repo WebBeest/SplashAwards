@@ -1,0 +1,63 @@
+uuid: abbc7702-fcf3-4d53-b5ac-90b9ab420a5e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p002_image.field_p_002_layout_image
+    - field.field.paragraph.p002_image.field_p_image
+    - field.field.paragraph.p002_image.field_p_link
+    - field.field.paragraph.p002_image.field_p_subtitle
+    - field.field.paragraph.p002_image.field_p_title
+    - paragraphs.paragraphs_type.p002_image
+    - responsive_image.styles.paragraph_p002_image_full
+  module:
+    - link
+    - responsive_image
+    - sa
+id: paragraph.p002_image.default
+targetEntityType: paragraph
+bundle: p002_image
+mode: default
+content:
+  field_p_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: paragraph_p002_image_full
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_p_002_layout_image: true
+  search_api_excerpt: true

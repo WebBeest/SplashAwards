@@ -1,0 +1,64 @@
+uuid: cfe042f0-6412-49f7-88c2-4dc4222fef00
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p002_image.field_p_002_layout_image
+    - field.field.paragraph.p002_image.field_p_image
+    - field.field.paragraph.p002_image.field_p_link
+    - field.field.paragraph.p002_image.field_p_subtitle
+    - field.field.paragraph.p002_image.field_p_title
+    - image.style.preview
+    - paragraphs.paragraphs_type.p002_image
+  module:
+    - focal_point
+    - sa
+id: paragraph.p002_image.default
+targetEntityType: paragraph
+bundle: p002_image
+mode: default
+content:
+  field_p_002_layout_image:
+    type: options_buttons
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_p_image:
+    type: image_focal_point
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: preview
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+  field_p_link:
+    type: link_target_widget
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      target: ''
+    third_party_settings: {  }
+  field_p_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_p_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
