@@ -1,0 +1,21 @@
+uuid: 2c1c9559-4c31-4ab7-95e3-8ca63bd6ab17
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_overview
+    - paragraphs.paragraphs_type.p013_overview
+  module:
+    - overview_field
+id: paragraph.p013_overview.field_p_overview
+field_name: field_p_overview
+entity_type: paragraph
+bundle: p013_overview
+label: Overview
+description: "Select an overview from the dropdown to show as part of this page's content"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: overview_field

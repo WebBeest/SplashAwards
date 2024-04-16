@@ -1,0 +1,75 @@
+uuid: 80687497-ed1d-4f97-8117-bb2a9b6f6e59
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p013_overview.field_overview_sidebar_blocks
+    - field.field.paragraph.p013_overview.field_p_bg_color
+    - field.field.paragraph.p013_overview.field_p_link
+    - field.field.paragraph.p013_overview.field_p_overview
+    - field.field.paragraph.p013_overview.field_p_subtitle
+    - field.field.paragraph.p013_overview.field_p_teaser
+    - field.field.paragraph.p013_overview.field_p_title
+    - paragraphs.paragraphs_type.p013_overview
+  module:
+    - block_field
+    - link
+    - overview_field
+    - sa
+id: paragraph.p013_overview.default
+targetEntityType: paragraph
+bundle: p013_overview
+mode: default
+content:
+  field_overview_sidebar_blocks:
+    type: block_field
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_p_overview:
+    type: overview_field_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_p_subtitle:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h3
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_bg_color: true
+  search_api_excerpt: true

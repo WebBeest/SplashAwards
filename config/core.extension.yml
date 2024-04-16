@@ -7,6 +7,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  block_field: 0
   breakpoint: 0
   captcha: 0
   ckeditor5: 0
@@ -49,6 +50,7 @@ module:
   mysql: 0
   node: 0
   options: 0
+  overview_field: 0
   page_cache: 0
   paragraphs_asymmetric_translation_widgets: 0
   paragraphs_type_permissions: 0

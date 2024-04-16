@@ -1,0 +1,25 @@
+uuid: cbab481b-af23-4eeb-b8dc-485856fec860
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_overview_sidebar_blocks
+    - paragraphs.paragraphs_type.p013_overview
+  module:
+    - block_field
+id: paragraph.p013_overview.field_overview_sidebar_blocks
+field_name: field_overview_sidebar_blocks
+entity_type: paragraph
+bundle: p013_overview
+label: 'Sidebar blocks'
+description: 'Select the blocks that have to be visible next to the Overview'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      page_title_block: page_title_block
+field_type: block_field
