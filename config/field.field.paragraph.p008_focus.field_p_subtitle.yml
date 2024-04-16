@@ -1,0 +1,19 @@
+uuid: 6ef9fb3e-eb79-45a8-8951-f5982104f002
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_subtitle
+    - paragraphs.paragraphs_type.p008_focus
+id: paragraph.p008_focus.field_p_subtitle
+field_name: field_p_subtitle
+entity_type: paragraph
+bundle: p008_focus
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

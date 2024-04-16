@@ -1,0 +1,23 @@
+uuid: ec63f0e5-8e57-497e-9d9d-f472a811bd64
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_button
+    - paragraphs.paragraphs_type.p009_photo_gallery
+  module:
+    - link
+id: paragraph.p009_photo_gallery.field_p_button
+field_name: field_p_button
+entity_type: paragraph
+bundle: p009_photo_gallery
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

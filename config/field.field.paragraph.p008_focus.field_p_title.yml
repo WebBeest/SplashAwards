@@ -1,0 +1,19 @@
+uuid: 576a64d8-8402-4881-b3b5-8558d775c543
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_title
+    - paragraphs.paragraphs_type.p008_focus
+id: paragraph.p008_focus.field_p_title
+field_name: field_p_title
+entity_type: paragraph
+bundle: p008_focus
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

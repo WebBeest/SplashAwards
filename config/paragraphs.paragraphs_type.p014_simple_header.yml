@@ -6,5 +6,5 @@ id: p014_simple_header
 label: 'P014 Simple header'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'This allows you to replace the title on the detail page of this node, as well as manage the visibility of breadcrumbs.'
 behavior_plugins: {  }

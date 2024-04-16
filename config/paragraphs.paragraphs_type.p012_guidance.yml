@@ -6,5 +6,5 @@ id: p012_guidance
 label: 'P012 Guidance'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Display selectable multi layout image and text with background.'
 behavior_plugins: {  }

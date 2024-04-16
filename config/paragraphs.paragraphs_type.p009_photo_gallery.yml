@@ -6,5 +6,5 @@ id: p009_photo_gallery
 label: 'P009 Photo gallery'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'A grid of visuals'
 behavior_plugins: {  }

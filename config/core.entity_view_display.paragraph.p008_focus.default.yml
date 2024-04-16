@@ -1,0 +1,71 @@
+uuid: d4f453f8-3b2a-458c-b514-2b4e1f881ecf
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p008_focus.field_p_bg_color
+    - field.field.paragraph.p008_focus.field_p_bg_image
+    - field.field.paragraph.p008_focus.field_p_button
+    - field.field.paragraph.p008_focus.field_p_subtitle
+    - field.field.paragraph.p008_focus.field_p_teaser
+    - field.field.paragraph.p008_focus.field_p_title
+    - paragraphs.paragraphs_type.p008_focus
+    - responsive_image.styles.paragraph_p005_image_background
+  module:
+    - link
+    - responsive_image
+    - sa
+id: paragraph.p008_focus.default
+targetEntityType: paragraph
+bundle: p008_focus
+mode: default
+content:
+  field_p_bg_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: paragraph_p005_image_background
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_p_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_subtitle:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h3
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_bg_color: true
+  search_api_excerpt: true

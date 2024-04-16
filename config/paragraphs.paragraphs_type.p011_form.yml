@@ -6,5 +6,5 @@ id: p011_form
 label: 'P011 Form'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Embed a webform'
 behavior_plugins: {  }

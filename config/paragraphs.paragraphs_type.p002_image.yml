@@ -6,5 +6,5 @@ id: p002_image
 label: 'P002 Image'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Add a large image'
 behavior_plugins: {  }

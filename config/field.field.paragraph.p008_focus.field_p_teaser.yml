@@ -1,0 +1,19 @@
+uuid: 70f1be3a-6379-48cf-be55-3e3a84d5fadb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_teaser
+    - paragraphs.paragraphs_type.p008_focus
+id: paragraph.p008_focus.field_p_teaser
+field_name: field_p_teaser
+entity_type: paragraph
+bundle: p008_focus
+label: Teaser
+description: 'Display a short descriptive text.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,23 @@
+uuid: 8cbed16e-afe8-495a-9bf2-53f65ae1ebe0
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_load_more
+    - paragraphs.paragraphs_type.p009_photo_gallery
+id: paragraph.p009_photo_gallery.field_p_load_more
+field_name: field_p_load_more
+entity_type: paragraph
+bundle: p009_photo_gallery
+label: 'Load more'
+description: "Check this if you would like to display a 'load more' button under first 6 images. Otherwise all gallery images will be visible by default."
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

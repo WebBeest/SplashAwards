@@ -6,5 +6,5 @@ id: p010_logo_bar
 label: 'P010 Logo bar'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'A row of logos'
 behavior_plugins: {  }

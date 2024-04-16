@@ -6,5 +6,5 @@ id: p006_video
 label: 'P006 Video'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Embed a video'
 behavior_plugins: {  }

@@ -6,5 +6,5 @@ id: p016_menu_overview
 label: 'P016 Menu overview'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Display links to menu items from a selected menu or the menu that the page is a part of'
 behavior_plugins: {  }

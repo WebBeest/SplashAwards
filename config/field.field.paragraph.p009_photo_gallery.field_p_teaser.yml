@@ -1,0 +1,19 @@
+uuid: 8fb3322a-45de-4c9b-9b49-790b9386eb1c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_teaser
+    - paragraphs.paragraphs_type.p009_photo_gallery
+id: paragraph.p009_photo_gallery.field_p_teaser
+field_name: field_p_teaser
+entity_type: paragraph
+bundle: p009_photo_gallery
+label: Teaser
+description: 'Display a short descriptive text.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

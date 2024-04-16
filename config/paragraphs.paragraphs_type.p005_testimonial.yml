@@ -6,5 +6,5 @@ id: p005_testimonial
 label: 'P005 Testimonial'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Add a testimonial'
 behavior_plugins: {  }

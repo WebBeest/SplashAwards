@@ -6,5 +6,5 @@ id: p015_focus_header
 label: 'P015 Focus header'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'More complex alternative for Simple Header'
 behavior_plugins: {  }

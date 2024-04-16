@@ -6,5 +6,5 @@ id: p008_focus
 label: 'P008 Focus'
 icon_uuid: null
 icon_default: null
-description: ''
+description: 'Like a CTA, add a group of textual elements with some background elements to draw focus'
 behavior_plugins: {  }
