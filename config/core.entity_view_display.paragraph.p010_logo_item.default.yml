@@ -1,0 +1,42 @@
+uuid: 6ac0d957-c985-40b9-9954-addf1b515e88
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p010_logo_item.field_p_image
+    - field.field.paragraph.p010_logo_item.field_p_link
+    - paragraphs.paragraphs_type.p010_logo_item
+    - responsive_image.styles.paragraph_p010_child_logo
+  module:
+    - link
+    - responsive_image
+id: paragraph.p010_logo_item.default
+targetEntityType: paragraph
+bundle: p010_logo_item
+mode: default
+content:
+  field_p_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: paragraph_p010_child_logo
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

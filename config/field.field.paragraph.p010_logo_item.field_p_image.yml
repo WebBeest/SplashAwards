@@ -1,0 +1,38 @@
+uuid: 773fe15d-5b98-441f-8909-86899c2e35f2
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_image
+    - paragraphs.paragraphs_type.p010_logo_item
+  module:
+    - image
+id: paragraph.p010_logo_item.field_p_image
+field_name: field_p_image
+entity_type: paragraph
+bundle: p010_logo_item
+label: 'Logo image'
+description: 'An image to show alongside the text'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'p010/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: 2MB
+  max_resolution: 2000x2000
+  min_resolution: 200x165
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image
