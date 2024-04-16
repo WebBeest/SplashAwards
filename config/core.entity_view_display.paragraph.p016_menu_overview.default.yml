@@ -1,0 +1,52 @@
+uuid: 5ae3bf87-6839-472a-a9c9-bd2414e92abb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p016_menu_overview.field_p_bg_color
+    - field.field.paragraph.p016_menu_overview.field_p_menu_overview
+    - field.field.paragraph.p016_menu_overview.field_p_subtitle
+    - field.field.paragraph.p016_menu_overview.field_p_teaser
+    - field.field.paragraph.p016_menu_overview.field_p_title
+    - paragraphs.paragraphs_type.p016_menu_overview
+  module:
+    - menu_clickthrough
+    - sa
+id: paragraph.p016_menu_overview.default
+targetEntityType: paragraph
+bundle: p016_menu_overview
+mode: default
+content:
+  field_p_menu_overview:
+    type: clickthrough_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_subtitle:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h3
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_bg_color: true
+  search_api_excerpt: true
