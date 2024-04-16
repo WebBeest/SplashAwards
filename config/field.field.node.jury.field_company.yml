@@ -1,0 +1,24 @@
+uuid: 3b803eae-b93f-4ade-888a-4ea35ab251e0
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company
+    - filter.format.full_html
+    - node.type.jury
+  module:
+    - text
+id: node.jury.field_company
+field_name: field_company
+entity_type: node
+bundle: jury
+label: Company
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text

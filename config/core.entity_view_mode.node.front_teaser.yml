@@ -1,0 +1,11 @@
+uuid: 70572c7d-b363-437b-bf44-28abc724089c
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+id: node.front_teaser
+label: 'Front teaser'
+description: ''
+targetEntityType: node
+cache: true

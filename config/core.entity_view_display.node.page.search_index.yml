@@ -1,0 +1,56 @@
+uuid: 596ec158-c393-4f62-b6de-23f3ed267a36
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.page.field_canonical_image
+    - field.field.node.page.field_description
+    - field.field.node.page.field_header
+    - field.field.node.page.field_meta_tags
+    - field.field.node.page.field_paragraphs
+    - node.type.page
+  module:
+    - image
+    - metatag
+    - user
+id: node.page.search_index
+targetEntityType: node
+bundle: page
+mode: search_index
+content:
+  field_canonical_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_header: true
+  field_paragraphs: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,330 @@
+uuid: dfc8eb19-7a10-42f8-8c03-ccb5d5d90cee
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.case.field_agree_terms
+    - field.field.node.case.field_attend
+    - field.field.node.case.field_award_year
+    - field.field.node.case.field_case_description
+    - field.field.node.case.field_case_images
+    - field.field.node.case.field_case_teaser
+    - field.field.node.case.field_case_title
+    - field.field.node.case.field_case_url
+    - field.field.node.case.field_case_video
+    - field.field.node.case.field_categories
+    - field.field.node.case.field_challenges
+    - field.field.node.case.field_client_name
+    - field.field.node.case.field_client_permission
+    - field.field.node.case.field_community_contributions
+    - field.field.node.case.field_contact_name
+    - field.field.node.case.field_contact_phone
+    - field.field.node.case.field_country_text
+    - field.field.node.case.field_date_live
+    - field.field.node.case.field_email
+    - field.field.node.case.field_extra
+    - field.field.node.case.field_invoice_address
+    - field.field.node.case.field_invoice_mail
+    - field.field.node.case.field_invoice_postal
+    - field.field.node.case.field_logo_client
+    - field.field.node.case.field_node_replacement_title
+    - field.field.node.case.field_nominee
+    - field.field.node.case.field_organization_logo
+    - field.field.node.case.field_organization_name
+    - field.field.node.case.field_paragraphs
+    - field.field.node.case.field_runner_up
+    - field.field.node.case.field_show_breadcrumb
+    - field.field.node.case.field_signup_newsletter
+    - field.field.node.case.field_vat_registration_id
+    - field.field.node.case.field_winner
+    - field.field.node.case.field_winneroftheyear
+    - image.style.image_style_16_9_landscape_sm
+    - image.style.product_thumbnail
+    - node.type.case
+    - responsive_image.styles.paragraph_p010_child_logo
+    - responsive_image.styles.product_detail
+  module:
+    - datetime
+    - entity_reference_revisions
+    - field_group
+    - link
+    - responsive_image
+    - sa
+    - slick
+    - user
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - field_logo_client
+        - field_case_title
+        - field_case_url
+      label: Info
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: 'node__info node__info--full node__info--product node__info--product-full'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_certificates:
+      children:
+        - field_case_images
+        - field_winner
+        - field_nominee
+        - field_runner_up
+        - field_winneroftheyear
+      label: Certificates
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: group--certificates
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: node.case.full
+targetEntityType: node
+bundle: case
+mode: full
+content:
+  field_case_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_case_images:
+    type: slick_image
+    label: hidden
+    settings:
+      caption:
+        alt: '0'
+        title: '0'
+      optionset: main_image
+      link: ''
+      by_delta: -1
+      layout: ''
+      view_mode: ''
+      cache: 0
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: product_detail
+      use_theme_field: false
+      box_style: ''
+      image_style: image_style_16_9_landscape_sm
+      media_switch: colorbox
+      ratio: ''
+      thumbnail_style: product_thumbnail
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      style: ''
+      skin: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      optionset_thumbnail: thumbnail_navigation
+      skin_thumbnail: asnavfor
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false
+      skin_arrows: ''
+      skin_dots: ''
+      preserve_keys: false
+      visible_items: null
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_case_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_case_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_case_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_case_video:
+    type: video_embed_field_video
+    label: above
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_challenges:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_community_contributions:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_date_live:
+    type: datetime_time_ago
+    label: above
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_extra:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_logo_client:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: paragraph_p010_child_logo
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_node_replacement_title:
+    type: title_replacement_formatter
+    label: hidden
+    settings:
+      wrapper_override: nothing
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_nominee:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_runner_up:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_winner:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_winneroftheyear:
+    type: breadcrumb_render
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+hidden:
+  field_agree_terms: true
+  field_attend: true
+  field_award_year: true
+  field_client_name: true
+  field_client_permission: true
+  field_contact_name: true
+  field_contact_phone: true
+  field_country_text: true
+  field_email: true
+  field_invoice_address: true
+  field_invoice_mail: true
+  field_invoice_postal: true
+  field_organization_logo: true
+  field_organization_name: true
+  field_show_breadcrumb: true
+  field_signup_newsletter: true
+  field_vat_registration_id: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

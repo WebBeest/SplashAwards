@@ -52,6 +52,7 @@ module:
   metatag: 0
   mysql: 0
   node: 0
+  node_keep: 0
   options: 0
   overview_field: 0
   page_cache: 0

@@ -1,0 +1,17 @@
+uuid: 5618d807-e11e-498d-be2b-58cb41992bcf
+langcode: nl
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Jury
+type: jury
+description: 'Add a Jury item for your Jury list'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

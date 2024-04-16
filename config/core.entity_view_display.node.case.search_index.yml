@@ -1,0 +1,134 @@
+uuid: c675986c-e778-4103-9c34-a536fbb71de3
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.case.field_agree_terms
+    - field.field.node.case.field_attend
+    - field.field.node.case.field_award_year
+    - field.field.node.case.field_case_description
+    - field.field.node.case.field_case_images
+    - field.field.node.case.field_case_teaser
+    - field.field.node.case.field_case_title
+    - field.field.node.case.field_case_url
+    - field.field.node.case.field_case_video
+    - field.field.node.case.field_categories
+    - field.field.node.case.field_challenges
+    - field.field.node.case.field_client_name
+    - field.field.node.case.field_client_permission
+    - field.field.node.case.field_community_contributions
+    - field.field.node.case.field_contact_name
+    - field.field.node.case.field_contact_phone
+    - field.field.node.case.field_country_text
+    - field.field.node.case.field_date_live
+    - field.field.node.case.field_email
+    - field.field.node.case.field_extra
+    - field.field.node.case.field_invoice_address
+    - field.field.node.case.field_invoice_mail
+    - field.field.node.case.field_invoice_postal
+    - field.field.node.case.field_logo_client
+    - field.field.node.case.field_node_replacement_title
+    - field.field.node.case.field_nominee
+    - field.field.node.case.field_organization_logo
+    - field.field.node.case.field_organization_name
+    - field.field.node.case.field_paragraphs
+    - field.field.node.case.field_runner_up
+    - field.field.node.case.field_show_breadcrumb
+    - field.field.node.case.field_signup_newsletter
+    - field.field.node.case.field_vat_registration_id
+    - field.field.node.case.field_winner
+    - field.field.node.case.field_winneroftheyear
+    - node.type.case
+  module:
+    - image
+    - link
+    - user
+id: node.case.search_index
+targetEntityType: node
+bundle: case
+mode: search_index
+content:
+  field_case_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_case_images:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_case_url:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_categories:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_organization_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_agree_terms: true
+  field_attend: true
+  field_award_year: true
+  field_case_teaser: true
+  field_case_title: true
+  field_case_video: true
+  field_challenges: true
+  field_client_name: true
+  field_client_permission: true
+  field_community_contributions: true
+  field_contact_name: true
+  field_contact_phone: true
+  field_country_text: true
+  field_date_live: true
+  field_email: true
+  field_extra: true
+  field_invoice_address: true
+  field_invoice_mail: true
+  field_invoice_postal: true
+  field_logo_client: true
+  field_node_replacement_title: true
+  field_nominee: true
+  field_organization_name: true
+  field_paragraphs: true
+  field_runner_up: true
+  field_show_breadcrumb: true
+  field_signup_newsletter: true
+  field_vat_registration_id: true
+  field_winner: true
+  field_winneroftheyear: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

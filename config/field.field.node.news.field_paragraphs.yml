@@ -1,0 +1,99 @@
+uuid: 1144021b-2db7-4e36-9580-7ac0a02343ec
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.news
+    - paragraphs.paragraphs_type.p007_usp_item
+    - paragraphs.paragraphs_type.p010_logo_item
+    - paragraphs.paragraphs_type.p012_guidance_box
+    - paragraphs.paragraphs_type.p014_simple_header
+    - paragraphs.paragraphs_type.p015_focus_header
+  module:
+    - entity_reference_revisions
+id: node.news.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: news
+label: Paragraphs
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      p007_usp_item: p007_usp_item
+      p010_logo_item: p010_logo_item
+      p012_guidance_box: p012_guidance_box
+      p014_simple_header: p014_simple_header
+      p015_focus_header: p015_focus_header
+    negate: 1
+    target_bundles_drag_drop:
+      p001_story:
+        weight: 22
+        enabled: false
+      p002_image:
+        weight: 23
+        enabled: false
+      p003_text_main:
+        weight: 24
+        enabled: false
+      p004_faq:
+        weight: 25
+        enabled: false
+      p005_testimonial:
+        weight: 26
+        enabled: false
+      p006_video:
+        weight: 27
+        enabled: false
+      p007_usp:
+        weight: 28
+        enabled: false
+      p007_usp_item:
+        weight: 29
+        enabled: true
+      p008_focus:
+        weight: 30
+        enabled: false
+      p009_photo_gallery:
+        weight: 31
+        enabled: false
+      p010_logo_bar:
+        weight: 32
+        enabled: false
+      p010_logo_item:
+        weight: 33
+        enabled: true
+      p011_form:
+        weight: 34
+        enabled: false
+      p012_guidance:
+        weight: 35
+        enabled: false
+      p012_guidance_box:
+        weight: 36
+        enabled: true
+      p013_overview:
+        weight: 37
+        enabled: false
+      p014_simple_header:
+        weight: 38
+        enabled: true
+      p015_focus_header:
+        weight: 39
+        enabled: true
+      p016_menu_overview:
+        weight: 40
+        enabled: false
+      p017_facebook_like_box:
+        weight: 41
+        enabled: false
+      p018_jury:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

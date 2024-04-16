@@ -1,0 +1,169 @@
+uuid: 26467a00-1b78-4034-b901-0e4c35b40a7d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.news.field_canonical_image
+    - field.field.node.news.field_description
+    - field.field.node.news.field_meta_tags
+    - field.field.node.news.field_node_replacement_title
+    - field.field.node.news.field_paragraphs
+    - field.field.node.news.field_show_breadcrumb
+    - image.style.thumbnail
+    - node.type.news
+  module:
+    - field_group
+    - image
+    - inline_entity_form
+    - metatag
+    - sa
+third_party_settings:
+  field_group:
+    group_header:
+      children:
+        - title
+        - field_node_replacement_title
+        - field_show_breadcrumb
+      label: Header
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_canonical_image:
+    type: image_image
+    weight: 9
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_description:
+    type: string_textarea
+    weight: 11
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 10
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
+  field_node_replacement_title:
+    type: paragraph_title_replacement_widget
+    weight: 2
+    region: content
+    settings:
+      checkbox_title: 'Replace the title'
+      checkbox_description: 'Replace the title on the detail page for this piece of content with a different title, which can include the following html: &lt;em&gt;&lt;/em&gt; and &lt;strong&gt;&lt;/strong&gt;'
+      allowed_wrapper_tags:
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
+        h6: h6
+        span: span
+      placeholder: 'My <em>detailed</em> title'
+      wrapper_title: Wrapper
+      wrapper_description: 'What tags to wrap this field in.'
+      size: 60
+    third_party_settings: {  }
+  field_paragraphs:
+    type: inline_entity_form_complex
+    weight: 2
+    region: content
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+      removed_reference: optional
+    third_party_settings: {  }
+  field_show_breadcrumb:
+    type: boolean_checkbox
+    weight: 3
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

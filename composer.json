@@ -37,6 +37,7 @@
         "drupal/image_effects": "^3.6",
         "drupal/inline_entity_form": "^3@rc",
         "drupal/metatag": "^2.0",
+        "drupal/node_keep": "^2.2",
         "drupal/overview_field": "^2.0",
         "drupal/paragraphs": "^1.17",
         "drupal/paragraphs_asymmetric_translation_widgets": "^1.3",

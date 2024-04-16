@@ -1,0 +1,50 @@
+uuid: 5296f8a2-9ca7-4fdf-9234-b98c239bb398
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.front_teaser
+    - field.field.node.news.field_canonical_image
+    - field.field.node.news.field_description
+    - field.field.node.news.field_meta_tags
+    - field.field.node.news.field_node_replacement_title
+    - field.field.node.news.field_paragraphs
+    - field.field.node.news.field_show_breadcrumb
+    - node.type.news
+    - responsive_image.styles.news_teaser
+  module:
+    - responsive_image
+    - sa
+    - user
+id: node.news.front_teaser
+targetEntityType: node
+bundle: news
+mode: front_teaser
+content:
+  field_canonical_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: news_teaser
+      image_link: content
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_node_replacement_title:
+    type: title_replacement_formatter
+    label: hidden
+    settings:
+      wrapper_override: h3
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_description: true
+  field_meta_tags: true
+  field_paragraphs: true
+  field_show_breadcrumb: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

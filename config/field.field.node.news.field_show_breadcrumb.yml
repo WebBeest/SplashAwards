@@ -1,0 +1,21 @@
+uuid: 509c559d-124f-449f-8e37-3eaadc1f5e06
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_breadcrumb
+    - node.type.news
+id: node.news.field_show_breadcrumb
+field_name: field_show_breadcrumb
+entity_type: node
+bundle: news
+label: 'Show breadcrumb'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

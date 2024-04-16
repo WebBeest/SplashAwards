@@ -1,0 +1,67 @@
+uuid: ddbb6b07-eb7f-41f2-83e6-44bb4449f97d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.news.field_canonical_image
+    - field.field.node.news.field_description
+    - field.field.node.news.field_meta_tags
+    - field.field.node.news.field_node_replacement_title
+    - field.field.node.news.field_paragraphs
+    - field.field.node.news.field_show_breadcrumb
+    - node.type.news
+  module:
+    - image
+    - metatag
+    - user
+id: node.news.search_index
+targetEntityType: node
+bundle: news
+mode: search_index
+content:
+  field_canonical_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_show_breadcrumb:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_node_replacement_title: true
+  field_paragraphs: true
+  langcode: true
+  search_api_excerpt: true

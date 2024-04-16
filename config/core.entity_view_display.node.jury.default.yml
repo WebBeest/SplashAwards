@@ -1,0 +1,40 @@
+uuid: f979089a-2803-4d74-b4b0-89c52236ebcb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.jury.field_company
+    - field.field.node.jury.field_image
+    - field.field.node.jury.field_name
+    - node.type.jury
+  module:
+    - text
+    - user
+id: node.jury.default
+targetEntityType: node
+bundle: jury
+mode: default
+content:
+  field_company:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_name:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_image: true
+  langcode: true
+  search_api_excerpt: true

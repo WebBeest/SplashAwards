@@ -1,0 +1,19 @@
+uuid: 84b78b86-d4fb-414d-9888-87683fd20c43
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_case_title
+    - node.type.case
+id: node.case.field_case_title
+field_name: field_case_title
+entity_type: node
+bundle: case
+label: 'Case title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

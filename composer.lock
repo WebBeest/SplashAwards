@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b1979f612954bd7c38943aa75f6c60ba",
+    "content-hash": "2c23110ed0bbb6afffdc611eaafcb59e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3975,6 +3975,74 @@
                 "source": "https://git.drupalcode.org/project/metatag",
                 "issues": "https://www.drupal.org/project/issues/metatag",
                 "docs": "https://www.drupal.org/docs/8/modules/metatag"
+            }
+        },
+        {
+            "name": "drupal/node_keep",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/node_keep.git",
+                "reference": "2.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/node_keep-2.2.2.zip",
+                "reference": "2.2.2",
+                "shasum": "6101050a5528630ff614f792c766ca78f8c01ca6"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "require-dev": {
+                "drupal/token": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.2",
+                    "datestamp": "1707301053",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Marek tyczynski",
+                    "homepage": "https://www.drupal.org/u/sandboxpl"
+                },
+                {
+                    "name": "Nick Vanpraet",
+                    "homepage": "https://www.drupal.org/u/grayle"
+                },
+                {
+                    "name": "podarok",
+                    "homepage": "https://www.drupal.org/user/116002"
+                },
+                {
+                    "name": "reszli",
+                    "homepage": "https://www.drupal.org/user/710368"
+                },
+                {
+                    "name": "sandboxpl",
+                    "homepage": "https://www.drupal.org/user/2187728"
+                },
+                {
+                    "name": "webfordreams",
+                    "homepage": "https://www.drupal.org/user/366525"
+                }
+            ],
+            "description": "Adds a base field to all nodes to prevent accidental deletion by unauthorized users.",
+            "homepage": "https://www.drupal.org/project/node_keep",
+            "support": {
+                "source": "http://git.drupal.org/project/node_keep.git",
+                "issues": "https://www.drupal.org/project/issues/node_keep"
             }
         },
         {

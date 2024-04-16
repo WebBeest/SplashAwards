@@ -1,0 +1,19 @@
+uuid: 9af3da59-aae1-4c80-b651-687c0382dbbc
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.news
+id: node.news.field_description
+field_name: field_description
+entity_type: node
+bundle: news
+label: 'Page description'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

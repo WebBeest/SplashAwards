@@ -1,0 +1,11 @@
+uuid: 9a53ad1c-870c-4913-afb5-32b59f4c3eb4
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.jury
+id: node.jury
+target_entity_type_id: node
+target_bundle: jury
+default_langcode: site_default
+language_alterable: true

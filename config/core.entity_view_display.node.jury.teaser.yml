@@ -1,0 +1,28 @@
+uuid: ba240b14-5d52-4dd9-966b-c232a179970c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.jury.field_company
+    - field.field.node.jury.field_image
+    - field.field.node.jury.field_name
+    - node.type.jury
+  module:
+    - user
+id: node.jury.teaser
+targetEntityType: node
+bundle: jury
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_company: true
+  field_image: true
+  field_name: true
+  langcode: true
+  search_api_excerpt: true
