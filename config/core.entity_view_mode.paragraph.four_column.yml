@@ -1,0 +1,11 @@
+uuid: 0a384c53-1d23-496b-be02-e746c4b5ea7d
+langcode: nl
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.four_column
+label: 'Four column'
+description: ''
+targetEntityType: paragraph
+cache: true

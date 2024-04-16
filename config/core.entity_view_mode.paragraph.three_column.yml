@@ -1,0 +1,11 @@
+uuid: aa9e291d-6af0-414f-9e35-c16f287d76cc
+langcode: nl
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.three_column
+label: 'Three column'
+description: ''
+targetEntityType: paragraph
+cache: true

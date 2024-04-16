@@ -1,0 +1,24 @@
+uuid: 70a5059f-023e-407e-8e25-a28d81d7037b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_text
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - text
+id: paragraph.p007_usp_item.field_p_text
+field_name: field_p_text
+entity_type: paragraph
+bundle: p007_usp_item
+label: 'USP text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

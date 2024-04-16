@@ -1,0 +1,62 @@
+uuid: 85061163-2219-4fd2-8f15-639d3f0a1cc8
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p007_usp_item.field_p_button
+    - field.field.paragraph.p007_usp_item.field_p_image
+    - field.field.paragraph.p007_usp_item.field_p_link
+    - field.field.paragraph.p007_usp_item.field_p_text
+    - field.field.paragraph.p007_usp_item.field_p_title
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - link
+    - responsive_image
+    - sa
+    - text
+id: paragraph.p007_usp_item.default
+targetEntityType: paragraph
+bundle: p007_usp_item
+mode: default
+content:
+  field_p_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: ''
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h3
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_link: true
+  search_api_excerpt: true

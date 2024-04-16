@@ -1,0 +1,68 @@
+uuid: 458776a0-bdf9-4b8d-8107-cbd49ceb1476
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p007_usp_item.field_p_button
+    - field.field.paragraph.p007_usp_item.field_p_image
+    - field.field.paragraph.p007_usp_item.field_p_link
+    - field.field.paragraph.p007_usp_item.field_p_text
+    - field.field.paragraph.p007_usp_item.field_p_title
+    - image.style.preview
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - focal_point
+    - sa
+    - text
+id: paragraph.p007_usp_item.default
+targetEntityType: paragraph
+bundle: p007_usp_item
+mode: default
+content:
+  field_p_button:
+    type: link_target_widget
+    weight: 4
+    region: content
+    settings:
+      target: ''
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_p_image:
+    type: image_focal_point
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: preview
+      preview_link: true
+      offsets: '50,50'
+    third_party_settings: {  }
+  field_p_link:
+    type: link_target_widget
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      target: ''
+    third_party_settings: {  }
+  field_p_text:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_p_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

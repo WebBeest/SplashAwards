@@ -1,0 +1,23 @@
+uuid: 8ccc35b1-ebc2-4cbe-8688-41d7d4809844
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_button
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - link
+id: paragraph.p007_usp_item.field_p_button
+field_name: field_p_button
+entity_type: paragraph
+bundle: p007_usp_item
+label: 'USP button'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

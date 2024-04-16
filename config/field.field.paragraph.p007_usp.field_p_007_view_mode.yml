@@ -1,0 +1,21 @@
+uuid: 273cb00c-86e3-4fb0-8420-d9e7b85b3c7a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_007_view_mode
+    - paragraphs.paragraphs_type.p007_usp
+  module:
+    - options
+id: paragraph.p007_usp.field_p_007_view_mode
+field_name: field_p_007_view_mode
+entity_type: paragraph
+bundle: p007_usp
+label: 'View mode'
+description: "Select the width of the usp items:\r\n<ul>\r\n<li>2 columns: displays 2 items per row</li>\r\n<li>3 columns: displays 3 items per row</li>\r\n<li>4 columns displays 4 items per row</li>\r\n</ul>"
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

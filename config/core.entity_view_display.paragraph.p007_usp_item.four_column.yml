@@ -1,0 +1,63 @@
+uuid: 1c51ee33-3a40-4ae0-9714-22a52000115d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.four_column
+    - field.field.paragraph.p007_usp_item.field_p_button
+    - field.field.paragraph.p007_usp_item.field_p_image
+    - field.field.paragraph.p007_usp_item.field_p_link
+    - field.field.paragraph.p007_usp_item.field_p_text
+    - field.field.paragraph.p007_usp_item.field_p_title
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - link
+    - responsive_image
+    - sa
+    - text
+id: paragraph.p007_usp_item.four_column
+targetEntityType: paragraph
+bundle: p007_usp_item
+mode: four_column
+content:
+  field_p_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: ''
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_p_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h3
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_link: true
+  search_api_excerpt: true

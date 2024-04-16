@@ -1,0 +1,30 @@
+uuid: 59479d30-8fb7-40fa-a44e-f63e84af9930
+langcode: nl
+status: true
+dependencies:
+  config:
+    - image.style.image_style_16_10_landscape_sm
+    - image.style.image_style_16_10_landscape_xs_wide
+    - image.style.image_style_16_10_portrait_xs_wide
+  theme:
+    - splash
+id: paragraph_p002_image_aside
+label: 'Paragraph P002 (image sidebar)'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_16_10_landscape_xs_wide
+    breakpoint_id: splash.sm
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_16_10_landscape_sm
+    breakpoint_id: splash.xs-wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: image_style_16_10_landscape_xs_wide
+    breakpoint_id: splash.all
+    multiplier: 1x
+breakpoint_group: splash
+fallback_image_style: image_style_16_10_portrait_xs_wide

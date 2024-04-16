@@ -1,0 +1,38 @@
+uuid: 35470932-9f47-4d62-b575-1d755b658645
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_image
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - image
+id: paragraph.p007_usp_item.field_p_image
+field_name: field_p_image
+entity_type: paragraph
+bundle: p007_usp_item
+label: 'USP image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'p007/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: 2MB
+  max_resolution: 2000x2000
+  min_resolution: 256x170
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

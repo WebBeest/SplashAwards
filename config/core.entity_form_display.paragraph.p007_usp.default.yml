@@ -1,0 +1,81 @@
+uuid: 69c7c93f-c05d-4c43-bfe1-97e21b8a986b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p007_usp.field_p_007_children
+    - field.field.paragraph.p007_usp.field_p_007_view_mode
+    - field.field.paragraph.p007_usp.field_p_bg_color
+    - field.field.paragraph.p007_usp.field_p_button
+    - field.field.paragraph.p007_usp.field_p_subtitle
+    - field.field.paragraph.p007_usp.field_p_teaser
+    - field.field.paragraph.p007_usp.field_p_title
+    - paragraphs.paragraphs_type.p007_usp
+  module:
+    - paragraphs
+    - sa
+id: paragraph.p007_usp.default
+targetEntityType: paragraph
+bundle: p007_usp
+mode: default
+content:
+  field_p_007_children:
+    type: entity_reference_paragraphs
+    weight: 5
+    region: content
+    settings:
+      title: Paragraaf
+      title_plural: Paragrafen
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_p_007_view_mode:
+    type: options_buttons
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_p_bg_color:
+    type: options_buttons
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_p_button:
+    type: link_target_widget
+    weight: 6
+    region: content
+    settings:
+      target: ''
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_p_subtitle:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_p_teaser:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_p_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

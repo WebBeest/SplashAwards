@@ -1,0 +1,11 @@
+uuid: 4bb93949-affd-49c4-9b11-2e4c721d0d3f
+langcode: nl
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.two_column
+label: 'Two column'
+description: ''
+targetEntityType: paragraph
+cache: true

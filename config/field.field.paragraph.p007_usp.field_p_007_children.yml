@@ -1,0 +1,91 @@
+uuid: 27d1c685-2256-4f04-80c0-abc396d7c90b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_007_children
+    - paragraphs.paragraphs_type.p007_usp
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - entity_reference_revisions
+id: paragraph.p007_usp.field_p_007_children
+field_name: field_p_007_children
+entity_type: paragraph
+bundle: p007_usp
+label: 'USP items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      p007_usp_item: p007_usp_item
+    negate: 0
+    target_bundles_drag_drop:
+      p001_story:
+        weight: 23
+        enabled: false
+      p002_image:
+        weight: 24
+        enabled: false
+      p003_text_main:
+        weight: 25
+        enabled: false
+      p004_faq:
+        weight: 22
+        enabled: false
+      p005_testimonial:
+        weight: 26
+        enabled: false
+      p006_video:
+        weight: 27
+        enabled: false
+      p007_usp:
+        weight: 28
+        enabled: false
+      p007_usp_item:
+        weight: 29
+        enabled: true
+      p008_focus:
+        weight: 30
+        enabled: false
+      p009_photo_gallery:
+        weight: 31
+        enabled: false
+      p010_logo_bar:
+        weight: 32
+        enabled: false
+      p010_logo_item:
+        weight: 33
+        enabled: false
+      p011_form:
+        weight: 34
+        enabled: false
+      p012_guidance:
+        weight: 35
+        enabled: false
+      p012_guidance_box:
+        weight: 36
+        enabled: false
+      p013_overview:
+        weight: 37
+        enabled: false
+      p014_simple_header:
+        weight: 38
+        enabled: false
+      p015_focus_header:
+        weight: 39
+        enabled: false
+      p016_menu_overview:
+        weight: 40
+        enabled: false
+      p017_facebook_like_box:
+        weight: 41
+        enabled: false
+      p018_jury:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

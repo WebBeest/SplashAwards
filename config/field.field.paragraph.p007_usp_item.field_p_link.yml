@@ -1,0 +1,23 @@
+uuid: bc1a7af4-7cb4-4a64-aa0d-16a526a0e13d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_link
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - link
+id: paragraph.p007_usp_item.field_p_link
+field_name: field_p_link
+entity_type: paragraph
+bundle: p007_usp_item
+label: 'USP link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link
