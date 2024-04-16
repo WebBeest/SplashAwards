@@ -1,0 +1,26 @@
+uuid: 1352ef03-4e8a-4be9-aa81-0f098020a004
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p017_facebook_like_box.field_p_fblikebox
+    - paragraphs.paragraphs_type.p017_facebook_like_box
+  module:
+    - block_field
+id: paragraph.p017_facebook_like_box.default
+targetEntityType: paragraph
+bundle: p017_facebook_like_box
+mode: default
+content:
+  field_p_fblikebox:
+    type: block_field_default
+    weight: 0
+    region: content
+    settings:
+      plugin_id: ''
+      settings: {  }
+      configuration_form: full
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

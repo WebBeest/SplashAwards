@@ -1,0 +1,19 @@
+uuid: 5fa32929-6c04-47df-8e5b-91c65367e200
+langcode: nl
+status: true
+dependencies:
+  module:
+    - block_field
+    - paragraphs
+id: paragraph.field_p_fblikebox
+field_name: field_p_fblikebox
+entity_type: paragraph
+type: block_field
+settings: {  }
+module: block_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

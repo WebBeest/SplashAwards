@@ -26,6 +26,7 @@ module:
   entity_reference_revisions: 0
   environment_indicator: 0
   facets: 0
+  fb_likebox: 0
   field: 0
   field_group: 0
   field_ui: 0
