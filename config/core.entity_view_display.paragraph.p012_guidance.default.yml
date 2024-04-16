@@ -1,0 +1,41 @@
+uuid: 2e41d75f-e366-4b20-9ea2-9e8a6cbb4072
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p012_guidance.field_p_012_children
+    - field.field.paragraph.p012_guidance.field_p_012_view_mode
+    - field.field.paragraph.p012_guidance.field_p_button
+    - paragraphs.paragraphs_type.p012_guidance
+  module:
+    - entity_reference_revisions
+    - link
+id: paragraph.p012_guidance.default
+targetEntityType: paragraph
+bundle: p012_guidance
+mode: default
+content:
+  field_p_012_children:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_p_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_p_012_view_mode: true
+  search_api_excerpt: true

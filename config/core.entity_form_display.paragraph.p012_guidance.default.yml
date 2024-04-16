@@ -1,0 +1,47 @@
+uuid: 9c6e9f09-bad5-4a41-9be9-56f33c1ca8e9
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p012_guidance.field_p_012_children
+    - field.field.paragraph.p012_guidance.field_p_012_view_mode
+    - field.field.paragraph.p012_guidance.field_p_button
+    - paragraphs.paragraphs_type.p012_guidance
+  module:
+    - paragraphs
+    - sa
+id: paragraph.p012_guidance.default
+targetEntityType: paragraph
+bundle: p012_guidance
+mode: default
+content:
+  field_p_012_children:
+    type: entity_reference_paragraphs
+    weight: 1
+    region: content
+    settings:
+      title: Paragraaf
+      title_plural: Paragrafen
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  field_p_012_view_mode:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_p_button:
+    type: link_target_widget
+    weight: 2
+    region: content
+    settings:
+      target: ''
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
