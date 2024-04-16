@@ -1,0 +1,38 @@
+uuid: bf51385e-c0a9-447f-a218-357debe68c60
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_bg_image
+    - paragraphs.paragraphs_type.p015_focus_header
+  module:
+    - image
+id: paragraph.p015_focus_header.field_p_bg_image
+field_name: field_p_bg_image
+entity_type: paragraph
+bundle: p015_focus_header
+label: 'Background image'
+description: 'This image will be used as the background.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'p015/bg-[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: 8MB
+  max_resolution: 2000x2000
+  min_resolution: 1920x1200
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

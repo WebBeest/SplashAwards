@@ -1,0 +1,21 @@
+uuid: f975ba37-4071-402c-af96-384d53ad4295
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_replacement_title
+    - paragraphs.paragraphs_type.p015_focus_header
+  module:
+    - sa
+id: paragraph.p015_focus_header.field_replacement_title
+field_name: field_replacement_title
+entity_type: paragraph
+bundle: p015_focus_header
+label: 'Replacement title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_title_replacement

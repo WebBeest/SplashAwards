@@ -1,0 +1,108 @@
+uuid: 914ca8d5-3000-43a5-b2da-750d5dcc258a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p015_focus_header.field_header_image_text_align
+    - field.field.paragraph.p015_focus_header.field_header_image_text_color
+    - field.field.paragraph.p015_focus_header.field_p_bg_color
+    - field.field.paragraph.p015_focus_header.field_p_bg_image
+    - field.field.paragraph.p015_focus_header.field_p_button
+    - field.field.paragraph.p015_focus_header.field_p_subtitle
+    - field.field.paragraph.p015_focus_header.field_p_teaser
+    - field.field.paragraph.p015_focus_header.field_replacement_title
+    - field.field.paragraph.p015_focus_header.field_show_breadcrumb
+    - paragraphs.paragraphs_type.p015_focus_header
+  module:
+    - field_group
+    - link
+    - responsive_image
+    - sa
+third_party_settings:
+  field_group:
+    group_info:
+      children:
+        - field_replacement_title
+        - field_show_breadcrumb
+        - field_p_subtitle
+        - field_p_teaser
+        - field_p_button
+      label: Info
+      parent_name: ''
+      region: content
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: p-header__content
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.p015_focus_header.default
+targetEntityType: paragraph
+bundle: p015_focus_header
+mode: default
+content:
+  field_p_bg_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: ''
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_p_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_p_subtitle:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_p_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_replacement_title:
+    type: title_replacement_formatter
+    label: hidden
+    settings:
+      wrapper_override: nothing
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_show_breadcrumb:
+    type: breadcrumb_render
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  field_header_image_text_align: true
+  field_header_image_text_color: true
+  field_p_bg_color: true
+  search_api_excerpt: true

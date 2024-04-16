@@ -1,0 +1,41 @@
+uuid: d4c8a213-2653-4212-818b-8165a3de732b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.product_title_only
+    - field.field.paragraph.p015_focus_header.field_header_image_text_align
+    - field.field.paragraph.p015_focus_header.field_header_image_text_color
+    - field.field.paragraph.p015_focus_header.field_p_bg_color
+    - field.field.paragraph.p015_focus_header.field_p_bg_image
+    - field.field.paragraph.p015_focus_header.field_p_button
+    - field.field.paragraph.p015_focus_header.field_p_subtitle
+    - field.field.paragraph.p015_focus_header.field_p_teaser
+    - field.field.paragraph.p015_focus_header.field_replacement_title
+    - field.field.paragraph.p015_focus_header.field_show_breadcrumb
+    - paragraphs.paragraphs_type.p015_focus_header
+  module:
+    - sa
+id: paragraph.p015_focus_header.product_title_only
+targetEntityType: paragraph
+bundle: p015_focus_header
+mode: product_title_only
+content:
+  field_replacement_title:
+    type: title_replacement_formatter
+    label: hidden
+    settings:
+      wrapper_override: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_header_image_text_align: true
+  field_header_image_text_color: true
+  field_p_bg_color: true
+  field_p_bg_image: true
+  field_p_button: true
+  field_p_subtitle: true
+  field_p_teaser: true
+  field_show_breadcrumb: true
+  search_api_excerpt: true

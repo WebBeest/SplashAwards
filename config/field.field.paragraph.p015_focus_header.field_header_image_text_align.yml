@@ -1,0 +1,21 @@
+uuid: 49cad79d-efe3-4a63-a676-a63aa8bcd28b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_header_image_text_align
+    - paragraphs.paragraphs_type.p015_focus_header
+  module:
+    - options
+id: paragraph.p015_focus_header.field_header_image_text_align
+field_name: field_header_image_text_align
+entity_type: paragraph
+bundle: p015_focus_header
+label: 'Text alignment'
+description: 'Select the alignment of all information overlaid on the background image'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
