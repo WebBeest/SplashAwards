@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.case.field_case_description
     - field.field.node.case.field_case_images
     - field.field.node.case.field_case_teaser
+    - field.field.node.case.field_case_title
     - field.field.node.case.field_case_url
     - field.field.node.case.field_case_video
     - field.field.node.case.field_categories
@@ -39,25 +40,134 @@ dependencies:
     - field.field.node.case.field_winner
     - field.field.node.case.field_winneroftheyear
     - node.type.case
+    - responsive_image.styles.product_teaser
   module:
+    - blazy
+    - field_group
+    - sa
     - user
+third_party_settings:
+  field_group:
+    group_certificates:
+      children:
+        - field_winner
+        - field_winneroftheyear
+        - field_runner_up
+        - field_nominee
+        - field_case_images
+      label: Certificates
+      parent_name: ''
+      region: content
+      weight: 2
+      format_type: html_element
+      format_settings:
+        classes: group--certificates
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
 id: node.case.teaser
 targetEntityType: node
 bundle: case
 mode: teaser
 content:
+  field_case_images:
+    type: blazy
+    label: hidden
+    settings:
+      caption:
+        alt: '0'
+        title: '0'
+      link: ''
+      by_delta: -1
+      layout: ''
+      view_mode: ''
+      cache: 0
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: product_teaser
+      use_theme_field: false
+      box_style: ''
+      image_style: ''
+      media_switch: content
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      style: ''
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_case_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_nominee:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_organization_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_runner_up:
+    type: author_render
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_winner:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_winneroftheyear:
+    type: author_render
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   field_agree_terms: true
   field_attend: true
   field_award_year: true
   field_case_description: true
-  field_case_images: true
-  field_case_teaser: true
+  field_case_title: true
   field_case_url: true
   field_case_video: true
   field_categories: true
@@ -76,15 +186,10 @@ hidden:
   field_invoice_postal: true
   field_logo_client: true
   field_node_replacement_title: true
-  field_nominee: true
   field_organization_logo: true
-  field_organization_name: true
   field_paragraphs: true
-  field_runner_up: true
   field_show_breadcrumb: true
   field_signup_newsletter: true
   field_vat_registration_id: true
-  field_winner: true
-  field_winneroftheyear: true
   langcode: true
   search_api_excerpt: true

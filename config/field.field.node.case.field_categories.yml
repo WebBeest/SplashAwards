@@ -10,7 +10,7 @@ id: node.case.field_categories
 field_name: field_categories
 entity_type: node
 bundle: case
-label: 'Category (choose one)'
+label: Categories
 description: ''
 required: true
 translatable: false
