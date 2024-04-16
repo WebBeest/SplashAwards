@@ -1,0 +1,11 @@
+uuid: 20223ff7-03f2-4b7a-8710-9be8afcf8b59
+langcode: nl
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.product_title_only
+label: 'Product title only'
+description: ''
+targetEntityType: paragraph
+cache: true

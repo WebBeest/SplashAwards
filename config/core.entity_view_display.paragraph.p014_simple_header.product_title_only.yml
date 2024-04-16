@@ -1,0 +1,55 @@
+uuid: 7af219f4-fb8b-4a27-99a1-8eeaf7271e6f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.product_title_only
+    - field.field.paragraph.p014_simple_header.field_p_bg_color
+    - field.field.paragraph.p014_simple_header.field_p_bg_image
+    - field.field.paragraph.p014_simple_header.field_replacement_title
+    - field.field.paragraph.p014_simple_header.field_show_breadcrumb
+    - paragraphs.paragraphs_type.p014_simple_header
+  module:
+    - field_group
+    - sa
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - field_replacement_title
+        - field_p_bg_image
+        - field_show_breadcrumb
+      label: Content
+      parent_name: ''
+      region: hidden
+      weight: 1
+      format_type: html_element
+      format_settings:
+        classes: ' p-header__content p-header-simple__content'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.p014_simple_header.product_title_only
+targetEntityType: paragraph
+bundle: p014_simple_header
+mode: product_title_only
+content:
+  field_replacement_title:
+    type: title_replacement_formatter
+    label: hidden
+    settings:
+      wrapper_override: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_bg_color: true
+  field_p_bg_image: true
+  field_show_breadcrumb: true
+  search_api_excerpt: true

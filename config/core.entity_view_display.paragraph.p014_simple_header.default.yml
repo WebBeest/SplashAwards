@@ -1,0 +1,71 @@
+uuid: e6b2cee5-9065-4bb6-8cce-78e42baaa779
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p014_simple_header.field_p_bg_color
+    - field.field.paragraph.p014_simple_header.field_p_bg_image
+    - field.field.paragraph.p014_simple_header.field_replacement_title
+    - field.field.paragraph.p014_simple_header.field_show_breadcrumb
+    - paragraphs.paragraphs_type.p014_simple_header
+    - responsive_image.styles.parah_header_bg_image
+  module:
+    - field_group
+    - responsive_image
+    - sa
+third_party_settings:
+  field_group:
+    group_content:
+      children:
+        - field_replacement_title
+        - field_show_breadcrumb
+      label: Content
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: ' p-header__content p-header-simple__content'
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.p014_simple_header.default
+targetEntityType: paragraph
+bundle: p014_simple_header
+mode: default
+content:
+  field_p_bg_image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: parah_header_bg_image
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_replacement_title:
+    type: title_replacement_formatter
+    label: hidden
+    settings:
+      wrapper_override: nothing
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_show_breadcrumb:
+    type: breadcrumb_render
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_p_bg_color: true
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: 4fae964f-3dc6-43fe-acde-0eefa06af342
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_bg_color
+    - paragraphs.paragraphs_type.p014_simple_header
+  module:
+    - options
+id: paragraph.p014_simple_header.field_p_bg_color
+field_name: field_p_bg_color
+entity_type: paragraph
+bundle: p014_simple_header
+label: 'Background color'
+description: 'This color will be used as the background for this paragraph. If a background image is also selected, this color will be used as an overlay for that image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

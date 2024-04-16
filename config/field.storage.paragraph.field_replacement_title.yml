@@ -1,0 +1,22 @@
+uuid: de339653-6d1c-474d-83b9-f86c9ecb96bb
+langcode: nl
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - sa
+id: paragraph.field_replacement_title
+field_name: field_replacement_title
+entity_type: paragraph
+type: paragraph_title_replacement
+settings:
+  max_length: '255'
+  is_ascii: false
+  case_sensitive: false
+module: sa
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

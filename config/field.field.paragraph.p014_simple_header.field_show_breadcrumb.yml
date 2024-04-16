@@ -1,0 +1,23 @@
+uuid: 575f51f0-63aa-45bd-b908-c33ac5b23f19
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_show_breadcrumb
+    - paragraphs.paragraphs_type.p014_simple_header
+id: paragraph.p014_simple_header.field_show_breadcrumb
+field_name: field_show_breadcrumb
+entity_type: paragraph
+bundle: p014_simple_header
+label: 'Show breadcrumb'
+description: 'When checked the breadcrumb will be visible on this page'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean
