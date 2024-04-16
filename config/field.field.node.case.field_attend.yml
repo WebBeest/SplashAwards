@@ -1,0 +1,21 @@
+uuid: f78bba95-47b1-4412-9162-0229e9ff8a08
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attend
+    - node.type.case
+id: node.case.field_attend
+field_name: field_attend
+entity_type: node
+bundle: case
+label: 'I will attend'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Attend
+  off_label: Uit
+field_type: boolean

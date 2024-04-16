@@ -1,0 +1,11 @@
+uuid: 661090b9-fa47-4710-ad0b-b4cdbfa3a8d6
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.award_year
+id: taxonomy_term.award_year
+target_entity_type_id: taxonomy_term
+target_bundle: award_year
+default_langcode: site_default
+language_alterable: false

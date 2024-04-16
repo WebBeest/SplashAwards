@@ -1,0 +1,19 @@
+uuid: 5cb7923b-d6a9-44b0-bde0-c2f28ac173db
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_case_teaser
+field_name: field_case_teaser
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

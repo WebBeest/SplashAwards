@@ -1,0 +1,19 @@
+uuid: 1a301f83-67ed-402f-8eeb-c44a45219631
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_extra
+    - node.type.case
+id: node.case.field_extra
+field_name: field_extra
+entity_type: node
+bundle: case
+label: 'Case goals and results'
+description: 'Which goals were set for the project, how does this solution try to meet those goals and what are the end results?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

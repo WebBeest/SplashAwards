@@ -1,0 +1,21 @@
+uuid: 3978120b-f553-48d5-9fc8-48b62949dc93
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_live
+    - node.type.case
+  module:
+    - datetime
+id: node.case.field_date_live
+field_name: field_date_live
+entity_type: node
+bundle: case
+label: 'Date when website went live'
+description: 'Indicate when (approximately) the website went live. Projects older than the previous calendar year (so from before 01-01-2020) are not eligible.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

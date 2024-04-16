@@ -1,0 +1,21 @@
+uuid: f791bbf0-a75d-4094-876a-6130f44941b0
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_agree_terms
+    - node.type.case
+id: node.case.field_agree_terms
+field_name: field_agree_terms
+entity_type: node
+bundle: case
+label: 'I agree to the terms of submission'
+description: 'By checking the box and clicking the button below, I agree and consent to the <a href="/spelregels" target="_blank">terms and conditions</a>, and the <a href="/privacy-policy" target="_blank">privacy policy</a>, including the <a href="/privacy-policy" target="_blank">cookie policy</a>.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Agree
+  off_label: Uit
+field_type: boolean

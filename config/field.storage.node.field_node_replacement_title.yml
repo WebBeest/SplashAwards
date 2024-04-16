@@ -1,0 +1,22 @@
+uuid: 1cbdd081-38c7-4e27-b575-e7af2ea307ba
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+    - sa
+id: node.field_node_replacement_title
+field_name: field_node_replacement_title
+entity_type: node
+type: paragraph_title_replacement
+settings:
+  max_length: '255'
+  is_ascii: false
+  case_sensitive: false
+module: sa
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

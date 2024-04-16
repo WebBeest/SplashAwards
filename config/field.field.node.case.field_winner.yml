@@ -1,0 +1,21 @@
+uuid: 9f08f636-d951-4d05-8580-750435c8f361
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_winner
+    - node.type.case
+id: node.case.field_winner
+field_name: field_winner
+entity_type: node
+bundle: case
+label: Winner
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Winner
+  off_label: Uit
+field_type: boolean

@@ -1,0 +1,11 @@
+uuid: a6aa73ca-94ae-4a89-a308-09004e85171d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.brand
+id: node.brand
+target_entity_type_id: node
+target_bundle: brand
+default_langcode: site_default
+language_alterable: true

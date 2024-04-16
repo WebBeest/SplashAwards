@@ -1,0 +1,18 @@
+uuid: 91496564-3b35-4903-b9e3-06fe4da4d34c
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_agree_terms
+field_name: field_agree_terms
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

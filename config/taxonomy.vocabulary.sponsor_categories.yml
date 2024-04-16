@@ -1,0 +1,8 @@
+uuid: e353ba2e-3291-4c84-87db-a02bdb828d9a
+langcode: nl
+status: true
+dependencies: {  }
+name: 'Sponsor categories'
+vid: sponsor_categories
+description: ''
+weight: 0

@@ -1,0 +1,19 @@
+uuid: 784177b7-f986-4e8a-a638-06b02bdc70cd
+langcode: nl
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_case_url
+field_name: field_case_url
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

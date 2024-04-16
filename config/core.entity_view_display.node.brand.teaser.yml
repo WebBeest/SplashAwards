@@ -1,0 +1,50 @@
+uuid: 58913c5e-a23d-4c65-a963-700f7afbcabe
+langcode: nl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.brand.body
+    - field.field.node.brand.field_category
+    - field.field.node.brand.field_link
+    - field.field.node.brand.field_logo
+    - image.style.medium
+    - node.type.brand
+  module:
+    - image
+    - link
+    - user
+id: node.brand.teaser
+targetEntityType: node
+bundle: brand
+mode: teaser
+content:
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_logo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  field_category: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

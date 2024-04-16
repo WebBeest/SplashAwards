@@ -1,0 +1,11 @@
+uuid: 20c8b6bb-7483-4cd7-8eaf-242c66bed83d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nominee_category
+id: taxonomy_term.nominee_category
+target_entity_type_id: taxonomy_term
+target_bundle: nominee_category
+default_langcode: site_default
+language_alterable: false

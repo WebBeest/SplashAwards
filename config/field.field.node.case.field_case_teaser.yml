@@ -1,0 +1,19 @@
+uuid: 91499f55-bfd9-49a0-bc57-2bd7b10784f1
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_case_teaser
+    - node.type.case
+id: node.case.field_case_teaser
+field_name: field_case_teaser
+entity_type: node
+bundle: case
+label: 'Case teaser'
+description: 'A short description that is used as teaser text in the overview pages. Additionally, this text is used for search engine and social media snippets.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

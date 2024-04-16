@@ -1,0 +1,402 @@
+uuid: f63729bb-d01f-4406-bcad-126e1e8fff65
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.node.case.field_agree_terms
+    - field.field.node.case.field_attend
+    - field.field.node.case.field_award_year
+    - field.field.node.case.field_case_description
+    - field.field.node.case.field_case_images
+    - field.field.node.case.field_case_teaser
+    - field.field.node.case.field_case_url
+    - field.field.node.case.field_case_video
+    - field.field.node.case.field_categories
+    - field.field.node.case.field_challenges
+    - field.field.node.case.field_client_name
+    - field.field.node.case.field_client_permission
+    - field.field.node.case.field_community_contributions
+    - field.field.node.case.field_contact_name
+    - field.field.node.case.field_contact_phone
+    - field.field.node.case.field_country_text
+    - field.field.node.case.field_date_live
+    - field.field.node.case.field_email
+    - field.field.node.case.field_extra
+    - field.field.node.case.field_invoice_address
+    - field.field.node.case.field_invoice_mail
+    - field.field.node.case.field_invoice_postal
+    - field.field.node.case.field_logo_client
+    - field.field.node.case.field_node_replacement_title
+    - field.field.node.case.field_nominee
+    - field.field.node.case.field_organization_logo
+    - field.field.node.case.field_organization_name
+    - field.field.node.case.field_paragraphs
+    - field.field.node.case.field_runner_up
+    - field.field.node.case.field_show_breadcrumb
+    - field.field.node.case.field_signup_newsletter
+    - field.field.node.case.field_vat_registration_id
+    - field.field.node.case.field_winner
+    - field.field.node.case.field_winneroftheyear
+    - image.style.thumbnail
+    - node.type.case
+  module:
+    - datetime
+    - field_group
+    - image
+    - link
+    - telephone
+    - video_embed_field
+third_party_settings:
+  field_group:
+    group_submit_case:
+      children:
+        - title
+        - field_case_url
+        - field_case_teaser
+        - field_date_live
+        - field_client_name
+        - field_logo_client
+      label: 'Submit case'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: project-form-wrapper
+        show_empty_fields: false
+        id: ''
+        description: "<h4>Deadline for submitting cases is Sunday September 24th</h4>\r\n<h5>Before submitting, take some time to familiarize yourself with the <a href=\"/categorieen-en-beoordelingscriteria\">categories and judging criteria</a> and <a href=\"/spelregels\">rules</a>. Do you have questions or need support? We are here to help you! Send your questions to <a href=\"mailto:splashawards@stichtingdrupal.nl\" target=\"_blank\">splashawards@stichtingdrupal.nl</a>. <br />\r\nSubmitting your project to the Splash Awards costs €150 per submitted project. If a project is submitted in more than one category, a separate fee will be charged for each category.</h5>\r\n<br/>"
+        required_fields: true
+    group_category:
+      children:
+        - field_categories
+      label: Category
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: project-form-wrapper
+        show_empty_fields: false
+        id: ''
+        description: '<h5>Each company can submit a maximum of three projects for the Splash Awards. If a project is submitted in three different categories, this also counts as three projects.</h5><br/>'
+        required_fields: true
+    group_project_details:
+      children:
+        - field_case_description
+        - field_extra
+        - field_challenges
+        - field_community_contributions
+      label: 'Project details'
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: project-form-wrapper
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_files:
+      children:
+        - field_case_images
+        - field_case_video
+      label: Files
+      region: content
+      parent_name: ''
+      weight: 3
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_about_the_organization:
+      children:
+        - field_organization_name
+        - field_organization_logo
+        - field_contact_name
+        - field_email
+        - field_contact_phone
+        - field_invoice_mail
+        - field_invoice_address
+        - field_vat_registration_id
+      label: 'About the organization'
+      region: content
+      parent_name: ''
+      weight: 4
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+    group_legal_information:
+      children:
+        - field_agree_terms
+        - field_client_permission
+      label: 'Legal information'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        classes: project-form-wrapper
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+id: node.case.default
+targetEntityType: node
+bundle: case
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_agree_terms:
+    type: boolean_checkbox
+    weight: 15
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_award_year:
+    type: entity_reference_autocomplete
+    weight: 14
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_case_description:
+    type: string_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_case_images:
+    type: image_image
+    weight: 23
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_case_teaser:
+    type: string_textarea
+    weight: 6
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_case_url:
+    type: link_default
+    weight: 5
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_case_video:
+    type: video_embed_field_textfield
+    weight: 24
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_categories:
+    type: options_buttons
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_challenges:
+    type: string_textarea
+    weight: 14
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_client_name:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_client_permission:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_community_contributions:
+    type: string_textarea
+    weight: 15
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_name:
+    type: string_textfield
+    weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_phone:
+    type: telephone_default
+    weight: 34
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_date_live:
+    type: datetime_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 33
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_extra:
+    type: string_textarea
+    weight: 13
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_invoice_address:
+    type: string_textarea
+    weight: 36
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_invoice_mail:
+    type: email_default
+    weight: 35
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_logo_client:
+    type: image_image
+    weight: 9
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_organization_logo:
+    type: image_image
+    weight: 31
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_organization_name:
+    type: string_textfield
+    weight: 30
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vat_registration_id:
+    type: string_textfield
+    weight: 37
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 6
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 10
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 13
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attend: true
+  field_country_text: true
+  field_invoice_postal: true
+  field_node_replacement_title: true
+  field_nominee: true
+  field_paragraphs: true
+  field_runner_up: true
+  field_show_breadcrumb: true
+  field_signup_newsletter: true
+  field_winner: true
+  field_winneroftheyear: true

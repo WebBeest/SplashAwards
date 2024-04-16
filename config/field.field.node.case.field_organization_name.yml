@@ -1,0 +1,19 @@
+uuid: 2f521dfa-c51c-4373-87c5-6492a7c0641b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organization_name
+    - node.type.case
+id: node.case.field_organization_name
+field_name: field_organization_name
+entity_type: node
+bundle: case
+label: 'Organization name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

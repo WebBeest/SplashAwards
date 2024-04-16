@@ -1,0 +1,33 @@
+uuid: 55a91780-af2d-4616-bf60-fc8aa5f4bc1a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_award_year
+    - node.type.case
+    - taxonomy.vocabulary.award_year
+  content:
+    - 'taxonomy_term:award_year:ba1ffd9e-e171-4613-8c3b-83f778914c87'
+id: node.case.field_award_year
+field_name: field_award_year
+entity_type: node
+bundle: case
+label: 'Award year'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: ba1ffd9e-e171-4613-8c3b-83f778914c87
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      award_year: award_year
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

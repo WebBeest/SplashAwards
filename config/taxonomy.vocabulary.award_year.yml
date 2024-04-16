@@ -1,0 +1,8 @@
+uuid: 526ff49b-5fb1-459d-84bb-b139f35c8128
+langcode: nl
+status: true
+dependencies: {  }
+name: 'Award Year'
+vid: award_year
+description: ''
+weight: 0

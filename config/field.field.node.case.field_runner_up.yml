@@ -1,0 +1,21 @@
+uuid: 6bb9b19b-6167-4641-aea4-97a54c62954e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_runner_up
+    - node.type.case
+id: node.case.field_runner_up
+field_name: field_runner_up
+entity_type: node
+bundle: case
+label: 'Runner up'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

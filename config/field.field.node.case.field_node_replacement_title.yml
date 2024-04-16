@@ -1,0 +1,21 @@
+uuid: 40fa0ac0-7feb-4610-9aa3-58e64d329440
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_node_replacement_title
+    - node.type.case
+  module:
+    - sa
+id: node.case.field_node_replacement_title
+field_name: field_node_replacement_title
+entity_type: node
+bundle: case
+label: 'Replacement title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: paragraph_title_replacement

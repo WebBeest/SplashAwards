@@ -1,0 +1,29 @@
+uuid: b65b11f7-4587-4091-9cc9-c8d85f14812a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_category
+    - node.type.brand
+    - taxonomy.vocabulary.sponsor_categories
+id: node.brand.field_category
+field_name: field_category
+entity_type: node
+bundle: brand
+label: Category
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sponsor_categories: sponsor_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

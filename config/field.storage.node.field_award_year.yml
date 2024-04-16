@@ -1,0 +1,20 @@
+uuid: ba459251-d00f-4ea1-8167-6021ce6fe6bc
+langcode: nl
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_award_year
+field_name: field_award_year
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

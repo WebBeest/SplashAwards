@@ -1,0 +1,21 @@
+uuid: 06c0893e-c0e3-45b5-bce3-de32a4c13f11
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nominee
+    - node.type.case
+id: node.case.field_nominee
+field_name: field_nominee
+entity_type: node
+bundle: case
+label: Nominee
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Nominee
+  off_label: Uit
+field_type: boolean

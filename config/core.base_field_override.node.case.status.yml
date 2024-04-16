@@ -1,0 +1,22 @@
+uuid: a688213b-e0ad-450d-beb8-6df45fbe4179
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.case
+id: node.case.status
+field_name: status
+entity_type: node
+bundle: case
+label: Gepubliceerd
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

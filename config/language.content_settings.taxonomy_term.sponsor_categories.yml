@@ -1,0 +1,11 @@
+uuid: 6561c2e4-556a-4b53-98f8-842c01aaeb49
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsor_categories
+id: taxonomy_term.sponsor_categories
+target_entity_type_id: taxonomy_term
+target_bundle: sponsor_categories
+default_langcode: site_default
+language_alterable: false

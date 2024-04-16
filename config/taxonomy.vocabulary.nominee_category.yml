@@ -1,0 +1,8 @@
+uuid: f066a6ad-c2ae-488e-9358-559bf4c24d76
+langcode: nl
+status: true
+dependencies: {  }
+name: 'Nominee Category'
+vid: nominee_category
+description: ''
+weight: 0
