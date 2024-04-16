@@ -1,0 +1,92 @@
+uuid: 28b1e74f-fbc0-4574-995b-d4c6d4f7e5bf
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p010_logo_bar.field_p_010_autonav
+    - field.field.paragraph.p010_logo_bar.field_p_010_children
+    - field.field.paragraph.p010_logo_bar.field_p_bg_color
+    - field.field.paragraph.p010_logo_bar.field_p_button
+    - field.field.paragraph.p010_logo_bar.field_p_subtitle
+    - field.field.paragraph.p010_logo_bar.field_p_teaser
+    - field.field.paragraph.p010_logo_bar.field_p_title
+    - paragraphs.paragraphs_type.p010_logo_bar
+  module:
+    - entity_reference_revisions
+    - field_group
+    - link
+    - sa
+third_party_settings:
+  field_group:
+    group_logo_wrapper:
+      children:
+        - field_p_010_children
+      label: 'Logo wrapper'
+      parent_name: ''
+      region: content
+      weight: 3
+      format_type: html_element
+      format_settings:
+        classes: p-010-child-wrapper
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.p010_logo_bar.default
+targetEntityType: paragraph
+bundle: p010_logo_bar
+mode: default
+content:
+  field_p_010_children:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_p_button:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_p_subtitle:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h3
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h2
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_p_010_autonav: true
+  field_p_bg_color: true
+  search_api_excerpt: true

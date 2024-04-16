@@ -1,0 +1,19 @@
+uuid: 6ac2cca9-4123-4112-bef3-7aa75eba714f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_title
+    - paragraphs.paragraphs_type.p010_logo_bar
+id: paragraph.p010_logo_bar.field_p_title
+field_name: field_p_title
+entity_type: paragraph
+bundle: p010_logo_bar
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

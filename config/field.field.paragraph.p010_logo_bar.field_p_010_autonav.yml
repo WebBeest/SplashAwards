@@ -1,0 +1,21 @@
+uuid: b4b7505d-8172-43c2-8b86-12ca74dff7f0
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_010_autonav
+    - paragraphs.paragraphs_type.p010_logo_bar
+id: paragraph.p010_logo_bar.field_p_010_autonav
+field_name: field_p_010_autonav
+entity_type: paragraph
+bundle: p010_logo_bar
+label: Autonavigate
+description: 'Checking this will cause references to start navigating to the right a number of seconds after the page loads. References will then keep navigating automatically.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

@@ -1,0 +1,19 @@
+uuid: ce74462f-73ce-4b9a-833b-1de7f9b94269
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_teaser
+    - paragraphs.paragraphs_type.p010_logo_bar
+id: paragraph.p010_logo_bar.field_p_teaser
+field_name: field_p_teaser
+entity_type: paragraph
+bundle: p010_logo_bar
+label: Teaser
+description: 'Display a short descriptive text.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
