@@ -1,0 +1,14 @@
+{% stories site_header with {
+  title: 'Splash Awards/Organisms/Site Header'
+} %}
+  {% story default with {
+    name: 'Default',
+    args: {
+      nav_primary: [],
+      nav_secondary: [],
+      header_top_nav: [],
+    }
+  } %}
+    {{ include ('splash:site-header', { nav_primary, nav_secondary, header_top_nav }) }}
+  {% endstory %}
+{% endstories %}

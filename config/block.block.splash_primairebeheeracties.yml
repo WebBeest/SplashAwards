@@ -1,0 +1,24 @@
+uuid: ce5dc29c-b097-4a52-8684-d3f49c67d99d
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - splash
+id: splash_primairebeheeracties
+theme: splash
+region: tabs
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primaire beheeracties'
+  label_display: '0'
+  provider: core
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/storybook/stories/render/*'

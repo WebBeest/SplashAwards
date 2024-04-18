@@ -1,0 +1,20 @@
+uuid: 3c102238-1ac5-4c4b-9853-bd60063bde35
+langcode: nl
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - splash
+id: splash_berichten
+theme: splash
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Berichten
+  label_display: '0'
+  provider: system
+visibility: {  }

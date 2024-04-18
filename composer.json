@@ -20,6 +20,7 @@
         "drupal/block_field": "^1@rc",
         "drupal/classy": "^1.0",
         "drupal/colorbox": "^2.0",
+        "drupal/components": "^3@beta",
         "drupal/config_ignore": "^3.2",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-dev": "^10.2",

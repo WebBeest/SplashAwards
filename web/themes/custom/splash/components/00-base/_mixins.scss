@@ -1,0 +1,506 @@
+// ** Font-size mixin: easily set font-size and line-height of an element
+// -- NOTE: default font-size is 13, default line-height is 18
+// -- USAGE: @include font-size(15, 18) (don't use px!) -> sets font-size to 15 and line-height to a ratio of 18/15 = 1.1385
+
+@mixin font-size($size:13, $line: $size * (18/13) ) {
+  font-size: rem($size);
+  line-height: rem($line);
+}
+
+
+// *
+// * Font-awesome mixin: add a font-awesome icon before or after an element
+//
+// * NOTE: before is default, margin is default 0.
+//
+// * Settings via an object, containing:
+// * $position:before,
+// * $left,
+// * $top,
+// * $type:'regular',
+// * $icon: eg. a fontawesome variable,
+// * $color,
+// * $size,
+// * $align:middle,
+// * $margin...
+//
+// * USAGE:
+// * $hamburgerIcon: (icon: $fa-var-hamburger, color: $color-white, size: 21px);
+// * @include font-awesome($hamburgerIcon);
+
+@mixin font-awesome($settings) {
+
+  // set variables
+  $element: map-get($settings, element);
+  $position: map-get($settings, position);
+  $left: map-get($settings, left);
+  $right: map-get($settings, right);
+  $top: map-get($settings, top);
+  $bottom: map-get($settings, bottom);
+
+  @if ($element == 'after' or $element == ':after' or $element == '::after') {
+    &:after {
+      @if($position != null) {
+        position: $position;
+      }
+      @if($left != null) {
+        left: $left;
+      }
+      @else if($left == null and $right != null) {
+        right: $right;
+      }
+      @if($top != null) {
+        top: $top;
+      }
+      @else if($top == null and $bottom != null) {
+        bottom: $bottom;
+      }
+      @include font-awesome-pseudo($settings);
+    }
+  } @else {
+    &:before {
+      @if($position != null) {
+        position: $position;
+      }
+      @if($left != null) {
+        left: $left;
+      }
+      @else if($left == null and $right != null) {
+        right: $right;
+      }
+      @if($top != null) {
+        top: $top;
+      }
+      @else if($top == null and $bottom != null) {
+        bottom: $bottom;
+      }
+      @include font-awesome-pseudo($settings);
+    }
+  }
+}
+
+
+@mixin font-awesome-pseudo($settings) {
+
+  // set variables
+  $type: map-get($settings, type);
+  $icon: map-get($settings, icon);
+  $color: map-get($settings, color);
+  $size: map-get($settings, size);
+  $align: map-get($settings, align);
+  $margin: map-get($settings, margin);
+
+  // fontawesome defaults:
+  //
+  // $fa-font-size-base:           16px !default;
+  // $fa-css-prefix:               fa !default;
+  // $fa-border-color:             #eee !default;
+  // $fa-inverse:                  #fff !default;
+  // $fa-li-width:                 2em !default;
+
+  content: unquote('\'#{ $icon }\'');
+  color: $color;
+  $newMargin: if(length($margin) == 0, 0px, $margin);
+  margin: $newMargin;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+  @if ($align == null) {
+    // vertical-align: -.125em;
+    vertical-align: middle;
+  } @else {
+    vertical-align: $align;
+  }
+
+  // set default size
+  @if ($size == 16px or $size == 16 or $size == null) {
+    $size: $fa-font-size-base;
+  }
+
+  font-size: rem($size);
+
+  // set font style/weight
+  @if ($type == 'brand') {
+    font-family: 'Font Awesome 5 Brands';
+  } @elseif ($type == 'regular') {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+  } @elseif ($type == 'light') {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+  } @else {
+    // solid
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+  }
+}
+
+
+// ** use font-face to generate all the different url's for the various font files
+// -- USAGE: @include font-face(FontAwesome, '../fonts/fontAwesome/fontawesome-light', 300);
+
+/* stylelint-disable */
+@mixin font-face(
+  $font-family,
+  $file-path,
+  $font-weight: normal
+) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    src: _font-source-declaration(
+        $font-family,
+        $file-path
+    );
+    @content;
+  }
+}
+
+// ** Font-size mixin: easily set font-size and line-height of an element
+// -- NOTE: default font-size is 13, default line-height is 18
+// -- USAGE: @include font-size(15, 18) (don't use px!) -> sets font-size to 15 and line-height to a ratio of 18/15 = 1.1385
+
+@mixin font-size($size:13, $line: $size * (18/13) ) {
+  font-size: rem($size);
+  line-height: rem($line);
+}
+
+// ** Clearfix.
+// * Adds clearfix based on http://bourbon.io/docs/#clearfix
+// * use example =   @include clearfix
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+// ** list-reset
+// -- Reset list item defaults when no margin, padding, list styles needed
+@mixin list-reset {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+// ** Don't break up text
+@mixin text-nobreak {
+  white-space: nowrap;
+  -ms-word-break: keep-all;
+  word-break: keep-all;
+}
+
+// ** underlined link: using pseudo element so we can animate it
+//
+// -- Usage normal: starts with an underline and disappears on hover
+//      @include link-underline((color: red, color-hover: blue));
+// -- Usage inversed: an underline only appears when hovered
+//    @include link-underline(inverse: true);
+
+@mixin link-underline($settings) {
+
+  $element: map-get($settings, element);
+  $color: map-get($settings, color);
+  $color-hover: map-get($settings, color-hover);
+  $color-active: map-get($settings, color-active);
+  $inverse: map-get($settings, inverse);
+
+  @if ($element == null) {
+    $element: after;
+  }
+  @if ($color == null) {
+    $color: $color-base;
+  }
+  @if ($color-hover == null) {
+    $color-hover: $color;
+  }
+  @if ($color-active == null) {
+    $color-active: $color-hover;
+  }
+  @if ($inverse == null) {
+    $inverse: false;
+  }
+
+  display: inline-block;
+  position: relative;
+
+  &,
+  &:visited {
+    color: $color;
+  }
+
+  &:#{$element} {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 2px;
+    height: 1px;
+    transition: all $duration $easing;
+    @if ($inverse == true) {
+      opacity: 0;
+      width: 90%;
+      background-color: $color-hover;
+    } @else {
+      opacity: 1;
+      width: 100%;
+      background-color: $color;
+    }
+
+    // no styling needed for empty links (eg. anchors)
+    &:not([href]) {
+      &:after {
+        pointer-events: none;
+        display: none;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &:hover {
+    color: $color-hover;
+
+    &:after {
+      @if ($inverse == true) {
+        opacity: 1;
+        width: 100%;
+      } @else {
+        opacity: 0;
+        width: 90%;
+        background-color: $color-hover;
+      }
+    }
+  }
+
+  &:active {
+    color: $color-active;
+
+    &:after {
+      @if ($inverse == true) {
+        opacity: 1;
+        width: 100%;
+      } @else {
+        opacity: 0;
+        width: 90%;
+        background-color: $color-active;
+      }
+    }
+  }
+}
+
+// ** More Link
+// -- Used on teasers
+@mixin link-more {
+  display: inline-block;
+  text-decoration: none;
+  @include font-awesome((icon: $fa-var-angle-right, size: 14, type: 'light', element: 'after', margin: 0 0 0 rem(5)));
+  @include text-nobreak;
+
+  // remove in case styled by another element
+  &:before {
+    display: none;
+  }
+
+  &:after {
+    transition: none; // prevent lagging on transition from link tag itself
+  }
+}
+
+// ** More Link Big
+// -- Used with Views on homepage
+@mixin link-more-big {
+
+  @include font-size(22, 50);
+  font-weight: $fw-bold;
+  text-transform: uppercase;
+
+  @include font-awesome((icon: $fa-var-long-arrow-right, size: 21, type: 'regular', element: 'after', margin: 0 0 0 rem(15)));
+  @include text-nobreak;
+
+  // remove in case styled by another element
+  &:before {
+    display: none;
+  }
+
+  &:after {
+    position: relative;
+    top: rem(-2);
+    transition: none;
+  }
+
+  &,
+  &:visited {
+    color: $color-spot-1;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-spot-2;
+  }
+}
+
+// ** Back Link
+// --
+@mixin link-back {
+  display: inline-block;
+  text-decoration: none;
+  @include font-awesome((icon: $fa-var-angle-left, size: 14, type: 'light', element: 'before', margin: 0 rem(5) 0 0));
+  @include text-nobreak;
+
+  &:before {
+    transition: none; // prevent lagging on transition from link tag itself
+  }
+
+  &:after {
+    display: none;
+  }
+
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Config: Breakpoints
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Breakpoints mixins
+// =============================================================================
+
+// 2 kinds of queries:
+// - per breakpoint, where you can also choose a media type (defaults to 'all')
+// - print (a shortcut for @media only print)
+//
+// Usage:
+//
+// body {
+//   @include bp-md('only screen') {
+//     font-size: 16px;
+//   }
+// }
+//
+// body {
+//   @include print {
+//     font-size: 24pt;
+//   }
+// }
+
+// -- portrait phone only: smaller than 480 */
+
+@mixin bp-xs-small-only {
+  @media (max-width: $bp-xs-small-max) {
+    @content;
+  }
+}
+
+// -- landscape phone only: 480 up to tablet-1px
+
+@mixin bp-xs-wide-only {
+  @media (min-width: $bp-xs-wide) and (max-width: $bp-xs-max) {
+    @content;
+  }
+}
+
+// -- phone size only (from 0 to tablet-1px )
+
+@mixin bp-xs-only {
+  @media (max-width: $bp-xs-max) {
+    @content;
+  }
+}
+
+// -- Wide phone and bigger
+
+@mixin bp-xs-wide {
+  @media (min-width: $bp-xs-wide) {
+    @content;
+  }
+}
+
+// -- Tablet portrait and bigger
+
+@mixin bp-sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+// -- Tablet portrait size only
+
+@mixin bp-sm-only {
+  @media (min-width: $bp-sm) and (max-width: $bp-sm-max) {
+    @content;
+  }
+}
+
+// -- Phone + tablet
+
+@mixin bp-sm-max {
+  @media (max-width: $bp-sm-max) {
+    @content;
+  }
+}
+
+// -- Desktop (or tablet landscape) and bigger
+
+@mixin bp-md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+// -- Desktop only
+
+@mixin bp-md-only {
+  @media (min-width: $bp-md) and (max-width: $bp-md-max) {
+    @content;
+  }
+}
+
+// -- Bigger than desktop but smaller than
+
+@mixin bp-lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin bp-xl {
+  @media (min-width: $bp-xl) {
+    @content;
+  }
+}
+
+// -- Print css only
+
+@mixin print {
+  @media only print {
+    @content;
+  }
+}
+
+
+
+// -- call z-index from a list so you never lose overview
+//    and set it to important if you really really really need it
+// usage: @include(modal, important); => z-index: 1000 !important;
+@mixin z-index($key, $important: null) {
+  @if ($important == null) {
+    z-index: map-get($z-index, $key);
+  } @else {
+    z-index: map-get($z-index, $key) !important;
+  }
+}

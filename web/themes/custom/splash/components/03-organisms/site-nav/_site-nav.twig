@@ -1,0 +1,45 @@
+{#
+ # Menus that you also want to be in mobile navigation go here
+ #}
+<section class="wrapper--navigation">
+  <a href="#" id="toggle-expand" class="navigation__toggle-expand">
+    <span class="visually-hidden">
+      {{ 'Mobile menu expand icon'|t }}
+    </span>
+    <span class="navigation__toggle-expand__group navigation__toggle-expand__group--open">
+      <span class="navigation__toggle-expand__icon navigation__toggle-expand__icon--open"></span>
+      <span class="navigation__toggle-expand__text navigation__toggle-expand__text--open">{{ 'Menu'|t }}</span>
+    </span>
+    <span class="navigation__toggle-expand__group navigation__toggle-expand__group--closed">
+      <span class="navigation__toggle-expand__icon navigation__toggle-expand__icon--closed"></span>
+      <span class="navigation__toggle-expand__text navigation__toggle-expand__text--closed">{{ 'Close'|t }}</span>
+    </span>
+  </a>
+  <div class="wrapper--navigation__content">
+    {% block nav_content %}
+
+      {# render the navigations and other elements
+         via _site-header component #}
+
+      {% if nav_primary %}
+      <div class="nav-section nav-section--primary">
+        {{ nav_primary }}
+      </div>
+      {% endif %}
+
+      {# secondary menu goes here, or social media links in some cases #}
+      {% if nav_secondary %}
+      <div class="nav-section nav-section--secondary">
+        {{ nav_secondary }}
+      </div>
+      {% endif %}
+
+      {% if header_top_nav %}
+      <div class="nav-section nav-section--tertiary">
+      {{ header_top_nav }}
+      </div>
+      {% endif %}
+
+    {% endblock %}
+  </div>
+</section>

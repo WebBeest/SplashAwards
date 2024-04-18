@@ -1,0 +1,24 @@
+uuid: fc502a26-e63a-4683-98ac-8fb13abde647
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - splash
+id: splash_kruimelpad
+theme: splash
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Kruimelpad
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/storybook/stories/render/*'

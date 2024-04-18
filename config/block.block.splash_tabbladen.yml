@@ -1,0 +1,26 @@
+uuid: 6de2bb79-59a8-4301-a960-341c1ffd06fe
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - splash
+id: splash_tabbladen
+theme: splash
+region: tabs
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabbladen
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/storybook/stories/render/*'

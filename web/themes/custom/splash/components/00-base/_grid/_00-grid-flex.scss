@@ -1,0 +1,147 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * CSS grid
+// *
+// * More on Flexbox (used here for fallback):
+//    https://css-tricks.com/snippets/css/complete-guide-grid/
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Flex-row mixins
+// =============================================================================
+
+// ** make a uniform grid (columns, mostly)
+//
+//    Variables:
+//    - $columns: total columns of your grid system
+//    - $gap-hor: gap between the columns
+@mixin flex-grid($columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  min-height: 1px;
+  //margin-top: rem(-$gap-vert); // compensate for children top gaps
+  margin-left: rem(-$gap-hor / 2);
+  margin-right: rem(-$gap-hor / 2);
+  overflow: hidden; // fix for non-collapsing margins
+}
+
+
+// ** set width of individual grid cell
+//
+//    Variables:
+//    - $number: number of columns your item is wide OR 'auto' for autosizing
+//    - $columns: total columns of your grid system
+//    - $gap-hor: gap between the columns
+@mixin flex-col($number, $columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
+  position: relative;
+  margin-left: rem($gap-hor / 2);
+  margin-right: rem($gap-hor / 2);
+  margin-top: rem($gap-vert); // create gaps
+  min-height: 1px;
+
+  @if ($number == 'auto') {
+    width: 100%; // mainly for IE
+    max-width: none;
+    flex: 1 1 auto;
+    // IE11 doesn't understand calc() in shorthand
+    flex-basis: auto;
+  } @else {
+    width: calc(#{100% * $number / $columns} - #{rem($gap-hor)}); // mainly for IE
+    flex: 0 0 calc(#{100% * $number / $columns} - #{rem($gap-hor)});
+    // IE11 doesn't understand calc() in shorthand
+    flex-basis: calc(#{100% * $number / $columns} - #{rem($gap-hor)});
+  }
+}
+
+
+// ** pull using position relative
+//
+//    Variables:
+//    - $size: number of columns to move
+//    - $columns: total columns of your grid system
+//    - $gap-hor: gap between the columns
+@mixin flex-col-pull($number, $columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
+  position: relative;
+  left: #{100% * -$number / $columns};
+}
+
+// ** push using margin relative
+//
+//    Variables:
+//    - $size: number of columns to move
+//    - $columns: total columns of your grid system
+//    - $gap-hor: gap between the columns
+@mixin flex-col-push($number, $columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
+  position: relative;
+  left: #{100% * $number / $columns};
+}
+
+
+// ** Create columns, but for different breakpoints
+// -- Variables:
+//    - 4 or 5 columns sizes
+//    - $columns: total columns of your grid system
+//    - $gap-hor: gap between the columns
+// -- USAGE: @include flex-col-responsive(12, 6, 6, 3)
+// --          Creates columns that span 12 columns on bp-xs-small (0-479)
+// --          Creates columns that span 6 columns on bp-xs-wide (480-768
+// --          Creates columns that span 6 columns on bp-sm (768-940)
+// --          Creates columns that span 3 columns on bp-md (940-…)
+// --          Creates columns that span 3 columns on bp-lg (1200-infinity)
+
+@mixin flex-col-responsive($flex-col-bp-xs:12, $flex-col-bp-xs-wide:$flex-col-bp-xs, $flex-col-bp-sm:12, $flex-col-bp-md:12, $flex-col-bp-lg: $flex-col-bp-md, $columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
+
+  @if ($flex-col-bp-xs-wide == false OR $flex-col-bp-xs == $flex-col-bp-xs-wide) {
+    @include bp-xs-only {
+      @include flex-col($flex-col-bp-xs, $columns, $gap-hor);
+    }
+  } @else {
+    @include bp-xs-small-only {
+      @include flex-col($flex-col-bp-xs, $columns, $gap-hor);
+    }
+
+    @include bp-xs-wide-only {
+      @include flex-col($flex-col-bp-xs-wide, $columns, $gap-hor);
+    }
+  }
+
+  @include bp-sm-only {
+    @include flex-col($flex-col-bp-sm, $columns, $gap-hor);
+  }
+
+  @if ($flex-col-bp-md == $flex-col-bp-lg) {
+    @include bp-md {
+      @include flex-col($flex-col-bp-md, $columns, $gap-hor);
+    }
+  } @else {
+    @include bp-md-only {
+      @include flex-col($flex-col-bp-md, $columns, $gap-hor);
+    }
+    @include bp-lg {
+      @include flex-col($flex-col-bp-lg, $columns, $gap-hor);
+    }
+  }
+}
+
+// ** create cells that span multiple rows: this is for the row wrapper
+
+@mixin flex-rows($height, $columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; // very important !!!
+  height: $height; // need a height in order to stretch over
+  margin-left: #{rem(-$gap-hor / 2)};
+  margin-right: #{rem(-$gap-hor / 2)};
+}
+
+// ** create cells that span multiple rows: this is for cells
+//    don't forget to mess around with 'order' to get the order you need
+
+@mixin flex-row($height, $rows: 2, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
+  flex: 0 0 calc(#{100% * $height / $rows} - #{rem($gap-hor)});
+  // IE11 doesn't understand calc() in shorthand
+  flex-basis: calc(#{100% * $height / $rows} - #{rem($gap-hor)});
+}

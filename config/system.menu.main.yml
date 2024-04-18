@@ -1,7 +1,12 @@
 uuid: 5aadfe2d-885a-4405-881a-ac3d153f266f
 langcode: nl
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_clickthrough
+third_party_settings:
+  menu_clickthrough:
+    clickthrough_enabled: 0
 _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main

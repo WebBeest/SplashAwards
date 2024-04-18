@@ -1,0 +1,29 @@
+uuid: 78a9c4b4-3651-4950-8dba-a0231c75b53e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - splash
+id: splash_hoofdnavigatie
+theme: splash
+region: primary_navigation
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: Hoofdnavigatie
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/storybook/stories/render/*'

@@ -1,0 +1,20 @@
+uuid: 3a39600f-2d88-497e-a2ba-fefc17f25e82
+langcode: nl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - splash
+id: splash_primaireinhoudvandepagina
+theme: splash
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Primaire inhoud van de pagina'
+  label_display: '0'
+  provider: system
+visibility: {  }

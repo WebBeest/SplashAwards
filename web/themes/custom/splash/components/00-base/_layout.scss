@@ -21,3 +21,22 @@ $border-radius: 5px;
 
 $site-width: 118rem;
 $site-width-max: 118rem;
+
+// smaller gap
+$gap-vert-xs: 5 !default;
+$gap-vert-sm: 15;
+
+// -- used with mixin: eg. @include z-index(header)
+$z-index: (
+  pb                 : 10000, // develop
+  grid-overlay       : 9999,  // develop
+  cookie             : 1010,  // over everything
+  modal              : 1000,  // over all content and nav
+  admin-toolbar      : 990,   // under modal but over rest
+  header-top         : 920,   // some elements go on the mobile nav
+  mobile-nav         : 910,
+  header-fixed       : 910,
+  header             : 910,
+  status             : 900,   // under all fixed things but above content
+);
+

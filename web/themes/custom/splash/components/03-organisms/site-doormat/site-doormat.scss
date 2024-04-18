@@ -1,0 +1,230 @@
+@import "../../style.scss";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Doormat
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// *
+// =============================================================================
+
+.doormat {
+  color: $color-doormat;
+  background: $color-doormat-bg;
+  padding: rem(65) 0 rem(65) 0;
+
+  .container {
+    // compensate for vertical space between blocks
+    // replace with the bottom space of the
+    //margin-bottom: rem(-15);
+  }
+  .col--doormat--01 {
+    width: 100%;
+    margin: 0;
+  }
+
+  .row--doormat {
+    text-align: center;
+  }
+}
+
+// * Blocks
+// =============================================================================
+
+.doormat .view,
+.doormat .nav,
+.block--region-doormat {
+  margin-bottom: rem(15); // vertical space between blocks
+  color: $color-doormat;
+  text-align: center;
+
+  // ** Titles
+  h2,
+  h3,
+  h4 {
+    @extend .h4;
+    margin-bottom: rem(15);
+    color: $color-doormat;
+  }
+
+  h5,
+  h6 {
+    margin-bottom: rem(15);
+    color: $color-doormat;
+  }
+
+  p,
+  ul,
+  ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .item-list {
+    ul {
+      @include list-reset;
+    }
+
+    li {
+      @include list-reset;
+      //margin-bottom: rem(7);
+    }
+
+    a {
+      @include link-underline((
+        color: $color-doormat,
+        inverse: false
+      ));
+    }
+  }
+
+  .menu {
+
+    @include list-reset;
+
+    li {
+      @include list-reset;
+      //margin-bottom: rem(7);
+    }
+
+    a {
+      @include link-underline((
+        color: $color-doormat,
+        inverse: false
+      ));
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * SOCIAL LINKS
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+.block-socialmedialinks {
+  //padding-left: rem(35);
+  .field--name-field-fb a:before {
+    content: '\f39e';
+  }
+
+  .field--name-field-ig a:before {
+    content: '\f16d';
+  }
+
+  .field--name-field-linkedin a:before {
+    content: '\f0e1';
+  }
+
+  .field--name-field-twitter a:before {
+    content: '\f099';
+  }
+
+  .field--type-link {
+    font-size: 0;
+    display: inline;
+
+    a {
+      font-family: 'Font Awesome 5 Brands';
+      margin-right: 3rem;
+    }
+    a:before {
+      font-weight: 400;
+      font-size: rem(32);
+      color: $color-white;
+      transition: all .15s ease-in-out;
+      background-color: $color-spot-2;
+      padding: 5px;
+      border-radius: 50%;
+      width: rem(62);
+      height: rem(62);
+      text-align: center;
+      line-height: 3.3rem;
+      display: inline-block;
+    }
+    a:hover:before {
+      background-color: darken($color-spot-2, 20%);
+    }
+  }
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: phone
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-xs-only {
+  .block-socialmedialinks {
+
+    .field--type-link {
+      a {
+        margin-right: 1rem;
+
+        &:before {
+          //padding: rem(10);
+        }
+      }
+    }
+  }
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  .doormat {
+    //text-align: left;
+  }
+
+  // * Structure
+  // ===========================================================================
+
+  .row--doormat {
+    //@include flex-grid;
+  }
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: desktop & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-md {
+
+  .doormat {
+
+    .container {
+      margin-bottom: rem(-20); // compensate for vertical space between blocks
+    }
+  }
+
+  // * Structure
+  // ===========================================================================
+
+  .col--doormat--01 {
+    @include flex-col(12);
+  }
+
+  // * General styling
+  // =============================================================================
+
+  .doormat .view,
+  .doormat .nav,
+  .block--region-doormat {
+    margin-bottom: rem(20); // vertical space between blocks
+  }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+  //
+}

@@ -13,7 +13,7 @@ entity_type: node
 bundle: page
 label: Image
 description: '<b>This image is also shown on the detail page of your news item.</b>'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

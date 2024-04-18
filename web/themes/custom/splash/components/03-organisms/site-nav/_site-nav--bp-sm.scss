@@ -1,0 +1,75 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Desktop navigation: structure of the elements present in non-mobile navigation
+// *
+// *
+////////////////////////////////////////////////////////////////////////////////
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * SITE NAVIGATION
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@mixin site-nav-bp-sm {
+  .header--primary {
+
+    & > .container {
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:after {
+        display: none;
+      }
+      .header__section--primary {
+        //
+      }
+      .header__section--secondary {
+        //
+      }
+    }
+
+    .header__section--primary,
+    .header__section--secondary,
+    .nav-section,
+    ul {
+      display: inline-flex;
+    }
+    .menu--main {
+      li {
+        display: flex;
+        align-items: center;
+        a {
+          color: $color-spot-2;
+          padding: rem(0) rem(10);
+          @include font-size(15);
+          font-weight: 500;
+          @include bp-md {
+            @include font-size(18);
+            padding: rem(0) rem(15);
+          }
+
+          &:hover {
+            color: $color-spot-1;
+          }
+          &.menu__link--active {
+            color: $color-spot-3;
+          }
+        }
+
+        &:last-child {
+          margin-left: rem(10);
+          @include bp-md {
+            margin-left: rem(15);
+          }
+        }
+        &:last-child a {
+          @include button-primary('sm');
+          @include font-size(15);
+          @include bp-md {
+            @include font-size(18);
+            @include button-primary('md');
+          }
+        }
+      }
+    }
+  }
+}

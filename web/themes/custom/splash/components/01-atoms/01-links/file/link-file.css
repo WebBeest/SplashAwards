@@ -1,0 +1,174 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* stylelint-disable */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-weight: 700; }
+  .h1 a,
+  .h1 a:visited,
+  .h2 a,
+  .h2 a:visited,
+  .h3 a,
+  .h3 a:visited,
+  .h4 a,
+  .h4 a:visited,
+  .h5 a,
+  .h5 a:visited,
+  .h6 a,
+  .h6 a:visited {
+    color: #DE0055;
+    text-decoration: none; }
+  .h1 a:hover,
+  .h2 a:hover,
+  .h3 a:hover,
+  .h4 a:hover,
+  .h5 a:hover,
+  .h6 a:hover {
+    color: #DE0055;
+    text-decoration: underline; }
+
+.h1 {
+  margin: 0 0 1.5rem 0;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #303030; }
+
+.h2 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 1.75rem;
+  line-height: 2.1875rem;
+  color: #303030; }
+
+.h3 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  color: #303030; }
+
+.h4 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #303030; }
+
+.h5,
+.h6 {
+  margin: 0 0 0.3125rem 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #303030; }
+
+.file {
+  display: block;
+  position: relative;
+  padding-left: 1.25rem; }
+  .file .icon {
+    position: absolute;
+    left: 0;
+    top: -0.125rem;
+    width: 0.875rem;
+    text-align: center; }
+  .file a {
+    display: block; }
+
+.icon--file {
+  transition: all 0.3s ease-in-out; }
+  .icon--file:before {
+    content: '\f15b';
+    color: #303030;
+    margin: 0 5px 0 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    vertical-align: middle;
+    font-size: 1rem;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900; }
+
+.list__item--download {
+  font-size: 0.875rem;
+  line-height: 1.21154rem;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out; }
+  .list__item--download:hover {
+    color: #FFFFFF;
+    background-color: #10BFFF;
+    box-shadow: 0 0 0 0.2em #10BFFF; }
+    .list__item--download:hover .icon:before {
+      color: #FFFFFF; }
+  .list__item--download .icon--file:before {
+    content: '\f15b';
+    color: #10BFFF;
+    margin: 0 5px 0 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    vertical-align: middle;
+    font-size: 1rem;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900; }
+  .list__item--download a,
+  .list__item--download a:visited {
+    color: #10BFFF;
+    transition: all 0.3s ease-in-out; }
+  .list__item--download a:hover,
+  .list__item--download a:active {
+    color: #FFFFFF; }

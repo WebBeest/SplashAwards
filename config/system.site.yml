@@ -2,13 +2,13 @@ _core:
   default_config_hash: l58O_yEXSo-SeJi19LXdzTU1tNJG3lmnIhCitRkM1tk
 langcode: nl
 uuid: 1dca824b-b6c7-4fbf-a79e-e48613d8e539
-name: 'Drush Site-Install'
-mail: admin@example.com
+name: 'Splash Awards Nederland 2024'
+mail: splashawards@web-beest.nl
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: nl

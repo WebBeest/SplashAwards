@@ -1,0 +1,36 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Site navigation
+// *
+// * Load all the styling + the structural CSS
+// * for the navigation in the right order and breakpoints
+// * You can change breakpoints to have mobile navigation for wider screens
+// * but don't forget to also modify the breakpoint in the mobile nav javascript
+// *   located in: 02-molecules/menus/menu--mobile.js
+// * and in the mobile menu Sass
+// *  in molecules > menus > menu
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: only on mobile phone
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-xs-only {
+
+  // layout of the elements as they are presented in mobile the navigation wrapper
+  @include site-nav-bp-xs-only;
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet and wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  @include site-nav-bp-sm;
+
+}
