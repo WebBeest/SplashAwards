@@ -64,7 +64,7 @@ table {
   .h5 a:visited,
   .h6 a,
   .h6 a:visited {
-    color: #DE0055;
+    color: #31D57C;
     text-decoration: none; }
   .h1 a:hover,
   .h2 a:hover,
@@ -72,7 +72,7 @@ table {
   .h4 a:hover,
   .h5 a:hover,
   .h6 a:hover {
-    color: #DE0055;
+    color: #31D57C;
     text-decoration: underline; }
 
 .h1 {
@@ -145,13 +145,13 @@ table {
   transition: all 0.3s ease-in-out; }
   .list__item--download:hover {
     color: #FFFFFF;
-    background-color: #10BFFF;
-    box-shadow: 0 0 0 0.2em #10BFFF; }
+    background-color: #31D57C;
+    box-shadow: 0 0 0 0.2em #31D57C; }
     .list__item--download:hover .icon:before {
       color: #FFFFFF; }
   .list__item--download .icon--file:before {
     content: '\f15b';
-    color: #10BFFF;
+    color: #31D57C;
     margin: 0 5px 0 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -167,7 +167,7 @@ table {
     font-weight: 900; }
   .list__item--download a,
   .list__item--download a:visited {
-    color: #10BFFF;
+    color: #31D57C;
     transition: all 0.3s ease-in-out; }
   .list__item--download a:hover,
   .list__item--download a:active {

@@ -1,0 +1,80 @@
+{#
+/**
+ * Available variables:
+ * - link_content - the content of the link (typically text)
+ * - link_url - the url this link should point to
+ * - link_attributes - array of attribute,value pairs
+ * - bem_link_element - the base class name
+ * - bem_link_modifiers - array of modifiers to add to the base classname
+ * - bem_link_block - blockname prepended to the base classname
+ * - nolink - if there is no link provided, fall back to span instead of a-tag
+ *
+ * Available blocks:
+ * - link_content - used to replace the content of the link
+ *     Example: to insert the image component
+ */
+#}
+
+{% set nolink = nolink|default(false) %}
+
+{% set bem_link_block = bem_link_block|default('link') %}
+
+{% set bem_link_element = bem_link_element|default(false) %}
+
+{% if bem_link_modifiers is not defined %}
+  {% set bem_link_modifiers = [] %}
+{% endif %}
+
+{% if not link_attribute_class %}
+  {% set link_attribute_class = [] %}
+{% endif %}
+
+{# if no link attributes, get them from url options #}
+{% if link_attributes is null and item.url and item.url.options and item.url.options.attributes %}
+  {% set link_attributes = item.url.options.attributes %}
+
+  {# if there's a class in there, add it to the base class #}
+  {% if item.url.options.attributes.class %}
+    {# if its an array #}
+    {% if item.url.options.attributes.class is iterable %}
+      {% set link_attribute_class = item.url.options.attributes.class %}
+      {# else just save the string #}
+    {% else %}
+      {% set link_attribute_class = [item.url.options.attributes.class] %}
+    {% endif %}
+
+    {# add custom classes for menu link to the list-item because that's cleaner for styling #}
+    {% set bem_link_extra = bem_item_extra|merge(link_attribute_class) %}
+
+  {% endif %}
+{% endif %}
+
+{# {% set bem_link_element = bem_link_element|default('link') %} #}
+{% if nolink %}
+  <span
+  {{ bem(bem_link_block, bem_link_element, bem_link_modifiers, bem_link_extra) }}
+  {% for attribute,value in link_attributes %}
+    {% if attribute != "class" %}
+      {{ attribute }}="{{ value }}"
+    {% endif %}
+  {% endfor %}
+  >
+{% else %}
+  <a
+  {{ bem(bem_link_block, bem_link_element, bem_link_modifiers, bem_link_extra) }}
+  {% for attribute,value in link_attributes %}
+    {% if attribute != "class" %}
+      {{ attribute }}="{{ value }}"
+    {% endif %}
+  {% endfor %}
+  href="{{ link_url }}"
+  >
+{% endif %}
+  {% block link_content %}
+    {{  link_content  }}
+  {% endblock %}
+{% if nolink %}
+  </span>
+{% else %}
+  </a>
+{% endif %}

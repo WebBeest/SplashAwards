@@ -64,7 +64,7 @@ table {
   .h5 a:visited,
   .h6 a,
   .h6 a:visited {
-    color: #DE0055;
+    color: #31D57C;
     text-decoration: none; }
   .h1 a:hover,
   .h2 a:hover,
@@ -72,7 +72,7 @@ table {
   .h4 a:hover,
   .h5 a:hover,
   .h6 a:hover {
-    color: #DE0055;
+    color: #31D57C;
     text-decoration: underline; }
 
 .h1 {

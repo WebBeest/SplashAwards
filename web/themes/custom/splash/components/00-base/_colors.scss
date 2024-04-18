@@ -10,9 +10,11 @@ $color-gray-light-3:         #A2A2A2;
 $color-gray:                 #707070;
 $color-gray-dark:            #545454;
 $color-black:                #000;
-$color-spot-1:               #10BFFF !default; // Bright blue
-$color-spot-2:               #DE0055 !default; // Red
-$color-spot-3:               #002C50 !default; // Dark blue
+
+$color-spot-1:               #31D57C !default;
+$color-spot-2:               #3232FF !default;
+$color-spot-3:               #120B47 !default;
+$color-spot-4:               #F97777 !default;
 
 //------------------------------------------------------------------------------
 // Main
@@ -22,7 +24,7 @@ $color-base-bg:             $color-white;
 
 $color-heading:             $color-base;
 
-$color-link:                $color-spot-2 !default;
+$color-link:                $color-spot-1 !default;
 $color-link-hover :         $color-spot-1;
 $color-link-active:         $color-spot-1 !default;
 

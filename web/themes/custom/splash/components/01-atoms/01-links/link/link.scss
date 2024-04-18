@@ -1,0 +1,113 @@
+@import '../../../includes';
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Links
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Links
+// =============================================================================
+a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  transition: color $duration $easing, background-color $duration $easing;
+
+  &,
+  &:visited {
+    color: $color-link;
+  }
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+  &:active,
+  &:focus {
+    color: $color-link-active;
+  }
+
+  &:after,
+  &:before {
+    transition: all $duration $easing;
+  }
+
+  /**
+  * Remove the outline on focused links when they are also active or hovered
+  * in all browsers (opinionated).
+  */
+  &:hover,
+  &:active {
+    outline-width: 0;
+  }
+}
+
+// ** More (eg. in teasers)
+
+.more-link {
+  a {
+    text-decoration: underline;
+  }
+}
+
+.link--more {
+  text-decoration: underline;
+}
+
+// ** Bigger 'more' link (eg. for views on homepage)
+
+.link--more-big {
+  @include link-more-big;
+}
+
+// ** Back
+
+.back-link {
+  a {
+    @include link-back;
+  }
+}
+
+.link--back {
+  @include link-back;
+}
+
+// ** links in CKE & styleguide
+
+// a couple of ':not' selectors to exclude styleguide elements
+ul.inline a,
+.text-long .links li a,
+.text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary) {
+  @include link-underline((
+    element: after,
+    color: $color-text-link,
+    color-hover: $color-text-link-hover,
+    color-active: $color-text-link-active
+  ));
+}
+
+// ** normalize a bunch of browser shit
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+
+// ** curser Pointer for Custom view-mode Wrappers
+//    which link to a location onclick
+[onclick^='location.href='],
+[onclick^='window.open'] {
+  cursor: pointer;
+}

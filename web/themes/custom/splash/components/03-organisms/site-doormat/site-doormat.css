@@ -91,7 +91,7 @@ table {
   .h5 a:visited,
   .h6 a,
   .h6 a:visited {
-    color: #DE0055;
+    color: #31D57C;
     text-decoration: none; }
   .h1 a:hover,
   .h2 a:hover,
@@ -108,7 +108,7 @@ table {
   .block--region-doormat h4 a:hover,
   .h5 a:hover,
   .h6 a:hover {
-    color: #DE0055;
+    color: #31D57C;
     text-decoration: underline; }
 
 .h1 {
@@ -351,7 +351,7 @@ table {
     font-size: 2rem;
     color: #FFFFFF;
     transition: all .15s ease-in-out;
-    background-color: #DE0055;
+    background-color: #3232FF;
     padding: 5px;
     border-radius: 50%;
     width: 3.875rem;
@@ -360,7 +360,7 @@ table {
     line-height: 3.3rem;
     display: inline-block; }
   .block-socialmedialinks .field--type-link a:hover:before {
-    background-color: #78002e; }
+    background-color: #0000cb; }
 
 @media (max-width: 767px) {
   .block-socialmedialinks .field--type-link a {

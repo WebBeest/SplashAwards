@@ -1,0 +1,37 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Link
+props:
+  type: object
+  required:
+    - link_content
+    - link_url
+  properties:
+    link_content:
+      type: string
+      title: Content
+      description: Link content, usually a text.
+      examples:
+        - Click here
+    link_url:
+      type: string
+      title: URL
+    link_attributes:
+      type: array
+      title: Attributes
+      description: Key-value array of attributes
+    bem_link_element:
+      type: string
+      title: BEM Link element
+      description: Base class name
+    bem_link_modifiers:
+      type: array
+      title: BEM Link modifiers
+      description: Array of modifiers to add to the base classname
+    bem_link_block:
+      type: string
+      title: BEM Link block
+      description: Blockname prepended to the base classname.
+    nolink:
+      type: boolean
+      title: Nolink
+      description: If there is no link provided, fall back to span instead of a-tag

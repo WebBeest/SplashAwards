@@ -1,13 +1,2 @@
 @import "00-base/reset";
-@import "00-base/vars";
-@import "00-base/colors";
-@import "00-base/grid";
-@import "00-base/breakpoints";
-@import "00-base/functions";
-@import "00-base/mixins";
-@import "00-base/layout";
-@import "00-base/typography";
-
-@import "00-base/_grid/_00-grid-flex";
-// @import "00-base/_grid/_set-breakpoints";
-// @import "00-base/_grid/_set-visual-grid";
+@import "includes";

@@ -1,0 +1,35 @@
+{% stories link with {
+  title: 'Splash Awards/Atoms/Link'
+} %}
+  {% story default with {
+    name: '1. Text link',
+    args: {
+      link_content: 'Link title'|t,
+      link_url: 'http://www.example.com',
+      link_attributes: {
+        target: '_blank',
+      },
+      bem_link_element: '',
+      bem_link_modifiers: [],
+      bem_link_block: '',
+      nolink: 'false',
+    }
+  } %}
+    {{ include ('splash:link', {link_content,link_url,link_attributes,bem_link_element,bem_link_modifiers,bem_link_block,nolink}) }}
+  {% endstory %}
+
+  {% story menuLink with {
+    name: '2. Menu link',
+    args: {
+      link_content: 'Spelregels',
+      link_url: '/spelregels',
+      link_attributes: {},
+      bem_link_element: 'link',
+      bem_link_modifiers: ['main'],
+      bem_link_block: 'menu',
+      nolink: false,
+    }
+  } %}
+    {{ include ('splash:link', {link_content,link_url,link_attributes,bem_link_element,bem_link_modifiers,bem_link_block,nolink}) }}
+  {% endstory %}
+{% endstories %}
