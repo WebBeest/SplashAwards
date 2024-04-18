@@ -1,0 +1,22 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Heading
+props:
+  type: object
+  required:
+    - heading_level
+    - heading
+  properties:
+    heading_level:
+      type: integer
+      title: Heading level
+      description: Level, between 1 and 5
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+    heading:
+      type: string
+      title: Heading text
+      description: Text of the heading

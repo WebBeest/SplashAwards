@@ -1,0 +1,41 @@
+{#
+/**
+ * Available variables:
+ * - heading_level - the header level 1-6 (produces h1, h2, etc.)
+ *
+ * - heading_blockname - blockname prepended to the base classname
+ * - heading_element - the base class
+ * - heading_modifiers - array of modifiers to add to the base classname
+ *
+ * - heading - the content of the heading (typically text)
+ *
+ * - heading_url - (optional) the url the heading should poing to
+ * - heading_link_attributes - key/value attributes to pass to link
+ * - heading_link_block - override the link block name (defaults to heading_block)
+ * - heading_link_element - override the link base class
+ * - heading_link_modifiers - override the link modifiers
+ */
+#}
+{% set bem_heading_block = bem_heading_block|default('h' ~ heading_level) %}
+{% set bem_heading_element = bem_heading_element|default(false) %}
+{% set bem_heading_modifiers = bem_heading_modifiers|default([]) %}
+{% set bem_heading_extra = bem_heading_extra|default([]) %}
+
+{% set bem_heading_link_block = bem_heading_link_block|default(bem_heading_block) %}
+{% set bem_heading_link_element = bem_heading_element|default('link') %}
+{% set bem_heading_link_modifiers = bem_heading_link_modifiers|default(bem_heading_modifiers) %}
+
+<h{{ heading_level }} {{ bem(bem_heading_block, bem_heading_element, bem_heading_modifiers, bem_heading_extra) }}>
+  {% if heading_url %}
+    {% include "@atoms/01-links/link/_link.twig" with {
+      "link_content": heading,
+      "link_url": heading_url,
+      "link_attributes": bem_heading_link_attributes,
+      "bem_link_block": bem_heading_link_block|default(bem_heading_block),
+      "bem_link_element": bem_heading_link_element,
+      "bem_link_modifiers": bem_heading_link_modifiers,
+    } %}
+  {% else %}
+    {{ heading }}
+  {% endif %}
+</h{{ heading_level }}>

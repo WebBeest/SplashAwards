@@ -1,0 +1,53 @@
+{% stories headings with {
+  title: 'Splash Awards/Atoms/Heading'
+} %}
+  {% story heading1 with {
+    name: 'Heading 1',
+    args: {
+      heading_level: 1,
+      heading: 'This is a page title, level 1 heading'
+    }
+  } %}
+    {{ include('splash:heading', {heading_level, heading}) }}
+  {% endstory %}
+
+  {% story heading2 with {
+    name: 'Heading 2',
+    args: {
+      heading_level: 2,
+      heading: 'This is a subtitle, level 2 heading'
+    }
+  } %}
+    {{ include('splash:heading', {heading_level, heading}) }}
+  {% endstory %}
+
+  {% story heading3 with {
+    name: 'Heading 3',
+    args: {
+      heading_level: 3,
+      heading: 'This is a level 3 heading'
+    }
+  } %}
+    {{ include('splash:heading', {heading_level, heading}) }}
+  {% endstory %}
+
+  {% story heading4 with {
+    name: 'Heading 4',
+    args: {
+      heading_level: 4,
+      heading: 'This is a level 4 heading'
+    }
+  } %}
+    {{ include('splash:heading', {heading_level, heading}) }}
+  {% endstory %}
+
+  {% story heading5 with {
+    name: 'Heading 5',
+    args: {
+      heading_level: 5,
+      heading: 'This is a level 5 heading'
+    }
+  } %}
+    {{ include('splash:heading', {heading_level, heading}) }}
+  {% endstory %}
+{% endstories %}
