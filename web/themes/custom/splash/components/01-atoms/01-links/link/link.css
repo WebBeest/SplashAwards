@@ -5,7 +5,7 @@
 .h4,
 .h5,
 .h6 {
-  font-family: "Open Sans", "Arial", sans-serif;
+  font-family: "Barlow Semi Condensed", "Arial";
   font-weight: 700; }
   .h1 a,
   .h1 a:visited,
@@ -30,34 +30,39 @@
     color: #31D57C;
     text-decoration: underline; }
 
+h1,
 .h1 {
   margin: 0 0 1.5rem 0;
-  font-size: 2rem;
-  line-height: 2.5rem;
-  color: #303030; }
+  font-size: 5rem;
+  line-height: 6rem;
+  color: #3232FF; }
 
+h2,
 .h2 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1.75rem;
-  line-height: 2.1875rem;
-  color: #303030; }
+  font-size: 3rem;
+  line-height: 4rem;
+  color: #3232FF; }
 
+h3,
 .h3 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1.5rem;
-  line-height: 1.875rem;
-  color: #303030; }
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #3232FF; }
 
+h4,
 .h4 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  color: #303030; }
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #3232FF; }
 
+h5, h6,
 .h5,
 .h6 {
   margin: 0 0 0.3125rem 0;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5rem;
   color: #303030; }
 
@@ -183,7 +188,7 @@ ul.inline a,
   .text-long .links li a:visited,
   .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary),
   .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):visited {
-    color: #3232FF; }
+    color: #31D57C; }
   ul.inline a:after,
   .text-long .links li a:after,
   .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):after {
@@ -197,7 +202,7 @@ ul.inline a,
     transition: all 0.3s ease-in-out;
     opacity: 1;
     width: 100%;
-    background-color: #3232FF; }
+    background-color: #31D57C; }
     ul.inline a:after:not([href]):after,
     .text-long .links li a:after:not([href]):after,
     .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):after:not([href]):after {
@@ -207,13 +212,13 @@ ul.inline a,
   ul.inline a:hover,
   .text-long .links li a:hover,
   .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):hover {
-    color: #3232FF; }
+    color: #31D57C; }
     ul.inline a:hover:after,
     .text-long .links li a:hover:after,
     .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):hover:after {
       opacity: 0;
       width: 90%;
-      background-color: #3232FF; }
+      background-color: #31D57C; }
   ul.inline a:active,
   .text-long .links li a:active,
   .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):active {

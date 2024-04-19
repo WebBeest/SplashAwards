@@ -5,7 +5,9 @@
     name: 'Heading 1',
     args: {
       heading_level: 1,
-      heading: 'This is a page title, level 1 heading'
+      heading: 'This is a page title, level 1 heading',
+      bem_heading_block: 'page',
+      bem_heading_element: 'title',
     }
   } %}
     {{ include('splash:heading', {heading_level, heading}) }}
@@ -19,6 +21,17 @@
     }
   } %}
     {{ include('splash:heading', {heading_level, heading}) }}
+  {% endstory %}
+
+  {% story heading2_link with {
+    name: 'Heading 2 - Link',
+    args: {
+      heading_level: 2,
+      heading: 'This is a subtitle with link, level 2 heading',
+      heading_url: 'https://www.example.com'
+    }
+  } %}
+    {{ include('splash:heading', {heading_level, heading, heading_url}) }}
   {% endstory %}
 
   {% story heading3 with {

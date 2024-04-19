@@ -10,7 +10,7 @@ h4,
 h5,
 .h6,
 h6 {
-  font-family: "Open Sans", "Arial", sans-serif;
+  font-family: "Barlow Semi Condensed", "Arial";
   font-weight: 700; }
   .h1 a, h1 a,
   .h1 a:visited,
@@ -51,43 +51,43 @@ h6 {
     color: #31D57C;
     text-decoration: underline; }
 
-.h1, h1 {
+h1, .h1, h1 {
   margin: 0 0 1.5rem 0;
-  font-size: 2rem;
-  line-height: 2.5rem;
-  color: #303030; }
+  font-size: 5rem;
+  line-height: 6rem;
+  color: #3232FF; }
 
-
+h2,
 .h2,
 h2 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1.75rem;
-  line-height: 2.1875rem;
-  color: #303030; }
+  font-size: 3rem;
+  line-height: 4rem;
+  color: #3232FF; }
 
-
+h3,
 .h3,
 h3 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1.5rem;
-  line-height: 1.875rem;
-  color: #303030; }
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #3232FF; }
 
-
+h4,
 .h4,
 h4 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  color: #303030; }
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #3232FF; }
 
-
+h5, h6,
 .h5,
 h5,
 .h6,
 h6 {
   margin: 0 0 0.3125rem 0;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5rem;
   color: #303030; }
 

@@ -22,37 +22,36 @@ $color-spot-4:               #F97777 !default;
 $color-base:                #303030;
 $color-base-bg:             $color-white;
 
-$color-heading:             $color-base;
+$color-heading:             $color-spot-2;
 
 $color-link:                $color-spot-1 !default;
 $color-link-hover :         $color-spot-1;
 $color-link-active:         $color-spot-1 !default;
 
-$color-text-link:           $color-spot-2 !default;
-$color-text-link-hover :    $color-spot-2;
+$color-text-link:           $color-spot-1 !default;
+$color-text-link-hover :    $color-spot-1;
 $color-text-link-active:    $color-spot-1 !default;
 
 $color-button:              $color-white;
 $color-button-bg:           $color-spot-1;
 $color-button-hover:        $color-white;
-$color-button-hover-bg:     $color-spot-2;
+$color-button-hover-bg:     darken($color-spot-1, 15%) !default;
 
 $color-border:              $color-gray-light-2;
 
 //------------------------------------------------------------------------------
 // Regions
 //------------------------------------------------------------------------------
-$color-header-top-bg:   $color-off-white;
-$color-navigation-bg:   $color-spot-1;
-$color-doormat:         $color-gray-light-1;
-$color-doormat-bg:      $color-gray-light-2;
-$color-footer:          $color-white;
-$color-footer-bg:       #060032;
-
-$color-mobile-nav:      $color-base;
-$color-mobile-nav-bg:   $color-gray-light-3;
-$color-mobile-nav-open:      $color-white;
-$color-mobile-nav-open-bg:   $color-spot-1;
+$color-header-top-bg:       $color-off-white;
+$color-navigation-bg:       $color-spot-1;
+$color-mobile-nav:          $color-base;
+$color-mobile-nav-bg:       $color-base-bg;
+$color-mobile-nav-open:     $color-spot-1;
+$color-mobile-nav-open-bg:  $color-white;
+$color-doormat:             $color-gray-light-1;
+$color-doormat-bg:          #120B47;
+$color-footer:              $color-white;
+$color-footer-bg:           #060032;
 
 //------------------------------------------------------------------------------
 // Tabs

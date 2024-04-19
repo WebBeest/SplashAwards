@@ -12,30 +12,30 @@ $fw-light:                      100;
 //------------------------------------------------------------------------------
 // Font sizes.
 //------------------------------------------------------------------------------
-$fs-base: 16 !default;
+$fs-base: 18 !default;
 $font-size-base: $fs-base !default;
 $fs-sm: 14 !default;
 $fs-xs: 11 !default;
 
-$fs-h1: 32;
-$fs-h2: 28;
-$fs-h3: 24;
-$fs-h4: 16;
+$fs-h1: 80;
+$fs-h2: 48;
+$fs-h3: 32;
+$fs-h4: 24;
 
 //------------------------------------------------------------------------------
 // Fonts.
 //------------------------------------------------------------------------------
-$font-base: 'Open Sans', 'Arial', sans-serif !default;
-$font-heading: $font-base !default;
+$font-base: 'Barlow', 'Arial', sans-serif !default;
+$font-heading: 'Barlow Semi Condensed', 'Arial' !default;
 
 //------------------------------------------------------------------------------
 // Line heights.
 //------------------------------------------------------------------------------
 $line-height-base: 24 !default;
-$lh-h1: 40;
-$lh-h2: 35;
-$lh-h3: 30;
-$lh-h4: 20;
+$lh-h1: 96;
+$lh-h2: 64;
+$lh-h3: 40;
+$lh-h4: 32;
 
 $gap-vert: $line-height-base !default;
 
@@ -65,30 +65,35 @@ $color-h4: $color-heading !default;
   }
 }
 
+h1,
 .h1 {
   margin: 0 0 rem($gap-vert) 0;
   @include font-size($fs-h1, $lh-h1);
   color: $color-h1;
 }
 
+h2,
 .h2 {
   margin: 0 0 rem($gap-vert-sm) 0;
   @include font-size($fs-h2, $lh-h2);
   color: $color-h2;
 }
 
+h3,
 .h3 {
   margin: 0 0 rem($gap-vert-sm) 0;
   @include font-size($fs-h3, $lh-h3);
   color: $color-h3;
 }
 
+h4,
 .h4 {
   margin: 0 0 rem($gap-vert-sm) 0;
   @include font-size($fs-h4, $lh-h4);
   color: $color-h4;
 }
 
+h5, h6,
 .h5,
 .h6 {
   margin: 0 0 rem($gap-vert-xs) 0;

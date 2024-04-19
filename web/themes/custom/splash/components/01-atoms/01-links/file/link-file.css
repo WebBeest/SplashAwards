@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,7 +52,7 @@ table {
 .h4,
 .h5,
 .h6 {
-  font-family: "Open Sans", "Arial", sans-serif;
+  font-family: "Barlow Semi Condensed", "Arial";
   font-weight: 700; }
   .h1 a,
   .h1 a:visited,
@@ -75,36 +77,61 @@ table {
     color: #31D57C;
     text-decoration: underline; }
 
+h1,
 .h1 {
   margin: 0 0 1.5rem 0;
-  font-size: 2rem;
-  line-height: 2.5rem;
-  color: #303030; }
+  font-size: 5rem;
+  line-height: 6rem;
+  color: #3232FF; }
 
+h2,
 .h2 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1.75rem;
-  line-height: 2.1875rem;
-  color: #303030; }
+  font-size: 3rem;
+  line-height: 4rem;
+  color: #3232FF; }
 
+h3,
 .h3 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1.5rem;
-  line-height: 1.875rem;
-  color: #303030; }
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #3232FF; }
 
+h4,
 .h4 {
   margin: 0 0 0.9375rem 0;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  color: #303030; }
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #3232FF; }
 
+h5, h6,
 .h5,
 .h6 {
   margin: 0 0 0.3125rem 0;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5rem;
   color: #303030; }
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 300;
+  src: url("../fonts/fontAwesome/fontawesome-light.eot?#iefix") format("embedded-opentype"), url("../fonts/fontAwesome/fontawesome-light.woff2") format("woff2"), url("../fonts/fontAwesome/fontawesome-light.woff") format("woff"), url("../fonts/fontAwesome/fontawesome-light.ttf") format("truetype"), url("../fonts/fontAwesome/fontawesome-light.svg#Font Awesome 5 Pro") format("svg"); }
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 400;
+  src: url("../fonts/fontAwesome/fontawesome-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/fontAwesome/fontawesome-regular.woff2") format("woff2"), url("../fonts/fontAwesome/fontawesome-regular.woff") format("woff"), url("../fonts/fontAwesome/fontawesome-regular.ttf") format("truetype"), url("../fonts/fontAwesome/fontawesome-regular.svg#Font Awesome 5 Pro") format("svg"); }
+
+@font-face {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  src: url("../fonts/fontAwesome/fontawesome-solid.eot?#iefix") format("embedded-opentype"), url("../fonts/fontAwesome/fontawesome-solid.woff2") format("woff2"), url("../fonts/fontAwesome/fontawesome-solid.woff") format("woff"), url("../fonts/fontAwesome/fontawesome-solid.ttf") format("truetype"), url("../fonts/fontAwesome/fontawesome-solid.svg#Font Awesome 5 Pro") format("svg"); }
+
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: normal;
+  src: url("../fonts/fontAwesome/fontawesome-brands.eot?#iefix") format("embedded-opentype"), url("../fonts/fontAwesome/fontawesome-brands.woff2") format("woff2"), url("../fonts/fontAwesome/fontawesome-brands.woff") format("woff"), url("../fonts/fontAwesome/fontawesome-brands.ttf") format("truetype"), url("../fonts/fontAwesome/fontawesome-brands.svg#Font Awesome 5 Brands") format("svg"); }
 
 .file {
   display: block;

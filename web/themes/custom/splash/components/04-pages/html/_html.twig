@@ -1,0 +1,40 @@
+{#
+  Load webfonts using a JS webfont loader, in parent theme's @pages/_html.twig
+  See more info over there.
+
+  To add local fonts (like custom or relatively hosted font) just add it to custom families:
+  Otherwise, add to google families variable
+  eg: 'FontAwesome', 'Iconfont'
+
+  Variables:
+  * tile_color: background for tile in Microsoft behind logo/favicon
+  * safari_tab_color: for tab color in safari when pinning site
+
+  * webfont_config_typekit_id: typekit id
+  * webfont_config_google_families: (array) google font families,
+  * webfont_config_custom_families: (array) self-hosted font families names,
+  * webfont_config_custom_urls: (array) custom/in fonts folder font families (comma separated)
+
+
+  * Example;
+  * webfont_config_google_families: ['Open+Sans:400,400i,700', 'Ubuntu:700']
+  * webfont_config_custom_families: ['FontAwesome', 'Iconfont']
+  * webfont_config_custom_urls: ['/themes/custom/dropsolid-theme-starter-8/css/style.fonts.css']
+#}
+{% embed '@pages/html/_html--master.twig' with {
+    body_classes: [
+      logged_in ? 'user-logged-in',
+      not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+      node_type ? 'page-node-type-' ~ node_type|clean_class,
+      db_offline ? 'db-offline',
+    ],
+    webfont_config_typekit_id: false,
+    webfont_config_google_families: ['Barlow:100, 200, 300, 400,400i,500,600,700,800,900'],
+    webfont_config_custom_families: ['FontAwesome','BarlowSemiCondensed'],
+    webfont_config_custom_urls: [base_path ~ directory ~ '/components/fonts.css'],
+    safari_tab_color: '#33C3F1',
+    tile_color: '#FFFFFF',
+  }
+%}
+  {% block webfont %}{% endblock %}
+{% endembed %}

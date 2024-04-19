@@ -27,10 +27,10 @@
 
 <h{{ heading_level }} {{ bem(bem_heading_block, bem_heading_element, bem_heading_modifiers, bem_heading_extra) }}>
   {% if heading_url %}
-    {% include "@atoms/01-links/link/_link.twig" with {
+    {% include "@atoms/01-links/link/link.twig" with {
       "link_content": heading,
       "link_url": heading_url,
-      "link_attributes": bem_heading_link_attributes,
+      "link_attributes": [],
       "bem_link_block": bem_heading_link_block|default(bem_heading_block),
       "bem_link_element": bem_heading_link_element,
       "bem_link_modifiers": bem_heading_link_modifiers,
