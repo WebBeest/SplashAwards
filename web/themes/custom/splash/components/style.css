@@ -132,3 +132,387 @@ h5, h6,
   font-family: "Font Awesome 5 Brands";
   font-weight: normal;
   src: url("../fonts/fontAwesome/fontawesome-brands.eot?#iefix") format("embedded-opentype"), url("../fonts/fontAwesome/fontawesome-brands.woff2") format("woff2"), url("../fonts/fontAwesome/fontawesome-brands.woff") format("woff"), url("../fonts/fontAwesome/fontawesome-brands.ttf") format("truetype"), url("../fonts/fontAwesome/fontawesome-brands.svg#Font Awesome 5 Brands") format("svg"); }
+
+/* stylelint-disable */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Barlow Semi Condensed", "Arial";
+  font-weight: 700; }
+  .h1 a,
+  .h1 a:visited,
+  .h2 a,
+  .h2 a:visited,
+  .h3 a,
+  .h3 a:visited,
+  .h4 a,
+  .h4 a:visited,
+  .h5 a,
+  .h5 a:visited,
+  .h6 a,
+  .h6 a:visited {
+    color: #31D57C;
+    text-decoration: none; }
+  .h1 a:hover,
+  .h2 a:hover,
+  .h3 a:hover,
+  .h4 a:hover,
+  .h5 a:hover,
+  .h6 a:hover {
+    color: #31D57C;
+    text-decoration: underline; }
+
+h1,
+.h1 {
+  margin: 0 0 1.5rem 0;
+  font-size: 5rem;
+  line-height: 6rem;
+  color: #3232FF; }
+
+h2,
+.h2 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 3rem;
+  line-height: 4rem;
+  color: #3232FF; }
+
+h3,
+.h3 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #3232FF; }
+
+h4,
+.h4 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #3232FF; }
+
+h5, h6,
+.h5,
+.h6 {
+  margin: 0 0 0.3125rem 0;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #303030; }
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  /**
+  * Remove the outline on focused links when they are also active or hovered
+  * in all browsers (opinionated).
+  */ }
+  a, a:visited {
+    color: #31D57C; }
+  a:hover {
+    color: #31D57C;
+    text-decoration: underline; }
+  a:active, a:focus {
+    color: #31D57C; }
+  a:after, a:before {
+    transition: all 0.3s ease-in-out; }
+  a:hover, a:active {
+    outline-width: 0; }
+
+.more-link a {
+  text-decoration: underline; }
+
+.link--more {
+  text-decoration: underline; }
+
+.link--more-big {
+  font-size: 1.375rem;
+  line-height: 3.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  -ms-word-break: keep-all;
+  word-break: keep-all; }
+  .link--more-big:after {
+    content: '\f178';
+    margin: 0 0 0 0.9375rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    vertical-align: middle;
+    font-size: 1.3125rem;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400; }
+  .link--more-big:before {
+    display: none; }
+  .link--more-big:after {
+    position: relative;
+    top: -0.125rem;
+    transition: none; }
+  .link--more-big, .link--more-big:visited {
+    color: #31D57C; }
+  .link--more-big:hover, .link--more-big:active {
+    color: #3232FF; }
+
+.back-link a {
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  -ms-word-break: keep-all;
+  word-break: keep-all; }
+  .back-link a:before {
+    content: '\f104';
+    margin: 0 0.3125rem 0 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    vertical-align: middle;
+    font-size: 0.875rem;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300; }
+  .back-link a:before {
+    transition: none; }
+  .back-link a:after {
+    display: none; }
+
+.link--back {
+  display: inline-block;
+  text-decoration: none;
+  white-space: nowrap;
+  -ms-word-break: keep-all;
+  word-break: keep-all; }
+  .link--back:before {
+    content: '\f104';
+    margin: 0 0.3125rem 0 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    vertical-align: middle;
+    font-size: 0.875rem;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300; }
+  .link--back:before {
+    transition: none; }
+  .link--back:after {
+    display: none; }
+
+ul.inline a,
+.text-long .links li a,
+.text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary) {
+  display: inline-block;
+  position: relative; }
+  ul.inline a, ul.inline a:visited,
+  .text-long .links li a,
+  .text-long .links li a:visited,
+  .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary),
+  .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):visited {
+    color: #31D57C; }
+  ul.inline a:after,
+  .text-long .links li a:after,
+  .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):after {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 2px;
+    height: 1px;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    width: 100%;
+    background-color: #31D57C; }
+    ul.inline a:after:not([href]):after,
+    .text-long .links li a:after:not([href]):after,
+    .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):after:not([href]):after {
+      pointer-events: none;
+      display: none;
+      text-decoration: none; }
+  ul.inline a:hover,
+  .text-long .links li a:hover,
+  .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):hover {
+    color: #31D57C; }
+    ul.inline a:hover:after,
+    .text-long .links li a:hover:after,
+    .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):hover:after {
+      opacity: 0;
+      width: 90%;
+      background-color: #31D57C; }
+  ul.inline a:active,
+  .text-long .links li a:active,
+  .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):active {
+    color: #31D57C; }
+    ul.inline a:active:after,
+    .text-long .links li a:active:after,
+    .text-long a:not(.button):not(.button--primary):not(.button--secondary):not(.button--negative):not(.button--negative-secondary):active:after {
+      opacity: 0;
+      width: 90%;
+      background-color: #31D57C; }
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none; }
+
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+  color: inherit;
+  text-decoration: none; }
+
+a:not([href]):not([tabindex]):focus {
+  outline: 0; }
+
+[onclick^='location.href='],
+[onclick^='window.open'] {
+  cursor: pointer; }
+
+/* stylelint-disable */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Barlow Semi Condensed", "Arial";
+  font-weight: 700; }
+  .h1 a,
+  .h1 a:visited,
+  .h2 a,
+  .h2 a:visited,
+  .h3 a,
+  .h3 a:visited,
+  .h4 a,
+  .h4 a:visited,
+  .h5 a,
+  .h5 a:visited,
+  .h6 a,
+  .h6 a:visited {
+    color: #31D57C;
+    text-decoration: none; }
+  .h1 a:hover,
+  .h2 a:hover,
+  .h3 a:hover,
+  .h4 a:hover,
+  .h5 a:hover,
+  .h6 a:hover {
+    color: #31D57C;
+    text-decoration: underline; }
+
+h1,
+.h1 {
+  margin: 0 0 1.5rem 0;
+  font-size: 5rem;
+  line-height: 6rem;
+  color: #3232FF; }
+
+h2,
+.h2 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 3rem;
+  line-height: 4rem;
+  color: #3232FF; }
+
+h3,
+.h3 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: #3232FF; }
+
+h4,
+.h4 {
+  margin: 0 0 0.9375rem 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #3232FF; }
+
+h5, h6,
+.h5,
+.h6 {
+  margin: 0 0 0.3125rem 0;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: #303030; }
+
+.file {
+  display: block;
+  position: relative;
+  padding-left: 1.25rem; }
+  .file .icon {
+    position: absolute;
+    left: 0;
+    top: -0.125rem;
+    width: 0.875rem;
+    text-align: center; }
+  .file a {
+    display: block; }
+
+.icon--file {
+  transition: all 0.3s ease-in-out; }
+  .icon--file:before {
+    content: '\f15b';
+    color: #303030;
+    margin: 0 5px 0 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    vertical-align: middle;
+    font-size: 1rem;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900; }
+
+.list__item--download {
+  font-size: 0.875rem;
+  line-height: 1.21154rem;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out; }
+  .list__item--download:hover {
+    color: #FFFFFF;
+    background-color: #31D57C;
+    box-shadow: 0 0 0 0.2em #31D57C; }
+    .list__item--download:hover .icon:before {
+      color: #FFFFFF; }
+  .list__item--download .icon--file:before {
+    content: '\f15b';
+    color: #31D57C;
+    margin: 0 5px 0 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    text-rendering: auto;
+    vertical-align: middle;
+    font-size: 1rem;
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900; }
+  .list__item--download a,
+  .list__item--download a:visited {
+    color: #31D57C;
+    transition: all 0.3s ease-in-out; }
+  .list__item--download a:hover,
+  .list__item--download a:active {
+    color: #FFFFFF; }

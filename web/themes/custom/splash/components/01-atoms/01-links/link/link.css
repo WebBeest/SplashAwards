@@ -78,7 +78,8 @@ a {
   a, a:visited {
     color: #31D57C; }
   a:hover {
-    color: #31D57C; }
+    color: #31D57C;
+    text-decoration: underline; }
   a:active, a:focus {
     color: #31D57C; }
   a:after, a:before {
