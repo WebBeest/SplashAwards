@@ -58,6 +58,9 @@ const config = {
     name: "@storybook/server-webpack5",
     options: {},
   },
+  staticDirs: [
+    '../web/themes/custom/splash/fonts',
+  ],
   docs: {
     autodocs: "tag",
   },

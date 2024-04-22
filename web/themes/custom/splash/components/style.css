@@ -31,9 +31,6 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1; }
 
-ol, ul {
-  list-style: none; }
-
 blockquote, q {
   quotes: none; }
 
@@ -79,7 +76,7 @@ table {
 
 h1,
 .h1 {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
   font-size: 5rem;
   line-height: 6rem;
   color: #3232FF; }
@@ -110,7 +107,7 @@ h5, h6,
 .h6 {
   margin: 0 0 0.3125rem 0;
   font-size: 1.125rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   color: #303030; }
 
 @font-face {
@@ -167,7 +164,7 @@ h5, h6,
 
 h1,
 .h1 {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
   font-size: 5rem;
   line-height: 6rem;
   color: #3232FF; }
@@ -198,7 +195,7 @@ h5, h6,
 .h6 {
   margin: 0 0 0.3125rem 0;
   font-size: 1.125rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   color: #303030; }
 
 a {
@@ -416,7 +413,7 @@ a:not([href]):not([tabindex]):focus {
 
 h1,
 .h1 {
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 2rem 0;
   font-size: 5rem;
   line-height: 6rem;
   color: #3232FF; }
@@ -447,7 +444,7 @@ h5, h6,
 .h6 {
   margin: 0 0 0.3125rem 0;
   font-size: 1.125rem;
-  line-height: 1.5rem;
+  line-height: 2rem;
   color: #303030; }
 
 .file {

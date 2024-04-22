@@ -1,4 +1,7 @@
 /** @type { import('@storybook/server').Preview } */
+// Import fonts.
+import "./_fonts.scss";
+
 const preview = {
   parameters: {
     controls: {

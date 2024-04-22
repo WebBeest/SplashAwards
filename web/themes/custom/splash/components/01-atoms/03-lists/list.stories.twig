@@ -1,0 +1,39 @@
+{% stories list with {
+  title: 'Splash Awards/Atoms/List'
+} %}
+  {% story unordered_list with {
+    name: '1. Unordered list',
+    args: {
+      title: 'Unordered list',
+      list_type: 'ul',
+      items: [
+        {value: 'Item 1'},
+        {value: 'Item 2'},
+        {value: 'Item 3'},
+      ]
+    }
+  } %}
+    <div class="item-list">
+    {{ include ('splash:list', {list_type, items, title}) }}
+    </div>
+  {% endstory %}
+
+  {% story ordered_list with {
+    name: '2. Ordered list',
+    args: {
+      title: 'Ordered list',
+      list_type: 'ol',
+      items: [
+        {value: 'Item 1'},
+        {value: 'Item 2'},
+        {value: 'Item 3'},
+      ]
+    }
+  } %}
+    <div class="item-list">
+    {{ include ('splash:list', {list_type, items, title}) }}
+    </div>
+  {% endstory %}
+
+{% endstories %}
+

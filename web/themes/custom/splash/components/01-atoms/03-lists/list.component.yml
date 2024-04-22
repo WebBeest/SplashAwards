@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: List
+props:
+  type: object
+  required:
+    - list_type
+    - items
+  properties:
+    list_type:
+      type: string
+      title: List type
+      description: Type of list
+      enum:
+        - ul
+        - ol
+    items:
+      type: array
+      title: Items
+      description: List of items
+    title:
+      type: string
+      title: List title
+      description: Title of the list

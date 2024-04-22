@@ -1,0 +1,51 @@
+// ** FontAwesome
+@mixin font-face(
+  $font-family,
+  $file-path,
+  $font-weight: normal
+) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    src: _font-source-declaration(
+        $font-family,
+        $file-path
+    );
+    @content;
+  }
+}
+
+@function _font-source-declaration(
+  $font-family,
+  $file-path
+) {
+  $src: ();
+
+  $file-formats: ('svg', 'ttf', 'woff2', 'woff', 'eot');
+
+  $formats-map: (
+    eot:   '#{$file-path}.eot?#iefix' format('embedded-opentype'),
+    woff2: '#{$file-path}.woff2' format('woff2'),
+    woff:  '#{$file-path}.woff' format('woff'),
+    ttf:   '#{$file-path}.ttf' format('truetype'),
+    svg:   '#{$file-path}.svg##{$font-family}' format('svg'),
+  );
+
+  @each $key, $values in $formats-map {
+    @if _contains($file-formats, $key) {
+      $file-path: nth($values, 1);
+      $font-format: nth($values, 2);
+
+      $src: append($src, url($file-path) $font-format, comma);
+    }
+  }
+
+  @return $src;
+}
+
+@include font-face('Font Awesome 5 Pro', 'fonts/fontAwesome/fontawesome-light', 300);
+@include font-face('Font Awesome 5 Pro', 'fonts/fontAwesome/fontawesome-regular', 400);
+@include font-face('Font Awesome 5 Pro', 'fonts/fontAwesome/fontawesome-solid', 900);
+@include font-face('Font Awesome 5 Brands', 'fonts/fontAwesome/fontawesome-brands');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
