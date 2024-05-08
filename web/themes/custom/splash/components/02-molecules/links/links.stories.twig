@@ -1,0 +1,34 @@
+{% stories links with {
+  title: 'Splash Awards/Molecules/Links'
+} %}
+  {% story navigation_links with {
+    name: '01. List with links',
+    args: {
+      heading: {
+        level: 'h2',
+        attributes: [],
+        text: 'This is a title'|t
+      },
+      attributes: {},
+      links: [
+        {
+          link: {
+            url: 'https://www.example.com',
+            content: 'Link name',
+          }
+        },
+        {
+          text: 'No link'|t
+        },
+        {
+          link: {
+          url: 'https://www.example.com',
+          content: 'Link name 2',
+        }
+        },
+      ],
+    }
+  } %}
+    {{ include('splash:links', {heading, attributes, links}) }}
+  {% endstory %}
+{% endstories %}

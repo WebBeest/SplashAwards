@@ -25,7 +25,7 @@
 {% set bem_heading_link_element = bem_heading_element|default('link') %}
 {% set bem_heading_link_modifiers = bem_heading_link_modifiers|default(bem_heading_modifiers) %}
 
-<h{{ heading_level }} {{ bem(bem_heading_block, bem_heading_element, bem_heading_modifiers, bem_heading_extra) }}>
+<{{ heading_level }} {{ bem(bem_heading_block, bem_heading_element, bem_heading_modifiers, bem_heading_extra) }}>
   {% if heading_url %}
     {% include "@atoms/01-links/link/link.twig" with {
       "link_content": heading,
@@ -38,4 +38,4 @@
   {% else %}
     {{ heading }}
   {% endif %}
-</h{{ heading_level }}>
+</{{ heading_level }}>

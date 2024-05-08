@@ -1,0 +1,76 @@
+@import "_image-helpers.scss";
+
+// * Image tag
+// =============================================================================
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  display: block;
+  @include img-responsive();
+}
+
+
+// * Images in CKE
+// =============================================================================
+
+.text-long {
+
+  @include clearfix;
+
+  // -- alignment and sizing responsive
+  img,
+  figure {
+    &,
+    &.align-left,
+    &.align-right,
+    &.align-center {
+      float: none;
+      display: block;
+      margin: 0 0 rem($grid-gap-hor) 0;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    }
+
+    @include bp-sm {
+      &.align-left {
+        float: left;
+        margin: 0 rem(($grid-gap-hor)) rem(($grid-gap-hor)) 0;
+      }
+
+      &.align-right {
+        float: right;
+        margin: 0 0 rem(($grid-gap-hor)) rem(($grid-gap-hor));
+      }
+
+      &.align-center {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  figure {
+
+    &.align-center {
+      img {
+        margin: 0 auto;
+      }
+    }
+
+    img {
+      // reset for nested img in figure
+      float: none;
+      padding: 0;
+    }
+  }
+
+  figcaption {
+    margin-top: rem(10);
+    display: block;
+    text-align: center;
+    font-style: italic;
+    color: $color-gray;
+  }
+}

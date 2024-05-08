@@ -1,0 +1,55 @@
+{#
+ Only useful for some components that need to render an individual image
+ that does not go through the image field.
+ E.g. for Pattern Lab styleguide
+
+/**
+ * Available variables:
+ * - bem_image_block - blockname prepended to the base classname
+ * - bem_image_element - base class name
+ * - bem_image_modifiers - array of modifiers to add to the base classname
+ * - bem_image_link_block - base class override for image link
+ * - bem_image_link_element - base class for the image link
+ * - bem_image_link_modifiers - modifiers for image link
+ * - bem_image_link_attributes - attributes key/value pair for link attributes
+ * - img_url - url for linked image
+ * - img_src - the actual image file location
+ * - img_alt - (optional) the alt text for screen readers and when the image cannot load
+ */
+#}
+
+{% set bem_image_block = bem_image_block|default('image') %}
+{% set bem_image_element = image_element|default(false) %}
+{% set bem_image_modifiers = bem_image_modifiers|default([]) %}
+
+{% set bem_image_link_block = bem_image_link_block|default(bem_image_block) %}
+{% set bem_image_link_element = bem_image_link_element|default('link') %}
+{% set bem_image_link_modifiers = bem_image_link_modifiers|default([]) %}
+
+{% if img_url %}
+  {% embed "@atoms/01-links/link/_link.twig" with {
+    "link_url": img_url,
+    "link_attributes": bem_image_link_attributes,
+    "bem_link_block": bem_image_link_block,
+    "bem_link_element": bem_image_link_element,
+    "bem_link_modifiers": bem_image_link_modifiers,
+  } %}
+    {% block link_content %}
+      <img
+        {{ bem(bem_image_block, bem_image_element, bem_image_modifiers) }}
+        src="{{ img_src }}"
+        {% if img_alt %}
+          alt="{{ img_alt }}"
+        {% endif %}
+      />
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  <img
+    {{ bem(bem_image_block, bem_image_element, bem_image_modifiers) }}
+    src="{{ img_src }}"
+    {% if img_alt %}
+      alt="{{ img_alt }}"
+    {% endif %}
+  />
+{% endif %}

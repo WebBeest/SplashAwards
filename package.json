@@ -21,8 +21,11 @@
     "style-loader": "^4.0.0"
   },
   "scripts": {
-    "storybook": "yarn scss && storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "scss": "gulp sass"
+  },
+  "dependencies": {
+    "gulp-sourcemaps": "^3.0.0"
   }
 }

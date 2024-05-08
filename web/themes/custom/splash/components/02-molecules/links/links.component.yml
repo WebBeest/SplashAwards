@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Navigation links
+props:
+  type: object
+  properties:
+    attributes:
+      type: array
+      title: Attributes
+      description: Array of key value attributes.
+    links:
+      type: array
+      title: Links
+      description: List of links, with link or text attributes.
+    heading:
+      type: object
+      title: Heading
+      description: Heading above link list
+      properties:
+        level:
+          type: string
+          title: Heading level
+          description: Level, between 1 and 5
+          enum:
+            - 'h1'
+            - 'h2'
+            - 'h3'
+            - 'h4'
+            - 'h5'
+        text:
+          type: string
+          title: Heading text
+          description: Text of the heading

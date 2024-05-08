@@ -8,8 +8,8 @@ base theme: classy
 core_version_requirement: ^10
 
 dependencies:
-  - drupal:sdc
-  - drupal:storybook
+  - drupal/sdc
+  - drupal/storybook
 
 regions:
   tabs: Tabs
