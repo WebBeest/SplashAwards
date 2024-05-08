@@ -1,0 +1,56 @@
+{% import "@base/attributes.twig" as attr %}
+{#
+/**
+ * Available variables:
+ *   - attributes: An optional array of attributes.
+ *   - display: Allow the label to be printed as visually hidden.
+ *   - for: The ID of the element this label is for.
+ *   - icon: An optional icon to show for the label.
+ *   - icon_attributes: An optional array of icon attributes.
+ *   - label: The content of the button (typically text).
+ *   - required: Whether the label should show as required or not.
+ *
+ * Dependencies:
+ *   - icon
+ */
+#}
+{%
+  set classes = [
+  title_display == 'after' ? 'option',
+  title_display == 'invisible' ? 'visually-hidden',
+  required ? 'js-form-required',
+  required ? 'form-required',
+  'form-item__label',
+]
+%}
+{# Set defaults for optional variables. #}
+{% set attributes = attributes|default({'class':[]})|merge({
+  'class': attributes.class|default([])|merge(classes)
+}) %}
+
+{# Allow the label to be printed as visually hidden. #}
+{% if display == 'invisible' %}
+  {% set attributes = attributes|merge({
+    'class': attributes.class|merge(['visually-hidden'])
+  }) %}
+{% endif %}
+
+{# Add a class when the label should show ass required. #}
+{% if required %}
+  {% set attributes = attributes|merge({
+    'class': attributes.class|merge(['form-required'])
+  }) %}
+{% endif %}
+
+{%- if label is not empty or required -%}
+<label{{ attr.attributes(attributes) }} for="{{ for }}">
+  {{ label }}
+  {% if required %}
+  <abbr class="form-item__required" title="{% trans %}required field{% endtrans %}" aria-label="{% trans %}required field{% endtrans %}">*</abbr>
+  {% else %}
+  <span class="form-item__not-required" title="{% trans %}Optional{% endtrans %}" aria-label="{% trans %}Optional{% endtrans %}">
+    ({% trans %}Optional{% endtrans %})
+  </span>
+  {% endif %}
+</label>
+{%- endif %}

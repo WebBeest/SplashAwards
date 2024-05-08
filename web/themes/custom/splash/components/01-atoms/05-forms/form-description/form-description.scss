@@ -1,0 +1,8 @@
+@import "../../../includes";
+
+.form-item__description {
+  margin-top: $space-1;
+
+  font-size: rem($fs-xs);
+  font-weight: $fw-semibold;
+}

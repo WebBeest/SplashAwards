@@ -40,4 +40,35 @@ components:
     organisms: components/03-organisms
     pages: components/04-pages
     layouts: components/05-layouts
-    p-organisms: components/paragraphs/03-organisms
+#    p-organisms: components/paragraphs/03-organisms
+
+libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/form.css: false
+        css/components/progress.css: false
+        css/components/dialog.css: false
+        css/components/node.css: false
+        css/components/user.css: false
+        css/components/messages.css: false
+  stable/base:
+    css:
+      component:
+        css/system/components/hidden.module.css: false
+        css/system/components/clearfix.module.css: false
+        css/system/components/tree-child.module.css: false
+        css/system/components/item-list.module.css: false
+        css/system/components/container-inline.module.css: false
+        css/system/components/fieldgroup.module.css: false
+        css/system/components/resize.module.css: false
+        css/system/components/reset-appearance.module.css: false
+        css/system/components/position-container.module.css: false
+        css/system/components/js.module.css: false
+        css/system/components/align.module.css: false
+        css/system/components/details.module.css: false
+        css/system/components/nowrap.module.css: false
+        css/system/components/progress.module.css: false
+        css/system/components/sticky-header.module.css: false
+        css/system/components/tabledrag.module.css: false
+        css/system/components/tablesort.module.css: false

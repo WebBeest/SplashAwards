@@ -1,0 +1,53 @@
+@import "../../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Form: Label
+// *
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+.form-item__label {
+  display: block;
+  font-weight: $fw-bold;
+  transition: all $duration $easing;
+
+  &.is-active {
+    color: $color-form-active;
+  }
+}
+
+// not-required message by default
+// you can style it here if the design needs it
+// or hide it if you need a 'required' symbol instead
+span.form-item__not-required,
+.form-item__not-required {
+  @include hide;
+}
+
+// required symbol for a field
+// hidden by default
+// style it here if the design needs it
+abbr.form-item__required,
+.form-item__required {
+  @include hide;
+  //text-decoration: none;
+  //color: $color-link;
+}
+
+
+// * Errors & warnings and stuff
+// =============================================================================
+
+.form-item--error {
+
+  .form-item__label {
+    color: $color-error;
+  }
+}
+
+label.form-required:after {
+  content: ' *';
+  color: red;
+}

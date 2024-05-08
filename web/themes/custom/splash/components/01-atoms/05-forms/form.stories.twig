@@ -1,0 +1,48 @@
+{% stories form with {
+  title: 'Splash Awards/Atoms/Form'
+} %}
+  {% story checkbox with {
+    name: '1. Checkbox',
+    args: {
+      id: 'my-checkbox',
+      name: 'my-checkbox-field',
+      label: 'I accept the terms and conditions'|t,
+      description: 'By accepting the terms and conditions all your base are belong to us'|t,
+      value: 'yes',
+      required: true
+    }
+  } %}
+    {{ include('splash:checkbox', {id,name,label,value,required}) }}
+  {% endstory %}
+
+  {% story checkboxes with {
+    name: '2. Multiple checkboxes',
+    args: {
+      legend: 'Sign up for our newsletter'|t,
+      items: {
+        1: {
+          label_attributes: {
+            required: false,
+          },
+          id: 'field-newsletter-one',
+          checkbox_name: 'newsletter[one]',
+          label: 'Newsletter one',
+          value: 'one',
+          required: false,
+        },
+        2: {
+          label_attributes: {
+            required: false,
+          },
+          id: 'field-newsletter-two',
+          checkbox_name: 'newsletter[two]',
+          label: 'Newsletter two',
+          value: 'two',
+          required: false,
+        }
+      }
+    }
+  } %}
+{#    {{ include('splash:checkboxes', {legend,items}) }}#}
+  {% endstory %}
+{% endstories %}

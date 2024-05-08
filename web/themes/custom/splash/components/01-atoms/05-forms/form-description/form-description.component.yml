@@ -1,0 +1,9 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Form description
+props:
+  type: object
+  properties:
+    description:
+      type: string
+      title: Description
+      description: The value of the description

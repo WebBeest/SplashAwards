@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Checkbox
+props:
+  type: object
+  required:
+    - id
+    - value
+  properties:
+    id:
+      type: string
+      title: ID
+      description: ID of the checkbox element
+    name:
+      type: string
+      title: Name
+      description: Name of the checkbox element
+    label:
+      type: string
+      title: Label
+      description: Label for the checkbox
+    description:
+      type: string
+      title: Description
+      description: Description of the checkbox
+    value:
+      type: string
+      title: Value
+      description: Value of the checkbox
+    required:
+      type: boolean
+      title: Required
+      description: Is the checkbox a required field
