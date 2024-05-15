@@ -16,7 +16,7 @@
   {% endstory %}
 
   {% story checkboxes with {
-    name: '2. Multiple checkboxes',
+    name: '2. Fieldset with multiple checkboxes',
     args: {
       legend: 'Sign up for our newsletter'|t,
       items: {
@@ -25,7 +25,7 @@
             required: false,
           },
           id: 'field-newsletter-one',
-          checkbox_name: 'newsletter[one]',
+          name: 'newsletter[one]',
           label: 'Newsletter one',
           value: 'one',
           required: false,
@@ -35,7 +35,7 @@
             required: false,
           },
           id: 'field-newsletter-two',
-          checkbox_name: 'newsletter[two]',
+          name: 'newsletter[two]',
           label: 'Newsletter two',
           value: 'two',
           required: false,
@@ -43,6 +43,6 @@
       }
     }
   } %}
-{#    {{ include('splash:checkboxes', {legend,items}) }}#}
+    {{ include('splash:checkboxes', {legend,items}) }}
   {% endstory %}
 {% endstories %}

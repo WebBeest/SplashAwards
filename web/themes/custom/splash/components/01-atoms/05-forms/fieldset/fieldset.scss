@@ -1,0 +1,30 @@
+@import "../../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Forms: fieldset
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+legend {
+  display: block;
+  white-space: normal;
+  @include font-size(24);
+  font-weight: $fw-bold;
+  color: $color-base;
+}
+
+fieldset,
+.form-fieldset {
+  border: 1px solid $color-border;
+  margin: 0 0 rem($gap-vert) 0;
+  padding: rem(10);
+
+  legend {
+    box-sizing: border-box;
+    padding: 0 rem(10);
+    display: table;
+    max-width: 100%;
+    width: auto;
+  }
+}

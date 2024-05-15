@@ -14,8 +14,8 @@
 {% set for = id %}
 <div{{ attr.attributes(attributes) }}>
   {{- include('splash:form-input', {input_attributes}) -}}
-  {{ include('splash:form-label', {label, for, required}) }}
+  {{- include('splash:form-label', {label, for, required}) -}}
   {% if description %}
-    {{ include('splash:form-description', {description}) }}
+    {{- include('splash:form-description', {description}) -}}
   {% endif %}
 </div>

@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Fieldset
+props:
+  type: object
+  required:
+    - legend
+  properties:
+    legend:
+      type: object
+      label: Legend
+    description:
+      type: object
+      label: Description
+    children:
+      type: string
+      label: Content
+      description: Content of the fieldset
