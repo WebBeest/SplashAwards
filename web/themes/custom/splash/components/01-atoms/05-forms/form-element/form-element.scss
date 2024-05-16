@@ -1,0 +1,86 @@
+@import "../../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Forms
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Styling
+// =============================================================================
+
+// Types of input:
+// email, number, password, search, tel, text, url, color, date, datetime,
+// datatime-local, month, time, week
+
+.form-item {
+  margin-bottom: rem($gap-vert);
+  width: 100%;
+
+  @include clearfix;
+
+  .field-suffix,
+  .admin-link {
+    display: block;
+  }
+
+  .admin-link {
+    margin-top: rem(10);
+  }
+
+  &.has--prefix,
+  &.has--suffix {
+    display: flex;
+    align-items: center;
+  }
+
+  .field-prefix {
+    margin-right: rem(10);
+  }
+
+  .field-suffix {
+    margin-left: rem(10);
+  }
+}
+
+// * Errors
+// =============================================================================
+
+// these styles are set in _form-label.scss, _input.scss
+// and the various other form elements css files
+
+
+// * Hints & description
+// =============================================================================
+
+form small,
+form .description,
+.form-item__description,
+.password-suggestions,
+.webform-component--mandatory-fields p,
+.form-item ~ p {
+  display: block;
+  color: rgba($color-gray, .6);
+  margin-top: rem($gap-vert-sm);
+  @include font-size(11, 15);
+
+  ul {
+    @include list((
+      type: 'unsorted',
+      bullet-space: 12
+    ));
+    overflow: hidden; // fix overlap bullets with floating elements
+    padding-left: 0;
+
+    > li {
+      margin-top: rem(6);
+
+      &:before {
+        top: rem(8);
+        font-size: 4px;
+      }
+    }
+  }
+}
+

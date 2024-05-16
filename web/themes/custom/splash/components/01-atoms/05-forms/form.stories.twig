@@ -45,4 +45,24 @@
   } %}
     {{ include('splash:checkboxes', {legend,items}) }}
   {% endstory %}
+
+  {% story text with {
+    name: '3. Input type text',
+    args: {
+      input_attributes: {
+        placeholder: 'What is your name?',
+        maxlength: 255,
+        size: 60,
+      },
+      label: 'Name',
+      id: 'field-name',
+      name: 'name',
+      value: '',
+      required: true,
+      description: 'Please enter your first and last name',
+      error: 'Name is a required field'
+    }
+  } %}
+    {% include '@atoms/05-forms/text/text.twig' %}
+  {% endstory %}
 {% endstories %}

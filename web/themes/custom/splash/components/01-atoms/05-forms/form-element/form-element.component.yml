@@ -1,0 +1,50 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Form element
+props:
+  type: object
+  properties:
+    prefix:
+      type: string
+      title: Prefix
+      description: The form element prefix, may not be set
+    suffix:
+      type: string
+      title: Suffix
+      description: The form element suffix, may not be set
+    required:
+      type: boolean
+      title: Required marker
+      description: Required marker, or empty if the associated form element is not required
+    type:
+      type: string
+      title: Type of the element
+    name:
+      type: string
+      title: Name of the element
+    label:
+      type: string
+      title: A rendered label element
+    label_display:
+      type: string
+      title: Label display settings
+      enum:
+        - before
+        - after
+        - invisible
+        - attribute
+    description:
+      type: object
+      title: A list of description properties
+    description_display:
+      type: string
+      title: Description display setting
+      enum:
+        - before
+        - after
+        - invisible
+    disabled:
+      type: boolean
+      title: Disabled
+    title_display:
+      type: object
+      title: Title display setting
