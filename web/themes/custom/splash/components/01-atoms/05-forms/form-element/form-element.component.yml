@@ -1,4 +1,3 @@
-$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Form element
 props:
   type: object
@@ -48,3 +47,7 @@ props:
     title_display:
       type: object
       title: Title display setting
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: Attributes object

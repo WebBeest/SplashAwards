@@ -1,11 +1,8 @@
-$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Input
 props:
   type: object
-  required:
-    - input_attributes
   properties:
-    input_attributes:
-      type: array
+    attributes:
+      type: Drupal\Core\Template\Attribute
       title: Input attributes
       description: Attributes, like type, id, etc. for input element

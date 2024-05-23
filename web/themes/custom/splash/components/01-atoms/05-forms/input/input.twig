@@ -1,4 +1,3 @@
-{%- import "@base/attributes.twig" as attr -%}
 {#
 /**
  * Available variables:
@@ -9,19 +8,29 @@
  *   - label
  */
 #}
-{# Set defaults for optional variables. #}
-{% set input_attributes = input_attributes|default({'class': []})|merge({
-  'class': input_attributes.class|default([])|merge([''])
-}) %}
-{# Add an error class when we have an error message. #}
-{%- if error -%}
-{% set input_attributes = input_attributes|default({'class': []})|merge({
-    'class': input_attributes.class|default([])|merge(['error'])
-}) %}
-{%- endif -%}
-<input{{ attr.attributes(input_attributes) }}>
-{%- if error -%}
-  <div class="form-item--error-message">
-    {{- error -}}
-  </div>
-{%- endif -%}
+{% apply spaceless %}
+{% if type %}{% set attributes = attributes.setAttribute('type', type) %}{% endif %}
+{% if id %}{% set attributes = attributes.setAttribute('id', id) %}{% endif %}
+{% if name %}{% set attributes = attributes.setAttribute('name', name) %}{% endif %}
+{% if title %}{% set attributes = attributes.setAttribute('title', title) %}{% endif %}
+{% if value %}{% set attributes = attributes.setAttribute('value', value) %}{% endif %}
+{% if required %}{% set attributes = attributes.setAttribute('required', required) %}{% endif %}
+{%
+  set classes = [
+  'form-item__' ~ attributes.type
+]
+%}
+{% set value = attributes.value %}
+{% if attributes.type == 'submit' %}
+  {% set button_bem_block = button_bem_block|default('button') %}
+  {% set button_bem_element = button_bem_block|default(false) %}
+  {% if button_bem_modifiers is not defined %}
+    {% set button_bem_modifiers = [] %}
+  {% endif %}
+  <button {{ bem(button_bem_block, button_bem_element, button_bem_modifiers) }}>
+    {{ value }}
+  </button>
+{% else %}
+  <input{{ attributes.addClass(classes) }} />{{ children }}
+{% endif %}
+{% endapply %}

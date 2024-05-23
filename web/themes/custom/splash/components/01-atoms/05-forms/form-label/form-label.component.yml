@@ -19,11 +19,7 @@ props:
       type: string
       title: Display
       description: Display the label as visually hidden
-    required:
-      type: boolean
-      title: Required
-      description: Whether the label should show as required or not
     attributes:
-      type: array
+      type: [string,array]
       title: Attributes
       description: Array of attributes.

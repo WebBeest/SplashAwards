@@ -4,6 +4,7 @@
   {% story checkbox with {
     name: '1. Checkbox',
     args: {
+      type: 'checkbox',
       id: 'my-checkbox',
       name: 'my-checkbox-field',
       title: 'I accept the terms and conditions'|t,
@@ -14,7 +15,23 @@
       required: true
     }
   } %}
-    {{ include('splash:checkbox', {id,name,label,value,required}) }}
+    {% set children %}
+      {{ include('splash:input', {type,id,name,label,value,required}) }}
+    {% endset %}
+    {% set label %}
+      {{ include('splash:form-label', {
+        title,
+        required,
+        for: id
+      }) }}
+    {% endset %}
+    {{ include('splash:form-element', {
+      label,
+      children,
+      label_display: 'after',
+      description_display: 'after',
+      description
+    }) }}
   {% endstory %}
 
   {% story checkboxes with {
