@@ -3,11 +3,11 @@ props:
   type: object
   properties:
     prefix:
-      type: string
+      type: ['null', 'string']
       title: Prefix
       description: The form element prefix, may not be set
     suffix:
-      type: string
+      type: ['null', 'string']
       title: Suffix
       description: The form element suffix, may not be set
     required:
@@ -32,7 +32,7 @@ props:
         - invisible
         - attribute
     description:
-      type: object
+      type: ['null','object']
       title: A list of description properties
     description_display:
       type: string
@@ -42,10 +42,10 @@ props:
         - after
         - invisible
     disabled:
-      type: boolean
+      type: ['null','boolean']
       title: Disabled
     title_display:
-      type: object
+      type: ['string','object']
       title: Title display setting
     attributes:
       type: Drupal\Core\Template\Attribute
