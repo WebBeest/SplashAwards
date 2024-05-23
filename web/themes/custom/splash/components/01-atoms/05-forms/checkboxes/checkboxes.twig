@@ -16,7 +16,8 @@
 {% endset %}
 {{ include('splash:fieldset', {
   legend: {
-    title: legend
+    title: legend.title|default(''),
+    attributes: legend.attributes|default({})
   },
   description: {
     content: description

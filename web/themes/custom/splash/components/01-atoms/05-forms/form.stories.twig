@@ -18,7 +18,10 @@
   {% story checkboxes with {
     name: '2. Fieldset with multiple checkboxes',
     args: {
-      legend: 'Sign up for our newsletter'|t,
+      legend: {
+        title: 'Sign up for our newsletter'|t,
+        attributes: {},
+      },
       items: {
         1: {
           label_attributes: {
