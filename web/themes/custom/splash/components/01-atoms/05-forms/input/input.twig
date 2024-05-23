@@ -9,12 +9,11 @@
  */
 #}
 {% apply spaceless %}
-{% if type %}{% set attributes = attributes.setAttribute('type', type) %}{% endif %}
-{% if id %}{% set attributes = attributes.setAttribute('id', id) %}{% endif %}
-{% if name %}{% set attributes = attributes.setAttribute('name', name) %}{% endif %}
-{% if title %}{% set attributes = attributes.setAttribute('title', title) %}{% endif %}
-{% if value %}{% set attributes = attributes.setAttribute('value', value) %}{% endif %}
-{% if required %}{% set attributes = attributes.setAttribute('required', required) %}{% endif %}
+  {% if input_attributes %}
+    {% for key,attr in input_attributes %}
+      {% set attributes = attributes.setAttribute(key,attr) %}
+    {% endfor %}
+  {% endif %}
 {%
   set classes = [
   'form-item__' ~ attributes.type
