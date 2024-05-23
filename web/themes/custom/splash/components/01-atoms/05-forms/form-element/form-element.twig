@@ -82,9 +82,7 @@
     {% endif %}
 
     {% if description_display == 'before' and description.content %}
-      <div{{ description.attributes }}>
-        {{ description.content }}
-      </div>
+      {{ include('splash:form-description', {description}) }}
     {% endif %}
 
     {{ children }}
@@ -107,9 +105,7 @@
     </div>
   {% endif %}
   {% if description_display in ['after', 'invisible'] and description.content %}
-    <div{{ description.attributes.addClass(description_classes) }}>
-      {{ description.content }}
-    </div>
+    {{- include('splash:form-description', {description}) -}}
   {% endif %}
 </div>
 {% endapply %}

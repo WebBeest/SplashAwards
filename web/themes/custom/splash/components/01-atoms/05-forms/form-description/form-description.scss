@@ -1,8 +1,34 @@
 @import "../../../includes";
 
-.form-item__description {
-  margin-top: $space-1;
+// * Hints & description
+// =============================================================================
+form small,
+form .description,
+.form-item__description,
+.password-suggestions,
+.webform-component--mandatory-fields p,
+.form-item ~ p {
+  display: block;
+  color: rgba($color-gray, .6);
+  margin-top: rem($gap-vert-sm);
+  @include font-size(11, 15);
 
-  font-size: rem($fs-xs);
-  font-weight: $fw-semibold;
+  ul {
+    @include list((
+      type: 'unsorted',
+      bullet-space: 12
+    ));
+    overflow: hidden; // fix overlap bullets with floating elements
+    padding-left: 0;
+
+    > li {
+      margin-top: rem(6);
+
+      &:before {
+        top: rem(8);
+        font-size: 4px;
+      }
+    }
+  }
 }
+

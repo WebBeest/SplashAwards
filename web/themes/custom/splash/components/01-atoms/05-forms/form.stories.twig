@@ -7,7 +7,9 @@
       id: 'my-checkbox',
       name: 'my-checkbox-field',
       title: 'I accept the terms and conditions'|t,
-      description: 'By accepting the terms and conditions all your base are belong to us'|t,
+      description: {
+        content: 'By accepting the terms and conditions all your base are belong to us'|t
+      },
       value: 'yes',
       required: true
     }
@@ -87,7 +89,9 @@
       name: 'name',
       value: '',
       required: true,
-      description: 'Please enter your first and last name',
+      description: {
+        content:'Please enter your first and last name'|t
+      },
       error: 'Name is a required field'
     }
   } %}
