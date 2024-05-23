@@ -41,57 +41,78 @@
     args: {
       legend: {
         title: 'Sign up for our newsletter'|t,
-        attributes: {},
       },
       items: {
         1: {
           label_attributes: {
             required: false,
           },
-          id: 'field-newsletter-one',
-          name: 'newsletter[one]',
+          input_attributes: {
+            id: 'field-newsletter-one',
+            name: 'newsletter[one]',
+            value: 'one',
+            required: false,
+            type: 'checkbox',
+          },
           title: 'Newsletter one',
-          value: 'one',
-          required: false,
         },
         2: {
           label_attributes: {
             required: false,
           },
-          id: 'field-newsletter-two',
-          name: 'newsletter[two]',
+          input_attributes: {
+            id: 'field-newsletter-two',
+            name: 'newsletter[two]',
+            value: 'two',
+            required: false,
+            type: 'checkbox',
+          },
           title: 'Newsletter two',
-          value: 'two',
-          required: false,
+        },
+        3: {
+          label_attributes: {
+            required: false,
+          },
+          input_attributes: {
+            id: 'field-newsletter-three',
+            name: 'newsletter[three]',
+            value: 'three',
+            required: false,
+            type: 'checkbox',
+          },
+          title: 'Newsletter three',
         }
       }
     }
   } %}
-    {% set children %}
+    {% set fieldset_children %}
       {% for item in items %}
-        {{ include('splash:checkbox', {
-          attributes: item.attributes|default({}),
-          label_attributes: item.label_attributes|default({}),
-          input_attributes: item.input_attributes|default({}),
-          id: item.id,
-          name: item.name|default(''),
+        {% set checkbox %}
+        {{ include('splash:input', {input_attributes: item.input_attributes}) }}
+        {% endset %}
+        {% set label %}
+        {{ include('splash:form-label', {
           title: item.title,
-          value: item.value,
-          required: item.required
-        })
-        }}
+          required: item.input_attributes.required,
+          for: item.input_attributes.id
+        }) }}
+        {% endset %}
+
+        {{ include('splash:form-element', {
+          label,
+          children: checkbox,
+          label_display: 'after',
+          description_display: 'after'
+        }) }}
       {% endfor %}
     {% endset %}
 
     {{ include('splash:fieldset', {
-      legend: {
-        title: legend.title|default(''),
-        attributes: legend.attributes|default({})
-      },
+      legend,
       description: {
         content: description
       },
-      children
+      children: fieldset_children
     }) }}
   {% endstory %}
 

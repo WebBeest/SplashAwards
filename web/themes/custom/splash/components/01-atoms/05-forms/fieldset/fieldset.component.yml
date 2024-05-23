@@ -1,4 +1,3 @@
-$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
 name: Fieldset
 props:
   type: object
@@ -12,6 +11,6 @@ props:
       type: object
       label: Description
     children:
-      type: string
+      type: ['null','string']
       label: Content
       description: Content of the fieldset
