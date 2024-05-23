@@ -1,0 +1,10 @@
+name: Form
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    children:
+      type: ['string','array']
+      title: Children elements

@@ -99,35 +99,36 @@
     name: '3. Input type text',
     args: {
       input_attributes: {
+        id: 'field-name',
+        name: 'name',
+        value: '',
+        required: true,
         placeholder: 'What is your name?',
         maxlength: 255,
         size: 60,
       },
       title: 'Name',
-      id: 'field-name',
-      name: 'name',
-      value: '',
-      required: true,
       description: {
         content:'Please enter your first and last name'|t
       },
-      error: 'Name is a required field'
+      errors: 'Name is a required field'
     }
   } %}
     {% set children %}
-      {{ include('splash:input', {type,id,name,label,value,required}) }}
+      {{ include('splash:input', {input_attributes}) }}
     {% endset %}
     {% set label %}
       {{ include('splash:form-label', {
         title,
-        required,
-        for: id
+        required: input_attributes.required,
+        for: input_attributes.id
       }) }}
     {% endset %}
     {{ include('splash:form-element', {
       label,
       children,
-      label_display: 'after',
+      errors,
+      label_display: 'before',
       description_display: 'after',
       description
     }) }}

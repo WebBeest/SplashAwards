@@ -833,3 +833,123 @@
     }
   }
 }
+
+
+// ** make a group of elements floating labels
+
+@mixin floating-labels-group() {
+  // on all form items, except radios and checkboxes and uploads
+  // if you want more exeptions, add another :not with a class name
+  .form-item:not(.form-type--range):not(.form-type--radio):not(.form-type--checkbox):not(.form-type--item):not(.form-type--password-confirm) {
+    @include floating-labels-item-label;
+    @include floating-labels-item-field;
+  }
+}
+
+// ** or make an individual item floating
+
+@mixin floating-labels-item-label($indicator: 'not required', $indicatorStyle: 'default') {
+
+  position: relative;
+
+  .form__item__presuffix-content {
+    position: relative;
+  }
+
+  @if ($indicator == 'not required' and $indicatorStyle == 'fixed') {
+    .form-item__not-required {
+      pointer-events: none;
+      position: absolute;
+      right: 9px;
+      top: 9px;
+      margin: 0; // reset margins
+      opacity: 1;
+      transition: opacity $duration $easing;
+    }
+  }
+
+  > label,
+  .form__item__presuffix-content > label {
+    // put it over the input field
+    // Make it look like input text
+    position: absolute;
+    z-index: 1; // has to go over select
+    left: rem(20);
+    top: rem(15); // overlap with input field
+    @include font-size(14);
+    font-weight: normal;
+    color: rgba($color-gray, .6);
+
+    &.is-active,
+    &.has-value {
+
+      color: $color-form-active;
+
+      @if ($indicator == 'not required' and $indicatorStyle == 'fixed') {
+        .form-item__not-required {
+          opacity: 0;
+        }
+      }
+
+      left: rem(20);
+      top: rem(8);
+      @include font-size(11);
+    }
+
+    // &.is-active {
+    //   color: $color-form-active;
+    // }
+  }
+
+  // certain labels are always styled as 'has-value'
+  // because the matching form-element always has content in it
+  // eg. html date, select, …
+  &.form-type--webform-document-file,
+  &.form-type--file,
+  &.form-type--managed-file,
+  &.form-type--date,
+  &.form-type--select {
+
+    > label,
+    .form__item__presuffix-content > label {
+      left: rem(20);
+      top: rem(8);
+      @include font-size(11);
+      color: $color-form-active;
+    }
+  }
+}
+
+@mixin floating-labels-item-field() {
+
+  #{$text-inputs-list},
+  textarea {
+    padding: rem(23) rem(20) rem(6);
+
+    &::placeholder {
+      color: transparent;
+      @include font-size(14);
+    }
+
+    @include font-size(14);
+
+    &.is-active,
+    &.has-value {
+      //
+    }
+  }
+
+  // same styling as text input fields
+  select {
+    padding: rem(23) rem(40) rem(6) rem(20);
+    height: rem(50);
+    @include font-size(14);
+  }
+
+  .form-item__dropdown {
+    &:after {
+      right: rem(20);
+    }
+  }
+
+}

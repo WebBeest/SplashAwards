@@ -1,0 +1,75 @@
+@import "../../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Forms: general
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Floating labels
+// =============================================================================
+
+// ** make floating labels for specific forms:
+
+form[class *= 'webform-submission'],
+form[class *= 'contact'],
+.styleguide form {
+  @include floating-labels-group;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Forms: PROJECT (CASE) SUBMISSION FORM
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+.node-product-form {
+  margin-top: rem(110);
+
+  .field-group-fieldset {
+    border-color: $color-spot-1;
+    > legend.h2 {
+      background-color: $color-spot-1;
+      text-transform: uppercase;
+      color: white;
+      border-radius: rem(30);
+      padding: rem(10) rem(50);
+    }
+    legend.h2 {
+      text-align: center;
+    }
+    .field--name-field-product-category {
+      legend.h2 {
+        font-size: rem(16);
+        text-align: left;
+        padding: 0;
+        margin-bottom: 0;
+      }
+      fieldset {
+        border: none;
+        padding-left: 0;
+        .form__group--checkboxes {
+          padding-left: rem(10);
+        }
+      }
+    }
+    .field--name-field-project-link {
+      legend.h2 {
+        font-size: rem(23);
+      }
+    }
+    &:first-of-type {
+      margin-bottom: rem(70);
+    }
+  }
+  button.form-submit {
+    margin-top: rem(5);
+    margin-left: 0;
+    border: none;
+    &:last-child {
+      margin-bottom: rem(45);
+    }
+  }
+
+}
