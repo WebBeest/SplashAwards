@@ -14,9 +14,9 @@ props:
       type: string
       title: Name
       description: Name of the checkbox element
-    label:
+    title:
       type: string
-      title: Label
+      title: Title
       description: Label for the checkbox
     description:
       type: string

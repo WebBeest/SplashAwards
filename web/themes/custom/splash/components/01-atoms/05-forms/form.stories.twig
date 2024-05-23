@@ -6,7 +6,7 @@
     args: {
       id: 'my-checkbox',
       name: 'my-checkbox-field',
-      label: 'I accept the terms and conditions'|t,
+      title: 'I accept the terms and conditions'|t,
       description: 'By accepting the terms and conditions all your base are belong to us'|t,
       value: 'yes',
       required: true
@@ -29,7 +29,7 @@
           },
           id: 'field-newsletter-one',
           name: 'newsletter[one]',
-          label: 'Newsletter one',
+          title: 'Newsletter one',
           value: 'one',
           required: false,
         },
@@ -39,14 +39,39 @@
           },
           id: 'field-newsletter-two',
           name: 'newsletter[two]',
-          label: 'Newsletter two',
+          title: 'Newsletter two',
           value: 'two',
           required: false,
         }
       }
     }
   } %}
-    {{ include('splash:checkboxes', {legend,items}) }}
+    {% set children %}
+      {% for item in items %}
+        {{ include('splash:checkbox', {
+          attributes: item.attributes|default({}),
+          label_attributes: item.label_attributes|default({}),
+          input_attributes: item.input_attributes|default({}),
+          id: item.id,
+          name: item.name|default(''),
+          label: item.label,
+          value: item.value,
+          required: item.required
+        })
+        }}
+      {% endfor %}
+    {% endset %}
+
+    {{ include('splash:fieldset', {
+      legend: {
+        title: legend.title|default(''),
+        attributes: legend.attributes|default({})
+      },
+      description: {
+        content: description
+      },
+      children
+    }) }}
   {% endstory %}
 
   {% story text with {

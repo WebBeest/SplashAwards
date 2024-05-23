@@ -44,6 +44,7 @@
  * @see template_preprocess_form_element()
  */
 #}
+{% apply spaceless %}
 {%
   set classes = [
   'js-form-item',
@@ -68,11 +69,6 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
-
-  {#{% if label_display in ['before', 'invisible'] %}#}
-  {#{{ label }}#}
-  {#{% endif %}#}
-
   {% if prefix is not empty %}
     <span class="field-prefix">{{ prefix }}</span>
   {% endif %}
@@ -116,3 +112,4 @@
     </div>
   {% endif %}
 </div>
+{% endapply %}

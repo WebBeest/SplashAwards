@@ -1,0 +1,43 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Forms: radios
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Grouping of items
+// =============================================================================
+
+// see: _checkboxes.scss
+
+
+// * Single item (input + label)
+// =============================================================================
+
+// see also: _checkboxes.scss
+
+
+// -- custom radiobuttons
+//    set checked via background-color or box-shadow
+
+input[type='radio'] {
+  @include square(rem(16));
+  border-radius: 50%;
+  transition: background-color $easing .1s, border-color $easing .1s, box-shadow $easing .1s;
+
+  // background-color: $color-white;
+  box-shadow: none;
+  background: $color-white;
+
+  &:checked {
+    // background-color: $color-form-active;
+    box-shadow: inset 0px 0px 0px 3px $color-white;
+    background: $color-form-active;
+  }
+
+  &:disabled:checked {
+    // background-color: $color-form-disabled;
+    box-shadow: inset 0px 0px 0px 3px $color-white;
+    background: $color-form-disabled;
+  }
+}

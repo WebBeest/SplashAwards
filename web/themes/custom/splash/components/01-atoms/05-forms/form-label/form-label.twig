@@ -29,7 +29,7 @@
 }) %}
 
 {# Allow the label to be printed as visually hidden. #}
-{% if display == 'invisible' %}
+{% if title_display == 'invisible' %}
   {% set attributes = attributes|merge({
     'class': attributes.class|merge(['visually-hidden'])
   }) %}
@@ -42,9 +42,9 @@
   }) %}
 {% endif %}
 
-{%- if label is not empty or required -%}
+{%- if title is not empty or required -%}
 <label{{ attr.attributes(attributes) }} for="{{ for }}">
-  {{ label }}
+  {{ title }}
   {% if required %}
   <abbr class="form-item__required" title="{% trans %}required field{% endtrans %}" aria-label="{% trans %}required field{% endtrans %}">*</abbr>
   {% else %}

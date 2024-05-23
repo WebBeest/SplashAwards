@@ -3,10 +3,6 @@ name: Form label
 props:
   type: object
   properties:
-    display:
-      type: string
-      title: Display
-      description: Display the label as visually hidden
     for:
       type: string
       title: For attribute
@@ -15,11 +11,19 @@ props:
       type: string
       title: Icon
       description: An optional icon to show for the label
-    label:
+    title:
       type: string
       title: Label
       description: The content of the label item
+    title_display:
+      type: string
+      title: Display
+      description: Display the label as visually hidden
     required:
       type: boolean
       title: Required
       description: Whether the label should show as required or not
+    attributes:
+      type: array
+      title: Attributes
+      description: Array of attributes.
