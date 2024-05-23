@@ -54,7 +54,7 @@
           input_attributes: item.input_attributes|default({}),
           id: item.id,
           name: item.name|default(''),
-          label: item.label,
+          title: item.title,
           value: item.value,
           required: item.required
         })
@@ -82,7 +82,7 @@
         maxlength: 255,
         size: 60,
       },
-      label: 'Name',
+      title: 'Name',
       id: 'field-name',
       name: 'name',
       value: '',
