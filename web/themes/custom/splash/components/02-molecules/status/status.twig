@@ -1,0 +1,71 @@
+{#
+/**
+ *
+ * Displays status, error, and warning messages, grouped by type.
+ *
+ * An invisible heading identifies the messages for assistive technology.
+ * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
+ * for info.
+ *
+ * Add an ARIA label to the contentinfo area so that assistive technology
+ * user agents will better describe this landmark.
+ *
+ * Available variables:
+ * - message_list: List of messages to be displayed, grouped by type.
+ * - status_headings: List of all status types.
+ * - display: (optional) May have a value of 'status' or 'error' when only
+ *   displaying messages of that specific type.
+ * - attributes: HTML attributes for the element, including:
+ * - class: HTML classes.
+ */
+#}
+{% block messages %}
+  <div class="messages--wrapper">
+  {% for type, messages in message_list %}
+    {%
+      set classes = [
+        'messages',
+        'messages--drupal',
+        'messages--' ~ type,
+      ]
+    %}
+    <div role="contentinfo" aria-label="{{ status_headings[type] }}"
+      {{ attributes.addClass(classes)|without('role', 'aria-label') }}>
+
+      {% if type == 'error' %}
+        <div role="alert">
+      {% endif %}
+        {% if status_headings[type] %}
+          <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+        {% endif %}
+        {% if messages is iterable and messages|length > 1 %}
+          <ul class="messages-list messages-list--drupal">
+            {% for key, message in messages %}
+                <li class="message message--{{ type }} message--drupal">
+                  {{ message }}
+                  {% if key < 1 %}
+                  <a class="message__close message__close--drupal js-close">
+                    <i class="icon icon-close"></i>
+                    <span>{{ 'Close'|t }}</span>
+                  </a>
+                  {% endif %}
+                </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <div class="message message--{{ type }} message--drupal">
+            {{ messages|first }}
+            <a class="message__close message__close--drupal js-close">
+              <i class="icon icon-close"></i>
+              <span>{{ 'Close'|t }}</span>
+            </a>
+          </div>
+        {% endif %}
+      {% if type == 'error' %}
+        </div>
+      {% endif %}
+    </div>
+    {% set attributes = attributes.removeClass(classes) %}
+  {% endfor %}
+  </div>
+{% endblock messages %}

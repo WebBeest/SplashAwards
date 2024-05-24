@@ -1,0 +1,20 @@
+name: Status messages
+props:
+  type: object
+  properties:
+    message_list:
+      type: ['array','string']
+      title: Message list
+      description: List of messages to be displayed, grouped by type.
+    status_headings:
+      type: ['array','string']
+      title: Status headings
+      description: List of all status types.
+    display:
+      type: ['string','null']
+      title: Display
+      description: (optional) May have a value of 'status' or 'error' when only displaying messages of that specific type.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: HTML attributes for the element, including "class" for HTML classes.

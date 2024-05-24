@@ -1,0 +1,123 @@
+{% stories status_messages with {
+  title: 'Splash Awards/Molecules/Status'
+}%}
+  {% story notification with {
+    name: '1. Status message',
+    args: {
+      message_list: {
+        status: [
+          'This is a status message'|t
+        ]
+      },
+      status_headings: {
+        status: 'Status message'
+      }
+    }
+  }%}
+    {{ include('splash:status') }}
+  {% endstory %}
+
+  {% story notification_multiple with {
+    name: '2. Multiple status messages',
+    args: {
+      message_list: {
+        status: [
+          'This is a status message'|t,
+          'This is another status message'|t
+        ]
+      },
+      status_headings: {
+        status: 'Status message'
+      }
+    }
+  }%}
+    {{ include('splash:status') }}
+  {% endstory %}
+
+  {% story warning with {
+    name: '3. Warning message',
+    args: {
+      message_list: {
+        warning: [
+          'This is a warning message'|t
+        ]
+      },
+      status_headings: {
+        warning: 'Warning message'
+      }
+    }
+  }%}
+    {{ include('splash:status') }}
+  {% endstory %}
+
+  {% story warning_multiple with {
+    name: '4. Multiple warning messages',
+    args: {
+      message_list: {
+        warning: [
+          'This is a warning message'|t,
+          'This is another warning message'|t,
+        ]
+      },
+      status_headings: {
+        warning: 'Warning message'
+      }
+    }
+  }%}
+    {{ include('splash:status') }}
+  {% endstory %}
+
+  {% story error with {
+    name: '5. Error message',
+    args: {
+      message_list: {
+        error: [
+          'This is an error message'|t
+        ]
+      },
+      status_headings: {
+        error: 'Error message'
+      }
+    }
+  }%}
+    {{ include('splash:status') }}
+  {% endstory %}
+
+  {% story error_multiple with {
+    name: '6. Multiple error messages',
+    args: {
+      message_list: {
+        error: [
+          'This is an error message'|t,
+          'This is another error message'|t
+        ]
+      },
+      status_headings: {
+        error: 'Error message'
+      }
+    }
+  }%}
+    {{ include('splash:status') }}
+  {% endstory %}
+
+  {% story mixed with {
+    name: '7. Mixed messages',
+    args: {
+      message_list: {
+        status: [
+          'This is a status message'|t,
+          'This is another status message'|t
+        ],
+        error: [
+          'This is an error message'|t,
+        ]
+      },
+      status_headings: {
+        status: 'Status message',
+        error: 'Error message'
+      }
+    }
+  }%}
+    {{ include('splash:status') }}
+  {% endstory %}
+{% endstories %}
