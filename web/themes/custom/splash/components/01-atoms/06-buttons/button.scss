@@ -1,21 +1,119 @@
-button {
-  &.my-button {
-    box-shadow: 1px 1px 2px #000000cc;
-    margin: 0;
+@import "../../includes";
+@import "_buttons-helpers";
 
-    svg {
-      width: 30px;
-      height: 30px;
-      vertical-align: bottom;
-      padding-left: 5px;
-      fill: white;
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Buttons (in forms and text)
+// *
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Preset classes
+// =============================================================================
+
+.button--primary,
+#{$buttons-list} {
+  @include button-primary();
+}
+
+.button--secondary {
+  @include button-secondary();
+}
+
+.button--negative {
+  @include button-negative();
+}
+
+.button--negative-secondary {
+  @include button-negative-secondary();
+}
+
+[id*='edit-cancel'] {
+  @include button-secondary();
+}
+
+
+// * Grouping of buttons
+// =============================================================================
+
+// eg. on 403 page
+
+.actions {
+
+  margin-top: rem(10);
+
+  .actions__divider,
+  .button {
+    display: block;
+    margin-top: rem(10);
+  }
+
+  .actions__divider {
+    text-align: center;
+  }
+
+  @include bp-sm {
+
+    margin-top: rem(10);
+    margin-left: rem(-10);
+
+    .actions__divider {
+      text-align: left;
     }
 
-    &:focus,
-    &:hover {
-      svg {
-        fill: black;
+    .actions__divider,
+    .button {
+      display: inline-block;
+      margin-left: rem(10);
+    }
+  }
+}
+
+
+// * Buttons in CKE
+// =============================================================================
+
+.text-long {
+
+  // reset interference from complex link-styling CSS, if needed
+  .button,
+  .button--secondary {
+
+    //&,
+    //&:visited {
+    //  text-decoration: none;
+    //}
+    //
+    //&:hover,
+    //&:active {
+    //  background-image: none;
+    //  text-decoration: none;
+    //  box-shadow: none;
+    //}
+
+    // &:after {
+    //   display: none;
+    // }
+  }
+
+  // grouping
+  p {
+    .actions__divider {
+      margin-right: rem(10);
+    }
+
+    .button {
+      margin-top: rem(10);
+      margin-right: rem(10);
+
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
+}
+
+.facet-item__status {
+  display: none;
 }

@@ -3,19 +3,15 @@ name: Button
 props:
   type: object
   required:
-    - text
+    - button_content
   properties:
-    text:
+    button_content:
       type: string
-      title: Title
-      description: The title for the button
-      examples:
-        - Press
-        - Submit now
-    iconType:
-      type: string
-      title: Icon Type
-      enum:
-        - power
-        - like
-        - external
+      title: Button content
+      description: Content of the button
+    button_url:
+      type: ['string','null']
+      title: (optional) Button URL
+    button_type:
+      type: ['string','null']
+      title: Button type, link or other

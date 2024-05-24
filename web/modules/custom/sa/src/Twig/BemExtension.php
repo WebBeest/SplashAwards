@@ -23,10 +23,10 @@ class BemExtension extends AbstractExtension {
   /**
    * Block Element Modifier.
    *
-   * @param string $element
-   *   Element.
    * @param string $block
    *   Block.
+   * @param string|null $element
+   * *   Element.
    * @param array $modifiers
    *   Modifiers.
    * @param mixed $extra
@@ -35,7 +35,7 @@ class BemExtension extends AbstractExtension {
    * @return \Drupal\Core\Template\Attribute|string
    *   Attributes.
    */
-  public function bem(string $block = '', string $element = '', array $modifiers = [], mixed $extra = []) {
+  public function bem(string $block = '', string|null $element = '', array $modifiers = [], mixed $extra = []) {
     $classes = [];
 
     // If using a blockname to override default class.

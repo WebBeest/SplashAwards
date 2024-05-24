@@ -2,11 +2,68 @@
   title: 'Splash Awards/Atoms/Button'
 } %}
   {% story default with {
-    name: '1. Default',
+    name: '1. Link button',
     args: {
-      text: 'Button'|t
+      button_content: 'Link button'|t,
+      button_url: '#',
+      button_type: 'link'
     }
   } %}
-    {{ include('splash:button', { text }) }}
+    {{ include('splash:button') }}
+  {% endstory %}
+
+  {% story primary_button with {
+    name: '2. Primary button',
+    args: {
+      button_content: 'Primary button'|t,
+      button_url: '#',
+      button_bem_modifiers: [
+        'primary'
+      ]
+    }
+  } %}
+    {{ include('splash:button') }}
+  {% endstory %}
+
+  {% story secondary_button with {
+    name: '3. Secondary button',
+    args: {
+      button_content: 'Secondary button'|t,
+      button_url: '#',
+      button_type: 'link',
+      button_bem_modifiers: [
+        'secondary'
+      ]
+    }
+  } %}
+    {{ include('splash:button') }}
+  {% endstory %}
+
+  {% story negative_button with {
+    name: '4. Negative button',
+    args: {
+      button_content: 'Negative button'|t,
+      button_url: '#',
+      button_type: 'link',
+      button_bem_modifiers: [
+        'negative'
+      ]
+    }
+  } %}
+    {{ include('splash:button') }}
+  {% endstory %}
+
+  {% story secondary_negative_button with {
+    name: '5. Secondary negative button',
+    args: {
+      button_content: 'Secondary negative button'|t,
+      button_url: '#',
+      button_type: 'link',
+      button_bem_modifiers: [
+        'negative-secondary'
+      ]
+    }
+  } %}
+    {{ include('splash:button') }}
   {% endstory %}
 {% endstories %}

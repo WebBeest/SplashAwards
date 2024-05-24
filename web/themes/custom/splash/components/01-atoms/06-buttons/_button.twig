@@ -1,0 +1,45 @@
+{#
+/**
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+#}
+
+{% set bem_button_block = bem_button_block|default('button') %}
+
+{% set bem_button_element = bem_button_element|default(false) %}
+
+{% if bem_button_modifiers is not defined  %}
+  {% set bem_button_modifiers = ['primary'] %}
+{# {% else %}
+  {% set bem_button_modifiers = bem_button_modifiers|merge(['primary']) %} #}
+{% endif %}
+
+{% if bem_button_extra is not defined  %}
+  {% set bem_button_extra = [] %}
+{% endif %}
+
+{% for item in items %}
+  {% include "@atoms/06-buttons/_button--master.twig" with {
+      'button_type': item.content['#type'],
+      'button_attributes': item.content['#options'].attributes,
+      'button_url': item.content['#url'],
+      'button_content': item.content['#title'],
+      'bem_button_block': '',
+      'bem_button_element': bem_button_element,
+      'bem_button_modifiers': bem_button_modifiers,
+      'bem_button_extra': bem_button_extra,
+    }
+  %}
+{% endfor %}
+
