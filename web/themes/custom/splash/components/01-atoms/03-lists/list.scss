@@ -111,7 +111,7 @@ ul:not(.inline,.contextual-links,.links) {
   }
 }
 
-ol {
+ol:not(.breadcrumb) {
   $list-settings: (
     type: 'sorted'
   );

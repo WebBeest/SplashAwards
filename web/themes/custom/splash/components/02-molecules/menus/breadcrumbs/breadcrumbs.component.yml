@@ -1,0 +1,7 @@
+title: Breadcrumb
+props:
+  type: object
+  properties:
+    breadcrumb:
+      type: ['array','null']
+      title: Breadcrumb item

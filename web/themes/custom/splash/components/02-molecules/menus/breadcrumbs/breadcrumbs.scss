@@ -1,0 +1,45 @@
+@import "../../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Breadcrumbs
+// *
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+.breadcrumb {
+  @include list-reset;
+  font-size: 0;
+}
+
+.breadcrumb__item {
+  display: inline-block;
+  font-size: 0;
+
+  @include font-awesome((icon: $fa-var-chevron-right, color: $color-link, size: 8, margin: 0 5px));
+
+  &:before {
+    vertical-align: text-bottom;
+  }
+
+  &:first-child:before {
+    display: none;
+  }
+}
+
+.breadcrumb__element {
+  @include font-size($font-size-base, $line-height-base);
+}
+
+.breadcrumb__link {
+  @include link-underline((
+    color: $color-spot-1,
+    color-hover: $color-spot-2,
+    inverse: 'inverse'
+  ));
+
+  &:after {
+    bottom: 1px;
+  }
+}

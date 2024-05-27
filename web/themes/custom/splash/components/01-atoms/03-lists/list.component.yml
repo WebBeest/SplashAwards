@@ -6,7 +6,7 @@ props:
     - items
   properties:
     items:
-      type: ['object','array']
+      type: ['null','object','array']
       title: Items
       description: A list of items. Each item contains attributes and a value.
     title:
