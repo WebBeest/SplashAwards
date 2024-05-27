@@ -45,3 +45,4 @@ web/sites/simpletest
 *.sql.*
 db
 .phpunit.result.cache
+.sass-cache
