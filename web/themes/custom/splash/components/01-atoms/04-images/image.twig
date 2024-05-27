@@ -27,23 +27,23 @@
 {% set bem_image_link_modifiers = bem_image_link_modifiers|default([]) %}
 
 {% if img_url %}
-  {% embed "@atoms/01-links/link/_link.twig" with {
-    "link_url": img_url,
-    "link_attributes": bem_image_link_attributes,
-    "bem_link_block": bem_image_link_block,
-    "bem_link_element": bem_image_link_element,
-    "bem_link_modifiers": bem_image_link_modifiers,
-  } %}
-    {% block link_content %}
-      <img
-        {{ bem(bem_image_block, bem_image_element, bem_image_modifiers) }}
-        src="{{ img_src }}"
-        {% if img_alt %}
-          alt="{{ img_alt }}"
-        {% endif %}
-      />
-    {% endblock %}
-  {% endembed %}
+  {% set link_content %}
+    <img
+      {{ bem(bem_image_block, bem_image_element, bem_image_modifiers) }}
+      src="{{ img_src }}"
+      {% if img_alt %}
+        alt="{{ img_alt }}"
+      {% endif %}
+    />
+  {% endset %}
+  {{ include('splash:image', {
+    link_url: img_url,
+    link_content: link_content,
+    link_attributes: bem_image_link_attributes,
+    bem_link_block: bem_image_link_block,
+    bem_link_element: bem_image_link_element,
+    bem_link_modifiers: bem_image_link_modifiers,
+  }) }}
 {% else %}
   <img
     {{ bem(bem_image_block, bem_image_element, bem_image_modifiers) }}
