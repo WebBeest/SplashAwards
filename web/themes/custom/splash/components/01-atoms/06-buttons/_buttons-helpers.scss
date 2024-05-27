@@ -223,6 +223,20 @@
   @include button($settings-button-secondary);
 }
 
+@mixin button-danger($size: 'md') {
+  $settings-button-danger: (
+    color: $color-button,
+    border: $color-error-dark,
+    background: $color-error,
+    hover: $color-button,
+    hover-bg: $color-error-dark,
+    hover-border: false,
+    size: $size,
+    border-radius: 500px
+  );
+  @include button($settings-button-danger);
+}
+
 @mixin button-negative($size:'md') {
   $settings-button-negative: (
     color: $color-spot-1,

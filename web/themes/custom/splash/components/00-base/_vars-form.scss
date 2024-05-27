@@ -33,7 +33,7 @@ $text-inputs-types:
 
 // elements that can look & act as form buttons
 $buttons-list:
-  'button:not(.toolbar-item):not(.toolbar-icon):not(.trigger):not(#cboxPrevious):not(#cboxNext):not(#cboxSlideshow):not(#cboxClose)',
+  'button:not(.toolbar-item):not(.toolbar-icon):not(.trigger):not(#cboxPrevious):not(#cboxNext):not(#cboxSlideshow):not(#cboxClose):not(.ck)',
   'input[type="button"]',
   'input[type="reset"]',
   'input[type="submit"]'

@@ -21,14 +21,15 @@
 %}
 {% set value = attributes.value %}
 {% if attributes.type == 'submit' %}
-  {% set button_bem_block = button_bem_block|default('button') %}
-  {% set button_bem_element = button_bem_block|default(false) %}
-  {% if button_bem_modifiers is not defined %}
-    {% set button_bem_modifiers = [] %}
-  {% endif %}
-  <button {{ bem(button_bem_block, button_bem_element, button_bem_modifiers) }}>
-    {{ value }}
-  </button>
+  {% set class = [] %}
+  {% for key,attr in attributes.class %}
+    {% set class = class|merge([attr]) %}
+  {% endfor %}
+  {{ include('splash:button', {
+    button_content: value,
+    button_attributes: attributes,
+    button_bem_extra: class
+  }) }}
 {% else %}
   <input{{ attributes.addClass(classes) }} />{{ children }}
 {% endif %}

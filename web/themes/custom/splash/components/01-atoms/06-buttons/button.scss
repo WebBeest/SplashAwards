@@ -12,8 +12,8 @@
 // * Preset classes
 // =============================================================================
 
-.button--primary,
-#{$buttons-list} {
+.button,
+.button--primary {
   @include button-primary();
 }
 
@@ -27,6 +27,10 @@
 
 .button--negative-secondary {
   @include button-negative-secondary();
+}
+
+.button--danger  {
+  @include button-danger();
 }
 
 [id*='edit-cancel'] {
