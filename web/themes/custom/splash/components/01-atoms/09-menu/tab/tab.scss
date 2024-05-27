@@ -1,0 +1,57 @@
+@import "../../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Tab
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// *
+// =============================================================================
+
+
+.tabs__link {
+  display: block;
+  padding: rem(10) rem($grid-gap-hor / 2);
+  background-color: rgba($color-white, .2);
+  border-top: 1px solid rgba($color-white, .4);
+  @include font-size(14, 18);
+
+  &,
+  &:visited {
+    color: $color-gray-light-1;
+  }
+
+  &:hover {
+    background-color: $color-button-bg;
+    color: $color-button;
+  }
+
+  &.is-active {
+    background-color: $color-gray-dark;
+    color: $color-gray-light-1;
+  }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  .tabs li {
+    display: inline-block;
+  }
+
+  .tabs__link {
+    display: inline-block;
+    border-top: 0 none;
+
+    &.is-active {
+      background-color: $color-white;
+      color: $color-gray-dark;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import "../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * main structure
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * General
+// =============================================================================
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+
+// * Containers
+// =============================================================================
+
+// ** max-width container
+
+.container {
+  @include max-width;
+  @include clearfix;
+
+  // -- reset inside
+
+  .container {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+}
+
+// ** fluid container
+
+.container--fluid {
+  padding-left: rem($grid-gap-hor);
+  padding-right: rem($grid-gap-hor);
+  @include clearfix;
+
+  .container {
+    padding: 0;
+  }
+}
+
+
+// * Page
+// =============================================================================
+
+// this wrapper is only used for the fixed footer
+// but also has a use to prevent vertical scrollbar
+// downside: seems to create a second scrollbar, so don't use overflow on this
+// until another solution is found
+.page-wrapper {
+  // overflow-x: hidden;
+  // overflow-y: auto;
+}
+
+// ** trying this to avoid the scrollbar, instead of putting it on page-wrapper
+//      remove if it breaks scroll somewhere
+.page {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+// * Sidebars
+// =============================================================================

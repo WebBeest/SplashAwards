@@ -1,0 +1,15 @@
+name: Tab
+props:
+  type: object
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+    is_active:
+      type: ['boolean','string','null']
+      title: Is active
+      description: Whether the task item is an active tab.
+    link:
+      type: ['string']
+      title: Link
+      description: A rendered link element.

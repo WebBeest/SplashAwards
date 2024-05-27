@@ -1,0 +1,83 @@
+
+{% set bem_item_block = bem_item_block|default('menu') %}
+{% set bem_item_element = bem_item_element|default('item') %}
+
+{% set bem_link_block = bem_link_block|default(bem_item_block) %}
+{% set bem_link_element = bem_link_element|default('link') %}
+
+{% if not bem_item_modifiers %}
+  {% set bem_item_modifiers = [] %}
+{% endif %}
+
+{% if not bem_item_extra %}
+  {% set bem_item_extra = [] %}
+{% endif %}
+
+{% if not link_attribute_class %}
+  {% set link_attribute_class = [] %}
+{% endif %}
+{% if item.in_active_trail == TRUE %}
+  {% set bem_item_modifiers = bem_item_modifiers|merge(['active']) %}
+{% endif %}
+{% if menu_level > 0 %}
+  {% set bem_item_modifiers = bem_item_modifiers|merge(['sub', 'sub-' ~ menu_level]) %}
+{% endif %}
+{% if item.below %}
+  {% set bem_item_modifiers = bem_item_modifiers|merge(['with-sub']) %}
+  {% set bem_item_extra = ['has-sub'] %}
+{% endif %}
+{# below could maybe be done without a loop? #}
+{% for modifier in item.modifiers %}
+  {% set bem_item_modifiers = bem_item_modifiers|merge([modifier]) %}
+{% endfor %}
+
+{% if item.url and item.url.options and item.url.options.attributes %}
+
+  {# {% set link_attributes = link_attributes|merge(item.url.options.attributes) %} #}
+
+  {% if item.url.options.attributes.class %}
+
+    {# if its an array, #}
+    {% if item.url.options.attributes.class is iterable %}
+      {% set link_attribute_class = item.url.options.attributes.class %}
+      {# else just save the string #}
+    {% else %}
+      {% set link_attribute_class = [item.url.options.attributes.class] %}
+    {% endif %}
+
+    {# add custom classes for menu link to the list-item because that's cleaner for styling #}
+    {% set bem_item_extra = bem_item_extra|merge(link_attribute_class) %}
+
+  {% endif %}
+
+{% endif %}
+
+{% embed "@atoms/03-lists/list/_list-item.twig" with {
+  "list_item_label": item_label,
+  "bem_li_block": bem_item_block,
+  "bem_li_element": bem_item_element,
+  "bem_li_modifiers": bem_item_modifiers,
+  "bem_li_extra": bem_item_extra,
+} %}
+  {% block list_item_block %}
+
+    {% set nolink = false %}
+
+    {% if item.url.isExternal() == false and item.url.getRouteName() == '<nolink>' %}
+      {% set nolink = true %}
+    {% endif %}
+
+    {% include "@atoms/01-links/link/_link.twig" with {
+      "link_content": item.title,
+      "link_url": item.url,
+      "bem_link_block": bem_item_block,
+      "bem_link_element": bem_link_element,
+      "bem_link_modifiers": bem_item_modifiers,
+      "nolink": nolink
+    } %}
+    {% if item.below %}
+      <i class="expand-sub"></i>
+      {{ menus.menu_links(item.below, attributes, menu_level + 1, bem_menu_block, bem_menu_element, bem_menu_modifiers, bem_item_block,  bem_item_element, bem_item_modifiers) }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

@@ -953,3 +953,27 @@
   }
 
 }
+
+@mixin max-width($width: null) {
+
+  @if ($width == null) {
+    padding-left: rem($container-padding);
+    padding-right: rem($container-padding);
+    margin: 0 auto;
+    max-width: $max-width-xs;
+
+    @include bp-sm {
+      max-width: none;
+    }
+
+    @include bp-md {
+      max-width: $max-width-sm;
+    }
+
+    @include bp-lg {
+      max-width:  $max-width-md;
+    }
+  } @else {
+    max-width: $width;
+  }
+}

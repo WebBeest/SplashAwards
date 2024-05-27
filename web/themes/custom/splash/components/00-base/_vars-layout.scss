@@ -1,0 +1,72 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Variables for Layout: creating whitespace, sizing and positioning
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// ** Vertical spacing
+// =============================================================================
+
+// traditionally, we use the line-height to create a vertical rhythm
+// this is used to create space after p-text and other typography
+$gap-vert: $line-height-base !default;
+
+// smaller gap
+$gap-vert-xs: 5 !default; // ($line-height-base / 4) !default;
+$gap-vert-sm: 15; // $font-size-base !default;
+
+// bigger gaps
+$gap-vert-lg: ($font-size-base + $line-height-base) !default;
+$gap-vert-xl: ($gap-vert-lg) !default;
+
+// space above and below certain elements: eg. paragraphs or blocks with a bg
+$gap-vert-top-xs: 20 !default;
+$gap-vert-top-sm: 20 !default;
+$gap-vert-top-md: 40 !default; //50
+$gap-vert-top-lg: 50 !default;
+$gap-vert-top-lg-2: 110 !default;
+
+$gap-vert-bottom-xs: 20 !default;
+$gap-vert-bottom-sm: 20 !default;
+$gap-vert-bottom-md: 40 !default; //50
+$gap-vert-bottom-lg: 50 !default;
+$gap-vert-bottom-lg-2: 110 !default;
+
+// ** Horizontal spacing
+// =============================================================================
+
+// used by the grid for it's gutters
+// DON'T override this if you only want to change the grid gutters
+$gap-hor: 30;
+
+$container-padding: 15;
+
+// ** Fixed sizes
+// =============================================================================
+
+$menubar-height: 60;
+
+// ** Position
+// =============================================================================
+
+$absolute-left: calc((-100vw + 100%) / 2);
+
+// ** Z-index
+// =============================================================================
+
+// -- used with mixin: eg. @include z-index(header)
+
+$z-index: (
+  pb                 : 10000, // develop
+  grid-overlay       : 9999,  // develop
+  cookie             : 1010,  // over everything
+  modal              : 1000,  // over all content and nav
+  admin-toolbar      : 990,   // under modal but over rest
+  header-top         : 920,   // some elements go on the mobile nav
+  mobile-nav         : 910,
+  header-fixed       : 910,
+  header             : 910,
+  status             : 900,   // under all fixed things but above content
+);
+
