@@ -16,7 +16,7 @@
  * - heading_link_modifiers - override the link modifiers
  */
 #}
-{% set bem_heading_block = bem_heading_block|default('h' ~ heading_level) %}
+{% set bem_heading_block = bem_heading_block|default(heading_level) %}
 {% set bem_heading_element = bem_heading_element|default(false) %}
 {% set bem_heading_modifiers = bem_heading_modifiers|default([]) %}
 {% set bem_heading_extra = bem_heading_extra|default([]) %}

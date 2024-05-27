@@ -977,3 +977,25 @@
     max-width: $width;
   }
 }
+
+// ** enable font-smoothing can be helpful on older screens,
+//    for fonts that do not have subpixel rendering
+//    or it could not? Who the hell knows…
+
+@mixin font-smoothing($value: off) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+// ** Hide an element's content
+@mixin hide-text {
+  text-indent: 110%;
+  overflow: hidden;
+  white-space: nowrap;
+}

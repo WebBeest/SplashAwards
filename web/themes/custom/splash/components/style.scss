@@ -1,6 +1,7 @@
 @import "00-base/reset";
 @import "includes";
 @import "00-base/fonts";
+@import "00-base/normalize";
 
 // Import separate styles that aren't import through SDC.
 @import "01-atoms/01-links/link/link.scss";

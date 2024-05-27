@@ -1,10 +1,10 @@
 {{ title_prefix }}
 {% if title %}
-  {% include "@atoms/02-text/heading.twig" with {
-    "heading_level": 'h1',
-    "heading": title,
-    "heading_element": "title",
-    "heading_block": "page"
-  } %}
+  {{ include('splash:heading', {
+    heading_level: 'h1',
+    heading: title,
+    heading_element: 'title',
+    heading_block: 'page'
+  }) }}
 {% endif %}
 {{ title_suffix }}
