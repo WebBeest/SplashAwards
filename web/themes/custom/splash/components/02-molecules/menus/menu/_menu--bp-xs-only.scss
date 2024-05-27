@@ -1,0 +1,89 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Menus: mobile
+// *
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+@mixin menu-bp-xs-only {
+
+  // * styling the navigations within the mobile menu
+  // ===========================================================================
+
+  .wrapper--navigation__content {
+
+    .menu {
+      //
+    }
+
+    // styling for all items (even sublevels)
+
+    .menu__item {
+      //
+    }
+
+    .menu__link {
+      cursor: pointer;
+      display: block;
+      margin: rem(9) rem($grid-gap-hor * 2);
+      padding-bottom: rem(15);
+      text-transform: uppercase;
+      border-bottom: 1px solid #C8E6E7;
+      font-weight: 600;
+
+      &,
+      &:visited {
+        //color: $color-white;
+      }
+
+      &.menu__link--active,
+      &.js-active-anchor,
+      &.active,
+      &:hover {
+        //color: $color-white;
+        //background-color: darken($color-mobile-nav-open-bg, 5%);
+      }
+    }
+
+    // ** Set border bottom of menu account out
+    .menu__link--account {
+      border-bottom: none;
+      color: $color-white;
+    }
+
+    // item with submenu
+
+    .menu__item--with-sub {
+
+      &.js-open {
+
+        .menu__item--sub {
+          //
+        }
+      }
+    }
+
+    // link of item with submenu
+    .menu__link--with-sub {
+      //
+    }
+
+    // submenu
+    // hidden by default
+    .menu--sub {
+      background-color: lighten($color-spot-1, 10%);
+    }
+
+    .menu__item--sub {
+      //
+    }
+
+    .menu__link--sub {
+      // indentation
+      padding-left: rem($grid-gap-hor * 3);
+    }
+
+  }
+
+}
+

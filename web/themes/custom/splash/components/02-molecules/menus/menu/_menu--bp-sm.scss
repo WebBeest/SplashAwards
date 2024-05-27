@@ -1,0 +1,92 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Menus: bp sm
+// *
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+@mixin menu-bp-sm {
+
+  // * styling the navigations
+  // ===========================================================================
+
+  .navigation__toggle-expand {
+    display: none;
+  }
+
+  .wrapper--navigation__content {
+
+    .menu {
+
+      // make menu go inline
+
+      // display: flex;
+      // margin: 0 rem(-10) 0 rem(-10);
+    }
+
+    .menu__item {
+      // margin: 0 rem(10) 0 rem(10);
+    }
+
+    .menu__link {
+
+      &,
+      &:visited {
+        // color: $color-white;
+      }
+
+      &.menu__link--active,
+      &.js-active-anchor,
+      &.active,
+      &:hover {
+        //
+      }
+    }
+
+    // item with submenu
+
+    .menu__item--with-sub {
+
+      padding-right: rem(30);
+
+      // visible after interaction
+      &.js-open {
+
+        & > .menu--sub {
+          //
+        }
+
+        .menu__item--sub {
+          //
+        }
+      }
+
+      // clickable icon to open/close submenu on touch (added via JS)
+      .expand-sub {
+        width: rem(24);
+        height: rem(24);
+      }
+    }
+
+    // submenu
+    // hidden by default
+    .menu--sub {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      flex-direction: column;
+      margin: 0;
+      min-width: rem(150);
+    }
+
+    .menu__item--sub {
+      margin: 0;
+    }
+
+    .menu__link--sub {
+      //
+    }
+
+  }
+
+}

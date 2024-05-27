@@ -1,0 +1,90 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Menu
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// ** Please use
+//    _menu--bp-xs-only.scss and
+//    _menu--bp-sm.scss
+//    ...
+// for breakpoint-specific styling
+
+
+// * Submenu styling across all breakpoints
+// =============================================================================
+
+@mixin menu-submenu {
+
+  // -- item which contains a submenu: style the icon
+
+  .menu__item--with-sub {
+    // hook for icon
+    position: relative;
+
+    // clickable icon to open/close submenu on touch (added via JS)
+    .expand-sub {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: rem(38);
+      height: rem(38);
+      transition: all $easing $duration;
+      transform: rotate(0);
+
+      @include font-awesome((
+        icon: $fa-var-chevron-down,
+        size: 10,
+        margin: 0
+      ));
+
+      &:before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        font-style: normal;
+      }
+    }
+
+    &.js-open {
+
+      & > .menu__item--sub {
+        max-height: rem(100);
+        transition: all .25s ease-in;
+      }
+
+      // rotate the icon
+      .expand-sub {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  // hide submenu items by default
+  .menu__item--with-sub > .menu__item--sub {
+    overflow: hidden;
+    max-height: 0;
+    transition: all .25s ease-out;
+  }
+
+
+  // -- submenu items
+  //    (hide by using max-height on items instead of menu itself, it's more flexible that way)
+
+  .menu__item--sub {
+    overflow: hidden;
+    max-height: 0;
+    transition: all .25s ease-out;
+  }
+
+  // visible after interaction
+  .menu__item.js-open .menu__item--sub {
+    max-height: rem(100);
+    transition: all .25s ease-in;
+  }
+
+}

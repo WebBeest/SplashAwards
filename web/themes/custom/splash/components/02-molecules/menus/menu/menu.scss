@@ -1,0 +1,48 @@
+@import "../../../includes";
+@import "menu--bp-xs-only";
+@import "menu--bp-sm";
+@import "menu--submenu";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Menu
+// *
+// * Load all the styling + the structural CSS
+// * for the menu in the right order and breakpoints
+// * You can change breakpoints to have mobile navigation for wider screens
+// *
+// * Eg.: replace bp-xs-only with bp-sm-max if you want the mobile menu to work on phone + tablet screens
+// *      and replace bp-sm with bp-md for the full navigation to be used on desktop screens and wider
+// *
+// * Don't forget to also modify the breakpoint in the mobile nav javascript
+// *   located in: 02-molecules/menus/menu--mobile.js
+// * and in the organisms > site-nav Sass
+// *
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// some defaults for how menu opens and closes + icon
+// you can override breakpoint-specific stuff in menu-mobile and menu-desktop
+@include menu-submenu;
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: only on mobile phone
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-xs-only {
+
+  // mobile elements of the menu (lists, listitems, links)
+  @include menu-bp-xs-only;
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet and wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  @include menu-bp-sm;
+}

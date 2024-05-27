@@ -67,14 +67,14 @@
       {% set nolink = true %}
     {% endif %}
 
-    {% include "@atoms/01-links/link/_link.twig" with {
+    {{ include('splash:link', {
       "link_content": item.title,
       "link_url": item.url,
       "bem_link_block": bem_item_block,
       "bem_link_element": bem_link_element,
       "bem_link_modifiers": bem_item_modifiers,
       "nolink": nolink
-    } %}
+    }) }}
     {% if item.below %}
       <i class="expand-sub"></i>
       {{ menus.menu_links(item.below, attributes, menu_level + 1, bem_menu_block, bem_menu_element, bem_menu_modifiers, bem_item_block,  bem_item_element, bem_item_modifiers) }}
