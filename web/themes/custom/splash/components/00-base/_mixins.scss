@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // *
 // * Font-awesome mixin: add a font-awesome icon before or after an element
 //
@@ -118,10 +120,10 @@
   // set font style/weight
   @if ($type == 'brand') {
     font-family: 'Font Awesome 5 Brands';
-  } @elseif ($type == 'regular') {
+  } @else if ($type == 'regular') {
     font-family: 'Font Awesome 5 Pro';
     font-weight: 400;
-  } @elseif ($type == 'light') {
+  } @else if ($type == 'light') {
     font-family: 'Font Awesome 5 Pro';
     font-weight: 300;
   } @else {
@@ -156,7 +158,7 @@
 // -- NOTE: default font-size is 13, default line-height is 18
 // -- USAGE: @include font-size(15, 18) (don't use px!) -> sets font-size to 15 and line-height to a ratio of 18/15 = 1.1385
 
-@mixin font-size($size:13, $line: $size * (18/13) ) {
+@mixin font-size($size:13, $line: $size * (math.div(18,13)) ) {
   font-size: rem($size);
   line-height: rem($line);
 }
@@ -521,18 +523,6 @@
 // *
 ////////////////////////////////////////////////////////////////////////////////
 
-// * Mixins
-// =============================================================================
-
-// ** list-reset
-// -- Reset list item defaults when no margin, padding, list styles needed
-@mixin list-reset {
-  list-style: none;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
 // ** Styling for lists in text
 // -- http://www.456bereastreet.com/archive/201105/styling_ordered_list_numbers/
 // USAGE: @include list; (without parameter, defaults to unsorted style)
@@ -569,7 +559,7 @@
   $number-space-default: 26;
   $number-color-default: $bullet-color-default;
   $padding-left-default: 0;
-  $spacing-default: ($gap-vert/4);
+  $spacing-default: math.div($gap-vert,4);
   $delimiter-default: '.';
 
   // set up the actual variables that will be used
@@ -683,11 +673,11 @@
       &:before {
         position: absolute;
         top: 0;
-        left: -1rem;
+        left: 0;
         content: counter(listStyle1) '.'; // Use the counter as content
         font-family: $number-font;
         font-weight: $fw-semibold;
-        @include font-size($font-size-base, ($line-height-base/2.1));
+        @include font-size($font-size-base, $line-height-base);
         color: $number-color;
 
         // optional: for looong numbered lists, to make sure the delimiters are aligned, you can align them to the right
@@ -763,8 +753,8 @@
           size: $bullet-size,
           type: $bullet-weight,
           position: absolute,
-          top: rem($line-height-base / 5),
-          left: -1rem
+          top: rem(math.div($line-height-base,2)),
+          left: 0
         );
 
         @include font-awesome($my-bullet);
@@ -797,7 +787,7 @@
           display: block;
           position: absolute;
           left: 1px; // push it in a bit because round shapes tend to look bigger and thus outside the edge
-          top: rem($line-height-base / 2); // half of line-height
+          top: rem(math.div($line-height-base,2)); // half of line-height
           margin-top: -1px; // pull it up a bit, to align with letters x-height
 
           width: rem($bullet-size);

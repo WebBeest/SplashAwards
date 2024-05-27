@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "../../../includes";
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -13,7 +14,7 @@
 
 .tabs__link {
   display: block;
-  padding: rem(10) rem($grid-gap-hor / 2);
+  padding: rem(10) rem(math.div($grid-gap-hor, 2));
   background-color: rgba($color-white, .2);
   border-top: 1px solid rgba($color-white, .4);
   @include font-size(14, 18);

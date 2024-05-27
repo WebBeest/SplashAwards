@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 ////////////////////////////////////////////////////////////////////////////////
 // *
 // * reboot.css
@@ -22,7 +24,7 @@
 
 html {
   font-family: sans-serif;
-  font-size: ($rem-base / 16 * 100%); // this forms the base for our rem calculations
+  font-size: (math.div($rem-base, 16) * 100%); // this forms the base for our rem calculations
   line-height: 1.15; // force a consistent line-height
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;

@@ -1,9 +1,9 @@
 'use strict';
 const gulp = require('gulp');
-const sass = require('gulp-sass')(require('node-sass'));
+const sass = require('gulp-sass')(require('sass'));
 const sourceMaps = require('gulp-sourcemaps');
 
-sass.compiler = require('node-sass');
+sass.compiler = require('sass');
 gulp.task('sass', function () {
   return gulp.src('./web/themes/custom/**/*.scss')
     .pipe(sourceMaps.init())

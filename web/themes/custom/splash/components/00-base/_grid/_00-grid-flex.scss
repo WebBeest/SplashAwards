@@ -1,3 +1,5 @@
+@use "sass:math";
+
 ////////////////////////////////////////////////////////////////////////////////
 // *
 // * CSS grid
@@ -22,8 +24,8 @@
   position: relative;
   min-height: 1px;
   //margin-top: rem(-$gap-vert); // compensate for children top gaps
-  margin-left: rem(-$gap-hor / 2);
-  margin-right: rem(-$gap-hor / 2);
+  margin-left: rem(math.div(-$gap-hor, 2));
+  margin-right: rem(math.div(-$gap-hor, 2));
   overflow: hidden; // fix for non-collapsing margins
 }
 
@@ -36,8 +38,8 @@
 //    - $gap-hor: gap between the columns
 @mixin flex-col($number, $columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
   position: relative;
-  margin-left: rem($gap-hor / 2);
-  margin-right: rem($gap-hor / 2);
+  margin-left: rem(math.div($gap-hor, 2));
+  margin-right: rem(math.div($gap-hor, 2));
   margin-top: rem($gap-vert); // create gaps
   min-height: 1px;
 
@@ -48,10 +50,10 @@
     // IE11 doesn't understand calc() in shorthand
     flex-basis: auto;
   } @else {
-    width: calc(#{100% * $number / $columns} - #{rem($gap-hor)}); // mainly for IE
-    flex: 0 0 calc(#{100% * $number / $columns} - #{rem($gap-hor)});
+    width: calc(#{100% * math.div($number, $columns)} - #{rem($gap-hor)}); // mainly for IE
+    flex: 0 0 calc(#{100% * math.div($number, $columns)} - #{rem($gap-hor)});
     // IE11 doesn't understand calc() in shorthand
-    flex-basis: calc(#{100% * $number / $columns} - #{rem($gap-hor)});
+    flex-basis: calc(#{100% * math.div($number, $columns)} - #{rem($gap-hor)});
   }
 }
 
@@ -64,7 +66,7 @@
 //    - $gap-hor: gap between the columns
 @mixin flex-col-pull($number, $columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
   position: relative;
-  left: #{100% * -$number / $columns};
+  left: #{100% * math.div($number, $columns) * -1};
 }
 
 // ** push using margin relative
@@ -75,7 +77,7 @@
 //    - $gap-hor: gap between the columns
 @mixin flex-col-push($number, $columns: $grid-columns, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
   position: relative;
-  left: #{100% * $number / $columns};
+  left: #{100% * math.div($number, $columns)};
 }
 
 
@@ -133,15 +135,15 @@
   flex-wrap: wrap;
   flex-direction: column; // very important !!!
   height: $height; // need a height in order to stretch over
-  margin-left: #{rem(-$gap-hor / 2)};
-  margin-right: #{rem(-$gap-hor / 2)};
+  margin-left: #{rem(math.div($gap-hor, 2) * -1)};
+  margin-right: #{rem(math.div($gap-hor, 2) * -1)};
 }
 
 // ** create cells that span multiple rows: this is for cells
 //    don't forget to mess around with 'order' to get the order you need
 
 @mixin flex-row($height, $rows: 2, $gap-hor: $grid-gap-hor, $gap-vert: $grid-gap-hor) {
-  flex: 0 0 calc(#{100% * $height / $rows} - #{rem($gap-hor)});
+  flex: 0 0 calc(#{100% * math.div($height, $rows)} - #{rem($gap-hor)});
   // IE11 doesn't understand calc() in shorthand
-  flex-basis: calc(#{100% * $height / $rows} - #{rem($gap-hor)});
+  flex-basis: calc(#{100% * math.div($height, $rows)} - #{rem($gap-hor)});
 }
