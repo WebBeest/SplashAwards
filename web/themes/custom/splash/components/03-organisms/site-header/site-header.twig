@@ -14,11 +14,11 @@
     <div class="header__section--secondary">
       {# Menus that you also want to be in mobile navigation
         get passed to the _site-nav component #}
-      {% include "@organisms/site-nav/_site-nav.twig" with {
+      {{ include('splash:site-nav', {
         'nav_primary': page.primary_navigation,
         'nav_secondary': page.secondary_navigation,
         'header_top_nav': page.top_navigation,
-      } %}
+      }) }}
     </div>
     {% endblock %}
 

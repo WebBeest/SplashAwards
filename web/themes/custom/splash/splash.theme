@@ -4,3 +4,37 @@
  * @file
  * Theme functions.
  */
+
+use Drupal\block\Entity\Block;
+use Drupal\block_content\BlockContentInterface;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function splash_preprocess_block(&$variables) {
+  // add extra names to build better block classes using BEM
+  $variables['attributes']['data-bem'] = [];
+
+  if (!empty($variables['elements']['#id'])) {
+    $block = Block::load($variables['elements']['#id']);
+    $originalId = $block->getOriginalId();
+    $region = $block->getRegion();
+
+    $variables['attributes']['data-bem']['originalId'] = $originalId;
+    $variables['attributes']['data-bem']['region'] = $region;
+  }
+  else {
+    if (isset($variables['elements']['#configuration']['region'])) {
+      $region = $variables['elements']['#configuration']['region'];
+      $variables['attributes']['data-bem']['region'] = $region;
+    }
+  }
+
+  if(isset($variables['elements']['content']['#block_content']) && $variables['elements']['content']['#block_content'] instanceof BlockContentInterface){
+    /** @var \Drupal\block_content\BlockContentInterface $content_block */
+    $content_block = $variables['elements']['content']['#block_content'];
+    $type = $content_block->bundle();
+
+    $variables['attributes']['data-bem']['type'] = $type;
+  }
+}
