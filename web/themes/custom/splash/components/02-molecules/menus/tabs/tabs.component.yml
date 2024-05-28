@@ -1,0 +1,10 @@
+name: Tabs
+props:
+  type: object
+  properties:
+    primary:
+      type: object
+      title: Primary
+    secondary:
+      type: object
+      title: Secondary
