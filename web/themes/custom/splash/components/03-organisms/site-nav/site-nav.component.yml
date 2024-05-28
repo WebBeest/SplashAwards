@@ -1,3 +1,13 @@
 name: Site navigation
 props:
   type: object
+  properties:
+    nav_primary:
+      type: array
+      title: Primary navigation
+    nav_secondary:
+      type: array
+      title: Secondary navigation
+    header_top_nav:
+      type: array
+      title: Header top navigation

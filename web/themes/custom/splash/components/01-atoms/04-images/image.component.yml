@@ -2,3 +2,13 @@ $schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc
 name: Image
 props:
   type: object
+  properties:
+    img_url:
+      type: string
+      title: URL
+    img_src:
+      type: string
+      title: SRC
+    img_alt:
+      type: string
+      title: ALT text

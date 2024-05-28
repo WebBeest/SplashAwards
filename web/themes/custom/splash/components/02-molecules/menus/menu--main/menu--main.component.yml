@@ -1,3 +1,12 @@
 name: Main menu
 props:
   type: object
+  properties:
+    menu_name:
+      type: string
+      title: Menu name
+      description: The machine name of the menu.
+    items:
+      type: array
+      title: Items
+      description: A nested list of menu items.
