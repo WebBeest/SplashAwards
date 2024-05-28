@@ -1,0 +1,11 @@
+{{ include('splash:logo', {
+  "bem_logo_block": 'block',
+  "bem_logo_element": 'branding',
+  "bem_logo_modifiers": ['header'],
+  "link_title": 'Home'|t,
+  "link_href": path('<front>'),
+  "img_src": site_logo ? site_logo : content.site_logo['#uri'],
+  "img_alt": 'Home'|t,
+  "name": site_name,
+  "slogan": site_slogan,
+}) }}

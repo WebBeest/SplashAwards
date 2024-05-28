@@ -1,0 +1,13 @@
+name: Logo
+props:
+  type: object
+  properties:
+    site_name:
+      type: string
+      title: Site name
+    site_logo:
+      type: string
+      title: Site logo
+    site_slogan:
+      type: string
+      title: Site slogan

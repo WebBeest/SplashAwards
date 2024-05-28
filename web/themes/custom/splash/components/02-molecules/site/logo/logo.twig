@@ -1,0 +1,48 @@
+{#
+  Set BEM classes using a function:
+  bem(element, modifiers = array(), block, extra = array())
+#}
+{% apply spaceless %}
+{% set bem_logo_block = bem_logo_block|default('block') %}
+{% set bem_logo_element = bem_logo_element|default('branding') %}
+{% if bem_logo_modifiers is not defined %}
+  {% set bem_logo_modifiers = [] %}
+{% endif %}
+{% set bem_logo_modifiers = bem_logo_modifiers|merge([
+    base_plugin_id ? base_plugin_id|clean_class|replace({'_':'-'}),
+    (configuration.view_mode) ? 'view-mode-' ~ configuration.view_mode|clean_class|replace({'_':'-'}),
+    configuration.provider ? 'provider-' ~ configuration.provider|clean_class|replace({'_':'-'}),
+    plugin_id ? plugin_id|clean_class|replace({'_':'-'}),
+    attributes['data-bem'].originalId ? 'id-' ~ attributes['data-bem'].originalId|clean_class|replace({'_':'-'}),
+    attributes['data-bem'].region ? 'region-' ~ attributes['data-bem'].region|clean_class|replace({'_':'-'}),
+    attributes['data-bem'].type ? 'type-' ~ attributes['data-bem'].type|clean_class|replace({'_':'-'}),
+    (configuration.view_mode and configuration.type) ?
+    configuration.type|clean_class|replace({'_':'-'}) ~ '--' ~  configuration.view_mode|clean_class|replace({'_':'-'})
+])
+%}
+{% if bem_logo_extra is not defined %}
+  {% set bem_logo_extra = [] %}
+{% endif %}
+{% set bem_logo_extra = bem_logo_extra|merge([
+    attributes.id ? attributes.id|clean_class|replace({'_':'-'}),
+    configuration.provider ? 'block-' ~ configuration.provider
+])
+%}
+<div {{ bem(bem_logo_block, bem_logo_element, bem_logo_modifiers, bem_logo_extra) }}>
+  {{title_prefix}}
+  {{title_suffix}}
+  {% block content %}
+    {% if img_src %}
+      <a {{ bem(bem_logo_block ~ '__' ~ bem_logo_element, 'image', bem_logo_modifiers) }} href="{{ link_href }}" title="{{ link_title }}" rel="home">
+        <img src="{{ img_src }}" alt="{{ img_alt }}" />
+      </a>
+    {% endif %}
+    {% if name %}
+      <a  {{ bem(bem_logo_block ~ '__' ~ bem_logo_element, 'name', bem_logo_modifiers) }} href="{{ link_href }}" title="{{ link_title }}" rel="home">{{ name }}</a>
+    {% endif %}
+    {% if slogan %}
+      <span {{ bem(bem_logo_block ~ '__' ~ bem_logo_element, 'slogan', bem_logo_modifiers) }}>{{ slogan }}</span>
+    {% endif %}
+  {% endblock %}
+</div>
+{% endapply %}
