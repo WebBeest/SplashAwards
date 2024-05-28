@@ -13,7 +13,6 @@
 // =============================================================================
 
 ul,
-ul.links,
 ol,
 dl {
   margin: 0 0 rem($gap-vert-sm) 0;
@@ -34,8 +33,7 @@ dl {
   }
 }
 
-ul,
-ul.links {
+ul {
   padding: 0 0 0 rem(20);
 }
 
@@ -94,65 +92,68 @@ ul.inline {
 
 // * Styling lists in CKE
 // =============================================================================
+
+.filter-type,
+.text-long {
   // a couple of ':not' selectors to exclude overlapping styles
 
-ul:not(#{$list-list}) {
-  $list-settings: (
-    type: 'unsorted',
-    bullet: $fa-var-circle,
-    bullet-weight: 'solid',
-    bullet-size: 6
-  );
+  ul:not(.inline) {
+    $list-settings: (
+      type: 'unsorted',
+      bullet: $fa-var-circle,
+      bullet-weight: 'solid',
+      bullet-size: 6
+    );
+    @include list($list-settings);
+    overflow: hidden; // fix overlap bullets with floating elements
 
-  @include list($list-settings);
-  overflow: hidden; // fix overlap bullets with floating elements
-
-  p {
-    margin-bottom: rem($gap-vert-sm); // same as the li's
-  }
-}
-
-ol:not(.breadcrumb) {
-  $list-settings: (
-    type: 'sorted'
-  );
-  @include list($list-settings);
-  overflow: hidden; // fix overlap bullets with floating elements
-
-  p {
-    margin-bottom: rem($gap-vert-sm); // same as the li's
-  }
-}
-
-ul:not(.inline,.contextual-links,.links.toolbar-menu),
-ol {
-
-  &.is-horizontal {
-    margin-right: rem(-$grid-gap-hor);
-
-    li {
-      display: inline-block;
-      margin-right: rem($grid-gap-hor);
+    p {
+      margin-bottom: rem($gap-vert-sm); // same as the li's
     }
   }
 
-  // last list should not have space so it aligns with bottom of text div
-  &:last-child {
-    margin-bottom: 0;
+  ol {
+    $list-settings: (
+      type: 'sorted'
+    );
+    @include list($list-settings);
+    overflow: hidden; // fix overlap bullets with floating elements
+
+    p {
+      margin-bottom: rem($gap-vert-sm); // same as the li's
+    }
   }
 
-  // reset margins
-  &.no-margin {
-    margin-bottom: 0;
-  }
-}
+  ul:not(.inline),
+  ol {
 
-// except for nested lists
-li {
-  > ol,
-  > ul:not(.inline,.contextual-links) {
+    &.is-horizontal {
+      margin-right: rem(-$grid-gap-hor);
+
+      li {
+        display: inline-block;
+        margin-right: rem($grid-gap-hor);
+      }
+    }
+
+    // last list should not have space so it aligns with bottom of text div
     &:last-child {
-      margin-bottom: rem($gap-vert-sm);
+      margin-bottom: 0;
+    }
+
+    // reset margins
+    &.no-margin {
+      margin-bottom: 0;
+    }
+  }
+
+  // except for nested lists
+  li {
+    > ol,
+    > ul:not(.inline) {
+      &:last-child {
+        margin-bottom: rem($gap-vert-sm);
+      }
     }
   }
 }
