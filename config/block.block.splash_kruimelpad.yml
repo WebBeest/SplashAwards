@@ -21,4 +21,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: '/storybook/stories/render/*'
+    pages: "/storybook/stories/render/*\r\n<front>"
