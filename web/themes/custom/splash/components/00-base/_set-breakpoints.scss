@@ -1,0 +1,65 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Set breakpoints
+// *
+// * Responsive indicators for  use in JS (remove color & position when done)
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+body:after {
+  position: fixed;
+  bottom:0;
+  right:0;
+  display: block;
+  padding: rem(10);
+  content:'bp-xs';
+  background: red;
+  @if ($visual-indicators) {
+    visibility: visible;
+    opacity: 1;
+  } @else {
+    visibility: hidden;
+    opacity: 0;
+  }
+  @include z-index(bp);
+}
+body.theme-debug-mode:after {
+  visibility: visible;
+}
+
+@if variable-exists(bp-sm) {
+  @include bp-sm {
+    body:after {
+      content: 'bp-sm';
+      background: #FFCE00;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+@if variable-exists(bp-md) {
+  @include bp-md {
+    body:after {
+      content: 'bp-md';
+      background: yellow;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+@if variable-exists(bp-lg) {
+  @include bp-lg {
+    body:after {
+      content: 'bp-lg';
+      background: green;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
