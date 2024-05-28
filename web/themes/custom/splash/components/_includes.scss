@@ -1,13 +1,14 @@
 @import "00-base/vars";
-@import "00-base/vars-form";
 @import "00-base/colors";
+@import "00-base/vars-typography";
+@import "00-base/vars-layout";
+@import "00-base/vars-form";
+
 @import "00-base/grid";
 @import "00-base/breakpoints";
 @import "00-base/functions";
 @import "00-base/mixins";
 @import "00-base/layout";
-@import "00-base/typography";
-@import "00-base/vars-layout";
 @import "00-base/set-breakpoints";
 
 @import "00-base/_grid/_00-grid-flex";
