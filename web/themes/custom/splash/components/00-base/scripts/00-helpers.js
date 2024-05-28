@@ -68,7 +68,6 @@
    **/
   self.checkScreenSize = function () {
     const currentBreakpoint = self.getBreakpoint();
-    console.log(currentBreakpoint);
 
     if (currentBreakpoint === 'bp-xs') {
       self.screen = 'xs';

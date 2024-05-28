@@ -21,7 +21,6 @@
     mobilemenu.forEach(function(item) {
 
       $(item).click(function(e) {
-        console.log('click', self);
         // check for screen size bigger than phone
         if(self.screen === 'xs'/* || self.screen == 'sm'*/) {
           // add classes (css handles the animation & open/close)
