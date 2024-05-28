@@ -1,0 +1,142 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{# {%
+  set classes = [
+    'field',
+    field_name ? 'field--name-' ~ field_name|clean_class,
+    field_type ? 'field--type-' ~ field_type|clean_class,
+    label_display ? 'field--label-' ~ label_display,
+  ]
+%} #}
+
+{# {%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%} #}
+
+{# {% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes.addClass(classes, 'field__items') }}>
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    <h3{{ title_attributes.addClass(title_classes) }}>{{ label }}</h3>
+    {% if multiple %}
+      <div class="field__items">
+    {% endif %}
+    {% for item in items %}
+      <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+    {% endfor %}
+    {% if multiple %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %} #}
+
+{% set bem_field_block = bem_field_block|default('field') %}
+{% set bem_field_element = bem_field_element|default(false) %}
+
+{% if not bem_field_modifiers %}
+  {% set bem_field_modifiers = [] %}
+{% endif %}
+{% set bem_field_modifiers = bem_field_modifiers|merge([
+    field_name ? 'name-' ~ field_name|clean_class,
+    field_type ? 'type-' ~ field_type|clean_class,
+    label_display ? 'label-' ~ label_display
+  ])
+%}
+
+<div{{ bem(bem_field_block, bem_field_element, bem_field_modifiers) }}>
+
+  {% if label_hidden %}
+    {# nothing #}
+  {% else %}
+    {% if label %}
+
+      {%
+        set title_classes = [
+          'field__label',
+          label_display == 'visually_hidden' ? 'visually-hidden',
+        ]
+      %}
+
+      {% include "@atoms/02-text/00-headings/_heading.twig" with {
+        "heading_level": 3,
+        "heading": label,
+        "heading_bem_extra": title_classes,
+      } %}
+
+    {% endif %}
+  {% endif %}
+
+  {# just always render the items wrapper, it's easier for theming #}
+  {% block field_content %}
+
+    {% if multiple and items|length > 0 %}
+      <div class="field__items">
+        {% set bem_fielditem_block = bem_field_block %}
+        {% set bem_fielditem_element = bem_fielditem_element|default('item') %}
+        {% set bem_fielditem_modifiers = bem_field_modifiers %}
+
+        {% for item in items %}
+          <div{{ bem(bem_fielditem_block, bem_fielditem_element, bem_fielditem_modifiers) }}>
+            {{ item.content }}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      {% for item in items %}
+        {{ item.content }}
+      {% endfor %}
+    {% endif %}
+
+  {% endblock %}
+
+</div>

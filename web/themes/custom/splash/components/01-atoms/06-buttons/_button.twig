@@ -30,16 +30,15 @@
 {% endif %}
 
 {% for item in items %}
-  {% include "@atoms/06-buttons/_button--master.twig" with {
-      'button_type': item.content['#type'],
-      'button_attributes': item.content['#options'].attributes,
-      'button_url': item.content['#url'],
-      'button_content': item.content['#title'],
-      'bem_button_block': '',
-      'bem_button_element': bem_button_element,
-      'bem_button_modifiers': bem_button_modifiers,
-      'bem_button_extra': bem_button_extra,
-    }
-  %}
+  {{ include('splash:button', {
+    'button_type': item.content['#type'],
+    'button_attributes': item.content['#options'].attributes,
+    'button_url': item.content['#url'],
+    'button_content': item.content['#title'],
+    'bem_button_block': '',
+    'bem_button_element': bem_button_element,
+    'bem_button_modifiers': bem_button_modifiers,
+    'bem_button_extra': bem_button_extra,
+  }) }}
 {% endfor %}
 
