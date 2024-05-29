@@ -1,0 +1,8 @@
+uuid: f855d34c-1110-44a4-8e0a-93bc35685931
+langcode: nl
+status: true
+dependencies: {  }
+id: social_media_links
+label: 'Social Media Links'
+revision: 0
+description: ''

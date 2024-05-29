@@ -1,0 +1,19 @@
+uuid: a002370e-003f-4f0c-8b27-bf797ac0d241
+langcode: nl
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_fb
+field_name: field_fb
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: a3eaf816-62fc-49b3-b4fe-4910b8f63f79
+langcode: nl
+status: true
+dependencies:
+  module:
+    - sa
+  theme:
+    - splash
+id: splash_copyrightblock
+theme: splash
+region: content
+weight: -3
+provider: null
+plugin: sa_copyright_block
+settings:
+  id: sa_copyright_block
+  label: 'Copyright block'
+  label_display: '0'
+  provider: sa
+  terms_of_use: '5'
+  privacy_policy: '10'
+  company: 'Splash Awards Nederland'
+visibility: {  }

@@ -18,10 +18,102 @@ dependencies:
     - paragraphs.paragraphs_type.p001_story
   module:
     - image
+    - layout_builder
     - link
     - sa
     - text
     - video_embed_field
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: Content
+          context_mapping: {  }
+          column_widths: 50-50
+        components:
+          8c9678c0-d188-4a3d-8588-f4da9506481b:
+            uuid: 8c9678c0-d188-4a3d-8588-f4da9506481b
+            region: first
+            configuration:
+              id: 'field_block:paragraph:p001_story:field_p_image'
+              label: Image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: image
+                label: hidden
+                settings:
+                  image_link: ''
+                  image_style: image_style_4_3_landscape_sm
+                  image_loading:
+                    attribute: lazy
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          21fd1433-19ad-43bc-8cdb-5b89ced3af43:
+            uuid: 21fd1433-19ad-43bc-8cdb-5b89ced3af43
+            region: second
+            configuration:
+              id: 'field_block:paragraph:p001_story:field_p_text'
+              label: Text
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          11a35549-354f-4a46-8b42-2f86c515d660:
+            uuid: 11a35549-354f-4a46-8b42-2f86c515d660
+            region: second
+            configuration:
+              id: 'field_block:paragraph:p001_story:field_p_title'
+              label: Title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: header_text_field_formatter
+                label: hidden
+                settings:
+                  header: h2
+                third_party_settings: {  }
+            weight: -1
+            additional: {  }
+          9537964b-2379-46fc-baa0-073829be1e21:
+            uuid: 9537964b-2379-46fc-baa0-073829be1e21
+            region: second
+            configuration:
+              id: 'field_block:paragraph:p001_story:field_p_subtitle'
+              label: Subtitle
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: header_text_field_formatter
+                label: hidden
+                settings:
+                  header: h3
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: paragraph.p001_story.default
 targetEntityType: paragraph
 bundle: p001_story

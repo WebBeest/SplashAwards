@@ -1,0 +1,25 @@
+uuid: 3a82e03b-42f6-4956-ba3e-3ed540075641
+langcode: nl
+status: true
+dependencies:
+  content:
+    - 'block_content:social_media_links:2bc8e877-08a9-4b5b-a1be-561544ade793'
+  module:
+    - block_content
+  theme:
+    - splash
+id: splash_socialmedialinks
+theme: splash
+region: doormat_col_1
+weight: 0
+provider: null
+plugin: 'block_content:2bc8e877-08a9-4b5b-a1be-561544ade793'
+settings:
+  id: 'block_content:2bc8e877-08a9-4b5b-a1be-561544ade793'
+  label: 'Social media links'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,19 @@
+uuid: 018463f8-cebf-4f8e-9338-b51daff933b2
+langcode: nl
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_linkedin
+field_name: field_linkedin
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

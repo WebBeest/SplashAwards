@@ -1,0 +1,28 @@
+uuid: a1a30e9e-e448-4a43-8bff-e64e5b56adcb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.storage.block_content.field_twitter
+  module:
+    - link
+id: block_content.social_media_links.field_twitter
+field_name: field_twitter
+entity_type: block_content
+bundle: social_media_links
+label: 'Twitter / X'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://twitter.com'
+    title: X
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,28 @@
+uuid: b9b20126-d038-416f-be55-6f5185dc8846
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.storage.block_content.field_linkedin
+  module:
+    - link
+id: block_content.social_media_links.field_linkedin
+field_name: field_linkedin
+entity_type: block_content
+bundle: social_media_links
+label: LinkedIn
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    attributes: {  }
+    uri: 'https://www.linkedin.com/'
+    title: In
+    options: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

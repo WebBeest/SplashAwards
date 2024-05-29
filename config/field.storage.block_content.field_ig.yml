@@ -1,0 +1,19 @@
+uuid: 82089823-c455-40b6-a2ab-d226f098726a
+langcode: nl
+status: true
+dependencies:
+  module:
+    - block_content
+    - link
+id: block_content.field_ig
+field_name: field_ig
+entity_type: block_content
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
