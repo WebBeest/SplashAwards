@@ -17,26 +17,36 @@
  * - img_alt - (optional) the alt text for screen readers and when the image cannot load
  */
 #}
-
+{%
+  set classes = [
+  style_name ? 'image-style-' ~ style_name|clean_class,
+]
+%}
 {% set bem_image_block = bem_image_block|default('image') %}
 {% set bem_image_element = image_element|default(false) %}
 {% set bem_image_modifiers = bem_image_modifiers|default([]) %}
+{% set bem_image_extra = bem_image_extra|default([]) %}
+{% set bem_image_extra = bem_image_extra|merge(classes) %}
+{% if attributes.class is iterable %}
+{% set bem_image_extra = bem_image_extra|merge(attributes.class) %}
+{% endif %}
 
 {% set bem_image_link_block = bem_image_link_block|default(bem_image_block) %}
 {% set bem_image_link_element = bem_image_link_element|default('link') %}
 {% set bem_image_link_modifiers = bem_image_link_modifiers|default([]) %}
 
+
 {% if img_url %}
   {% set link_content %}
     <img
-      {{ bem(bem_image_block, bem_image_element, bem_image_modifiers) }}
+      {{ bem(bem_image_block, bem_image_element, bem_image_modifiers, bem_image_extra) }}
       src="{{ img_src }}"
       {% if img_alt %}
         alt="{{ img_alt }}"
       {% endif %}
     />
   {% endset %}
-  {{ include('splash:image', {
+  {{ include('splash:link', {
     link_url: img_url,
     link_content: link_content,
     link_attributes: bem_image_link_attributes,
@@ -46,10 +56,7 @@
   }) }}
 {% else %}
   <img
-    {{ bem(bem_image_block, bem_image_element, bem_image_modifiers) }}
-    src="{{ img_src }}"
-    {% if img_alt %}
-      alt="{{ img_alt }}"
-    {% endif %}
+    {{ bem(bem_image_block, bem_image_element, bem_image_modifiers, bem_image_extra) }}
+    {{ attributes|without('class') }}
   />
 {% endif %}

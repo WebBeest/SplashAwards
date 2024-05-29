@@ -382,7 +382,7 @@ function sa_paragraphs_paragraph_view_alter(array &$build, EntityInterface $enti
   }
 
   // Add JS for all paragraphs.
-  // $build['#attached']['library'][] = 'sa_paragraphs/p';
+  $build['#attached']['library'][] = 'sa_paragraphs/p';
 
   /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
   // Set background color to all paragraphs that have the common bg color field.
@@ -405,76 +405,76 @@ function sa_paragraphs_paragraph_view_alter(array &$build, EntityInterface $enti
   // Set individual paragraphs stuff.
   switch ($entity->bundle()) {
     // Story paragraph.
-    case 'p_001':
+    case 'p001_story':
       _sa_paragraphs_p_001_view_alter($build, $entity, $display);
       break;
 
     // Image paragraph.
-    case 'p_002':
+    case 'p002_image':
       _sa_paragraphs_p_002_view_alter($build, $entity, $display);
       break;
 
     // Text Main paragraph.
-    case 'p_003':
+    case 'p003_text_main':
       _sa_paragraphs_p_003_view_alter($build, $entity, $display);
       break;
 
     // FAQ paragraph.
-    case 'p_004':
+    case 'p004_faq':
       _sa_paragraphs_p_004_view_alter($build, $entity, $display);
       break;
 
     // Testimonial paragraph.
-    case 'p_005':
+    case 'p005_testimonial':
       _sa_paragraphs_p_005_view_alter($build, $entity, $display);
       break;
 
     // Video paragraph.
-    case 'p_006':
+    case 'p006_video':
       _sa_paragraphs_p_006_view_alter($build, $entity, $display);
       break;
 
     // USP
-    case 'p_007':
+    case 'p007_usp':
       _sa_paragraphs_p_007_view_alter($build, $entity, $display);
       break;
 
-    case 'p_007_child':
+    case 'p007_usp_item':
       _sa_paragraphs_p_007_child_view_alter($build, $entity, $display);
       break;
 
     // Focus paragraph.
-    case 'p_008':
+    case 'p008_focus':
       _sa_paragraphs_p_008_view_alter($build, $entity, $display);
       break;
 
     // Photogallery paragraph.
-    case 'p_009':
+    case 'p009_photo_gallery':
       _sa_paragraphs_p_009_view_alter($build, $entity, $display);
       break;
 
     // Logobar paragraph.
-    case 'p_010':
+    case 'p010_logo_bar':
       _sa_paragraphs_p_010_view_alter($build, $entity, $display);
       break;
 
     // Guidance paragraph.
-    case 'p_012':
+    case 'p012_guidance':
       _sa_paragraphs_p_012_view_alter($build, $entity, $display);
       break;
 
     // Guidance box paragraph.
-    case 'p_012_child':
+    case 'p012_guidance_box':
       _sa_paragraphs_p_012_child_view_alter($build, $entity, $display);
       break;
 
     // Overview paragraph.
-    case 'overview':
+    case 'p013_overview':
       _sa_paragraphs_p_013_view_alter($build, $entity, $display);
       break;
 
     // Focus Header.
-    case 'p_016':
+    case 'p016_menu_overview':
       _sa_paragraphs_p_016_view_alter($build, $entity, $display);
       break;
   }
@@ -524,11 +524,9 @@ function _sa_paragraphs_p_001_view_alter(
   if ($entity->hasfield('field_p_001_layout_image')) {
 
     // Output the image layout choice as a class on the wrapper.
-    $p_layout_image = $entity->get('field_p_001_layout_image')->getValue();
-
-    if (isset($p_layout_image[0]['value'])) {
-
-      $build['#attributes']['class'][] = 'p--layout--' . $p_layout_image[0]['value'];
+    $p_layout_image = $entity->get('field_p_001_layout_image')->getString();
+    if ($p_layout_image) {
+      $build['#attributes']['class'][] = 'p--layout--' . $p_layout_image;
     }
   }
 }

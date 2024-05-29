@@ -1,0 +1,188 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Paragraphs: story
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+// *
+// =============================================================================
+
+.paragraph--type-p001-story {
+  // image/video aside
+  .layout__region--first {
+    margin-bottom: rem(math.div($p-gap-vert-bottom-xs, 3));
+
+    @if ($structuralOnly == false) {
+
+      //
+
+    } @else {
+
+      // override some default styling
+      .field--type-image {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & larger
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+  .paragraph--type-p001-story {
+
+    // normal size image
+
+    &.p--layout--normal_image,
+    &.p--layout--image_normal {
+
+      // ** image and text next to each other
+
+      .layout--twocol-section {
+        margin-top: 0;
+        flex-wrap: nowrap;
+      }
+
+      // image/video aside
+      .layout__region--first {
+        @include flex-col(6, 12, $story-gap);
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      // content
+      .layout__region--second {
+        @include flex-col(6, 12, $story-gap);
+        margin-top: 0;
+      }
+
+      // ** STORY RIGHT
+
+      &.p-001--view-mode--right,
+      &.p-001--view-mode--image_right {
+        .layout__cols {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+
+
+    // Some layout changes when stretched image
+
+    &.p--layout--stretched_image,
+    &.p--layout--image_stretched {
+
+      // override the top padding to add make space
+      // when 2 paragraphs with same bg follow each other
+
+      .group--paragraphs__item.has-matching-bg + .group--paragraphs__item.has-matching-bg & {
+        padding-top: rem($p-gap-vert-top-sm);
+      }
+
+      // ** image and text next to each other
+
+      .layout--twocol-section {
+        position: static;
+        overflow: visible;
+        margin: 0;
+        padding-left: calc(50% + #{rem($story-gap)});
+      }
+
+      // image/video aside
+      .layout__region--first {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        height: 100%;
+        width: calc(50vw);
+        flex-basis: calc(50vw);
+        margin: 0;
+        transform: translateX(-50vw);
+        overflow: hidden; // avoid issues with a vertical scrollbar
+
+        img {
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: auto;
+          width: 50vw;
+          max-width: none;
+        }
+      }
+
+      // content
+      .layout__region--second {
+        width: 100%;
+        flex-basis: 100%;
+        margin: 0;
+      }
+
+      // ** STORY RIGHT
+
+      &.p-001--view-mode--right,
+      &.p-001--view-mode--image_right {
+
+        .layout--twocol-section {
+          flex-direction: row;
+          padding-left: 0;
+          padding-right: calc(50% + #{rem($story-gap)});
+        }
+
+        .layout__region--first {
+          transform: none;
+
+          img {
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: desktop & larger
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-md {
+
+  .paragraph--type-p001-story {
+
+    &.p--layout--normal_image,
+    &.p--layout--image_normal {
+
+      // image/video aside
+      .layout__region--first {
+        @include flex-col(6, 12, $story-gap);
+        margin-top: 0;
+      }
+
+      // content
+      .layout__region--second {
+        @include flex-col(6, 12, $story-gap);
+        margin-top: 0;
+      }
+
+    }
+
+  }
+  .block-region-content {
+    .p-001--bg--spot-2 {
+      padding-bottom: 11.5rem !important;
+    }
+  }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+  .paragraph--type-p001-story {
+  }
+}

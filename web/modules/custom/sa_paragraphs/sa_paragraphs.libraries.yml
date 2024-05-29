@@ -12,7 +12,7 @@ p:
     js/p.js: { minified: false }
   dependencies:
     - core/jquery
-    - core/jquery.once
+    - core/once
 
 # generated colors
 p_colors:
