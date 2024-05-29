@@ -1,0 +1,33 @@
+uuid: 7bb9d9a1-add3-4568-a33c-f2393b107cda
+langcode: nl
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: nominees_en
+label: 'Nominees (EN)'
+type: 'canonical_entities:node'
+pattern: 'nominees/[node:title]'
+selection_criteria:
+  350e91f7-58ed-44d0-b281-9878ef90c8ad:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 350e91f7-58ed-44d0-b281-9878ef90c8ad
+    context_mapping:
+      node: node
+    bundles:
+      case: case
+  2772b11f-09c1-42cc-8eaa-aa7acd1f8302:
+    id: language
+    negate: false
+    uuid: 2772b11f-09c1-42cc-8eaa-aa7acd1f8302
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en: en
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Taal
