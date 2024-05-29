@@ -1,0 +1,5 @@
+rocketship_paragraphs.admin_settings_form:
+  title: 'Splash Awards - Paragraphs'
+  route_name: sa_paragraphs.admin_settings_form
+  parent: system.admin_config_system
+  weight: 99

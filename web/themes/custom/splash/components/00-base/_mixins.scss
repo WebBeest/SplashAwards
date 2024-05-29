@@ -497,6 +497,45 @@
   }
 }
 
+// ** Make an element inside .container fill the viewport width and stay in place
+
+@mixin stretch {
+  position: relative;
+  width: 100vw;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+
+// ** Adds fullwidth background using given color.
+// options:
+// $color: the background color
+// $element: the pseudo-element
+// $stretch: if the background stretches horizontally to the edges of the browser window
+
+@mixin full-bg ($color, $element: before, $stretch: true) {
+  position: relative;
+  z-index: 5;
+
+  &:#{$element} {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    background-color: $color;
+    z-index: -1;
+    @if($stretch == true) {
+      margin-left: calc((-100vw + 100%) / 2);
+      width: 100vw;
+    }
+  }
+}
+
+
 /**
  * Square mixin
  *
@@ -991,3 +1030,4 @@
   overflow: hidden;
   white-space: nowrap;
 }
+

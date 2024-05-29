@@ -1,0 +1,581 @@
+@use "sass:math";
+
+@import "vars-00-base";
+
+.paragraph {
+  $paragraph: &;
+  position: relative;
+
+  // -- Body text
+  .field--type-text-long,
+  .text-long {
+    > p,
+    > ul,
+    > ol {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // -- Buttons
+  .field--buttons {
+    margin-top: rem($p-gap-vert - 10);
+    text-align: left;
+
+    .button {
+      margin: rem(10) rem(10) 0 0;
+
+      @if ($structuralOnly == false) {
+        // -- make the other buttons look different
+
+        &:nth-child(n+2) {
+          @include button-secondary;
+        }
+      }
+    }
+  }
+
+  // -- background image: make it stretch (like 'cover')
+  .field--name-field-p-bg-image {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    overflow: hidden;
+
+    // -- make img stretch with width (visually cropped height)
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: auto;
+      min-width: 100%;
+      min-height: 100%;
+      width: 100%;
+      height: auto;
+      max-width: none;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+  }
+
+  @if ($structuralOnly == false) {
+
+    //
+
+  } @else {
+
+    .field img {
+      display: block;
+      margin: 0;
+    }
+
+    .node & .field--name-field-p-bg-image {
+      float: none;
+      margin: 0;
+    }
+  }
+
+  // ** if explicitely set, make background-image stretch width of page
+  &.has-bg-stretched .field--name-field-p-bg-image {
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+  }
+
+
+  // needs better class name, but this is one that is inside p016
+  .info-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  @if ($structuralOnly == false) {
+
+    // ***************************************************************************
+    // Add your paragraph specific backgrounds here.
+    // See example below.
+    // ***************************************************************************
+
+    // ** paragraph backgrounds
+
+    &.bg--white {
+      @include full-bg ($color-white, 'before', false);
+    }
+
+    &.bg--grey {
+      @include full-bg ($color-gray-light-1, 'before', false);
+    }
+
+    &.bg--spot-1 {
+      @include full-bg ($color-spot-1, 'before', false);
+    }
+
+    &.bg--spot-2 {
+      @include full-bg ($color-spot-2, 'before', false);
+    }
+
+    &.bg--spot-3 {
+      @include full-bg ($color-spot-3, 'before', false);
+    }
+
+  }
+
+  // ** stretched paragraph backgrounds
+
+  &.has-bg-stretched {
+
+    &:before {
+      margin-left: calc((-100vw + 100%) / 2);
+      width: 100vw;
+    }
+  }
+
+  @if ($structuralOnly == false) {
+
+    // ** color changes because of the backgrounds
+
+    &.bg--spot-1,
+    &.bg--spot-2,
+    &.bg--spot-3 {
+
+      color: $color-white;
+
+      a,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $color-white;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: $color-white;
+
+        a,
+        a:visited,
+        a:hover,
+        a:active {
+          color: $color-white;
+        }
+      }
+
+      // breadcrumb
+
+      .breadcrumb {
+        color: $color-white;
+      }
+
+      .breadcrumb__item {
+        &:before {
+          color: $color-white;
+        }
+      }
+
+      .breadcrumb__element {
+        color: $color-white;
+      }
+
+      .breadcrumb__link {
+        @include link-underline((color: $color-white));
+      }
+
+      // other types of links
+      .field--name-field-blog-tags,
+      .field--name-node-title,
+      .field--name-node-link,
+      .field--name-field-p-link {
+        color: $color-white;
+
+        a {
+          &,
+          &:visited,
+          &:hover,
+          &:active {
+            color: $color-white;
+          }
+        }
+      }
+
+      // titles & subtitles
+      .field--name-field-p-title,
+      .field--name-field-p-subtitle {
+
+        h2,
+        h3,
+        h4 {
+          color: $color-white;
+
+          a,
+          a:visited,
+          a:hover,
+          a:active {
+            color: $color-white;
+          }
+        }
+      }
+
+      .button {
+
+        @include button-negative;
+
+        // -- make the other buttons look different
+
+        &:nth-child(n+2) {
+          @include button-negative-secondary;
+        }
+
+        // -- more Examples:
+        //
+        //// 2nd button
+        //&:nth-child(2) {
+        //  @include button-secondary();
+        //}
+        //
+        //// 3rd button and all buttons after that
+        //&:nth-child(n+3) {
+        //
+        //}
+      }
+
+    }
+
+  }
+
+  // ***************************************************************************
+  // Add your paragraph specific backgrounds here for the content
+  // See example below.
+  // ***************************************************************************
+
+  &.has-bg-image .field--type-string * {
+    color: $color-white;
+  }
+
+  // ** background for content of paragraph (eg. Testimonial)
+
+  &.has-content-bg > .p-content {
+
+    @if ($structuralOnly == false) {
+
+      color: $color-base; // override stuff set by the general bg-color class
+
+      a {
+        &,
+        &:visited,
+        &:hover,
+        &:active {
+          color: $color-link;
+        }
+      }
+
+      .field--name-field-blog-tags,
+      .field--name-node-title,
+      .field--name-node-link,
+      .field--name-field-p-link {
+        color: $color-base;
+
+        a {
+          &,
+          &:visited,
+          &:hover,
+          &:active {
+            color: $color-link;
+          }
+        }
+      }
+
+    }
+
+    // if background of the content
+    // need spacing
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: rem(30);
+    padding-right: rem(30);
+    padding-bottom: rem(40);
+  }
+
+  @if ($structuralOnly == false) {
+
+    &.content-bg--white > .p-content {
+      background-color: $color-white;
+    }
+
+    &.content-bg--grey > .p-content {
+      background-color: $color-gray-light-1;
+    }
+
+    &.content-bg--spot-1 > .p-content {
+      background-color: $color-spot-1;
+    }
+
+    &.content-bg--spot-2 > .p-content {
+      background-color: $color-spot-2;
+    }
+
+    &.content-bg--spot-3 > .p-content {
+      background-color: $color-spot-3;
+    }
+
+    &.content-bg--spot-1,
+    &.content-bg--spot-2,
+    &.content-bg--spot-3 {
+
+      & > .p-content {
+        color: $color-white;
+
+        // quote mark
+        .text-long:before {
+          color: $color-white;
+
+          a {
+            &,
+            &:visited,
+            &:hover,
+            &:active {
+              color: $color-white;
+            }
+          }
+        }
+
+        .field--name-field-blog-tags,
+        .field--name-node-title,
+        .field--name-node-link,
+        .field--name-field-p-link {
+          color: $color-white;
+
+          a {
+            &,
+            &:visited,
+            &:hover,
+            &:active {
+              color: $color-white;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+// ** recurring elements
+
+.field--name-field-p-title {
+  h2,
+  h3 {
+    margin-bottom: rem($p-gap-vert-sm);
+  }
+}
+
+.field--name-field-p-subtitle {
+  h3,
+  h4 {
+    margin-bottom: rem($p-gap-vert-sm);
+  }
+}
+
+.field--name-field-p-teaser {
+  margin-bottom: rem($p-gap-vert);
+
+  @if ($structuralOnly == false) {
+    font-weight: $fw-bold;
+  } @else {
+    font-weight: bold;
+  }
+}
+
+
+// * Grouped paragraphs
+// =============================================================================
+
+.group--paragraphs {
+  //
+}
+
+// -- spacing and alignment for paragraphs as part of a group
+
+.group--paragraphs__item {
+  @include clearfix;
+
+  $selfSelector: '.group--paragraphs__item';
+
+  &,
+  & * {
+    box-sizing: border-box;
+  }
+
+  // padding to make space around the paragraph
+  .paragraph {
+    padding-top: rem($p-gap-vert-top-xs);
+    padding-bottom: rem($p-gap-vert-bottom-xs);
+
+    // ** paragraph with backgrounds need padding on sides
+
+    padding-left: rem($p-gap-hor);
+    padding-right: rem($p-gap-hor);
+
+    // ** paragraph with stretched backgrounds need no padding on the sides
+
+    &.has-bg-stretched {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  // no top padding if 2 have matching background-colors
+  &.has-matching-bg + #{$selfSelector}.has-matching-bg-last {
+    .paragraph {
+      padding-top: 0; // no double spacing when same bg
+    }
+  }
+}
+
+//// ** Page content paragraphs:
+////
+//// ** last paragraph (BEFORE DOORMAT) + without a bg needs no space
+//
+//.layout__content--node--page--full {
+//
+//  .group--paragraphs__item {
+//
+//    &:last-child {
+//      .paragraph {
+//        padding-bottom: rem($p-gap-vert-bottom-xs);
+//      }
+//    }
+//  }
+//}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+
+  //.field--name-field-p-bg-image {
+  //
+  //  // -- make img stretch with width (visually cropped height)
+  //
+  //  img {
+  //    width: 100%;
+  //    height: auto;
+  //  }
+  //
+  //}
+
+  // -- grouped paragraphs: get more margin
+
+  .group--paragraphs__item {
+
+    $selfSelector: '.group--paragraphs__item';
+
+    // padding to make space around the paragraph
+    .paragraph {
+      padding-top: rem($p-gap-vert-top-sm);
+      padding-bottom: rem($p-gap-vert-bottom-sm);
+    }
+  }
+
+  //// ** Page content paragraphs:
+  ////
+  //// ** last paragraph (BEFORE DOORMAT) + without a bg needs no space
+  //
+  //.layout__content--node--page--full {
+  //
+  //  .group--paragraphs__item {
+  //
+  //    &:last-child {
+  //      .paragraph {
+  //        padding-bottom: rem($p-gap-vert-bottom-sm);
+  //      }
+  //    }
+  //  }
+  //}
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: desktop & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-md {
+
+  // -- grouped paragraphs: get more margin
+
+  .group--paragraphs__item {
+
+    $selfSelector: '.group--paragraphs__item';
+
+    // padding to make space around the paragraph
+    .paragraph {
+      padding-top: rem($p-gap-vert-top-md);
+      padding-bottom: rem($p-gap-vert-bottom-md);
+    }
+
+  }
+
+  //// ** Page content paragraphs:
+  ////
+  //// ** last paragraph (BEFORE DOORMAT) + without a bg needs no space
+  //
+  //.layout__content--node--page--full {
+  //
+  //  .group--paragraphs__item {
+  //
+  //    &:last-child {
+  //      .paragraph {
+  //        padding-bottom: rem($p-gap-vert-bottom-md);
+  //      }
+  //    }
+  //  }
+  //}
+
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+
+  .group--paragraphs__item {
+
+    $selfSelector: '.group--paragraphs__item';
+
+    // padding to make space around the paragraph
+    .paragraph {
+      padding-top: rem($p-gap-vert-top-lg-2);
+      padding-bottom: rem($p-gap-vert-bottom-lg-2);
+    }
+
+  }
+
+  //// ** Page content paragraphs:
+  ////
+  //// ** last paragraph (BEFORE DOORMAT) + without a bg needs no space
+  //
+  //.layout__content--node--page--full {
+  //
+  //  .group--paragraphs__item {
+  //
+  //    &:last-child {
+  //      .paragraph {
+  //        padding-bottom: 0;
+  //      }
+  //    }
+  //  }
+  //}
+
+}
+
+@import "p014-simple-header/p014-simple-header";

@@ -9,3 +9,9 @@ $easing-out: ease-out;
 $font-preloader: false;
 
 $list-list: '.inline,.contextual-links,.links,.toolbar-menu';
+
+// Only use the most basic styling,
+// So if skip typography and certain mixins (eg. buttons, fontawesome, …)
+// Useful when trying to generate structural CSS, eg. for use in the Paragraphs module
+// TO DO: actually implement this everywhere (not just in the paragraphs styling)
+$structuralOnly: false !default;

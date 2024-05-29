@@ -9,10 +9,12 @@ dependencies:
     - field.field.node.page.field_header
     - field.field.node.page.field_meta_tags
     - field.field.node.page.field_paragraphs
+    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - entity_reference_revisions
     - layout_builder
+    - layout_discovery
     - user
 third_party_settings:
   layout_builder:
@@ -22,41 +24,67 @@ third_party_settings:
       -
         layout_id: layout_onecol
         layout_settings:
-          label: ''
+          label: Visual
+          context_mapping: {  }
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Header
+          context_mapping: {  }
         components:
-          4df38ab9-ee90-4997-aa3d-5161bb03a48f:
-            uuid: 4df38ab9-ee90-4997-aa3d-5161bb03a48f
+          f9cd2b33-d168-4c69-bda0-d8d5d140104a:
+            uuid: f9cd2b33-d168-4c69-bda0-d8d5d140104a
             region: content
             configuration:
               id: 'field_block:node:page:field_header'
+              label: Header
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_revisions_entity_view
                 label: hidden
                 settings:
                   view_mode: default
-                  link: ''
                 third_party_settings: {  }
             weight: 0
             additional: {  }
-          79dc60aa-bbe2-456f-acbb-5ab4eba430f9:
-            uuid: 79dc60aa-bbe2-456f-acbb-5ab4eba430f9
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: CTA
+          context_mapping: {  }
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Content
+          context_mapping: {  }
+        components:
+          022667ac-f511-46f3-81f8-a4215fa80f14:
+            uuid: 022667ac-f511-46f3-81f8-a4215fa80f14
             region: content
             configuration:
               id: 'field_block:node:page:field_paragraphs'
+              label: Paragraphs
               label_display: '0'
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
               formatter:
                 type: entity_reference_revisions_entity_view
                 label: hidden
                 settings:
                   view_mode: default
-                  link: ''
                 third_party_settings: {  }
-            weight: 1
+            weight: 0
             additional: {  }
         third_party_settings: {  }
 id: node.page.full
@@ -87,5 +115,6 @@ hidden:
   field_description: true
   field_meta_tags: true
   langcode: true
+  layout_builder__layout: true
   links: true
   search_api_excerpt: true

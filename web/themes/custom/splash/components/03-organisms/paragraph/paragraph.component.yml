@@ -1,0 +1,28 @@
+name: Paragraph
+props:
+  type: object
+  properties:
+    paragraph:
+      type: object
+      title: Paragraph
+      description: Full paragraph entity.
+    content:
+      type: object
+      title: Content
+      description: All paragraph items.
+    attributes:
+      type: Drupal\Core\Template\Attribute
+      title: Attributes
+      description: HTML attributes for the containing element.
+    view_mode:
+      type: string
+      title: View mode
+      description: View mode; for example, "preview" or "full".
+    logged_in:
+      type: boolean
+      title: Logged in
+      description: Flag for authenticated user status. Will be true when the current user is a logged-in member.
+    is_admin:
+      type: boolean
+      title: Is admin
+      description: Flag for admin user status. Will be true when the current user is an administrator.

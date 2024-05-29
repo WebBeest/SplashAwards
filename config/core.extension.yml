@@ -61,6 +61,7 @@ module:
   page_cache: 0
   paragraphs_asymmetric_translation_widgets: 0
   paragraphs_type_permissions: 0
+  path: 0
   path_alias: 0
   rabbit_hole: 0
   recaptcha: 0
@@ -68,6 +69,7 @@ module:
   responsive_image: 0
   rh_taxonomy: 0
   sa: 0
+  sa_paragraphs: 0
   sdc: 0
   search_api: 0
   search_api_db: 0
@@ -88,6 +90,7 @@ module:
   video_embed_field: 0
   views_ui: 0
   webform: 0
+  pathauto: 1
   content_translation: 10
   views: 10
   paragraphs: 11

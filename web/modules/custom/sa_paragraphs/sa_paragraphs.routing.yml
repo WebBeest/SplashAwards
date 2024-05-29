@@ -1,0 +1,9 @@
+sa_paragraphs.admin_settings_form:
+  path: '/admin/config/system/splash-paragraphs'
+  defaults:
+    _form: '\Drupal\sa_paragraphs\Form\SettingsForm'
+    _title: 'Splash Awards Paragraphs Settings'
+  requirements:
+    _permission: 'manage sa paragraph settings'
+  options:
+    _admin_route: TRUE

@@ -40,7 +40,6 @@ components:
     organisms: components/03-organisms
     pages: components/04-pages
     layouts: components/05-layouts
-#    p-organisms: components/paragraphs/03-organisms
 
 libraries-override:
   classy/base:
