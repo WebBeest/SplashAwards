@@ -59,3 +59,7 @@ h5, h6,
   @include font-size($font-size-base, $line-height-base);
   color: $color-base;
 }
+
+strong, b {
+  font-weight: $fw-bold;
+}

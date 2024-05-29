@@ -1,0 +1,105 @@
+@import "../../../includes";
+@import "text-helpers";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Text
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Styling basic tags
+// =============================================================================
+
+mark {
+  @extend .marker;
+}
+
+details {
+  border: 1px solid $color-border;
+
+  summary {
+    padding: rem(8) rem(15);
+    background: $color-border;
+    color: $color-heading;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .details-wrapper {
+    padding: rem(10) rem(15) 0;
+  }
+  // &[open] { }
+}
+
+summary {
+  cursor: pointer;
+}
+
+small {
+  @extend .small;
+}
+
+p {
+  @extend .p;
+}
+
+
+// * Styling text in CKE
+// =============================================================================
+
+.text-long {
+
+  // text alignment
+
+  .text-align-right {
+    text-align: right;
+  }
+
+  .text-align-center {
+    text-align: center;
+  }
+
+  .text-align-justify {
+    text-align: justify;
+  }
+
+  // prevent floating elements from breaking out
+  @include clearfix;
+
+  // reset margins
+  p {
+
+    // @extend .p;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.no-margin {
+      margin-bottom: 0;
+    }
+  }
+
+  blockquote {
+    @extend .blockquote;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  hr {
+    @extend .hr;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  pre {
+    @extend .pre;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
