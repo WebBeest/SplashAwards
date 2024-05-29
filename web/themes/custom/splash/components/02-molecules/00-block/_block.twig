@@ -24,36 +24,16 @@
  *
  * @see template_preprocess_block()
  */
-
 #}
-{# {%
-  set classes = [
-    'block',
-    'block-' ~ configuration.provider|clean_class,
-    'block-' ~ plugin_id|clean_class,
-  ]
-%}
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</div> #}
-
 {% set bem_block_block = bem_block_block|default('block') %}
-
 {% set bem_block_element = bem_block_element|default(false) %}
-
 {% if bem_block_modifiers is not defined %}
   {% set bem_block_modifiers = [] %}
 {% endif %}
 {% set bem_block_modifiers = bem_block_modifiers|merge([
     (configuration.view_mode) ? 'view-mode-' ~ configuration.view_mode|clean_class|replace({'_':'-'}),
     configuration.provider ? 'provider-' ~ configuration.provider|clean_class|replace({'_':'-'}),
+    configuration.provider ? configuration.provider|clean_class,
     plugin_id ? plugin_id|clean_class|replace({'_':'-'}),
     attributes['data-bem'].originalId ? 'id-' ~ attributes['data-bem'].originalId|clean_class|replace({'_':'-'}),
     attributes['data-bem'].region ? 'region-' ~ attributes['data-bem'].region|clean_class|replace({'_':'-'}),
@@ -62,18 +42,19 @@
     configuration.type|clean_class|replace({'_':'-'}) ~ '--' ~  configuration.view_mode|clean_class|replace({'_':'-'})
 ])
 %}
-
 {% if bem_block_extra is not defined %}
   {% set bem_block_extra = [] %}
 {% endif %}
-
 {% set bem_block_extra = bem_block_extra|merge([
     attributes.id ? attributes.id|clean_class|replace({'_':'-'}),
     configuration.provider ? 'block-' ~ configuration.provider
   ])
 %}
+{% if attributes.class is iterable %}
+{% set bem_block_extra = bem_block_extra|merge(attributes.class) %}
+{% endif %}
 
-<div {{ bem(bem_block_block, bem_block_element, bem_block_modifiers, bem_block_extra) }}>
+<div {{ bem(bem_block_block, bem_block_element, bem_block_modifiers, bem_block_extra) }} {{ attributes|without('class') }}>
   {{ title_prefix }}
   {% if label %}
     {{ include ('splash:heading', {
