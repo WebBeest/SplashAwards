@@ -1,0 +1,52 @@
+
+// *
+// =============================================================================
+
+// ** View modes (layout): defaults to 'left'
+
+.p-003--view-mode--centered {
+  text-align: center;
+
+
+  // center content (combo with max-width)
+  > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // lists centering
+  //
+  // IF you want the whole list to be centered but the items themselves aligned left,
+  // paste the ul, ol styling onto the .text-long class
+  .text-long {
+    ul,
+    ol {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .field--buttons {
+    text-align: center;
+
+    .button {
+      @include button-negative();
+      margin-left: rem(5);
+      margin-right:  rem(5);
+    }
+  }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+  .paragraph--type-p003-text-main {
+    > * {
+      max-width: (math.div(100%,12) * 9);
+    }
+  }
+}

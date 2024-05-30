@@ -1,11 +1,36 @@
 uuid: 0d8604a3-f8ab-4b78-9529-bfbffc982b06
 langcode: nl
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blazy
+    - media
+    - slick
 name: 'Full HTML'
 format: full_html
 weight: 0
 filters:
+  blazy_filter:
+    id: blazy_filter
+    provider: blazy
+    status: false
+    weight: 3
+    settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_media_style: ''
+      box_caption: ''
+      filter_tags:
+        img: img
+        iframe: iframe
+      use_data_uri: '0'
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
   filter_autop:
     id: filter_autop
     provider: filter
@@ -24,7 +49,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<br> <p class="intro no-margin text-align-left text-align-center text-align-right"> <h2 class="text-align-left text-align-center text-align-right"> <h3 class="text-align-left text-align-center text-align-right"> <h4 class="text-align-left text-align-center text-align-right"> <h5 class="text-align-left text-align-center text-align-right"> <h6 class="text-align-left text-align-center text-align-right"> <a class="button button--secondary" href> <table class="is-reformatted no-margin"> <span class="highlight"> <strong> <em> <u> <code> <sub> <sup> <ul> <ol reversed start> <li> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-entity-uuid data-entity-type data-caption>'
+      allowed_html: '<br> <p class="intro no-margin text-align-left text-align-center text-align-right"> <h2 class="text-align-left text-align-center text-align-right"> <h3 class="text-align-left text-align-center text-align-right"> <h4 class="text-align-left text-align-center text-align-right"> <h5 class="text-align-left text-align-center text-align-right"> <h6 class="text-align-left text-align-center text-align-right"> <a class="button button--secondary" href> <table class="is-reformatted no-margin"> <span class="highlight"> <strong> <em> <u> <code> <sub> <sup> <ul> <ol reversed start> <li> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <img src alt height width data-entity-uuid data-entity-type data-caption data-align>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_htmlcorrector:
@@ -46,3 +71,59 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_view_modes:
+        default: default
+      allowed_media_types:
+        afbeelding: afbeelding
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      caption:
+        alt: '0'
+        title: '0'
+      optionset: default
+      by_delta: null
+      layout: ''
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      responsive_image_style: ''
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      style: ''
+      skin: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false
+      preserve_keys: false
+      visible_items: null

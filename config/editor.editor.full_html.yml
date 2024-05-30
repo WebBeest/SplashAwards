@@ -83,6 +83,8 @@ settings:
         -
           label: Highlight
           element: '<span class="highlight">'
+    editor_advanced_link_link:
+      enabled_attributes: {  }
 image_upload:
   status: true
   scheme: public
