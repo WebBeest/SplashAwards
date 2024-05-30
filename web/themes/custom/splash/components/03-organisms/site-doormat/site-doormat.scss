@@ -36,7 +36,8 @@
 
 .doormat .view,
 .doormat .nav,
-.block--region-doormat {
+.block--region-doormat,
+.block--region-doormat-col-1 {
   margin-bottom: rem(15); // vertical space between blocks
   color: $color-doormat;
   text-align: center;
@@ -218,7 +219,8 @@
 
   .doormat .view,
   .doormat .nav,
-  .block--region-doormat {
+  .block--region-doormat,
+  .block--region-doormat-col-1 {
     margin-bottom: rem(20); // vertical space between blocks
   }
 }

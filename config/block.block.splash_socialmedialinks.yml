@@ -11,7 +11,7 @@ dependencies:
 id: splash_socialmedialinks
 theme: splash
 region: doormat_col_1
-weight: 0
+weight: -5
 provider: null
 plugin: 'block_content:2bc8e877-08a9-4b5b-a1be-561544ade793'
 settings:

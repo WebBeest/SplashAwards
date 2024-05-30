@@ -1,0 +1,25 @@
+uuid: c01508aa-6ee9-4c20-8ffd-def6eaa98643
+langcode: nl
+status: true
+dependencies:
+  content:
+    - 'block_content:content:916de0bf-a5aa-45c4-9c4f-9dc26a8c59fb'
+  module:
+    - block_content
+  theme:
+    - splash
+id: splash_silversponsors
+theme: splash
+region: doormat_col_1
+weight: -4
+provider: null
+plugin: 'block_content:916de0bf-a5aa-45c4-9c4f-9dc26a8c59fb'
+settings:
+  id: 'block_content:916de0bf-a5aa-45c4-9c4f-9dc26a8c59fb'
+  label: 'Silver Sponsors'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
