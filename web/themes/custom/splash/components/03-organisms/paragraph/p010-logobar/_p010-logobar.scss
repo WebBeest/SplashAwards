@@ -1,0 +1,184 @@
+// * Slick slider
+// =============================================================================
+.paragraph--type-p010-logo-bar {
+  position: relative;
+  text-align: center;
+
+  .field--buttons {
+    text-align: center;
+
+    a {
+      margin-left: rem(5);
+      margin-right: rem(5);
+    }
+  }
+
+
+  // ** slider itself
+
+  .slick-slider {
+    //
+    margin-top: rem(50);
+  }
+
+  // ** items list
+
+  .slick-list {
+    width: calc(100% - 60px);
+    height: auto !important; // Overwrite height added by script
+    margin-left: rem(30);
+    margin-right: rem(30);
+
+    *:focus {
+      outline: none;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    > .paragraph {
+      padding: rem(10);
+    }
+  }
+
+  // ** navigation
+
+  .slick-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: rem(30);
+    font-size: 0;
+    cursor: pointer;
+    transition: all $duration $easing;
+
+    @if ($structuralOnly == false) {
+      //background: $color-off-white;
+    } @else {
+      //background: rgba(#FFFFFF, .75);
+    }
+
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all $duration $easing;
+    }
+
+    &.slick-prev {
+      left: 0;
+
+      @if ($structuralOnly == false) {
+
+        @include font-awesome((icon: $fa-var-chevron-left, color: $color-spot-2, size: 18, type: 'light'));
+
+      } @else {
+
+        &:before {
+          display: block;
+          content: '';
+          margin-left: rem(-4);
+          border-top: 7px solid transparent;
+          border-right: 7px solid #000000;
+          border-bottom: 7px solid transparent;
+          border-left: 7px solid transparent;
+        }
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+
+      @if ($structuralOnly == false) {
+
+        @include font-awesome((icon: $fa-var-chevron-right, color: $color-spot-2, size: 18, type: 'light'));
+
+      } @else {
+
+        &:before {
+          display: block;
+          content: '';
+          margin-left: rem(4);
+          border-top: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-left: 7px solid #000000;
+        }
+      }
+    }
+
+    &:hover {
+
+      @if ($structuralOnly == false) {
+
+        //background: $color-spot-2;
+
+        &:before {
+          //color: $color-spot-1;
+        }
+
+      } @else {
+
+        //background: rgba(#FFFFFF, 1);
+
+      }
+    }
+  }
+}
+
+// * Logo itself
+// =============================================================================
+
+.paragraph--type-p010-logo-item {
+  position: relative;
+
+  .field--name-field-p-image {
+
+    img {
+      display: block;
+      margin: 0 auto;
+      border: 0 none;
+
+      transition: transform .5s ease;
+
+      &:hover,
+      &:active {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  .field--name-field-p-link {
+    a {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      text-indent: rem(-9999);
+
+      @if ($structuralOnly == false) {
+
+        //
+
+      } @else {
+
+        text-decoration: none;
+        border: 0 none;
+      }
+
+    }
+  }
+}

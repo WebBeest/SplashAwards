@@ -393,14 +393,6 @@
   }
 }
 
-
-// * Grouped paragraphs
-// =============================================================================
-
-.group--paragraphs {
-  //
-}
-
 // -- spacing and alignment for paragraphs as part of a group
 
 .group--paragraphs__item {
@@ -439,44 +431,13 @@
   }
 }
 
-//// ** Page content paragraphs:
-////
-//// ** last paragraph (BEFORE DOORMAT) + without a bg needs no space
-//
-//.layout__content--node--page--full {
-//
-//  .group--paragraphs__item {
-//
-//    &:last-child {
-//      .paragraph {
-//        padding-bottom: rem($p-gap-vert-bottom-xs);
-//      }
-//    }
-//  }
-//}
-
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // * Breakpoint: tablet & wider
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 @include bp-sm {
-
-
-  //.field--name-field-p-bg-image {
-  //
-  //  // -- make img stretch with width (visually cropped height)
-  //
-  //  img {
-  //    width: 100%;
-  //    height: auto;
-  //  }
-  //
-  //}
-
   // -- grouped paragraphs: get more margin
-
   .group--paragraphs__item {
-
     $selfSelector: '.group--paragraphs__item';
 
     // padding to make space around the paragraph
@@ -485,22 +446,6 @@
       padding-bottom: rem($p-gap-vert-bottom-sm);
     }
   }
-
-  //// ** Page content paragraphs:
-  ////
-  //// ** last paragraph (BEFORE DOORMAT) + without a bg needs no space
-  //
-  //.layout__content--node--page--full {
-  //
-  //  .group--paragraphs__item {
-  //
-  //    &:last-child {
-  //      .paragraph {
-  //        padding-bottom: rem($p-gap-vert-bottom-sm);
-  //      }
-  //    }
-  //  }
-  //}
 }
 
 
@@ -509,11 +454,8 @@
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 @include bp-md {
-
   // -- grouped paragraphs: get more margin
-
   .group--paragraphs__item {
-
     $selfSelector: '.group--paragraphs__item';
 
     // padding to make space around the paragraph
@@ -521,35 +463,14 @@
       padding-top: rem($p-gap-vert-top-md);
       padding-bottom: rem($p-gap-vert-bottom-md);
     }
-
   }
-
-  //// ** Page content paragraphs:
-  ////
-  //// ** last paragraph (BEFORE DOORMAT) + without a bg needs no space
-  //
-  //.layout__content--node--page--full {
-  //
-  //  .group--paragraphs__item {
-  //
-  //    &:last-child {
-  //      .paragraph {
-  //        padding-bottom: rem($p-gap-vert-bottom-md);
-  //      }
-  //    }
-  //  }
-  //}
-
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 // * Breakpoint: large
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
 @include bp-lg {
-
   .group--paragraphs__item {
-
     $selfSelector: '.group--paragraphs__item';
 
     // padding to make space around the paragraph
@@ -557,26 +478,9 @@
       padding-top: rem($p-gap-vert-top-lg-2);
       padding-bottom: rem($p-gap-vert-bottom-lg-2);
     }
-
   }
-
-  //// ** Page content paragraphs:
-  ////
-  //// ** last paragraph (BEFORE DOORMAT) + without a bg needs no space
-  //
-  //.layout__content--node--page--full {
-  //
-  //  .group--paragraphs__item {
-  //
-  //    &:last-child {
-  //      .paragraph {
-  //        padding-bottom: 0;
-  //      }
-  //    }
-  //  }
-  //}
-
 }
 
 @import "p001-story/p001-story";
+@import "p010-logobar/p010-logobar";
 @import "p014-simple-header/p014-simple-header";

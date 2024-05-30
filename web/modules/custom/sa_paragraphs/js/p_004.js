@@ -1,74 +1,25 @@
-/**
- * Rocketship UI JS
- *
- * contains: triggers for functions
- * Functions themselves are split off and grouped below each behavior
- *
- * Drupal behaviors:
- *
- * Means the JS is loaded when page is first loaded
- * + during AJAX requests (for newly added content)
- * use jQuery's "once" to avoid processing the same element multiple times
- * http: *api.jquery.com/one/
- * use the "context" param to limit scope, by default this will return document
- * use the "settings" param to get stuff set via the theme hooks and such.
- *
- *
- * Avoid multiple triggers by using jQuery Once
- *
- * EXAMPLE 1:
- *
- * $('.some-link', context).once('js-once-my-behavior').click(function () {
- *   // Code here will only be applied once
- * });
- *
- * EXAMPLE 2:
- *
- * $('.some-element', context).once('js-once-my-behavior').each(function () {
- *   // The following click-binding will only be applied once
- * * });
- */
-
-(function ($, Drupal, window, document) {
+(function ($, Drupal, window, document, once) {
 
   "use strict";
 
   // set namespace for frontend UI javascript
-  if (typeof window.rocketshipUI == 'undefined') { window.rocketshipUI = {}; }
+  if (typeof window.splashUI == 'undefined') { window.splashUI = {}; }
 
-  var self = window.rocketshipUI;
+  const self = window.splashUI;
 
-  ///////////////////////////////////////////////////////////////////////
-  // Cache variables available across the namespace
-  ///////////////////////////////////////////////////////////////////////
-
-
-  ///////////////////////////////////////////////////////////////////////
-  // Behavior for Tabs: triggers
-  ///////////////////////////////////////////////////////////////////////
-
-  Drupal.behaviors.rocketshipUI_p004 = {
+  Drupal.behaviors.splashUI_p004 = {
     attach: function (context, settings) {
-
-      var faq = $('.field__item--name-field-p-004-item', context);
+      const faq = $('.field__item--name-field-p-004-item', context);
       if (faq.length) self.faqCollapsable(faq);
-
     }
   };
 
-  ///////////////////////////////////////////////////////////////////////
-  // Behavior for Tabs: functions
-  ///////////////////////////////////////////////////////////////////////
-
-  /*
-   *
+  /**
    * Open/close FAQ items
    */
   self.faqCollapsable = function (faq) {
-
-    faq.once('js-once-faq-collapsable').each(function () {
-
-      var faqItem = $(this),
+    $(once('js-once-faq-collapsable', faq)).each(function () {
+      let faqItem = $(this),
         trigger = faqItem.find('.tab-item__title'),
         target = faqItem.find('.tab-item__content');
 
@@ -86,7 +37,8 @@
             //callback
           });
           // open item
-        } else {
+        }
+        else {
           faqItem.addClass('js-open');
           target.stop( true, true ).slideDown(250, function () {
             //callback
@@ -94,7 +46,7 @@
 
           // close all siblings
           faqItem.siblings().each(function () {
-            var sibling = $(this);
+            const sibling = $(this);
 
             if (sibling.hasClass('js-open')) {
               sibling.removeClass('js-open');
@@ -104,11 +56,7 @@
             }
           });
         }
-
       });
-
     });
-
   };
-
-})(jQuery, Drupal, window, document);
+})(jQuery, Drupal, window, document, once);
