@@ -1,0 +1,18 @@
+uuid: 6c58734d-ae72-4983-89b1-8d80087dce7d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p005_testimonial
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.p005_testimonial
+target_entity_type_id: paragraph
+target_bundle: p005_testimonial
+default_langcode: site_default
+language_alterable: false

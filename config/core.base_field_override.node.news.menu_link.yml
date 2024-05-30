@@ -1,0 +1,20 @@
+uuid: 9af0d6d9-ecd7-4e23-8425-2c667d5e07ce
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: node.news.menu_link
+field_name: menu_link
+entity_type: node
+bundle: news
+label: Menulink
+description: 'Berekende menulink van de node (alleen beschikbaar tijdens het opslaan).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

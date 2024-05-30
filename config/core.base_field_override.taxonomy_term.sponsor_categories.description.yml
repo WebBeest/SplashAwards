@@ -1,0 +1,21 @@
+uuid: 0ed399a2-c124-4eca-9b5e-3e3e47f2411d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsor_categories
+  module:
+    - text
+id: taxonomy_term.sponsor_categories.description
+field_name: description
+entity_type: taxonomy_term
+bundle: sponsor_categories
+label: Beschrijving
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

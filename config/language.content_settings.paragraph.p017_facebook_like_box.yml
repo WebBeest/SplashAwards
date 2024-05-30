@@ -1,0 +1,18 @@
+uuid: 71d2bd3f-27c7-4bc1-8842-e4d83989ab57
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p017_facebook_like_box
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.p017_facebook_like_box
+target_entity_type_id: paragraph
+target_bundle: p017_facebook_like_box
+default_langcode: site_default
+language_alterable: false

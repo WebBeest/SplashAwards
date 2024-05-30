@@ -1,0 +1,18 @@
+uuid: 2f5a07a8-18f2-49fa-961b-09591189a63e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.case
+id: node.case.title
+field_name: title
+entity_type: node
+bundle: case
+label: Titel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

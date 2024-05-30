@@ -1,0 +1,22 @@
+uuid: 4897f75b-4ff6-4623-b4aa-b4e3eaf3d56f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p011_form
+id: paragraph.p011_form.status
+field_name: status
+entity_type: paragraph
+bundle: p011_form
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

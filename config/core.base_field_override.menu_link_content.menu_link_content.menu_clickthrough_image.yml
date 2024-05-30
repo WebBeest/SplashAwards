@@ -1,0 +1,36 @@
+uuid: c387602c-c500-4ebe-8ee1-6b24d4b4ce9b
+langcode: nl
+status: true
+dependencies:
+  module:
+    - image
+    - menu_link_content
+id: menu_link_content.menu_link_content.menu_clickthrough_image
+field_name: menu_clickthrough_image
+entity_type: menu_link_content
+bundle: menu_link_content
+label: 'Teaser image'
+description: 'This image is used in menu clickthrough paragraphs.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+  file_directory: menu_link_content
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: '2 MB'
+  max_resolution: 2000x2000
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

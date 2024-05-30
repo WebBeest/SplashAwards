@@ -1,0 +1,22 @@
+uuid: 92f8cd5b-3936-4727-9644-648a3f86179b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsor_categories
+id: taxonomy_term.sponsor_categories.rh_redirect_response
+field_name: rh_redirect_response
+entity_type: taxonomy_term
+bundle: sponsor_categories
+label: 'Rabbit Hole redirect response code'
+description: 'Specifies the HTTP response code that should be used when perform a redirect.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

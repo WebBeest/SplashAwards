@@ -1,0 +1,20 @@
+uuid: 521023b8-f0d9-4a3d-9f2c-658fc5c56e43
+langcode: nl
+status: true
+dependencies:
+  module:
+    - menu_link_content
+    - text
+id: menu_link_content.menu_link_content.menu_clickthrough_description
+field_name: menu_clickthrough_description
+entity_type: menu_link_content
+bundle: menu_link_content
+label: Teaser
+description: 'This text is used in menu clickthrough paragraphs.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

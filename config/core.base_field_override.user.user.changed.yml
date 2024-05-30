@@ -1,0 +1,18 @@
+uuid: 0536262d-9489-4865-8661-8d2a2366b589
+langcode: nl
+status: true
+dependencies:
+  module:
+    - user
+id: user.user.changed
+field_name: changed
+entity_type: user
+bundle: user
+label: Gewijzigd
+description: 'Het tijdstip waarop de gebruiker voor het laatst is bewerkt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

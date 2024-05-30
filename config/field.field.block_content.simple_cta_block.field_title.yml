@@ -1,0 +1,19 @@
+uuid: b37da610-86b2-44c9-9999-883586923b17
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_cta_block
+    - field.storage.block_content.field_title
+id: block_content.simple_cta_block.field_title
+field_name: field_title
+entity_type: block_content
+bundle: simple_cta_block
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

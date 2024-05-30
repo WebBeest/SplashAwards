@@ -1,0 +1,22 @@
+uuid: b86c2da5-f235-4acc-bccb-d622c430f2b2
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: node.news.status
+field_name: status
+entity_type: node
+bundle: news
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

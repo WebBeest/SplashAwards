@@ -1,0 +1,18 @@
+uuid: f9407755-defe-4b3b-a98a-f35ce8fd29c8
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+id: block_content.social_media_links.changed
+field_name: changed
+entity_type: block_content
+bundle: social_media_links
+label: Gewijzigd
+description: 'Het tijdstip waarop het inhoudsblok voor het laatst is bewerkt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

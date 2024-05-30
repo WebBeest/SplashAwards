@@ -1,0 +1,20 @@
+uuid: 08e16c24-9e6d-49a1-ae7f-c07d124ba541
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+  module:
+    - metatag
+id: block_content.social_media_links.metatag
+field_name: metatag
+entity_type: block_content
+bundle: social_media_links
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The computed meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag_computed

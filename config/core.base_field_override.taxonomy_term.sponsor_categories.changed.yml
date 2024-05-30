@@ -1,0 +1,18 @@
+uuid: 13612fdd-98a8-4e1a-aa9e-84517bf807d4
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsor_categories
+id: taxonomy_term.sponsor_categories.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: sponsor_categories
+label: Gewijzigd
+description: 'Het tijdstip waarop de term het laatst is aangepast.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

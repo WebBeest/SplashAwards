@@ -1,0 +1,18 @@
+uuid: f1607d36-4999-47f2-9a06-2d3abf02964a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p007_usp_item
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.p007_usp_item
+target_entity_type_id: paragraph
+target_bundle: p007_usp_item
+default_langcode: site_default
+language_alterable: false

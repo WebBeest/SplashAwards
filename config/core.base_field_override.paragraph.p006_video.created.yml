@@ -1,0 +1,18 @@
+uuid: b753ec97-8b25-412d-90ac-ebc7eee0f8a1
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p006_video
+id: paragraph.p006_video.created
+field_name: created
+entity_type: paragraph
+bundle: p006_video
+label: 'Aangemaakt op'
+description: 'Tijdstip waarop de paragraaf is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

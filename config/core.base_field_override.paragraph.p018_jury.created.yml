@@ -1,0 +1,18 @@
+uuid: 23f35ddc-6b54-4e23-91d9-0585a0271ecd
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p018_jury
+id: paragraph.p018_jury.created
+field_name: created
+entity_type: paragraph
+bundle: p018_jury
+label: 'Aangemaakt op'
+description: 'Tijdstip waarop de paragraaf is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

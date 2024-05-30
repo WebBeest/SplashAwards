@@ -1,0 +1,22 @@
+uuid: c24cde28-7205-406b-a09e-4a60b240b19c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.news
+id: node.news.sticky
+field_name: sticky
+entity_type: node
+bundle: news
+label: 'Vastgeplakt bovenaan de lijst'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

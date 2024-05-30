@@ -1,0 +1,21 @@
+uuid: ae8cf588-7db4-46df-a5a6-77bc6c094214
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.award_year
+  module:
+    - text
+id: taxonomy_term.award_year.description
+field_name: description
+entity_type: taxonomy_term
+bundle: award_year
+label: Beschrijving
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

@@ -1,0 +1,8 @@
+uuid: 6e574ae1-5a39-444f-9368-07b79dc0aef1
+langcode: nl
+status: true
+dependencies: {  }
+id: content
+label: Content
+revision: 0
+description: ''

@@ -1,0 +1,13 @@
+uuid: 00246753-24e5-4699-ba25-77ac5731825b
+langcode: nl
+status: true
+dependencies: {  }
+id: header
+label: Header
+classes: region-header
+type: section
+group: default
+block_restrictions: {  }
+layout_restrictions:
+  - layout_twocol_section
+weight: 0

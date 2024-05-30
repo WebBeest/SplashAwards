@@ -1,0 +1,22 @@
+uuid: 7b43fdbc-aac9-49db-a7f2-86304ae5cb23
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.jury
+id: node.jury.status
+field_name: status
+entity_type: node
+bundle: jury
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

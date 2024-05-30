@@ -1,0 +1,18 @@
+uuid: dc66484b-fe4d-4e5b-8339-2b112ba193d4
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p015_focus_header
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.p015_focus_header
+target_entity_type_id: paragraph
+target_bundle: p015_focus_header
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,22 @@
+uuid: 48a7df8f-be27-4803-b053-a3446e468202
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p010_logo_item
+id: paragraph.p010_logo_item.status
+field_name: status
+entity_type: paragraph
+bundle: p010_logo_item
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

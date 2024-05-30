@@ -1,0 +1,22 @@
+uuid: 9429026f-68f0-4fb7-9389-9fa8d9f19fab
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p007_usp_item
+id: paragraph.p007_usp_item.status
+field_name: status
+entity_type: paragraph
+bundle: p007_usp_item
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

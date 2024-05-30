@@ -1,0 +1,22 @@
+uuid: 1bdd51ec-9d37-4029-8e7b-3d04eaa55815
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p014_simple_header
+id: paragraph.p014_simple_header.status
+field_name: status
+entity_type: paragraph
+bundle: p014_simple_header
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

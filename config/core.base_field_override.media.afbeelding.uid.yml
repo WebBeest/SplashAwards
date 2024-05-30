@@ -1,0 +1,20 @@
+uuid: 522f07aa-1b1a-4fb5-874b-a40b1636d858
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.afbeelding
+id: media.afbeelding.uid
+field_name: uid
+entity_type: media
+bundle: afbeelding
+label: 'Geschreven door'
+description: 'Gebruikers-ID van de auteur.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\media\Entity\Media::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

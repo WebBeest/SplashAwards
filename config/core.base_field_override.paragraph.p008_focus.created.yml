@@ -1,0 +1,18 @@
+uuid: 09676731-240f-4922-b3f4-69586ad55007
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p008_focus
+id: paragraph.p008_focus.created
+field_name: created
+entity_type: paragraph
+bundle: p008_focus
+label: 'Aangemaakt op'
+description: 'Tijdstip waarop de paragraaf is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

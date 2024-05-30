@@ -1,0 +1,20 @@
+uuid: 317a8527-36ff-4f76-9a1e-2c14e6e62c88
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.jury
+  module:
+    - path
+id: node.jury.path
+field_name: path
+entity_type: node
+bundle: jury
+label: URL-alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

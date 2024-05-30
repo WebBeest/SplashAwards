@@ -1,0 +1,22 @@
+uuid: 2e220b8f-25c8-4b32-a9fc-d2863dbebdfa
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.award_year
+id: taxonomy_term.award_year.status
+field_name: status
+entity_type: taxonomy_term
+bundle: award_year
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

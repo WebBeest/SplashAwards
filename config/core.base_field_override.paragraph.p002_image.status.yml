@@ -1,0 +1,22 @@
+uuid: cba85bb1-6ac2-4d4e-9954-6392c2a34122
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p002_image
+id: paragraph.p002_image.status
+field_name: status
+entity_type: paragraph
+bundle: p002_image
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

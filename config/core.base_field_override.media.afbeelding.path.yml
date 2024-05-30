@@ -1,0 +1,20 @@
+uuid: e364ca02-52f2-4fc7-943a-037f9b625227
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.afbeelding
+  module:
+    - path
+id: media.afbeelding.path
+field_name: path
+entity_type: media
+bundle: afbeelding
+label: URL-alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

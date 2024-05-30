@@ -1,0 +1,18 @@
+uuid: 3f49e169-d1a5-4721-a455-445c268f836b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p010_logo_bar
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.p010_logo_bar
+target_entity_type_id: paragraph
+target_bundle: p010_logo_bar
+default_langcode: site_default
+language_alterable: false

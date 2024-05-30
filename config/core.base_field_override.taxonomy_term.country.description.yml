@@ -1,0 +1,21 @@
+uuid: 15447bc6-0742-4a25-8e90-080ad0763beb
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.country
+  module:
+    - text
+id: taxonomy_term.country.description
+field_name: description
+entity_type: taxonomy_term
+bundle: country
+label: Beschrijving
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

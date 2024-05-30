@@ -1,0 +1,18 @@
+uuid: 527db065-d0dc-4d59-bdf2-3ad21add1dab
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p006_video
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.p006_video
+target_entity_type_id: paragraph
+target_bundle: p006_video
+default_langcode: site_default
+language_alterable: false

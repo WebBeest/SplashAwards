@@ -1,0 +1,20 @@
+uuid: da7e9f0c-ed2f-4ee5-a95d-1966a5d24ff5
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.case
+id: node.case.uid
+field_name: uid
+entity_type: node
+bundle: case
+label: 'Geschreven door'
+description: 'De gebruikersnaam van de auteur.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

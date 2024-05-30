@@ -1,0 +1,18 @@
+uuid: 5962703b-96d2-4152-8fb6-7b0126b0d1ac
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.page
+id: node.page.created
+field_name: created
+entity_type: node
+bundle: page
+label: 'Aangemaakt op'
+description: 'Datum en tijdstip waarop de inhoud gemaakt is.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

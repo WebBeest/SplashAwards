@@ -1,0 +1,22 @@
+uuid: a6507111-9f69-4e4f-9ae0-4274bf18f4b9
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p017_facebook_like_box
+id: paragraph.p017_facebook_like_box.status
+field_name: status
+entity_type: paragraph
+bundle: p017_facebook_like_box
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

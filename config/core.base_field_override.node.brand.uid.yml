@@ -1,0 +1,20 @@
+uuid: c35c50aa-406a-4258-96a2-ea9adb9b2233
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.brand
+id: node.brand.uid
+field_name: uid
+entity_type: node
+bundle: brand
+label: 'Geschreven door'
+description: 'De gebruikersnaam van de auteur.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

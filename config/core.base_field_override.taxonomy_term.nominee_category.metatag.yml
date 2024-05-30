@@ -1,0 +1,20 @@
+uuid: 9828d4c6-b923-4d1c-99e9-2a052566f97e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nominee_category
+  module:
+    - metatag
+id: taxonomy_term.nominee_category.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: nominee_category
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The computed meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag_computed

@@ -1,0 +1,20 @@
+uuid: 4db734bf-95f1-4b44-a766-3eb5e9305ed5
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.afbeelding
+id: media.afbeelding.name
+field_name: name
+entity_type: media
+bundle: afbeelding
+label: Naam
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ''
+default_value_callback: ''
+settings: {  }
+field_type: string

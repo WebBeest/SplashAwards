@@ -1,0 +1,20 @@
+uuid: ee51a3ad-a09c-45b6-90bf-83ef624dbd92
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsor_categories
+  module:
+    - path
+id: taxonomy_term.sponsor_categories.path
+field_name: path
+entity_type: taxonomy_term
+bundle: sponsor_categories
+label: URL-alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

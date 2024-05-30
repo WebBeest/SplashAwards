@@ -1,0 +1,18 @@
+uuid: fbb3bb5d-c801-4f20-8377-382277e60d81
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsor_categories
+id: taxonomy_term.sponsor_categories.rh_redirect
+field_name: rh_redirect
+entity_type: taxonomy_term
+bundle: sponsor_categories
+label: 'Rabbit Hole redirect path.'
+description: 'The path to where the user should get redirected to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

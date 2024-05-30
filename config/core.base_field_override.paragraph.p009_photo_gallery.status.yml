@@ -1,0 +1,22 @@
+uuid: 24ebe70a-9c2b-49b2-b1a4-e9a0b2bf02ab
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p009_photo_gallery
+id: paragraph.p009_photo_gallery.status
+field_name: status
+entity_type: paragraph
+bundle: p009_photo_gallery
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

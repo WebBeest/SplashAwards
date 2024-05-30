@@ -1,0 +1,18 @@
+uuid: 7cb15890-2c11-4baf-9b8b-d363215aa3b1
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.case
+id: node.case.created
+field_name: created
+entity_type: node
+bundle: case
+label: 'Aangemaakt op'
+description: 'Datum en tijdstip waarop de inhoud gemaakt is.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

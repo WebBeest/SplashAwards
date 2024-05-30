@@ -1,0 +1,20 @@
+uuid: d54568ed-7d39-423f-b033-4a6df2dfea2b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.country
+  module:
+    - metatag
+id: taxonomy_term.country.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: country
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The computed meta tags for the entity.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag_computed

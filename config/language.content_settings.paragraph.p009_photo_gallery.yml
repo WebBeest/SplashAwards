@@ -1,0 +1,18 @@
+uuid: 5ec16213-93f5-4249-88d8-f46e18412684
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p009_photo_gallery
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.p009_photo_gallery
+target_entity_type_id: paragraph
+target_bundle: p009_photo_gallery
+default_langcode: site_default
+language_alterable: false

@@ -1,0 +1,22 @@
+uuid: 4d33c288-cda8-49c2-9182-094c04855d85
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+id: block_content.social_media_links.status
+field_name: status
+entity_type: block_content
+bundle: social_media_links
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

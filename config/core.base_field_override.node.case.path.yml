@@ -1,0 +1,20 @@
+uuid: cc555f4b-4494-4d8b-9312-4789388914da
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.case
+  module:
+    - path
+id: node.case.path
+field_name: path
+entity_type: node
+bundle: case
+label: URL-alias
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

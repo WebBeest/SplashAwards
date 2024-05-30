@@ -1,0 +1,22 @@
+uuid: c2ec05ae-1020-4eb7-96d3-3eecd88aaf7b
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsor_categories
+id: taxonomy_term.sponsor_categories.status
+field_name: status
+entity_type: taxonomy_term
+bundle: sponsor_categories
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

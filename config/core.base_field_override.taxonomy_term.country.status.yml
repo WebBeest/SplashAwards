@@ -1,0 +1,22 @@
+uuid: a2f8ed51-5046-4abf-8572-d1c79cb05f63
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.country
+id: taxonomy_term.country.status
+field_name: status
+entity_type: taxonomy_term
+bundle: country
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

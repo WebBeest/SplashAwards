@@ -1,0 +1,21 @@
+uuid: e365c2cd-6cd2-4be0-8af4-d83ea3250c58
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nominee_category
+  module:
+    - text
+id: taxonomy_term.nominee_category.description
+field_name: description
+entity_type: taxonomy_term
+bundle: nominee_category
+label: Beschrijving
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

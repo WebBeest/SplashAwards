@@ -1,0 +1,22 @@
+uuid: 6df733bc-8428-49c2-91aa-60490a05c4f1
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.case
+id: node.case.promote
+field_name: promote
+entity_type: node
+bundle: case
+label: 'Aangeraden op de voorpagina'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

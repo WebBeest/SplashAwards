@@ -1,0 +1,18 @@
+uuid: 6e9b09f8-898e-4614-9cfc-32cb12bc78d8
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.jury
+id: node.jury.changed
+field_name: changed
+entity_type: node
+bundle: jury
+label: Gewijzigd
+description: 'Het tijdstip waarop de node voor het laatst werd bewerkt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

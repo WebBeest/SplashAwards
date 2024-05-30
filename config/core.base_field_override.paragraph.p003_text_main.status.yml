@@ -1,0 +1,22 @@
+uuid: 66064761-eb0b-41f0-a8e4-1519f81342a6
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p003_text_main
+id: paragraph.p003_text_main.status
+field_name: status
+entity_type: paragraph
+bundle: p003_text_main
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

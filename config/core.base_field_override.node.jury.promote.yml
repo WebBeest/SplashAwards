@@ -1,0 +1,22 @@
+uuid: 36244d23-f0f9-4d15-9e1b-216762549513
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.jury
+id: node.jury.promote
+field_name: promote
+entity_type: node
+bundle: jury
+label: 'Aangeraden op de voorpagina'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

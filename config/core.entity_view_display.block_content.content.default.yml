@@ -1,0 +1,26 @@
+uuid: 196cf7b9-6841-4074-86e5-f8d4f5a6bd35
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.content
+    - field.field.block_content.content.field_paragraphs
+  module:
+    - entity_reference_revisions
+id: block_content.content.default
+targetEntityType: block_content
+bundle: content
+mode: default
+content:
+  field_paragraphs:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

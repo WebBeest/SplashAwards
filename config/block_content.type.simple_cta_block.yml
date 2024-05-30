@@ -1,0 +1,8 @@
+uuid: 3dbffeb1-7c06-4ba8-833d-991a35bfa586
+langcode: nl
+status: true
+dependencies: {  }
+id: simple_cta_block
+label: 'Simple CTA block'
+revision: 0
+description: 'Title and CTA for simple CTA blocks'

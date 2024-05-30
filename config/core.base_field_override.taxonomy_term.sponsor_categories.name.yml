@@ -1,0 +1,18 @@
+uuid: 836f1efd-acd6-4afb-b1e4-55039e3ef199
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.sponsor_categories
+id: taxonomy_term.sponsor_categories.name
+field_name: name
+entity_type: taxonomy_term
+bundle: sponsor_categories
+label: Naam
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

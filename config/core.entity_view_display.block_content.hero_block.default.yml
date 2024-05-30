@@ -55,10 +55,10 @@ content:
     weight: 2
     region: content
   field_title:
-    type: string
+    type: header_text_field_formatter
     label: hidden
     settings:
-      link_to_entity: false
+      header: h1
     third_party_settings: {  }
     weight: 3
     region: content

@@ -1,0 +1,22 @@
+uuid: 77544246-f999-48ef-9a40-33edc2cb247c
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p004_faq
+id: paragraph.p004_faq.status
+field_name: status
+entity_type: paragraph
+bundle: p004_faq
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

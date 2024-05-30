@@ -1,0 +1,22 @@
+uuid: 0dd5e233-8434-47dd-bb89-46e13cc391e2
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p015_focus_header
+id: paragraph.p015_focus_header.status
+field_name: status
+entity_type: paragraph
+bundle: p015_focus_header
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

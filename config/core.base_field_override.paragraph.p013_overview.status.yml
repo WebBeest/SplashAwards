@@ -1,0 +1,22 @@
+uuid: 8cfab153-dff9-43ac-8249-b0a80e73fb82
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p013_overview
+id: paragraph.p013_overview.status
+field_name: status
+entity_type: paragraph
+bundle: p013_overview
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

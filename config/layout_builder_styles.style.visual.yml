@@ -1,0 +1,14 @@
+uuid: ce2f1582-7aed-402c-94b2-5b7c33dc4c55
+langcode: nl
+status: true
+dependencies: {  }
+id: visual
+label: Visual
+classes: region-visual
+type: section
+group: default
+block_restrictions: {  }
+layout_restrictions:
+  - layout_onecol
+  - layout_twocol_section
+weight: 0

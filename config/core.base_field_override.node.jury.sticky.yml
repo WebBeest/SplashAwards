@@ -1,0 +1,22 @@
+uuid: c1cf4200-440e-46a9-aefe-9a967ed26479
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.jury
+id: node.jury.sticky
+field_name: sticky
+entity_type: node
+bundle: jury
+label: 'Vastgeplakt bovenaan de lijst'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: debeb975-b454-4a32-aa6e-725f9d4bf89a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p016_menu_overview
+id: paragraph.p016_menu_overview.created
+field_name: created
+entity_type: paragraph
+bundle: p016_menu_overview
+label: 'Aangemaakt op'
+description: 'Tijdstip waarop de paragraaf is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

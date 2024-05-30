@@ -1,0 +1,37 @@
+uuid: 35e4feec-1b7f-41d8-bce1-0f04ad48e93a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - media.type.afbeelding
+  module:
+    - image
+id: media.afbeelding.thumbnail
+field_name: thumbnail
+entity_type: media
+bundle: afbeelding
+label: Miniatuur
+description: 'Miniatuur van het media-item.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

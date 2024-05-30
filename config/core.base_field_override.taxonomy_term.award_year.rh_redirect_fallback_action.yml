@@ -1,0 +1,18 @@
+uuid: 430cd559-df01-4f85-be27-011c31438ed8
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.award_year
+id: taxonomy_term.award_year.rh_redirect_fallback_action
+field_name: rh_redirect_fallback_action
+entity_type: taxonomy_term
+bundle: award_year
+label: 'Rabbit Hole redirect fallback action'
+description: 'Specifies the action that should be used when the redirect path is invalid or empty.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

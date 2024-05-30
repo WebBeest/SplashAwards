@@ -1,0 +1,22 @@
+uuid: 02701508-c2a9-48b0-8351-c11ce100fcaa
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p007_usp
+id: paragraph.p007_usp.status
+field_name: status
+entity_type: paragraph
+bundle: p007_usp
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

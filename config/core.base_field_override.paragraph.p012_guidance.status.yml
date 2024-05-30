@@ -1,0 +1,22 @@
+uuid: be53120f-fb4a-4fe3-bde4-7f50d9759e60
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p012_guidance
+id: paragraph.p012_guidance.status
+field_name: status
+entity_type: paragraph
+bundle: p012_guidance
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

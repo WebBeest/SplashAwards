@@ -1,0 +1,18 @@
+uuid: 5aaf4fe8-1076-4586-9c30-38631d05be16
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.award_year
+id: taxonomy_term.award_year.rh_action
+field_name: rh_action
+entity_type: taxonomy_term
+bundle: award_year
+label: 'Rabbit Hole action'
+description: 'Specifies which action that Rabbit Hole should take.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

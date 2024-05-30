@@ -1,0 +1,18 @@
+uuid: a7738abf-f0ac-4571-8546-48b44ff5ceb8
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nominee_category
+id: taxonomy_term.nominee_category.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: nominee_category
+label: Gewijzigd
+description: 'Het tijdstip waarop de term het laatst is aangepast.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

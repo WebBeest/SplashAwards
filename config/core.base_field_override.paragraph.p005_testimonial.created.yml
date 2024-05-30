@@ -1,0 +1,18 @@
+uuid: bb123a2d-7bbf-4e6c-bb14-17683efb64a7
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p005_testimonial
+id: paragraph.p005_testimonial.created
+field_name: created
+entity_type: paragraph
+bundle: p005_testimonial
+label: 'Aangemaakt op'
+description: 'Tijdstip waarop de paragraaf is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

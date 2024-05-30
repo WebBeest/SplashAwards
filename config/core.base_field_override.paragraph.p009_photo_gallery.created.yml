@@ -1,0 +1,18 @@
+uuid: 4e8b7df7-65d8-47c7-8fcc-eec906c14321
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p009_photo_gallery
+id: paragraph.p009_photo_gallery.created
+field_name: created
+entity_type: paragraph
+bundle: p009_photo_gallery
+label: 'Aangemaakt op'
+description: 'Tijdstip waarop de paragraaf is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

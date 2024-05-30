@@ -1,0 +1,18 @@
+uuid: 4baa9d56-818d-4db1-b8c6-d14bc08d002f
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.country
+id: taxonomy_term.country.rh_redirect
+field_name: rh_redirect
+entity_type: taxonomy_term
+bundle: country
+label: 'Rabbit Hole redirect path.'
+description: 'The path to where the user should get redirected to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

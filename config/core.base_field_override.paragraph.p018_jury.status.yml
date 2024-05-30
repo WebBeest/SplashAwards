@@ -1,0 +1,22 @@
+uuid: d8e216af-45c7-45ca-86a6-5f24a1f2839e
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p018_jury
+id: paragraph.p018_jury.status
+field_name: status
+entity_type: paragraph
+bundle: p018_jury
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

@@ -1,0 +1,18 @@
+uuid: c36cd49b-28ed-471e-abb3-126aa0704dc3
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.nominee_category
+id: taxonomy_term.nominee_category.name
+field_name: name
+entity_type: taxonomy_term
+bundle: nominee_category
+label: Naam
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

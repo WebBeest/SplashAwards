@@ -1,0 +1,18 @@
+uuid: af1f0bf4-f1ce-45bb-92b6-958b4a831c98
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p011_form
+id: paragraph.p011_form.created
+field_name: created
+entity_type: paragraph
+bundle: p011_form
+label: 'Aangemaakt op'
+description: 'Tijdstip waarop de paragraaf is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

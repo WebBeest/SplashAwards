@@ -1,0 +1,52 @@
+uuid: b3485084-272a-44e0-ae29-b128f274b079
+langcode: nl
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_cta_block
+    - field.field.block_content.simple_cta_block.field_button
+    - field.field.block_content.simple_cta_block.field_title
+  module:
+    - link
+id: block_content.simple_cta_block.default
+targetEntityType: block_content
+bundle: simple_cta_block
+mode: default
+content:
+  field_button:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 0
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  translation:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

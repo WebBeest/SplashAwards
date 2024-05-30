@@ -1,0 +1,18 @@
+uuid: 1995d402-a048-46b6-a821-b1fb42077b8a
+langcode: nl
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.award_year
+id: taxonomy_term.award_year.name
+field_name: name
+entity_type: taxonomy_term
+bundle: award_year
+label: Naam
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

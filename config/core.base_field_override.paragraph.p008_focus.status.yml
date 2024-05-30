@@ -1,0 +1,22 @@
+uuid: ea202318-1eb3-4b29-91ef-3a9adb1ef476
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p008_focus
+id: paragraph.p008_focus.status
+field_name: status
+entity_type: paragraph
+bundle: p008_focus
+label: Gepubliceerd
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Aan
+  off_label: Uit
+field_type: boolean

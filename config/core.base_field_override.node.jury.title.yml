@@ -1,0 +1,18 @@
+uuid: d2d2b3ec-89b2-4a4b-b916-20ab6998bcb3
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.jury
+id: node.jury.title
+field_name: title
+entity_type: node
+bundle: jury
+label: Titel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

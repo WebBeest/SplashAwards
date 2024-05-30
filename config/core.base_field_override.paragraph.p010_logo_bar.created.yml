@@ -1,0 +1,18 @@
+uuid: 982bed07-11f0-4642-9155-9df908864c81
+langcode: nl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.p010_logo_bar
+id: paragraph.p010_logo_bar.created
+field_name: created
+entity_type: paragraph
+bundle: p010_logo_bar
+label: 'Aangemaakt op'
+description: 'Tijdstip waarop de paragraaf is aangemaakt.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

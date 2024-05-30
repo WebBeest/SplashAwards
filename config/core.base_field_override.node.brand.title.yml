@@ -1,0 +1,18 @@
+uuid: 9cf8b280-e961-4689-827d-2bf1d8aa545d
+langcode: nl
+status: true
+dependencies:
+  config:
+    - node.type.brand
+id: node.brand.title
+field_name: title
+entity_type: node
+bundle: brand
+label: Titel
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
