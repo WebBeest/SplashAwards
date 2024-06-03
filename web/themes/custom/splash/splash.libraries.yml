@@ -6,4 +6,5 @@ global:
     components/00-base/scripts/00-helpers.js: {}
     components/00-base/scripts/01-base.js: {}
   dependencies:
+    - core/drupal
     - core/once
