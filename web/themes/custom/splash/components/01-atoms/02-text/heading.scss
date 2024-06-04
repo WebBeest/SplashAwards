@@ -1,5 +1,6 @@
 @import '../../includes';
 @import "../../00-base/typography";
+@import "headings-helpers";
 
 h1 {
   @extend .h1;
