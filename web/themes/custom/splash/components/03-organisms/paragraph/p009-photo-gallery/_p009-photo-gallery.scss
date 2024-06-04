@@ -8,7 +8,7 @@
 // *
 // =============================================================================
 
-.paragraph--type-p-009 {
+.paragraph--type-p009-photo-gallery {
   padding: rem(25) rem(20);
   text-align: center;
 
@@ -160,7 +160,7 @@
 
 @include bp-xs-wide-only {
 
-  .paragraph--type-p-009 {
+  .paragraph--type-p009-photo-gallery {
 
     // ** Grid layout
 
@@ -187,12 +187,12 @@
       .field--name-field-p-images-unlimited {
 
         .field__items {
-          margin: rem(0) rem(-$gallery-gap / 2);
+          margin: rem(0) rem(-1 * calc($gallery-gap / 2));
         }
 
         .field__item {
-          width: (100% / 3);
-          padding: rem(0) rem($gallery-gap / 2) rem($gallery-gap) rem($gallery-gap / 2);
+          width: calc(100% / 3);
+          padding: rem(0) rem(calc($gallery-gap / 2)) rem($gallery-gap) rem(calc($gallery-gap / 2));
         }
 
       }
@@ -208,7 +208,7 @@
 
 @include bp-sm {
 
-  .paragraph--type-p-009 {
+  .paragraph--type-p009-photo-gallery {
 
     // ** Grid layout
 
@@ -235,12 +235,12 @@
       .field--name-field-p-images-unlimited {
 
         .field__items {
-          margin: rem(0) rem(-$gallery-gap / 2);
+          margin: rem(0) rem(-1 * calc($gallery-gap / 2));
         }
 
         .field__item {
-          width: (100% / 3);
-          padding: rem(0) rem($gallery-gap / 2) rem($gallery-gap) rem($gallery-gap / 2);
+          width: calc(100% / 3);
+          padding: rem(0) rem(calc($gallery-gap / 2)) rem($gallery-gap) rem(calc($gallery-gap / 2));
         }
       }
     }
