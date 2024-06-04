@@ -43,7 +43,8 @@
     {% endif %}
 
     {# List #}
-    {% embed "@atoms/03-lists/list/_00-ul.twig" with {
+    {%  embed 'splash:list' with {
+      list_type: 'ul',
       bem_ul_block: bem_menu_block,
       bem_ul_modifiers: bem_menu_modifiers,
     } %}

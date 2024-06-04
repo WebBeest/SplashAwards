@@ -19,17 +19,30 @@
  * @see template_preprocess_item_list()
  */
 #}
+{% set bem_ul_block = bem_ul_block|default(list_type) %}
+{% set bem_ul_element = bem_ul_element|default(false) %}
+{% if bem_ul_modifiers is not defined %}
+  {% set bem_ul_modifiers = [] %}
+{% endif %}
+{% if bem_ul_extra is not defined %}
+  {% set bem_ul_extra = [] %}
+{% endif %}
+
+{% if attributes.class is iterable %}
+  {% set bem_ul_extra = bem_ul_extra|merge(attributes.class) %}
+{% endif %}
+
 {% if context.list_style %}
   {%- set wrapper_attributes = wrapper_attributes.addClass('item-list--' ~ context.list_style) %}
   {%- set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
 {% endif %}
 {% if items or empty -%}
-  <div{{ wrapper_attributes.addClass('item-list') }}>
     {%- if title is not empty -%}
       <h3>{{ title }}</h3>
     {%- endif -%}
+  {% if not empty %}<{{ list_type }} {{ bem(bem_ul_block, bem_ul_element, bem_ul_modifiers) }} {{ attributes|without('class') }}>{% endif %}
+  {% block list_content %}
     {%- if items -%}
-      <{{ list_type }}{{ attributes }}>
         {%- for item in items -%}
           {% set itemClasses = [] %}
           {% if attributes.class %}
@@ -39,9 +52,9 @@
           {% endif %}
           <li{{ item.attributes.addClass(itemClasses) }}>{{ item.value }}</li>
         {%- endfor -%}
-      </{{ list_type }}>
     {%- else -%}
       {{- empty -}}
     {%- endif -%}
-  </div>
+    {% if not empty %}</{{ list_type }}>{% endif %}
+  {% endblock %}
 {%- endif %}

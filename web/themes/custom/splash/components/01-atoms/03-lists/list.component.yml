@@ -36,3 +36,7 @@ props:
       type: object
       title: Context
       description: A list of contextual data associated with the list. May contain "list_style" (The custom list style).
+slots:
+  list_content:
+    title: List content
+    description: Block with list contents.
