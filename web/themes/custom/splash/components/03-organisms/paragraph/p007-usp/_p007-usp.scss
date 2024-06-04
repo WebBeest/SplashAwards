@@ -1,0 +1,198 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Paragraphs: USP
+// *
+// * The indivicual items are styled in the Molecules
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * USP
+// =============================================================================
+
+.paragraph--type-p007-usp {
+
+  h2 {
+    margin-bottom: rem(35);
+    padding-bottom: rem(15);
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .field--name-field-p-title {
+    h3 {
+      border-bottom: 1px solid $color-base;
+      //max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: rem(10);
+      color: $color-base;
+    }
+  }
+
+  .field--name-field-p-subtitle {
+    margin-bottom: rem(50);
+    h3 {
+      font-weight: lighter;
+    }
+
+  }
+
+
+  text-align: center;
+
+  // ** usp items
+
+  .field--name-field-p-007-children {
+
+    .field__items {
+      margin-top: rem(-$p-gap-vert);
+      overflow: hidden; // fix for non-collapsing margins
+
+      & > .field__item {
+        margin-top: rem($p-gap-vert);
+        background-color: white;
+        //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: rem(25);
+
+      }
+    }
+  }
+
+  // ** centered button
+
+  .field--name-field-p-button {
+    text-align: center;
+
+    a {
+      margin-left: rem(5);
+      margin-right: rem(5);
+    }
+  }
+
+  .paragraph--type-p-007-child {
+    //background-color: $color-spot-1;
+    //color: $color-white;
+  }
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: wide phone only
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-xs-wide-only {
+
+  .paragraph--type-p-007 {
+    //
+  }
+
+  // ** in 2 column layout
+
+  .p-007__children--view-mode--2-column,
+  .p-007__children--view-mode--two-column {
+
+    > .field__items {
+      @include flex-grid(12, $usp-gap);
+    }
+
+    .field__item--name-field-p-007-children {
+      @include flex-col(6, 12, $usp-gap);
+    }
+  }
+
+  // ** in 3 column layout
+
+  .p-007__children--view-mode--3-column,
+  .p-007__children--view-mode--three-column {
+
+    > .field__items {
+      @include flex-grid(12, $usp-gap);
+    }
+
+    .field__item--name-field-p-007-children {
+      @include flex-col(6, 12, $usp-gap);
+    }
+  }
+
+  // ** in 4 column layout
+
+  .p-007__children--view-mode--4-column,
+  .p-007__children--view-mode--four-column {
+
+    > .field__items {
+      @include flex-grid(12, $usp-gap);
+    }
+
+    .field__item--name-field-p-007-children {
+      @include flex-col(6, 12, $usp-gap);
+    }
+  }
+
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  .paragraph--type-p-007 {
+    //
+  }
+
+  // ** in 2 column layout
+
+  .p-007__children--view-mode--2-column,
+  .p-007__children--view-mode--two-column {
+
+    text-align: left;
+
+    > .field__items {
+      @include flex-grid(12, $usp-gap);
+    }
+
+    .field__item--name-field-p-007-children {
+      @include flex-col(6, 12, $usp-gap);
+    }
+  }
+
+  // ** in 3 column layout
+
+  .p-007__children--view-mode--3-column,
+  .p-007__children--view-mode--three-column {
+
+    > .field__items {
+      @include flex-grid(12, $usp-gap);
+    }
+
+    .field__item--name-field-p-007-children {
+      @include flex-col(4, 12, $usp-gap);
+    }
+  }
+
+  // ** in 4 column layout
+
+  .p-007__children--view-mode--4-column,
+  .p-007__children--view-mode--four-column {
+
+    > .field__items {
+      @include flex-grid(12, $usp-gap);
+    }
+
+    .field__item--name-field-p-007-children {
+      @include flex-col(3, 12, $usp-gap);
+    }
+  }
+
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: desktop & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-md {
+
+  //
+
+}

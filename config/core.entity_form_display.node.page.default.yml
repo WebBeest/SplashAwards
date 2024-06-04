@@ -17,6 +17,7 @@ dependencies:
     - metatag
     - paragraphs
     - paragraphs_asymmetric_translation_widgets
+    - path
 third_party_settings:
   field_group:
     group_header:
@@ -39,6 +40,13 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
+  alias_keeper:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 5
@@ -96,10 +104,10 @@ content:
     settings:
       title: Paragraaf
       title_plural: Paragrafen
-      edit_mode: open
+      edit_mode: preview
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -114,6 +122,12 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox

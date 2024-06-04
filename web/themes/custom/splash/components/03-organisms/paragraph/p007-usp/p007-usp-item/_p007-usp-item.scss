@@ -1,0 +1,325 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Paragraphs: USP item
+// *
+// * The USP as a group, is styled in the Organisms
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * USP item
+// =============================================================================
+
+// reset spacing from parent
+.group--paragraphs__item .paragraph--type-p-007-child,
+.group--paragraphs__item + .group--paragraphs__item.has-matching-bg .paragraph--type-p-007-child {
+  padding: 0;
+}
+
+.paragraph--type-p-007-child {
+
+  // Image
+
+  .field--name-image-url-field,
+  .field--name-field-p-image {
+    margin: 0 auto rem($p-gap-vert-sm) auto;
+
+    a,
+    img {
+      display: block;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+  }
+
+  @if ($structuralOnly == false) {
+
+    //
+
+  } @else {
+
+    .node & .field--name-image-url-field,
+    .node & .field--name-field-p-image {
+      float: none;
+      margin: 0;
+    }
+  }
+
+  // title
+
+  .field--name-field-p-title {
+    h3 {
+      //
+    }
+  }
+
+  // Content
+
+  // reset margins on last bit of text
+  .field--name-field-p-text {
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Buttons (make them smaller)
+  // -- extra selector because needs to override CSS
+  //    from default paragraphs that is in the 'organisms' folder
+
+  .paragraph & .field--buttons {
+
+    margin-top: rem($p-gap-vert-sm);
+
+    .button {
+      margin-left: rem(5);
+      margin-right: rem(5);
+
+      &,
+      &:nth-child(n+2) {
+        @include button-size('sm');
+      }
+    }
+  }
+}
+
+// -- 2 column layout
+
+.p-007__children--view-mode--2-column,
+.p-007__children--view-mode--two-column {
+
+  // Image: make it small
+
+  .field--name-image-url-field,
+  .field--name-field-p-image {
+
+    img {
+      height: rem(100); // max-height of the image, same as the field width
+      width: auto;
+      margin: 0 auto;
+      max-width: none;
+    }
+  }
+}
+
+// -- 3 column layout
+
+.p-007__children--view-mode--3-column,
+.p-007__children--view-mode--three-column {
+
+  //
+}
+
+// -- 4 column layout
+
+.p-007__children--view-mode--4-column,
+.p-007__children--view-mode--four-column {
+
+  .field--name-image-url-field,
+  .field--name-field-p-image {
+
+    //
+
+  }
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  // ** By default, we have only 1 image style (3:2 ratio)
+  //    and if we need to fit square sizes into it (eg. 2-columns uses square icon-images)
+  //    we have to crop via CSS by using fixed sizes and overflow hidden
+
+  // -- 2 column layout: small image next to text
+
+  .p-007__children--view-mode--2-column,
+  .p-007__children--view-mode--two-column {
+
+    // since the image has a fixed px size,
+    // it's safe to just position it and make space
+
+    // leave img to a fixed width, and hide the overflow
+    // in case size or crop of image style was not set up properly
+
+    .field--name-image-url-field,
+    .field--name-field-p-image {
+      position: absolute;
+      left: 0;
+      top: 0;
+      overflow: hidden;
+      width: rem(100);
+
+      img {
+        // size already set (see higher in the file)
+
+        // center the image horizontally
+        // that way it crops the image to a square
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .field--name-field-p-title,
+    .field--name-field-p-text,
+    .field--name-field-p-button {
+      padding-left: rem(100 + $usp-gap);
+    }
+
+  }
+
+  // -- 3 column layout: image on top
+
+  .p-007__children--view-mode--3-column,
+  .p-007__children--view-mode--three-column {
+
+    display: flex; // needed to use flex & flex-grow in deeper levels
+
+    //
+    .field--name-image-url-field,
+    .field--name-field-p-image {
+
+      // -- Example: if need to crop visually, based on height
+      //
+      //overflow: hidden;
+      //width: rem(100);
+      //
+      //img {
+      //  max-width: none;
+      //  height: 100%;
+      //  width: auto;
+      //  margin: 0 auto;
+      //
+      //  // center the image
+      //  position: relative;
+      //  transform: translateX(-50%);
+      //  left: 50%;
+      //}
+
+    }
+
+    // push buttons down so they are properly aligned with the other items
+    .field--name-field-p-text {
+      flex-grow: 1;
+    }
+  }
+
+  // -- 4 column layout: image on top
+
+  .p-007__children--view-mode--4-column,
+  .p-007__children--view-mode--four-column {
+
+    display: flex; // needed to use flex & flex-grow in deeper levels
+
+    //
+    .field--name-image-url-field,
+    .field--name-field-p-image {
+
+      // -- Example: if need to crop visually, based on height
+      //
+      //overflow: hidden;
+      //width: rem(100);
+      //
+      //img {
+      //  max-width: none;
+      //  height: 100%;
+      //  width: auto;
+      //  margin: 0 auto;
+      //
+      //  // center the image
+      //  position: relative;
+      //  transform: translateX(-50%);
+      //  left: 50%;
+      //}
+
+    }
+
+    // push buttons down so they are properly aligned with the other items
+    .field--name-field-p-text {
+      flex-grow: 1;
+    }
+
+  }
+
+  .paragraph--type-p-007-child {
+    display: flex; // needed to use flex & flex-grow in deeper levels
+    flex-direction: column;
+  }
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: desktop & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-md {
+
+  // -- 2 column layout
+
+  .p-007__children--view-mode--2-column,
+  .p-007__children--view-mode--two-column {
+
+    // Extra space on the sides
+    padding: 0 rem(50);
+  }
+
+  // -- 3 column layout
+
+  .p-007__children--view-mode--3-column,
+  .p-007__children--view-mode--three-column {
+
+    //
+
+  }
+
+  // -- 4 column layout
+
+  .p-007__children--view-mode--4-column,
+  .p-007__children--view-mode--four-column {
+
+    //
+
+  }
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+
+  // -- 2 column layout
+
+  .p-007__children--view-mode--2-column,
+  .p-007__children--view-mode--two-column {
+
+    // Extra space on the sides
+    padding: 0 rem(80);
+  }
+
+  // -- 3 column layout
+
+  .p-007__children--view-mode--3-column,
+  .p-007__children--view-mode--three-column {
+    //
+  }
+
+  // -- 4 column layout
+
+  .p-007__children--view-mode--4-column,
+  .p-007__children--view-mode--four-column {
+    //
+  }
+
+}

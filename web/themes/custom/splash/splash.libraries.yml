@@ -8,3 +8,8 @@ global:
   dependencies:
     - core/drupal
     - core/once
+
+admin_overrides:
+  css:
+    base:
+      components/style.admin.css: {}

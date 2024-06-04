@@ -1,53 +1,13 @@
-/**
- * Rocketship UI JS
- *
- * contains: triggers for functions
- * Functions themselves are split off and grouped below each behavior
- *
- * Drupal behaviors:
- *
- * Means the JS is loaded when page is first loaded
- * + during AJAX requests (for newly added content)
- * use jQuery's "once" to avoid processing the same element multiple times
- * http: *api.jquery.com/one/
- * use the "context" param to limit scope, by default this will return document
- * use the "settings" param to get stuff set via the theme hooks and such.
- *
- *
- * Avoid multiple triggers by using jQuery Once
- *
- * EXAMPLE 1:
- *
- * $('.some-link', context).once('js-once-my-behavior').click(function () {
- *   // Code here will only be applied once
- * });
- *
- * EXAMPLE 2:
- *
- * $('.some-element', context).once('js-once-my-behavior').each(function () {
- *   // The following click-binding will only be applied once
- * * });
- */
-
-(function ($, Drupal, window, document) {
+(function ($, Drupal, window, document, once) {
 
   "use strict";
 
   // set namespace for frontend UI javascript
-  if (typeof window.rocketshipAdminUI === 'undefined') { window.rocketshipAdminUI = {}; }
+  if (typeof window.splashAdminUI === 'undefined') { window.splashAdminUI = {}; }
 
-  var self = window.rocketshipAdminUI;
+  const self = window.splashAdminUI;
 
-  ///////////////////////////////////////////////////////////////////////
-  // Cache variables available across the namespace
-  ///////////////////////////////////////////////////////////////////////
-
-
-  ///////////////////////////////////////////////////////////////////////
-  // Behavior for Tabs: triggers
-  ///////////////////////////////////////////////////////////////////////
-
-  Drupal.behaviors.RocketshipParagraphsAdminLayouts = {
+  Drupal.behaviors.SplashParagraphsAdminLayouts = {
     attach: function (context, settings) {
 
       // find the layout pickers:
@@ -57,11 +17,10 @@
       // - 007: layout of the usp items (columns)
       // - 006: video stretch
       // - TBD: 009: grid vs mozaic
-
-      var group = $('.field--name-field-p-001-layout-image.field--widget-options-buttons, .field--name-field-p-002-layout-image.field--widget-options-buttons, .field--name-field-video-layout.field--widget-options-buttons, .field--name-field-p-001-layout.field--widget-options-buttons, .field--name-field-p-003-view-mode.field--widget-options-buttons, .field--name-field-p-007-view-mode.field--widget-options-buttons, .field--name-field-p-009-view-mode.field--widget-options-buttons');
+      const group = $('.field--name-field-p-001-layout-image.field--widget-options-buttons, .field--name-field-p-002-layout-image.field--widget-options-buttons, .field--name-field-video-layout.field--widget-options-buttons, .field--name-field-p-001-layout.field--widget-options-buttons, .field--name-field-p-003-view-mode.field--widget-options-buttons, .field--name-field-p-007-view-mode.field--widget-options-buttons, .field--name-field-p-009-view-mode.field--widget-options-buttons');
 
       // find the paragraphs that have a text layout option
-      var groupTextAlignment = $('.field--name-field-p-003-view-mode');
+      const groupTextAlignment = $('.field--name-field-p-003-view-mode');
 
       // do stuff with it if they exist
       if (group.length) {
@@ -87,32 +46,22 @@
    *
    */
   self.layoutPicker = function(group) {
-
-    group.once('js-once-p-layoutPicker').each(function() {
-
-      var group = $(this)
-
+    $(once('js-once-p-layoutPicker', group)).each(function() {
+      let group = $(this)
       group.addClass('p-field-layouts');
-
-      group.find('input:radio').once('js-once-p-layoutPicker-radio').each(function () {
-        var optionLabel = $(this).next('label');
-
-        var layout = $(this).val();
+      $(once('js-once-p-layoutPicker-radio', group.find('input:radio'))).each(function () {
+        const optionLabel = $(this).next('label');
+        const layout = $(this).val();
 
         // wrap the text in a div & put under the radio
-
         optionLabel.parent().append('<div class="text">' + optionLabel.text() + '</div>');
 
         // add a class for styling
-
-        var optionClass = layout.replace('_', '-');
+        let optionClass = layout.replace('_', '-');
 
         optionLabel.addClass('layout-' + optionClass);
-
       });
-
     });
-
   };
 
   /**
@@ -123,15 +72,12 @@
    * @constructor
    */
   self.CKEOverride = function(layout) {
-
-    layout.once('js-once-p-CKEOverride').each(function() {
-
-      var layout = $(this);
-      var textareaField = layout.parent().find('.js-form-type-textarea');
+    $(once('js-once-p-CKEOverride', layout)).each(function() {
+      const layout = $(this);
+      const textareaField = layout.parent().find('.js-form-type-textarea');
 
       // handler for the layout changes
-
-      var layoutHandler = function(value) {
+      const layoutHandler = function(value) {
 
         // -- if active layout is 'centered'
         //    wrap the cke content in a 'centered' class, to mimic the CKE text-alignment functionality
@@ -139,11 +85,10 @@
 
         // find the textareas
         textareaField.each(function() {
-
-          var field = $(this);
-          var textarea = field.find('textarea');
-          var areaId = textarea.attr('id');
-          var text;
+          let field = $(this);
+          let textarea = field.find('textarea');
+          let areaId = textarea.attr('id');
+          let text;
 
           // manipulate the CKE buttons via a class
           // this is bc we want to be able to disable it for new paragraphs with 'centered' layout by default
@@ -172,10 +117,9 @@
           //  so we add a timeOut to gain some time
           //  it's not perfect but the other solution is working with Promises, which is unsupported in IE11
 
-          var hasCKE = false;
+          let hasCKE = false;
 
-          var ckeTimer = setTimeout(function(){
-
+          let ckeTimer = setTimeout(function(){
             clearTimeout(ckeTimer);
 
             if (typeof CKEDITOR !== 'undefined' && Object.keys(CKEDITOR.instances).length && typeof CKEDITOR.instances[areaId] !== 'undefined') {
@@ -187,13 +131,12 @@
             // wrap text in 'centered' classes for CKE to be able to preview centered text
 
             if (hasCKE) {
-
               if (value === 'centered') {
 
                 // wrap content in cke's 'center' class
                 // so the cke preview matches our custom centered layout
 
-                var newText = '<div class="text-align-center">' + text + '</div>';
+                const newText = '<div class="text-align-center">' + text + '</div>';
 
                 // textarea.text(newText);
                 CKEDITOR.instances[areaId].setData(newText);
@@ -234,8 +177,7 @@
 
       // find the active layout on load, and pass to the layout handler
       layout.find('input:radio:checked').once('js-once-p-CKEOverride-radio').each(function () {
-
-        var value = $(this).val();
+        const value = $(this).val();
 
         layoutHandler(value);
 
@@ -243,8 +185,7 @@
 
       // change of layout should also call the layoutHandler
       layout.find('input:radio').once('js-once-p-CKEOverride-radio-change').change(function () {
-
-          var value = $(this).val();
+          const value = $(this).val();
 
           layoutHandler(value);
 
@@ -255,4 +196,4 @@
 
   }
 
-})(jQuery, Drupal, window, document);
+})(jQuery, Drupal, window, document, once);

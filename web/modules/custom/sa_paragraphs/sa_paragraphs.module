@@ -285,7 +285,8 @@ function sa_paragraphs_background_colors(FieldStorageDefinitionInterface $defini
   }
 
   $theme = \Drupal::configFactory()->get('system.theme')->get('default');
-  $path = drupal_get_path('theme', $theme) . '/' . "$theme.theme";
+  $theme_path = \Drupal::service('extension.list.theme')->getPath($theme);
+  $path = $theme_path . '/' . "$theme.theme";
   if (is_file($path)) {
     require_once $path;
   }
@@ -298,23 +299,27 @@ function sa_paragraphs_background_colors(FieldStorageDefinitionInterface $defini
 }
 
 /**
- * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ * Implements hook_field_widget_complete_WIDGET_TYPE_form_alter().
  *
  * Widget : Paragraphs Classic : entity_reference_paragraphs.
  */
-function sa_paragraphs_field_widget_entity_reference_paragraphs_form_alter(&$element, &$form_state, $context) {
+function sa_paragraphs_field_widget_complete_entity_reference_paragraphs_form_alter(&$element, &$form_state, $context) {
+  sa_paragraphs_widget_bg_color_alter($element, $form_state, $context);
+}
+
+function sa_paragraphs_widget_bg_color_alter(&$element, &$form_state, $context) {
   // If the paragraph type has got a background color field,
   // we need to load a library for the admin preview of colors
   // (color picker) to work.
-  if (isset($element['subform']['field_p_bg_color']) && isset($element['subform']['field_p_bg_color']['widget'])) {
+  if (isset($element['widget'][0]['subform']['field_p_bg_color']['widget'])) {
     // Library for making the colorpicker work.
-    $element['subform']['#attached']['library'][] = 'sa_paragraphs/p_admin_colors';
+    $element['widget'][0]['subform']['#attached']['library'][] = 'sa_paragraphs/p_admin_colors';
 
     // let the theme override it if has an override library
     $theme = \Drupal::configFactory()->get('system.theme')->get('default');
     $library = \Drupal::service('library.discovery')->getLibraryByName($theme, 'admin_overrides');
     if (isset($library)) {
-      $element['subform']['#attached']['library'][] = $theme . '/admin_overrides';
+      $element['widget'][0]['subform']['#attached']['library'][] = $theme . '/admin_overrides';
     }
   }
 }
@@ -322,43 +327,43 @@ function sa_paragraphs_field_widget_entity_reference_paragraphs_form_alter(&$ele
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
-function sa_paragraphs_field_widget_paragraphs_form_alter(&$element, &$form_state, $context) {
-  sa_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+function sa_paragraphs_field_widget_complete_paragraphs_form_alter(&$element, &$form_state, $context) {
+  sa_paragraphs_field_widget_complete_entity_reference_paragraphs_form_alter($element, $form_state, $context);
 }
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
-function sa_paragraphs_field_widget_paragraphs_classic_asymmetric_form_alter(&$element, &$form_state, $context) {
-  sa_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+function sa_paragraphs_field_widget_complete_paragraphs_classic_asymmetric_form_alter(&$element, &$form_state, $context) {
+  sa_paragraphs_field_widget_complete_entity_reference_paragraphs_form_alter($element, $form_state, $context);
 }
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
-function sa_paragraphs_field_widget_entity_reference_paragraphs_previewer_form_alter(&$element, &$form_state, $context) {
-  sa_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+function sa_paragraphs_field_widget_complete_entity_reference_paragraphs_previewer_form_alter(&$element, &$form_state, $context) {
+  sa_paragraphs_field_widget_complete_entity_reference_paragraphs_form_alter($element, $form_state, $context);
 }
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
-function sa_paragraphs_field_widget_paragraphs_previewer_form_alter(&$element, &$form_state, $context) {
-  sa_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+function sa_paragraphs_field_widget_complete_paragraphs_previewer_form_alter(&$element, &$form_state, $context) {
+  sa_paragraphs_field_widget_complete_entity_reference_paragraphs_form_alter($element, $form_state, $context);
 }
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
-function sa_paragraphs_field_widget_paragraphs_asymmetric_form_alter(&$element, &$form_state, $context) {
-  sa_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+function sa_paragraphs_field_widget_complete_paragraphs_asymmetric_form_alter(&$element, &$form_state, $context) {
+  sa_paragraphs_field_widget_complete_entity_reference_paragraphs_form_alter($element, $form_state, $context);
 }
 
 /**
  * Implements hook_field_widget_WIDGET_TYPE_form_alter().
  */
 function sa_paragraphs_field_widget_rs_paragraphs_asymmetric_form_alter(&$element, &$form_state, $context) {
-  sa_paragraphs_field_widget_entity_reference_paragraphs_form_alter($element, $form_state, $context);
+  sa_paragraphs_field_widget_complete_entity_reference_paragraphs_form_alter($element, $form_state, $context);
 }
 
 /**

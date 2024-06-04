@@ -62,7 +62,7 @@
 
       &.p-001--view-mode--right,
       &.p-001--view-mode--image_right {
-        .layout__cols {
+        .layout--twocol-section {
           flex-direction: row-reverse;
         }
       }

@@ -1,0 +1,41 @@
+// *
+// =============================================================================
+
+.paragraph--type-p006-video {
+  margin: 0 auto;
+
+  // ** makes the image stretch to the side of the document window
+
+  &.p--layout--video_stretched {
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .field--name-field-p-video {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50vw);
+      width: 100vw;
+      max-width: none;
+    }
+  }
+  .field--name-field-p-subtitle,
+  .field--name-field-p-link,
+  .field--name-field-title {
+    text-align: center;
+  }
+  .field--name-field-p-subtitle {
+    margin-bottom: rem(20);
+  }
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+
+  .paragraph--type-p006-video {
+    max-width: calc(100% / 12 * 9);
+  }
+}

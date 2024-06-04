@@ -1,0 +1,173 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Paragraphs: testimonial
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// *
+// =============================================================================
+
+.paragraph--type-p005-testimonial {
+  position: relative;
+  text-align: center;
+
+  // extra space for image
+  .group--paragraphs__item &.has-image {
+    padding-top: rem($p-gap-vert-top-xs + calc($testimonial-image-size / 2));
+  }
+
+  // ** user image
+
+  .field--name-field-p-image {
+    position: absolute;
+    left: 50%;
+    top: rem(-1 * calc($testimonial-image-size / 2));
+    transform: translateX(-50%);
+
+    @if ($structuralOnly == false) {
+      //
+    } @else {
+      .node & .field--type-image {
+        float: none;
+        margin: 0;
+      }
+    }
+
+    // need matching image style
+    img {
+      height: rem($testimonial-image-size);
+      width: rem($testimonial-image-size);
+      border-radius: 100%;
+    }
+  }
+
+  // ** description
+
+  .field--type-text-long,
+  .text-long {
+    position: relative;
+    max-width: rem(900);
+    margin: 0 auto;
+
+    // -- add quote icon
+
+    @if ($structuralOnly == false) {
+
+      @include font-awesome((icon: $fa-var-quote-left, color: $color-base, size: 30));
+
+      &:before {
+        position: absolute;
+        top: rem(-30);
+        left: 0;
+      }
+
+    } @else {
+
+      &:before {
+        content: '\201C';
+        position: absolute;
+        top: rem(-40);
+        left: 0;
+        font-size: 80px;
+        line-height: 1;
+      }
+    }
+
+  }
+
+  // ** grouping the info
+  .p-info {
+    margin-top: rem(20);
+  }
+
+  // ** name & title
+
+  .field--name-field-p-name,
+  .field--name-field-p-extra-rule {
+    display: inline-block;
+
+    @if ($structuralOnly == false) {
+      font-weight: $fw-bold;
+    } @else {
+      font-weight: bold;
+    }
+  }
+
+  .field--name-field-p-extra-rule {
+    &:before {
+      content: ' - ';
+    }
+  }
+
+  // ** url
+  .field--name-field-p-link {
+    //
+  }
+}
+
+
+// * Grouping the content
+// =============================================================================
+
+.p005-content {
+  position: relative; // hook for image
+  z-index: 1; // over the background-image, if any
+  padding-top: rem(40); // space for quote mark
+
+  // extra padding if image
+  .has-image & {
+    padding-top: rem(40 + calc($testimonial-image-size / 2));
+  }
+}
+
+// if background of the content
+// need resizing
+
+.has-content-bg > .p005-content {
+  max-width: rem(512);
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet and bigger
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  .paragraph--type-p005-testimonial {
+    // extra space for image
+    .group--paragraphs__item &.has-image {
+      padding-top: rem($p-gap-vert-top-sm + calc($testimonial-image-size / 2));
+    }
+  }
+
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: desktop & bigger
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-md {
+
+  .paragraph--type-p005-testimonial {
+    // extra space for image
+    .group--paragraphs__item &.has-image {
+      padding-top: rem($p-gap-vert-top-md + calc($testimonial-image-size / 2));
+    }
+  }
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+  .paragraph--type-p005-testimonial {
+    // extra space for image
+    .group--paragraphs__item &.has-image {
+      padding-top: rem($p-gap-vert-top-lg + calc($testimonial-image-size / 2));
+    }
+  }
+}

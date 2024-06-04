@@ -1,0 +1,214 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Paragraphs: guidance box
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Box itself + bg
+// =============================================================================
+
+// reset spacing from parent
+.group--paragraphs__item .paragraph--type-p-012-child,
+.group--paragraphs__item + .group--paragraphs__item.has-matching-bg .paragraph--type-p-012-child {
+  padding: 0;
+
+  &:before {
+    background-color: transparent; // no need for the bg color here, we do that with a deeper element
+  }
+}
+
+.paragraph--type-p-012-child {
+  position: relative;
+  align-items: center;
+  border: 1px solid $color-border; // border only if no image
+  transition: border-color $duration $easing;
+  overflow: hidden;
+
+  // keep box in ratio 3:2
+  // reset default bg color stuff
+  &.has-bg:before,
+  &:before {
+    position: static;
+    margin: 0;
+    height: 0;
+    width: 100%;
+    content: '';
+    display: block;
+    padding-top: (100% / 3 * 2);
+  }
+
+  // ** if has an image
+  //    - remove border
+
+  &.has-image {
+    border: 0 none;
+  }
+
+
+  // * Fields
+  // =============================================================================
+
+  // ** Link
+
+  .field--name-field-p-link {
+    a {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-indent: rem(-9999);
+      z-index: 1;
+      border: 0;
+      text-decoration: none;
+    }
+  }
+
+  // ** Images
+  //    by default, the img tag will fit width and height auto
+
+  .field--name-field-p-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  // ** Grouping of text (title & teaser)
+
+  .p-012-child--text {
+    position: absolute;
+    z-index: 1; // has to go over the image, if there is one
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: rem(20) rem(25);
+    background: rgba($color-white, .75); // is overridden by explicit color from picker
+    transition: background-color $duration $easing, top $duration $easing;
+  }
+
+  .p-012-child--text-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  // ** Title
+
+  .field--name-field-p-title {
+    margin-bottom: rem(20);
+    transition: padding $duration $easing;
+
+    * {
+      margin: 0;
+    }
+  }
+
+  // ** Teaser
+
+  .field--name-field-p-teaser {
+    // display: flex;
+    // padding: 0 rem(25) rem(22);
+    font-weight: $font-weight-normal;
+  }
+
+  // ** Button
+
+  .field--name-field-guidance-button {
+    margin-top: rem(15);
+    text-align: center;
+
+    @if ($structuralOnly == false) {
+      a {
+        @include button;
+      }
+    }
+  }
+
+  // ** on hover
+
+  &:hover {
+    border-color: $color-spot-2;
+  }
+}
+
+
+// * Guidance modes
+// =============================================================================
+
+// Mode 1: Only title visible
+// on hover: all fields are visible and overlay whatever bg-image is set
+.group--paragraphs__item .p-012__child--view-mode--title {
+
+  .p-012-child--text {
+    top: 100%; // will be overridden by JS on hover
+  }
+
+  &:hover {
+    .p-012-child--text {
+      top: 0; // will be overridden by JS
+    }
+  }
+
+  // ***************************************************************************
+  // Add your site specific backgrounds here.
+  // See example below.
+  // ***************************************************************************
+
+  &.bg--white .p-012-child--text {
+    background: rgba($color-off-white, .75);
+  }
+
+  &.bg--white:hover .p-012-child--text {
+    background: rgba($color-off-white, 1);
+  }
+
+  &.bg--grey .p-012-child--text {
+    background-color: rgba($color-gray-light-1, .75);
+  }
+
+  &.bg--spot-1 .p-012-child--text {
+    background-color: rgba($color-spot-1, .75);
+  }
+
+}
+
+
+// Image mode
+// Teaser image mode
+.group--paragraphs__item .p-012__child--view-mode--image,
+.group--paragraphs__item .p-012__child--view-mode--teaser-image {
+  //
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  .paragraph--type-p-012-child {
+
+    // no need to set the box in a certain ratio
+    // it has a height at this breakpoint
+    // (see _p012-guidance.scss -> uses flexbox at bp-sm)
+    //
+    &.has-bg:before,
+    &:before {
+      height: 100%;
+    }
+  }
+
+}

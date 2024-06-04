@@ -1,5 +1,6 @@
 @use "sass:math";
 
+@import "../../includes";
 @import "vars-00-base";
 
 .paragraph {
@@ -482,6 +483,13 @@
 }
 
 @import "p001-story/p001-story";
+@import "p002-image/p002-image";
 @import "p003-text/p003-text";
+@import "p004-faq/p004-faq";
+@import "p005-testimonial/p005-testimonial";
+@import "p006-video/p006-video";
+@import "p007-usp/p007-usp";
+@import "p007-usp/p007-usp-item/p007-usp-item";
+@import "p008-focus/p008-focus";
 @import "p010-logobar/p010-logobar";
 @import "p014-simple-header/p014-simple-header";

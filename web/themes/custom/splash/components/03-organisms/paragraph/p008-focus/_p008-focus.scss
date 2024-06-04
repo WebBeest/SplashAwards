@@ -1,0 +1,105 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Paragraphs: p008 Focus
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// *
+// =============================================================================
+
+.paragraph--type-p008-focus {
+  text-align: center;
+
+  // -- Example:
+  //     use a gradient background color over the image
+  //     when there is a bg-image
+  //
+  &.has-bg-image {
+
+    // First we fix the z-indexes so color goes OVER the bg image
+    &:before {
+      z-index: 0;
+    }
+
+    .field--name-field-p-bg-image {
+      z-index: -1;
+      opacity: 1; // no transparency on the image needed
+    }
+  }
+
+  &.has-bg-image.bg--spot-1 {
+
+    // then we turn the bg color into a gradient
+    // set a direction using 'to …'
+    // use positions using %
+    // use rgba for transparency of colors
+    // this example:
+    // - sets a solid bg color until position 50%,
+    // - then it fades to opacity 0 at position 75%,
+    // - then it stays at opacity 0 until the end position at 100%
+    // so the image fades in between position 50% until 100%, and is fully visible from 75% until 100%;
+
+    &:before {
+      background: linear-gradient(to right, rgba($color-spot-1, 1) 50%, rgba($color-spot-1, 0) 75%, rgba($color-spot-1, 0) 100%);
+    }
+  }
+
+  &.has-bg-image.bg--spot-2 {
+
+    // then we turn the bg color into a gradient
+    // set a direction using 'to …'
+    // use positions using %
+    // use rgba for transparency of colors
+    // this example:
+    // - sets a solid bg color until position 50%,
+    // - then it fades to opacity 0 at position 75%,
+    // - then it stays at opacity 0 until the end position at 100%
+    // so the image fades in between position 50% until 100%, and is fully visible from 75% until 100%;
+
+    &:before {
+      background: linear-gradient(to right, rgba($color-spot-2, 1) 50%, rgba($color-spot-2, 0) 75%, rgba($color-spot-2, 0) 100%);
+    }
+  }
+
+  .field--buttons {
+    text-align: center;
+    margin-left: rem(-10);
+    margin-right: rem(-10);
+
+    .button {
+      margin-left: rem(5);
+      margin-right: rem(5);
+    }
+  }
+
+  .field--name-field-p-image {
+    margin-bottom: rem(10);
+
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  .field--name-field-p-title {
+    // @extend .h3;
+    margin-bottom: rem(30);
+  }
+
+  .field--name-field-p-subtitle {
+    // @extend .h4;
+    margin-bottom: rem(30);
+  }
+
+  .field--name-field-p-teaser {
+    //
+  }
+
+  // all fields need to go over the bg image
+  //
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+}

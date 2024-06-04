@@ -1,0 +1,164 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Focus header
+// *
+// * This is the Paragraph: 'focus header'
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// *
+// =============================================================================
+
+.paragraph--type-p-016 {
+
+  $paragraph: &;
+
+  &,
+  & * {
+    box-sizing: border-box;
+  }
+
+  margin: 0;
+  padding-top: rem($p-gap-vert-top-xs);
+  padding-bottom: rem($p-gap-vert-bottom-xs);
+  transition: all $duration $easing;
+
+  // -- Some kind of bg by default
+  // !!!  If you don't set one, you need to reset the bottom padding to zero
+  //      and set bottom padding if has.bg class is set ON EVERY BREAKPOINT
+  //
+  @include full-bg ($color-off-white, 'before', false);
+
+  // ** paragraph with backgrounds need padding on sides
+
+  padding-left: rem($p-gap-hor);
+  padding-right: rem($p-gap-hor);
+
+  // ** paragraph with stretched backgrounds need no padding on the sides
+
+  &.has-bg-stretched {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // -- Example:
+  //     use a gradient background color over the image
+  //     when there is a bg-image
+  //
+  //&.has-bg-image {
+  //
+  //  // First we fix the z-indexes so color goes OVER the bg image
+  //  &:before {
+  //    z-index: 0;
+  //  }
+  //
+  //  .field--name-field-p-bg-image {
+  //    z-index: -1;
+  //    opacity: 1; // no transparency on the image needed
+  //  }
+  //}
+  //
+  //&.has-bg-image.bg--spot-1 {
+  //
+  //  // then we turn the bg color into a gradient
+  //  // set a direction using 'to …'
+  //  // use positions using %
+  //  // use rgba for transparency of colors
+  //  // this example:
+  //  // - sets a solid bg color until position 50%,
+  //  // - then it fades to opacity 0 at position 75%,
+  //  // - then it stays at opacity 0 until the end position at 100%
+  //  // so the image fades in between position 50% until 100%, and is fully visible from 75% until 100%;
+  //
+  //  &:before {
+  //    background: linear-gradient(to right, rgba($color-spot-1,1) 50%,rgba($color-spot-1,0) 75%,rgba($color-spot-1,0) 100%);
+  //  }
+  //}
+}
+
+
+// ** header content
+
+.p-header__content {
+  position: relative;
+  z-index: 1; // over the bg image
+
+  //h1,
+  //h2 {
+  //  margin-bottom: 0;
+  //}
+
+  .header--view-mode--center > & {
+    &,
+    & .field--buttons {
+      text-align: center;
+    }
+  }
+
+  .header--view-mode--right > & {
+
+    &,
+    & .field--buttons {
+      text-align: right;
+    }
+  }
+}
+
+//.p-header__meta {
+//  display: flex;
+//  flex-direction: row;
+//  margin-top: rem(5);
+//  margin-left: rem(-10);
+//
+//  @if ($structuralOnly == false) {
+//    font-weight: $font-weight-bold;
+//  } @else {
+//    font-weight: bold;
+//  }
+//
+//  & > .field {
+//    margin-left: rem(10);
+//  }
+//}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  .paragraph--type-p-016 {
+    padding-top: rem($p-gap-vert-top-sm);
+    padding-bottom: rem($p-gap-vert-bottom-sm);
+  }
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: desktop & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-md {
+
+  .paragraph--type-p-016 {
+    padding-top: rem($p-gap-vert-top-md);
+    padding-bottom: rem($p-gap-vert-bottom-md);
+  }
+
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+
+  .paragraph--type-p-016 {
+    padding-top: rem($p-gap-vert-top-lg);
+    padding-bottom: rem($p-gap-vert-bottom-lg);
+  }
+
+}

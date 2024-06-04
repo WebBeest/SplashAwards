@@ -1,0 +1,232 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Paragraphs: guidance
+// *
+// * grouping of the guidance boxes
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * General
+// =============================================================================
+
+// ** the main paragraph
+
+.paragraph--type-p-012 {
+  //
+}
+
+// ** fields wrapper containing the separate boxes
+
+.field-p-012-children {
+  .p-012__row {
+    margin-top: rem(-$guidance-gap); // compensate for child margin
+    margin-bottom: rem($guidance-gap); // margins between multiple rows eg. view mode mixed 4 or 5
+    overflow: hidden; // so the margins don't collapse
+  }
+
+  &:last-child {
+    .p-012__row {
+      margin-bottom: 0; // reset on last row
+    }
+  }
+}
+
+// ** child box
+
+.paragraph--type-p-012-child {
+  margin-top: rem($guidance-gap);
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-sm {
+
+  // ** fields wrapper containing the separate boxes
+
+  .field-p-012-children .p-012__row {
+    @include flex-grid(12, $guidance-gap);
+    justify-content: center;
+  }
+
+  // ** child box
+
+  .paragraph--type-p-012-child {
+    @include flex-col(6, 12, $guidance-gap);
+  }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: desktop & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-md {
+
+  // ** default child box
+
+  .paragraph--type-p-012-child {
+    @include flex-col(12, 12, $guidance-gap);
+  }
+
+  // * View modes
+  // =============================================================================
+
+  // ** Default small
+
+  .p-012--view-mode--default-small,
+  .p-012--view-mode--default-large {
+    .paragraph--type-p-012-child {
+      @include flex-col(1, 3, $guidance-gap);
+    }
+  }
+
+  // ** Default large
+
+  .p-012--view-mode--default-large {
+    .paragraph--type-p-012-child {
+      height: $guidance-height-md;
+      @include flex-col(1, 3, $guidance-gap);
+    }
+  }
+
+  // ** 2 big
+
+  .p-012--view-mode--2-big {
+    .paragraph--type-p-012-child {
+      height: #{$guidance-height-md/1.5};
+      @include flex-col(1, 2, $guidance-gap);
+
+    }
+  }
+
+  // ** 4 mixed
+  .p-012--view-mode--4-mixed {
+
+    .field-p-012-children .p-012__row {
+      @include flex-rows(calc(#{$guidance-height-md} + #{$guidance-gap}px), 12, $guidance-gap);
+    }
+
+    .paragraph--type-p-012-child {
+      @include flex-col(4, 12, $guidance-gap);
+
+      &:before {
+        padding-top: 100%; // make bg color fit height
+      }
+
+      // long blocks go over 2 rows
+      &:nth-child(4n+1),
+      &:nth-child(4n+4) {
+        @include flex-row(2, 2, $guidance-gap);
+      }
+
+      // short blocks are 1 row high
+      &:nth-child(4n+2),
+      &:nth-child(4n+3) {
+        @include flex-row(1, 2, $guidance-gap);
+      }
+
+      // order: make first block stay first
+      &:nth-child(4n+1) {
+        order: 0;
+      }
+
+      // make second long block go last
+      &:nth-child(4n+4) {
+        order: 2;
+      }
+
+      // make image fit width because they're either very long or a little longer than 3:2
+      .field--name-field-p-image {
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin: auto;
+          width: auto;
+          height: auto;
+          transform: translateX(-50%) translateY(-50%);
+          min-width: 100%;
+          min-height: 100%;
+          max-width: none;
+        }
+      }
+    }
+  }
+
+  .p-012--view-mode--5-mixed {
+
+    .field-p-012-children .p-012__row {
+      @include flex-rows(calc(#{$guidance-height-md} + #{$guidance-gap}px), 12, $guidance-gap);
+    }
+
+    .paragraph--type-p-012-child {
+      @include flex-col(4, 12, $guidance-gap);
+
+      &:before {
+        padding-top: 100%; // make bg color fit height
+      }
+
+      // only first block is long
+      &:nth-child(4n+1) {
+        @include flex-row(2, 2, $guidance-gap);
+      }
+
+      // rst is short (1 col high)
+      &:nth-child(5n+2),
+      &:nth-child(5n+3),
+      &:nth-child(5n+4),
+      &:nth-child(5n+5) {
+        @include flex-row(1, 2, $guidance-gap);
+      }
+
+      // order
+      &:nth-child(5n+1) {
+        order: 0;
+      }
+
+      // make image fit width because they're either very long or a little longer than 3:2
+      .field--name-field-p-image {
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin: auto;
+          width: auto;
+          height: auto;
+          max-width: none;
+          transform: translateX(-50%) translateY(-50%);
+          min-width: 100%;
+          min-height: 100%;
+        }
+      }
+    }
+  }
+
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: large screen
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+@include bp-lg {
+
+  // ** 4 mixed
+  .p-012--view-mode--4-mixed {
+
+    .field-p-012-children .p-012__row {
+      @include flex-rows(calc(#{$guidance-height-lg} + #{$guidance-gap}px), 12, $guidance-gap);
+    }
+  }
+
+  .p-012--view-mode--5-mixed {
+
+    .field-p-012-children .p-012__row {
+      @include flex-rows(calc(#{$guidance-height-lg} + #{$guidance-gap}px), 12, $guidance-gap);
+    }
+  }
+
+}

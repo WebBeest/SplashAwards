@@ -2,17 +2,17 @@
  * @file
  * Behaviors of the background color field.
  */
-
 (function ($, _, Drupal, drupalSettings) {
     "use strict";
-    Drupal.behaviors.RocketshipParagraphsAdminColors = {
+    Drupal.behaviors.SplashParagraphsAdminColors = {
         attach: function (context) {
 
-          var group = $('.field--name-field-p-bg-color.field--widget-options-buttons, .field--name-field-p-content-bg-color.field--widget-options-buttons');
-
+          const group = $('.field--name-field-p-bg-color.field--widget-options-buttons, .field--name-field-p-content-bg-color.field--widget-options-buttons');
+          console.log(group);
           group.addClass('p-field-bg-color');
 
           group.find('input:radio').each(function() {
+            console.log('test');
             var optionLabel = $(this).next('label');
             var colors = $(this).val().split('/');
 

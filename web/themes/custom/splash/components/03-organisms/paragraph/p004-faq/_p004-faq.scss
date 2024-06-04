@@ -1,0 +1,142 @@
+// *
+// =============================================================================
+.paragraph--type-p004-faq {
+  .field--name-field-p-title,
+  .field--name-field-p-subtitle,
+  .field--name-field-p-teaser {
+    text-align: center;
+  }
+}
+
+
+// * Accordion
+// =============================================================================
+
+.field__item--type-tabbed-item {
+  padding-top: rem($p-gap-vert-sm);
+  border-top: 1px solid $color-border;
+
+  // ** question title
+  .tab-item__title {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 rem(25) rem($p-gap-vert-sm) 0;
+    cursor: pointer;
+    transition: all $duration $easing;
+
+    @if ($structuralOnly == false) {
+      @extend .h3 !optional;
+      margin-bottom: 0;
+
+      // -- Icon
+
+      @include font-awesome((
+        icon: $fa-var-chevron-down,
+        color: $color-base,
+        size: 16,
+        element: 'before'));
+
+      &:before {
+        position: absolute;
+        right: 0;
+        top: rem(6);
+        transition: all $duration $easing;
+      }
+
+      .bg--spot-1 &:before {
+        color: $color-white;
+      }
+    } @else {
+      &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: rem(10);
+        transition: all $duration $easing;
+        transform-origin: 50% 25%;
+        border-top: 5px solid #000000;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid transparent;
+      }
+    }
+  }
+
+  // ** question body
+  .tab-item__content {
+    margin-top: rem($p-gap-vert-sm);
+    padding-bottom: rem($p-gap-vert); // same or more than space between paragraphs
+    display: none;
+
+    p,
+    ul,
+    ol,
+    table {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // ** states
+
+  &:hover,
+  &.js-open {
+
+    .tab-item__title {
+
+      @if ($structuralOnly == false) {
+
+        color: $color-spot-1;
+
+        &:hover {
+          color: $color-spot-1;
+        }
+      }
+
+      &:before {
+        transform: rotate(90deg);
+        @if ($structuralOnly == false) {
+          transform-origin: center center;
+        } @else {
+          transform-origin: 50% 25%;
+        }
+      }
+
+      @if ($structuralOnly == false) {
+
+        // ** for background-color
+
+        .bg--spot-1 & {
+          color: $color-white;
+
+          &:hover {
+            color: $color-white;
+          }
+
+        }
+
+      }
+    }
+
+    .tab-item__content {
+      // slides open using JS
+    }
+  }
+
+  &.js-open {
+
+    .tab-item__title {
+
+      &:before {
+        transform: rotate(180deg);
+        @if ($structuralOnly == false) {
+          transform-origin: center center;
+        } @else {
+          transform-origin: 50% 25%;
+        }
+      }
+    }
+  }
+}

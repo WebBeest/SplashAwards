@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - media
+    - paragraphs_type_permissions
     - storybook
     - system
 _core:
@@ -16,3 +17,24 @@ permissions:
   - 'access content'
   - 'render storybook stories'
   - 'view media'
+  - 'view paragraph content p001_story'
+  - 'view paragraph content p002_image'
+  - 'view paragraph content p003_text_main'
+  - 'view paragraph content p004_faq'
+  - 'view paragraph content p005_testimonial'
+  - 'view paragraph content p006_video'
+  - 'view paragraph content p007_usp'
+  - 'view paragraph content p007_usp_item'
+  - 'view paragraph content p008_focus'
+  - 'view paragraph content p009_photo_gallery'
+  - 'view paragraph content p010_logo_bar'
+  - 'view paragraph content p010_logo_item'
+  - 'view paragraph content p011_form'
+  - 'view paragraph content p012_guidance'
+  - 'view paragraph content p012_guidance_box'
+  - 'view paragraph content p013_overview'
+  - 'view paragraph content p014_simple_header'
+  - 'view paragraph content p015_focus_header'
+  - 'view paragraph content p016_menu_overview'
+  - 'view paragraph content p017_facebook_like_box'
+  - 'view paragraph content p018_jury'

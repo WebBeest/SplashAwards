@@ -24,9 +24,9 @@ services:
 
 proxy:
   mailhog:
-    - mailhog-rivmweb.lndo.site
+    - mailhog-sa.lndo.site
   pma:
-    - pma-rivmweb.lndo.site
+    - pma-sa.lndo.site
 
 tooling:
   run-tests:

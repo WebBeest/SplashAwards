@@ -60,6 +60,8 @@ p_admin_colors:
   css:
     base:
       css/ds-paragraph-colors.admin.css: {}
+  dependencies:
+    - core/drupal
 
 p_admin_layouts:
   js:
@@ -67,3 +69,6 @@ p_admin_layouts:
   css:
     base:
       css/ds-paragraph-layouts.admin.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
