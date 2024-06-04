@@ -3,9 +3,9 @@ _core:
 langcode: nl
 first_day: 0
 country:
-  default: ''
+  default: NL
 timezone:
-  default: UTC
+  default: Europe/Amsterdam
   user:
     configurable: true
     default: 0

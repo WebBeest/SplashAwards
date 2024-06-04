@@ -1,0 +1,22 @@
+@import "../../../includes";
+
+.paragraph--type-p018-jury {
+  display: flex;
+  align-content: flex-start;
+  gap: rem($gap-hor);
+
+  .group--paragraphs__item & {
+    padding-bottom: rem($gap-vert);
+  }
+
+  .field--name-field-image {
+    flex-basis: content;
+
+    img {
+      max-width: fit-content;
+    }
+  }
+
+  .field--type-text-long {
+  }
+}
