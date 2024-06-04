@@ -1,0 +1,38 @@
+uuid: 3ab384c9-c1da-4819-b70f-ed6083edcfc9
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_image
+    - paragraphs.paragraphs_type.p012_guidance_box
+  module:
+    - image
+id: paragraph.p012_guidance_box.field_p_image
+field_name: field_p_image
+entity_type: paragraph
+bundle: p012_guidance_box
+label: 'Guide image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: 'p012/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: 2MB
+  max_resolution: 2000x2000
+  min_resolution: 768x512
+  alt_field: true
+  alt_field_required: true
+  title_field: true
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

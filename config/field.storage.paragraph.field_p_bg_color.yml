@@ -10,7 +10,7 @@ field_name: field_p_bg_color
 entity_type: paragraph
 type: list_string
 settings:
-  allowed_values: { }
+  allowed_values: {  }
   allowed_values_function: sa_paragraphs_background_colors
 module: options
 locked: false

@@ -1,0 +1,19 @@
+uuid: 68dfc387-bb8d-4e80-bc20-02d43a0cc1d0
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_title
+    - paragraphs.paragraphs_type.p012_guidance_box
+id: paragraph.p012_guidance_box.field_p_title
+field_name: field_p_title
+entity_type: paragraph
+bundle: p012_guidance_box
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

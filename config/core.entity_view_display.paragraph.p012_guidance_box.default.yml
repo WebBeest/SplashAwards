@@ -1,0 +1,127 @@
+uuid: ec061730-e4b0-4e6d-b2ef-a6860dd8d6bc
+langcode: nl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.p012_guidance_box.field_p_012_child_mode
+    - field.field.paragraph.p012_guidance_box.field_p_bg_color
+    - field.field.paragraph.p012_guidance_box.field_p_image
+    - field.field.paragraph.p012_guidance_box.field_p_link
+    - field.field.paragraph.p012_guidance_box.field_p_teaser
+    - field.field.paragraph.p012_guidance_box.field_p_title
+    - paragraphs.paragraphs_type.p012_guidance_box
+    - responsive_image.styles.paragraph_p012_child_image
+  module:
+    - blazy
+    - field_group
+    - link
+    - sa
+third_party_settings:
+  field_group:
+    group_text:
+      children:
+        - group_text_content
+      label: Text
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: html_element
+      format_settings:
+        classes: p-012-child--text
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+    group_text_content:
+      children:
+        - field_p_title
+        - field_p_teaser
+      label: 'Text content'
+      parent_name: group_text
+      region: content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        classes: p-012-child--text-content
+        show_empty_fields: false
+        id: ''
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+id: paragraph.p012_guidance_box.default
+targetEntityType: paragraph
+bundle: p012_guidance_box
+mode: default
+content:
+  field_p_image:
+    type: blazy
+    label: hidden
+    settings:
+      caption:
+        alt: '0'
+        title: '0'
+      link: ''
+      by_delta: -1
+      layout: ''
+      view_mode: ''
+      cache: 0
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: paragraph_p012_child_image
+      use_theme_field: false
+      box_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      style: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_p_teaser:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_p_title:
+    type: header_text_field_formatter
+    label: hidden
+    settings:
+      header: h4
+    third_party_settings: {  }
+    weight: 6
+    region: content
+hidden:
+  field_p_012_child_mode: true
+  field_p_bg_color: true
+  search_api_excerpt: true
