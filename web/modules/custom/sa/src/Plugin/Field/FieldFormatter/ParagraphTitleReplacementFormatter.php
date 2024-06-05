@@ -99,6 +99,7 @@ class ParagraphTitleReplacementFormatter extends TextDefaultFormatter {
         '#prefix' => '<' . $tag . '>',
         '#suffix' => '</' . $tag . '>',
         '#markup' => $value,
+        '#heading_level' => $tag,
         '#allowed_tags' => [
           'em',
           'strong',

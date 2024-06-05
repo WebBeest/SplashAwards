@@ -83,6 +83,7 @@ class HeaderTextFieldFormatter extends FormatterBase {
       $elements[$delta] = [
         '#prefix' => '<' . $tag . '>',
         '#suffix' => '</' . $tag . '>',
+        '#heading_level' => $tag,
         '#type' => 'inline_template',
         '#template' => '{{ value|nl2br }}',
         '#context' => ['value' => $item->value],
