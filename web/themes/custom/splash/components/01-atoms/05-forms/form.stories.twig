@@ -40,7 +40,7 @@
     name: '2. Fieldset with multiple checkboxes',
     args: {
       legend: {
-        title: 'Sign up for our newsletter'|t,
+        title: 'Sign up for our newsletter'|t
       },
       items: {
         1: {
@@ -85,6 +85,7 @@
       }
     }
   } %}
+    {% set legend = legend|merge({'attributes': legend.attributes|default(create_attribute())}) %}
     {% embed 'splash:fieldset' with {
       legend,
       description: {
