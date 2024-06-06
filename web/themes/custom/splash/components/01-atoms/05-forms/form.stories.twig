@@ -17,23 +17,23 @@
       },
     }
   } %}
-    {% set children %}
-      {{ include('splash:input', {input_attributes}) }}
-    {% endset %}
-    {% set label %}
-      {{ include('splash:form-label', {
-        title,
-        required: input_attributes.required,
-        for: input_attributes.id
-      }) }}
-    {% endset %}
-    {{ include('splash:form-element', {
-      label,
-      children,
+    {% embed 'splash:form-element' with {
+      type: 'checkbox',
       label_display: 'after',
       description_display: 'after',
       description
-    }) }}
+    } %}
+      {% block label %}
+        {{ include('splash:form-label', {
+          title,
+          required: input_attributes.required,
+          for: input_attributes.id
+        }) }}
+      {% endblock %}
+      {% block children %}
+        {{ include('splash:input', {input_attributes}) }}
+      {% endblock %}
+    {% endembed %}
   {% endstory %}
 
   {% story checkboxes with {

@@ -10,6 +10,7 @@
 #}
 {% apply spaceless %}
   {% if input_attributes %}
+    {% set attributes = create_attribute() %}
     {% for key,attr in input_attributes %}
       {% set attributes = attributes.setAttribute(key,attr) %}
     {% endfor %}
@@ -31,6 +32,7 @@
     button_bem_extra: class
   }) }}
 {% else %}
-  <input{{ attributes.addClass(classes) }} />{{ children }}
+  <input{{ attributes.addClass(classes) }} />
+{% block children %}{{ children }}{% endblock %}
 {% endif %}
 {% endapply %}

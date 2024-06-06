@@ -53,21 +53,19 @@
   type ? 'js-form-type-' ~ type|clean_class,
   name ? 'form-item--' ~ name|clean_class,
   name ? 'js-form-item-' ~ name|clean_class,
-  title_display not in ['after', 'before'] ? 'form-no-label',
+  label_display not in ['after', 'before'] ? 'form-no-label',
   disabled == 'disabled' ? 'form-disabled',
   errors ? 'form-item--error',
   prefix is not empty ? 'has--prefix',
   suffix is not empty ? 'has--suffix'
 ]
 %}
-
 {%
   set description_classes = [
   'form-item__description',
   description_display == 'invisible' ? 'visually-hidden',
 ]
 %}
-
 <div{{ attributes.addClass(classes) }}>
   {% if prefix is not empty %}
     <span class="field-prefix">{{ prefix }}</span>
@@ -75,20 +73,24 @@
 
   {% if prefix is not empty or suffix is not empty %}
   <div class="form__item__presuffix-content">
-    {% endif %}
+  {% endif %}
 
-    {% if label_display in ['before', 'invisible'] %}
+  {% if label_display in ['before', 'invisible'] %}
+    {% block label %}
       {{ label }}
-    {% endif %}
+    {% endblock %}
+  {% endif %}
 
-    {% if description_display == 'before' and description.content %}
-      {{ include('splash:form-description', {description}) }}
-    {% endif %}
+  {% if description_display == 'before' and description.content %}
+    {{ include('splash:form-description', {description}) }}
+  {% endif %}
 
-    {{ children }}
+  {% block children %}
+  {{ children }}
+  {% endblock %}
 
     {% if label_display == 'after' %}
-      {{ label }}
+      {{ block('label') }}
     {% endif %}
 
     {% if prefix is not empty or suffix is not empty %}

@@ -20,9 +20,6 @@ props:
     name:
       type: string
       title: Name of the element
-    label:
-      type: string
-      title: A rendered label element
     label_display:
       type: string
       title: Label display settings
@@ -51,3 +48,8 @@ props:
       type: Drupal\Core\Template\Attribute
       title: Attributes
       description: Attributes object
+slots:
+  label:
+    title: Label
+  children:
+    title: Children

@@ -24,6 +24,7 @@
 ]
 %}
 {# Set defaults for optional variables. #}
+{% set attributes = create_attribute() %}
 {% set attributes = attributes|default({'class':[]})|merge({
   'class': attributes.class|default([])|merge(classes)
 }) %}

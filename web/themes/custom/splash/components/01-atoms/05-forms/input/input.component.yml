@@ -6,3 +6,6 @@ props:
       type: Drupal\Core\Template\Attribute
       title: Input attributes
       description: Attributes, like type, id, etc. for input element
+slots:
+  children:
+    title: Children

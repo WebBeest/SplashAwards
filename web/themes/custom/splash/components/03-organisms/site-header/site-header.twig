@@ -11,6 +11,7 @@
     {% endblock %}
 
     {% block header_section_secondary %}
+      {% if page.primary_navigation or page.secondary_navigation or page.top_navigation %}
     <div class="header__section--secondary">
       {# Menus that you also want to be in mobile navigation
         get passed to the _site-nav component #}
@@ -20,6 +21,7 @@
         'header_top_nav': page.top_navigation,
       }) }}
     </div>
+      {% endif %}
     {% endblock %}
 
   </div>
