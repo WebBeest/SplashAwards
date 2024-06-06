@@ -1,0 +1,46 @@
+@import "../../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Forms: containers (wrappers for buttons and such)
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// ** wraps our submit & other buttons on a form
+
+.main .form-actions {
+  margin-top: rem($gap-vert);
+
+  button,
+  input[type='submit'],
+  #edit-cancel {
+    width: 100%;
+    margin-top: rem($gap-vert-sm);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    // make every next button another style
+    // & + button,
+    // & + input[type='submit'],
+    // & + #edit-cancel {
+    //   @include button-secondary;
+    // }
+  }
+
+  @include bp-sm {
+    button,
+    input[type='submit'],
+    #edit-cancel {
+      width: auto;
+      margin-top: 0;
+      margin-left: rem($gap-vert-sm);
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
