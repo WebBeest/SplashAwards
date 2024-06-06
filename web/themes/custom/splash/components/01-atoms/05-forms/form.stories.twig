@@ -155,4 +155,84 @@
     }) }}
 
   {% endstory %}
+
+  {% story radios with {
+    name: '4. Fieldset with multiple radios',
+    args: {
+      legend: {
+        title: 'Sign up for our newsletter'|t
+      },
+      items: {
+        1: {
+          label_attributes: {
+            required: false,
+          },
+          input_attributes: {
+            id: 'field-newsletter-one',
+            name: 'newsletter',
+            value: 'one',
+            required: false,
+            type: 'radio',
+          },
+          title: 'Newsletter one',
+        },
+        2: {
+          label_attributes: {
+            required: false,
+          },
+          input_attributes: {
+            id: 'field-newsletter-two',
+            name: 'newsletter',
+            value: 'two',
+            required: false,
+            type: 'radio',
+          },
+          title: 'Newsletter two',
+        },
+        3: {
+          label_attributes: {
+            required: false,
+          },
+          input_attributes: {
+            id: 'field-newsletter-three',
+            name: 'newsletter',
+            value: 'three',
+            required: false,
+            type: 'radio',
+          },
+          title: 'Newsletter three',
+        }
+      }
+    }
+  } %}
+    {% set legend = legend|merge({'attributes': legend.attributes|default(create_attribute())}) %}
+    {% embed 'splash:fieldset' with {
+      legend,
+      description: {
+        content: description
+      }
+    }
+    %}
+      {% block children %}
+        {% for item in items %}
+          {% embed 'splash:form-element' with {
+            label_display: 'after',
+            description_display: 'after',
+            type: item.input_attributes.type
+          } %}
+            {% block label %}
+              {{ include('splash:form-label', {
+                title: item.title,
+                required: item.input_attributes.required,
+                for: item.input_attributes.id
+              }) }}
+            {% endblock %}
+            {% block children %}
+              {% include 'splash:input' with {input_attributes: item.input_attributes} %}
+            {% endblock %}
+          {% endembed %}
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+  {% endstory %}
 {% endstories %}
