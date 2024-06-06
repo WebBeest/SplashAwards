@@ -10,7 +10,7 @@ props:
     description:
       type: object
       label: Description
-    children:
-      type: ['null','string']
-      label: Content
-      description: Content of the fieldset
+slots:
+  children:
+    label: Content
+    description: Content of the fieldset

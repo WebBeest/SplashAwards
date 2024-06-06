@@ -14,6 +14,9 @@
  *   - icon
  */
 #}
+{% if _story %}
+  {% set attributes = create_attribute() %}
+{% endif %}
 {%
   set classes = [
   title_display == 'after' ? 'option',
@@ -24,7 +27,6 @@
 ]
 %}
 {# Set defaults for optional variables. #}
-{% set attributes = create_attribute() %}
 {% set attributes = attributes|default({'class':[]})|merge({
   'class': attributes.class|default([])|merge(classes)
 }) %}

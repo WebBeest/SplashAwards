@@ -85,35 +85,34 @@
       }
     }
   } %}
-    {% set fieldset_children %}
-      {% for item in items %}
-        {% set checkbox %}
-        {{ include('splash:input', {input_attributes: item.input_attributes}) }}
-        {% endset %}
-        {% set label %}
-        {{ include('splash:form-label', {
-          title: item.title,
-          required: item.input_attributes.required,
-          for: item.input_attributes.id
-        }) }}
-        {% endset %}
-
-        {{ include('splash:form-element', {
-          label,
-          children: checkbox,
-          label_display: 'after',
-          description_display: 'after'
-        }) }}
-      {% endfor %}
-    {% endset %}
-
-    {{ include('splash:fieldset', {
+    {% embed 'splash:fieldset' with {
       legend,
       description: {
         content: description
-      },
-      children: fieldset_children
-    }) }}
+      }
+    }
+    %}
+      {% block children %}
+        {% for item in items %}
+          {% embed 'splash:form-element' with {
+            label_display: 'after',
+            description_display: 'after',
+            type: item.input_attributes.type
+          } %}
+            {% block label %}
+              {{ include('splash:form-label', {
+                title: item.title,
+                required: item.input_attributes.required,
+                for: item.input_attributes.id
+              }) }}
+            {% endblock %}
+            {% block children %}
+              {% include 'splash:input' with {input_attributes: item.input_attributes} %}
+            {% endblock %}
+          {% endembed %}
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
   {% endstory %}
 
   {% story text with {

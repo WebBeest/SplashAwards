@@ -8,9 +8,18 @@
  *   - label
  */
 #}
+{#
+/**
+ * Storybook has the tendency to transport attributes from one story to another
+ * when embedding template in template.
+ * If this is a story, empty the attributes class.
+ */
+#}
+{% if _story %}
+  {% set attributes = create_attribute() %}
+{% endif %}
 {% apply spaceless %}
   {% if input_attributes %}
-    {% set attributes = create_attribute() %}
     {% for key,attr in input_attributes %}
       {% set attributes = attributes.setAttribute(key,attr) %}
     {% endfor %}
