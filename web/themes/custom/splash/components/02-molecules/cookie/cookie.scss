@@ -1,0 +1,83 @@
+@import "../../includes";
+
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Cookie policy
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// *
+// =============================================================================
+#cookie-consent-popup {
+  display: none;
+}
+
+.cookiePolicy-is-visible #cookie-consent-popup {
+  display: block !important;
+}
+
+.cookie-policy {
+  display: block !important;
+}
+
+.cookie-policy {
+  position: fixed;
+  bottom: rem(-200);
+  left: 0;
+  right: 0;
+  padding: rem(15) 0;
+  background: $color-spot-3;
+  color: $color-white;
+  transition: all $duration $easing;
+  @include z-index(cookie);
+
+  .cookiePolicy-is-visible & {
+    bottom: 0;
+  }
+}
+
+.cookie-policy__message {
+  span {
+    display: block;
+  }
+  a {
+    position: relative;
+    @include link-underline((color: $color-white, color-hover: $color-white));
+  }
+}
+
+.cookie-policy__message--first {
+  font-weight: 700;
+}
+.cookie-policy__dismiss {
+  margin-top: rem(20);
+
+  a {
+    @include button-primary();
+  }
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * Breakpoint: tablet & wider
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+// -- switch to big menu when desktop
+// -- change to bp-sm if you want to switch earlier
+// -- don't forget to change the breakpoint check in JS .mobileMenu() as well
+
+@include bp-sm {
+
+  .cookie-policy {
+    padding: rem(25) 0;
+  }
+  .cookie-policy__message {
+    float: left;
+  }
+  .cookie-policy__dismiss {
+    margin-top: rem(3);
+    float: right;
+  }
+
+}

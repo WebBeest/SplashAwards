@@ -1,0 +1,16 @@
+{% stories cookies with {
+  title: 'Splash Awards/Molecules/Cookies'
+} %}
+  {% story cookiebanner with {
+    name: '1. Cookie banner',
+    args: {
+      template_first_line: 'Splash Awards Nederland 2024 uses cookies to improve your online experience.',
+      template_second_line: 'By clicking on "I understand", you accept the use of cookies.',
+      dismiss_text: 'I understand',
+    }
+  } %}
+    <div class="cookiePolicy-is-visible">
+    {{ include('splash:cookie') }}
+    </div>
+  {% endstory %}
+{% endstories %}

@@ -1,5 +1,5 @@
 (function ($, Drupal, drupalSettings) {
-    var cookie_consent = {
+    let cookie_consent = {
         cookie_name: null,
         template: null,
         getCookie: function (cookie_name) {
@@ -18,7 +18,7 @@
             if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) {
                 return false;
             }
-            var sExpires = "";
+            let sExpires = "";
             if (vEnd) {
                 switch (vEnd.constructor) {
                     case Number:
@@ -36,7 +36,7 @@
             return true;
         },
         build: function (template, cookie_name) {
-            var _this = this;
+            const _this = this;
             $('body').append(template);
             $('#cookie-consent-popup').find('a.dismiss').on('click', function (event) {
                 // sticking it in a var breaks it, for some reason

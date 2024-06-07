@@ -1,0 +1,13 @@
+name: Cookie
+props:
+  type: object
+  properties:
+    template_first_line:
+      title: Template first line
+      type: ['array','string']
+    template_second_line:
+      title: Template second line
+      type: [ 'array','string']
+    dismiss_text:
+      title: Dismiss text
+      type: ['array','string']
