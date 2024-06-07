@@ -1,0 +1,44 @@
+name: Table
+props:
+  type: object
+  properties:
+    attributes:
+      title: Attributes
+      description: HTML attributes to apply to the <table> tag.
+      type: Drupal\Core\Template\Attribute
+    caption:
+      title: Caption
+      description: A localized string for the <caption> tag.
+      type: ['string','null']
+    colgroups:
+      title: Column groups
+      description: Column groups. Each group contains attributes.
+      type: object
+    header:
+      title: Header
+      description: Table header cells. Each cell contains tag, attributes, content, field, sort.
+      type: ['array','object']
+    sticky:
+      title: Sticky
+      description: A flag indicating whether to use a "sticky" table header.
+      type: boolean
+    rows:
+      title: Table rows
+      description: Each row contains attributes, data, no_striping, cells.
+      type: ['array','object']
+    footer:
+      title: Footer
+      description: Table footer rows, in the same format as the rows variable.
+      type: object
+    empty:
+      title: Empty message
+      description: The message to display in an extra row if table does not have any rows.
+      type: ['string','array','null']
+    no_striping:
+      title: No striping flag
+      description: A boolean indicating that the row should receive no striping.
+      type: boolean
+    header_columns:
+      title: Header columns
+      description: The number of columns in the header.
+      type: integer

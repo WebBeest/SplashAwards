@@ -1,0 +1,195 @@
+{% stories tables with {
+  title: 'Splash Awards/Atoms/Table'
+}%}
+  {% story table with {
+    name: '01. Table',
+    args: {
+      caption: 'Caption'|t,
+      header_items: [
+        {
+          tag: 'th',
+          content: 'Buuathabr phuswewubobr nedocru',
+        },
+        {
+          tag: 'th',
+          content: 'Dasi jegit heswiuadredr',
+        },
+        {
+          tag: 'th',
+          content: 'Wouerucrul sospoclisifr wadibridiliv',
+        },
+        {
+          tag: 'th',
+          content: 'Thon clashufr showauuj',
+        },
+        {
+          tag: 'th',
+          content: 'Wejiwr maswisukodr nucr',
+        },
+      ],
+      row_items: [
+        {
+          cells: [
+            {tag: 'td', content: 'Vifrasis wreman drawelah'},
+            {tag: 'td', content: 'Brubeuumit lidram uevepufr'},
+            {tag: 'td', content: 'Frichob cleswe micladoch'},
+            {tag: 'td', content: 'Tibrosubi phechathes hokiwuhachud'},
+            {tag: 'td', content: 'Cevushas chethachuth crist'}
+          ],
+        },
+        {
+          cells: [
+            {tag: 'td', content: 'Kefrowi trap tisabethoswe'},
+            {tag: 'td', content: 'Judarus rotheci jamuuuwecrut'},
+            {tag: 'td', content: 'Cruswe thekiwrojot prucreslupe'},
+            {tag: 'td', content: 'Craclurit suuitech wupojesi'},
+            {tag: 'td', content: 'Sestetrewrut tipasibroth wutrodisla'},
+          ],
+        },
+        {
+          cells: [
+            {tag: 'td', content: 'Tonecesuj lespocruphuk wruclubot'},
+            {tag: 'td', content: 'Celic tujifresush wevarok'},
+            {tag: 'td', content: 'Chuje jiuospasle bacram'},
+            {tag: 'td', content: 'Tobesaba sivi nouastusac'},
+            {tag: 'td', content: 'Hacow wabri duruuishash'},
+        ],
+        },
+        {
+          cells: [
+            {tag: 'td', content: 'Chithevu hespeclulu uibome'},
+            {tag: 'td', content: 'Brabefrun nispe tehe'},
+            {tag: 'td', content: 'Frathephigo wrebuth jivacribra'},
+            {tag: 'td', content: 'Cretrodom prec picliphuwaw'},
+            {tag: 'td', content: 'Clishom rudrowri jiku'},
+          ],
+        },
+        {
+          cells: [
+            {tag: 'td', content: 'Jimav reshawofrit spuwunutha'},
+            {tag: 'td', content: 'Poslislist vuson frosh'},
+            {tag: 'td', content: 'Wujucledran rofro clojo'},
+            {tag: 'td', content: 'Jevati karicrot slutrusp'},
+            {tag: 'td', content: 'Kohadritri sipigiliwi kephopod'},
+          ],
+        }
+      ]
+    }
+  } %}
+    {% set header = [] %}
+    {% set rows = [] %}
+    {% for cell in header_items %}
+      {% set cell = cell|merge({attributes: create_attribute()}) %}
+      {% set header = header|merge([cell])%}
+    {% endfor %}
+
+    {% for row in row_items %}
+      {% set new_row = row|merge({attributes: create_attribute()}) %}
+      {% set cells = [] %}
+      {% for cell in row.cells %}
+        {% set cell = cell|merge({attributes: create_attribute()}) %}
+        {% set cells = cells|merge([cell]) %}
+      {% endfor %}
+      {% set new_row = new_row|merge({cells: cells}) %}
+      {% set rows = rows|merge([new_row]) %}
+    {% endfor %}
+    {{ include('splash:table') }}
+  {% endstory %}
+
+  {% story responsive_table with {
+    name: '02. Responsive Table',
+    args: {
+      responsive: true,
+      caption: 'Caption'|t,
+      header_items: [
+        {
+          tag: 'th',
+          content: 'Buuathabr phuswewubobr nedocru',
+        },
+        {
+          tag: 'th',
+          content: 'Dasi jegit heswiuadredr',
+        },
+        {
+          tag: 'th',
+          content: 'Wouerucrul sospoclisifr wadibridiliv',
+        },
+        {
+          tag: 'th',
+          content: 'Thon clashufr showauuj',
+        },
+        {
+          tag: 'th',
+          content: 'Wejiwr maswisukodr nucr',
+        },
+      ],
+      row_items: [
+        {
+          cells: [
+          {tag: 'td', content: 'Vifrasis wreman drawelah'},
+          {tag: 'td', content: 'Brubeuumit lidram uevepufr'},
+          {tag: 'td', content: 'Frichob cleswe micladoch'},
+          {tag: 'td', content: 'Tibrosubi phechathes hokiwuhachud'},
+          {tag: 'td', content: 'Cevushas chethachuth crist'}
+        ],
+        },
+        {
+          cells: [
+          {tag: 'td', content: 'Kefrowi trap tisabethoswe'},
+          {tag: 'td', content: 'Judarus rotheci jamuuuwecrut'},
+          {tag: 'td', content: 'Cruswe thekiwrojot prucreslupe'},
+          {tag: 'td', content: 'Craclurit suuitech wupojesi'},
+          {tag: 'td', content: 'Sestetrewrut tipasibroth wutrodisla'},
+        ],
+        },
+        {
+          cells: [
+          {tag: 'td', content: 'Tonecesuj lespocruphuk wruclubot'},
+          {tag: 'td', content: 'Celic tujifresush wevarok'},
+          {tag: 'td', content: 'Chuje jiuospasle bacram'},
+          {tag: 'td', content: 'Tobesaba sivi nouastusac'},
+          {tag: 'td', content: 'Hacow wabri duruuishash'},
+        ],
+        },
+        {
+          cells: [
+          {tag: 'td', content: 'Chithevu hespeclulu uibome'},
+          {tag: 'td', content: 'Brabefrun nispe tehe'},
+          {tag: 'td', content: 'Frathephigo wrebuth jivacribra'},
+          {tag: 'td', content: 'Cretrodom prec picliphuwaw'},
+          {tag: 'td', content: 'Clishom rudrowri jiku'},
+        ],
+        },
+        {
+          cells: [
+          {tag: 'td', content: 'Jimav reshawofrit spuwunutha'},
+          {tag: 'td', content: 'Poslislist vuson frosh'},
+          {tag: 'td', content: 'Wujucledran rofro clojo'},
+          {tag: 'td', content: 'Jevati karicrot slutrusp'},
+          {tag: 'td', content: 'Kohadritri sipigiliwi kephopod'},
+        ],
+        }
+      ]
+    }
+  } %}
+    {% set header = [] %}
+    {% set rows = [] %}
+    {% for cell in header_items %}
+      {% set cell = cell|merge({attributes: create_attribute()}) %}
+      {% set header = header|merge([cell])%}
+    {% endfor %}
+
+    {% for row in row_items %}
+      {% set new_row = row|merge({attributes: create_attribute()}) %}
+      {% set cells = [] %}
+      {% for cell in row.cells %}
+        {% set cell = cell|merge({attributes: create_attribute()}) %}
+        {% set cells = cells|merge([cell]) %}
+      {% endfor %}
+      {% set new_row = new_row|merge({cells: cells}) %}
+      {% set rows = rows|merge([new_row]) %}
+    {% endfor %}
+    {{ include('splash:table') }}
+  {% endstory %}
+
+{% endstories %}

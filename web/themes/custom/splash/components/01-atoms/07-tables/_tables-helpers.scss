@@ -1,0 +1,109 @@
+////////////////////////////////////////////////////////////////////////////////
+// *
+// * Tables: helpers
+// *
+////////////////////////////////////////////////////////////////////////////////
+
+
+// * Mixins
+// =============================================================================
+
+// ** Responsive tables
+// -- option to reformat or to use a scrollbar: 'reformatted' or 'scroll'
+
+@mixin table-responsive($type) {
+
+  @include bp-xs-only {
+
+    // -- https://css-tricks.com/responsive-data-tables/
+    @if ($type == 'reformatted') {
+
+      caption {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid $color-border;
+      }
+
+      /* Force table to not be like tables anymore */
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        background: transparent;
+        border: 0 none;
+        tr {
+          position: absolute;
+          top: -9999px;
+          left: -9999px;
+        }
+      }
+
+      tr {
+        border: 0 none; // we'll set borders in the td's
+
+        td {
+          /* Behave  like a 'row' */
+          border: none;
+          border-bottom: 1px solid $color-border;
+          position: relative;
+          // padding-left: 50%;
+
+          &:before {
+            // include the row title
+            content: attr(data-title)': ';
+            /* Now like a table header */
+            // position: absolute;
+            /* Top/left values mimic padding */
+            // top: 10px;
+            // left: 10px;
+            // width: 45%;
+            display: block;
+            padding-right: 10px;
+            white-space: nowrap;
+            font-weight: bold;
+          }
+        }
+
+        &.odd {
+          td {
+            border-bottom: 1px solid $color-white;
+          }
+        }
+      }
+
+      // no need for the extra padding and ':' when no th's
+      table.no-th {
+        tr td {
+          width: auto;
+          position: static;
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+      // -- The bootstrap way: with horizontal scrollbar with long cells
+    } @else {
+
+      width: 100%;
+      min-height: .01%;
+      margin-bottom: rem($gap-vert-lg);
+      overflow-x: auto;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      // border: 1px solid $color-border;
+
+      table {
+        table-layout: auto;
+        border: 0 none;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
