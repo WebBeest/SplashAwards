@@ -4,10 +4,14 @@ status: true
 dependencies:
   module:
     - menu_ui
+    - node_keep
 third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
+  node_keep:
+    node_keeper: false
+    alias_keeper: false
 name: Case
 type: case
 description: 'Use <em>case items</em> for your case articles'

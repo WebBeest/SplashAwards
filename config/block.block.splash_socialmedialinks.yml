@@ -6,6 +6,7 @@ dependencies:
     - 'block_content:social_media_links:2bc8e877-08a9-4b5b-a1be-561544ade793'
   module:
     - block_content
+    - system
   theme:
     - splash
 id: splash_socialmedialinks
@@ -22,4 +23,8 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/storybook/stories/render/*'

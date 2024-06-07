@@ -131,6 +131,7 @@
         }
     },
     "require-dev": {
-        "drupal/sdc_examples": "^1@dev"
+        "drupal/sdc_examples": "^1@dev",
+        "drupal/upgrade_status": "^4.3"
     }
 }

@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - sa
+    - system
   theme:
     - splash
 id: splash_copyrightblock
@@ -20,4 +21,8 @@ settings:
   terms_of_use: '5'
   privacy_policy: '10'
   company: 'Splash Awards Nederland'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/storybook/stories/render/*'

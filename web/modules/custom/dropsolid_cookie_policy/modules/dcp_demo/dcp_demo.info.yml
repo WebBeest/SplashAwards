@@ -1,0 +1,15 @@
+name: Dropsolid Cookie Policy - Demo Content
+type: module
+description: Contains a migration to set up a Cookie Policy page.
+core: 8.x
+package: Rocketship
+core_version_requirement: ^8 || ^9 || ^10
+dependencies:
+  - drupal:migrate
+  - drupal:migrate_plus
+  - drupal:token
+  - drupal:dropsolid_cookie_policy
+  - drupal:rocketship_page
+  - drupal:rocketship_paragraphs
+  - drupal:migrate_source_csv
+  - drupal:node_keep

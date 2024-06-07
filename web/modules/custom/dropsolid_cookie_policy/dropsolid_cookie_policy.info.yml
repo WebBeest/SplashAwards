@@ -1,0 +1,22 @@
+name: Dropsolid Cookie Policy
+type: module
+description: Contains functionality to include a cookie policy popup on every page.
+core_version_requirement: ^8 || ^9 || ^10
+package: Rocketship
+group: Cookie Policy
+show_during_install: true
+states:
+  checked:
+  - "#edit-dcp-demo":
+      checked: true
+  disabled:
+  - "#edit-dcp-demo":
+      checked: true
+upgrades:
+  - dcp_demo:Demo
+configure: dropsolid_cookie_policy.cookie_policy_config
+
+interface translation project: dropsolid_cookie_policy
+interface translation server pattern: modules/contrib/dropsolid_cookie_policy/translations/%project-%version-%language.po
+dependencies:
+  - drupal:node

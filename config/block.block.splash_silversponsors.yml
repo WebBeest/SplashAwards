@@ -6,6 +6,7 @@ dependencies:
     - 'block_content:content:916de0bf-a5aa-45c4-9c4f-9dc26a8c59fb'
   module:
     - block_content
+    - system
   theme:
     - splash
 id: splash_silversponsors
@@ -22,4 +23,8 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/storybook/stories/render/*'

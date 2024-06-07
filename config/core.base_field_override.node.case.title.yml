@@ -8,7 +8,7 @@ id: node.case.title
 field_name: title
 entity_type: node
 bundle: case
-label: Titel
+label: Project
 description: ''
 required: true
 translatable: false
