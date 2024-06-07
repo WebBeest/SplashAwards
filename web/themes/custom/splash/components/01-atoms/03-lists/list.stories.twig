@@ -13,9 +13,11 @@
       ]
     }
   } %}
-    <div class="item-list">
-    {{ include ('splash:list', {list_type, items, title}) }}
-    </div>
+  {{ include ('splash:list', {
+    wrapper_attributes: create_attribute(),
+    attributes: create_attribute(),
+    list_type, items, title
+  }) }}
   {% endstory %}
 
   {% story ordered_list with {
@@ -30,10 +32,66 @@
       ]
     }
   } %}
-    <div class="item-list">
-    {{ include ('splash:list', {list_type, items, title}) }}
-    </div>
+    {{ include ('splash:list', {
+      wrapper_attributes: create_attribute(),
+      attributes: create_attribute(),
+      list_type, items, title
+    }) }}
   {% endstory %}
+
+  {% story unordered_list_block with {
+    name: '3. Unordered list with list_content block',
+    args: {
+      title: 'Unordered list',
+      list_type: 'ul',
+      list_items: '<li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>',
+    }
+  } %}
+    {% embed 'splash:list' with {
+      wrapper_attributes: create_attribute(),
+      attributes: create_attribute(),
+      list_type,
+      items,
+      title
+    } %}
+      {% block list_content %}
+      {{ list_items|raw }}
+      {% endblock %}
+    {% endembed %}
+  {% endstory %}
+
+
+  {% story unordered_list_children with {
+    name: '4. Unordered list with second level',
+    args: {
+      title: 'Unordered list',
+      list_type: 'ul',
+      list_items: '<li>List item 1</li>
+          <li>
+            <ul>
+              <li>Sub item 1</li>
+              <li>Sub item 2</li>
+            </ul>
+          </li>
+          <li>List item 3</li>',
+    }
+  } %}
+    {% embed 'splash:list' with {
+      wrapper_attributes: create_attribute(),
+      attributes: create_attribute(),
+      list_type,
+      items,
+      title
+    } %}
+      {% block list_content %}
+        {{ list_items|raw }}
+      {% endblock %}
+    {% endembed %}
+  {% endstory %}
+
+
 
 {% endstories %}
 

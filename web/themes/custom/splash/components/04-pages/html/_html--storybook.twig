@@ -27,55 +27,52 @@
 <html{{ html_attributes }}>
   <head-placeholder token="{{ placeholder_token }}">
   {#
-      It is a good idea to load webfonts using a JS webfont loader
-      That way fonts will never be blocking and Google score will be better
-      https://github.com/typekit/webfontloader
+  It is a good idea to load webfonts using a JS webfont loader
+  That way fonts will never be blocking and Google score will be better
+  https://github.com/typekit/webfontloader
 
-      To add local fonts (like custom or relatively hosted font) just add it to custom families:
-      Otherwise, add to google families variable
-      eg: 'FontAwesome', 'dropsolid-iconfont'
-    #}
-    {% block webfont %}
-      <script>
-        WebFontConfig = {
-          {% if webfont_config_typekit_id != false %}
-            typekit: { id: '{{ webfont_config_typekit_id }}' },
-          {% endif %}
-          {% if webfont_config_google_families != false %}
-          google: {
-            families: [
-              {% for key, value in webfont_config_google_families %}
-                '{{value}}'{% if not loop.last %},{% endif %}
-              {% endfor %}
-            ]
-          },
-          {% endif %}
-          custom: {
-            families: [
-              {% for key, value in webfont_config_custom_families %}
-                '{{value}}'{% if not loop.last %},{% endif %}
-              {% endfor %}
-            ],
-            urls: [
-              {% for key, value in webfont_config_custom_urls %}
-                '{{value}}'{% if not loop.last %},{% endif %}
-              {% endfor %}
-            ]
-          }
-        };
-        (function(d) {
-          var wf = d.createElement('script'), s = d.scripts[0];
-          wf.src = '{{base_path ~ directory}}' + '/js/libs/webfontloader.js';
-          wf.async = true;
-          s.parentNode.insertBefore(wf, s);
-        })(document);
-      </script>
-    {% endblock %}
-
-    <title>{{ head_title|safe_join(' | ') }}</title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
+  To add local fonts (like custom or relatively hosted font) just add it to custom families:
+  Otherwise, add to google families variable
+  eg: 'FontAwesome', 'dropsolid-iconfont'
+  #}
+  {% block webfont %}
+    <script>
+      WebFontConfig = {
+        {% if webfont_config_typekit_id != false %}
+        typekit: { id: '{{ webfont_config_typekit_id }}' },
+        {% endif %}
+        {% if webfont_config_google_families != false %}
+        google: {
+          families: [
+            {% for key, value in webfont_config_google_families %}
+            '{{value}}'{% if not loop.last %},{% endif %}
+            {% endfor %}
+          ]
+        },
+        {% endif %}
+        custom: {
+          families: [
+            {% for key, value in webfont_config_custom_families %}
+            '{{value}}'{% if not loop.last %},{% endif %}
+            {% endfor %}
+          ],
+          urls: [
+            {% for key, value in webfont_config_custom_urls %}
+            '{{value}}'{% if not loop.last %},{% endif %}
+            {% endfor %}
+          ]
+        }
+      };
+      (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = '{{base_path ~ directory}}' + '/js/libs/webfontloader.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+    </script>
+  {% endblock %}
+  <title>{{ head_title|safe_join(' | ') }}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {% block favicons %}
       <link rel="apple-touch-icon" sizes="57x57" href="{{ base_path ~ directory }}/favicons/generated/apple-touch-icon-57x57.png">
       <link rel="apple-touch-icon" sizes="60x60" href="{{ base_path ~ directory }}/favicons/generated/apple-touch-icon-60x60.png">
@@ -112,21 +109,12 @@
 
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
-
   </head>
-
   <body{{ attributes.addClass(body_classes) }}>
-    {#
-      Keyboard navigation/accessibility link to main content section in
-      page.html.twig.
-    #}
     <a href="#main-content" class="visually-hidden focusable skip-link">
       {{ 'Skip to main content'|t }}
     </a>
-
-    {{ page_top }}
     {{ page }}
-    {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>

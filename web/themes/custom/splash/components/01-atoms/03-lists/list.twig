@@ -32,11 +32,16 @@
   {% set bem_ul_extra = bem_ul_extra|merge(attributes.class) %}
 {% endif %}
 
+{% if items is empty and block('list_content') is not empty %}
+  {% set items = [{}] %}
+{% endif %}
+
 {% if context.list_style %}
   {%- set wrapper_attributes = wrapper_attributes.addClass('item-list--' ~ context.list_style) %}
   {%- set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
 {% endif %}
 {% if items or empty -%}
+  <div{{ wrapper_attributes.addClass('item-list') }}>
     {%- if title is not empty -%}
       <h3>{{ title }}</h3>
     {%- endif -%}
@@ -57,4 +62,5 @@
     {%- endif -%}
     {% if not empty %}</{{ list_type }}>{% endif %}
   {% endblock %}
+  </div>
 {%- endif %}
