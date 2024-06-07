@@ -15,9 +15,6 @@
  * If this is a story, empty the attributes class.
  */
 #}
-{% if _story %}
-  {% set attributes = create_attribute() %}
-{% endif %}
 {% apply spaceless %}
   {% if input_attributes %}
     {% for key,attr in input_attributes %}

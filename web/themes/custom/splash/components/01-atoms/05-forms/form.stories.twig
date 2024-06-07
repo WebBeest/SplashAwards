@@ -19,6 +19,7 @@
   } %}
     {% embed 'splash:form-element' with {
       type: 'checkbox',
+      attributes: create_attribute(),
       label_display: 'after',
       description_display: 'after',
       description
@@ -26,12 +27,16 @@
       {% block label %}
         {{ include('splash:form-label', {
           title,
+          attributes: create_attribute(),
           required: input_attributes.required,
           for: input_attributes.id
         }) }}
       {% endblock %}
       {% block children %}
-        {{ include('splash:input', {input_attributes}) }}
+        {{ include('splash:input', {
+          input_attributes,
+          attributes: create_attribute()
+        }) }}
       {% endblock %}
     {% endembed %}
   {% endstory %}
@@ -96,19 +101,24 @@
       {% block children %}
         {% for item in items %}
           {% embed 'splash:form-element' with {
+            attributes: create_attribute(),
             label_display: 'after',
             description_display: 'after',
             type: item.input_attributes.type
           } %}
             {% block label %}
               {{ include('splash:form-label', {
+                attributes: create_attribute(),
                 title: item.title,
                 required: item.input_attributes.required,
                 for: item.input_attributes.id
               }) }}
             {% endblock %}
             {% block children %}
-              {% include 'splash:input' with {input_attributes: item.input_attributes} %}
+              {% include 'splash:input' with {
+                attributes: create_attribute(),
+                input_attributes: item.input_attributes
+              } %}
             {% endblock %}
           {% endembed %}
         {% endfor %}
@@ -216,19 +226,24 @@
       {% block children %}
         {% for item in items %}
           {% embed 'splash:form-element' with {
+            attributes: create_attribute(),
             label_display: 'after',
             description_display: 'after',
             type: item.input_attributes.type
           } %}
             {% block label %}
               {{ include('splash:form-label', {
+                attributes: create_attribute(),
                 title: item.title,
                 required: item.input_attributes.required,
                 for: item.input_attributes.id
               }) }}
             {% endblock %}
             {% block children %}
-              {% include 'splash:input' with {input_attributes: item.input_attributes} %}
+              {% include 'splash:input' with {
+                input_attributes: item.input_attributes,
+                attributes: create_attribute()
+              } %}
             {% endblock %}
           {% endembed %}
         {% endfor %}
