@@ -38,3 +38,12 @@ function splash_preprocess_block(&$variables) {
     $variables['attributes']['data-bem']['type'] = $type;
   }
 }
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function splash_page_attachments_alter(array &$attachments) {
+  if (in_array('dropsolid_cookie_policy/CookiePolicyPopup', $attachments['#attached']['library'])) {
+    $attachments['#attached']['library'][] = 'sdc/splash--cookie';
+  }
+}
