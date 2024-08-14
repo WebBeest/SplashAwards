@@ -1,6 +1,5 @@
 _core:
   default_config_hash: fOx6TBj_84WfX_a6JhuWiPQ-twAjHykvYsTvJAKbZsE
-langcode: nl
 metadata_cache:
   enabled: true
   expiration: 172800

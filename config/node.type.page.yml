@@ -12,7 +12,7 @@ third_party_settings:
 name: Page
 type: page
 description: 'Use <em>pages</em> for your static content, from an "About us" page to a landingspage for a campaign'
-help: ''
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false

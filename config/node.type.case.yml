@@ -15,7 +15,7 @@ third_party_settings:
 name: Case
 type: case
 description: 'Use <em>case items</em> for your case articles'
-help: ''
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false

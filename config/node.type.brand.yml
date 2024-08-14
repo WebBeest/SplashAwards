@@ -11,7 +11,7 @@ third_party_settings:
 name: Brand
 type: brand
 description: 'Add a brand to the logo overviews.'
-help: ''
+help: null
 new_revision: false
 preview_mode: 1
 display_submitted: false

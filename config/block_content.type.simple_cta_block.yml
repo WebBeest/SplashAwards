@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: simple_cta_block
 label: 'Simple CTA block'
-revision: 0
+revision: false
 description: 'Title and CTA for simple CTA blocks'
