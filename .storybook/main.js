@@ -1,6 +1,6 @@
 /** @type { import('@storybook/server-webpack5').StorybookConfig } */
 const config = {
-  stories: ["../web/**/*.mdx", "../web/**/*.stories.@(json|yaml|yml)"],
+  stories: ["../docroot/**/*.mdx", "../docroot/**/*.stories.@(json|yaml|yml)"],
   core: {
     disableTelemetry: true
   },
@@ -59,7 +59,7 @@ const config = {
     options: {},
   },
   staticDirs: [
-    '../web/themes/custom/splash/fonts',
+    '../docroot/themes/custom/splash/fonts',
   ],
   docs: {
     autodocs: "tag",

@@ -2,7 +2,7 @@ name: splashawards2024
 recipe: drupal10
 config:
   xdebug: 'develop,debug'
-  webroot: web
+  webroot: docroot
 services:
   appserver:
     overrides:

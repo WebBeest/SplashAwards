@@ -29,7 +29,7 @@ props:
     footer:
       title: Footer
       description: Table footer rows, in the same format as the rows variable.
-      type: object
+      type: ['null','object']
     empty:
       title: Empty message
       description: The message to display in an extra row if table does not have any rows.

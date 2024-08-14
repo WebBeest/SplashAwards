@@ -1,34 +1,33 @@
 bin
 vendor
-web/core
-web/modules/contrib
-web/themes/contrib
-web/libraries
+docroot/core
+docroot/modules/contrib
+docroot/themes/contrib
 
-web/.csslintrc
-web/.eslintignore
-web/.eslintrc.json
-web/.htaccess
-web/autoload.php
-web/index.php
-web/sites/default/default.services.yml
-web/sites/default/default.settings.php
-web/update.php
-web/.gitignore
+docroot/.csslintrc
+docroot/.eslintignore
+docroot/.eslintrc.json
+docroot/.htaccess
+docroot/autoload.php
+docroot/index.php
+docroot/sites/default/default.services.yml
+docroot/sites/default/default.settings.php
+docroot/update.php
+docroot/.gitignore
 
-web/sites/**/*.services.yml
-web/sites/**/settings*.php
-web/sites/**/settings.php
+docroot/sites/**/*.services.yml
+docroot/sites/**/settings*.php
+docroot/sites/**/settings.php
 
-web/sites/*/files
-web/sites/*/private
+docroot/sites/*/files
+docroot/sites/*/private
 
-web/INSTALL.txt
-web/README.md
-web/modules/README.txt
-web/profiles/README.txt
-web/sites/README.txt
-web/themes/README.txt
+docroot/INSTALL.txt
+docroot/README.md
+docroot/modules/README.txt
+docroot/profiles/README.txt
+docroot/sites/README.txt
+docroot/themes/README.txt
 
 nbproject
 .idea
@@ -41,7 +40,7 @@ Thumbs.db
 node_modules
 .yarn
 
-web/sites/simpletest
+docroot/sites/simpletest
 *.sql.*
 db
 .phpunit.result.cache
